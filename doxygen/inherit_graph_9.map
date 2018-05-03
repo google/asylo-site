@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classasylo_1_1error_1_1ErrorSpace.html" title="All implementations of error spaces are derived from this abstract class. " alt="" coords="5,100,165,127"/>
+<area shape="rect" id="node2" href="$classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="An intermediate template class that to help define an ErrorSpace subclass. " alt="" coords="213,5,373,61"/>
+<area shape="rect" id="node3" href="$classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="asylo::error::ErrorSpace\lImplementationHelper\&lt;\l GoogleErrorSpace \&gt;" alt="" coords="213,85,373,141"/>
+<area shape="rect" id="node5" href="$classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="asylo::error::ErrorSpace\lImplementationHelper\&lt;\l PosixErrorSpace \&gt;" alt="" coords="213,165,373,221"/>
+<area shape="rect" id="node4" href="$classasylo_1_1error_1_1GoogleErrorSpace.html" title="The implementation of the ErrorSpace interface for the GoogleError canonical error space..." alt="" coords="421,93,585,134"/>
+<area shape="rect" id="node6" href="$classasylo_1_1error_1_1PosixErrorSpace.html" title="An implementation of the ErrorSpace interface for POSIX error codes. " alt="" coords="425,173,581,214"/>
+</map>

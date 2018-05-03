@@ -1,0 +1,128 @@
+---
+title: Identity ACL
+overview: Representation of an enclave identity ACL (access control list).
+location: https://asylo.dev/docs/reference/proto/identity/asylo.identity_acl.v1.html
+layout: protoc-gen-docs
+redirect_from: /docs/reference/proto/identity/identity_acl.html
+number_of_entries: 3
+---
+<p>The following recursive protos allow for arbitrary nesting of logical
+operators when constructing an <code>EnclaveIdentityExpectation</code>-based ACL. Such
+ACLs can be evaluated against a set of identities belonging to an enclave
+to make authorization decisions.</p>
+
+<p>An ACL is represented by a top-level <code>IdentityAclPredicate</code>. A predicate can
+either be a singular <code>EnclaveIdentityExpectation</code>, or a nested
+<code>IdentityAclGroup</code>, which contains a list of predicates as well as a logical
+operator (<code>OR</code>, <code>AND</code>, or <code>NOT</code>):</p>
+
+<ul>
+<li>An <code>OR</code>-group is satisfied if any of the embedded predicates are
+satisfied.</li>
+<li>An <code>AND</code>-group is satisfied if all of the embedded predicates are
+satisfied.</li>
+<li>A <code>NOT</code>-group is required to have only a single embedded predicate and is
+satisfied if the embedded predicate is not satisfied.</li>
+</ul>
+
+<p>An <code>EnclaveIdentityExpectation</code> predicate is satisfied if it is matched by
+any of a given set of enclave identities.</p>
+
+<h2 id="IdentityAclGroup">IdentityAclGroup</h2>
+<section>
+<p>Represents a group of ACL predicates.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IdentityAclGroup.predicates">
+<td><code>predicates</code></td>
+<td><code><a href="#IdentityAclPredicate">IdentityAclPredicate[]</a></code></td>
+<td>
+<p>The predicates that make up this group. Must be non-empty.</p>
+
+</td>
+</tr>
+<tr id="IdentityAclGroup.type">
+<td><code>type</code></td>
+<td><code><a href="#IdentityAclGroup.GroupType">IdentityAclGroup.GroupType</a></code></td>
+<td>
+<p>The type of this ACL group.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="IdentityAclGroup.GroupType">IdentityAclGroup.GroupType</h2>
+<section>
+<p>Possible logical operators to use when evaluating the results of matching
+|predicates| against a set of identities.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IdentityAclGroup.GroupType.OR">
+<td><code>OR</code></td>
+<td>
+<p>Evaluates to true iff any predicates match.</p>
+
+</td>
+</tr>
+<tr id="IdentityAclGroup.GroupType.AND">
+<td><code>AND</code></td>
+<td>
+<p>Evaluates to true iff all predicates match.</p>
+
+</td>
+</tr>
+<tr id="IdentityAclGroup.GroupType.NOT">
+<td><code>NOT</code></td>
+<td>
+<p>Evaluates to true iff no predicates match. |predicates| must have exactly
+one element.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="IdentityAclPredicate">IdentityAclPredicate</h2>
+<section>
+<p>Represents either a group of predicates or a single expectation.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IdentityAclPredicate.acl_group" class="oneof oneof-start">
+<td><code>acl_group</code></td>
+<td><code><a href="#IdentityAclGroup">IdentityAclGroup (oneof)</a></code></td>
+<td>
+</td>
+</tr>
+<tr id="IdentityAclPredicate.expectation" class="oneof">
+<td><code>expectation</code></td>
+<td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.identity.v1.html#EnclaveIdentityExpectation">EnclaveIdentityExpectation (oneof)</a></code></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</section>

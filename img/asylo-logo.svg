@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 404.21311 467.52301">
+  <defs>
+    <style>
+      .cls-1, .cls-5 {
+        fill: #ffe082;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #ff6f00;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-6 {
+        fill: #ffca28;
+      }
+
+      .cls-3, .cls-7 {
+        fill: #ffb300;
+      }
+
+      .cls-4 {
+        opacity: 0.5;
+      }
+    </style>
+  </defs>
+  <title>Asylo logo</title>
+  <desc>Asylo's ochre cube in a cube logo. The inner cube represents enclave applications and the outer cube represents untrusted environments.</desc>
+  <g id="Logo-cubes" data-name="Logo-cubes">
+    <g>
+      <polygon class="cls-1" points="202.107 34.408 29.749 134.085 87.364 167.404 202.107 233.761 316.849 167.404 374.464 134.085 202.107 34.408"/>
+      <polygon class="cls-2" points="87.364 167.404 29.749 134.085 29.749 333.438 202.107 433.114 202.107 233.761 87.364 167.404"/>
+      <polygon class="cls-3" points="316.849 167.404 202.107 233.761 202.107 433.114 374.464 333.438 374.464 134.085 316.849 167.404"/>
+    </g>
+    <g class="cls-4">
+      <polygon class="cls-5" points="202.107 0 0 116.881 67.559 155.951 202.107 233.762 336.654 155.951 404.213 116.881 202.107 0"/>
+      <polygon class="cls-6" points="67.559 155.951 0 116.881 0 350.643 202.107 467.523 202.107 233.762 67.559 155.951"/>
+      <polygon class="cls-7" points="336.654 155.951 202.107 233.762 202.107 467.523 404.213 350.643 404.213 116.881 336.654 155.951"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+---
+title: Status
+overview: Represents an error or OK status.
+location: https://asylo.dev/docs/reference/proto/util/asylo.status.v1.html
+layout: protoc-gen-docs
+redirect_from: /docs/reference/proto/util/status.html
+number_of_entries: 1
+---
+<h2 id="StatusProto">StatusProto</h2>
+<section>
+<p>Wire-format representation for a Status object.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="StatusProto.code">
+<td><code>code</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Numeric error code.</p>
+
+</td>
+</tr>
+<tr id="StatusProto.error_message">
+<td><code>error_message</code></td>
+<td><code>string</code></td>
+<td>
+<p>Detailed error message explaining the error.</p>
+
+</td>
+</tr>
+<tr id="StatusProto.space">
+<td><code>space</code></td>
+<td><code>string</code></td>
+<td>
+<p>Name of the error space to which <code>code</code> belongs.</p>
+
+</td>
+</tr>
+<tr id="StatusProto.canonical_code">
+<td><code>canonical_code</code></td>
+<td><code>int32</code></td>
+<td>
+<p>The equivalent error code in the Google canonical error space.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>

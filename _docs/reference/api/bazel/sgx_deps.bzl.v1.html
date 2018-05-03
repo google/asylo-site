@@ -1,0 +1,37 @@
+---
+title: Asylo's SGX SDK backend dependencies
+overview: Details about Asylo's repository rules for including the SGX SDK backend dependencies.
+home_location: https://asylo.dev/docs/reference/api/bazel/sgx_deps.bzl.v1.html
+layout: skylark-docs
+redirect_from: /docs/reference/api/bazel/sgx_deps.bzl.html
+number_of_entries: 1
+---
+
+<p>The file <code>sgx_deps.bzl</code> defines the Bazel repository rules needed to declare a dependency on the SGX backend in your <code>WORKSPACE</code> file. You may include its macros (<em>e.g.</em>, <code>sgx_deps</code>) with the following line in your <code>WORKSPACE</code> file:
+</p>
+<pre id="sgx_deps.load"><code class="language-skylark">load("@com_google_asylo//asylo/bazel:sgx_deps.bzl", "sgx_deps")</code></pre>
+
+
+<h2 id="sgx_deps">sgx_deps</h2>
+<section>
+  <p>The rule used to depend on the Asylo SGX backend toolchain and supporting libraries.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="sgx_deps.installation_path">
+        <td><code>installation_path</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>[optional] The absolute path to the installed Asylo toolchain for building SGX targets. The default value for this path comes either from the user installation path in <code>$HOME/.asylo/sgx_toolchain_location</code>, <code>/usr/local/share/asylo/sgx_toolchain_location</code>, or the default path <code>/opt/asylo/toolchains/sgx_x86_64</code> (see the installation script for details <a href="https://github.com/google/asylo/blob/master/asylo/distrib/sgx_x86_64/install-toolchain"><code>asylo/distrib/sgx_x86_64/install-toolchain</code></a>).
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

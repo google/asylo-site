@@ -1,0 +1,321 @@
+---
+title: C++ Bazel support
+overview: Detailed information on the bazel rules to support C++ targets.
+home_location: https://asylo.dev/docs/reference/api/cpp/asylo.build_rules.v1.html
+layout: skylark-docs
+redirect_from: /docs/reference/api/cpp/asylo.build_rules.html
+number_of_entries: 6
+order: 10
+---
+
+<p>The file <code>bazel/asylo.bzl</code> defines the bazel repository rules needed to build enclave applications and enclave tests in your <code>WORKSPACE</code> file. Asylo provides the following rules and macros to build and test enclaves: `debug_enclave_driver`, `enclave_test`, `cc_test`, `cc_test_and_cc_enclave_test`, `cc_enclave_test`. The SGX backend provides a C++-specific macro: `sgx_enclave`.
+You may include asylo macros (<em>e.g.</em>, <code>debug_enclave_driver</code>) with the following line in your <code>WORKSPACE</code> file:
+</p>
+<pre id="debug_enclave_driver.load"><code class="language-skylark">load("@com_google_asylo//asylo/bazel:asylo.bzl", "debug_enclave_driver")</code></pre>
+<p>You may include sgx macros (<em>e.g.</em>, <code>sgx_enclave</code>) with the following line in your <code>WORKSPACE</code> file:
+</p>
+<pre id="sgx_enclave.load"><code class="language-skylark">load("@linux_sgx//:sgx_sdk.bzl", "sgx_enclave")</code></pre>
+
+<h2 id="debug_enclave_driver">debug_enclave_driver</h2>
+<section>
+  <p>The rule used to create cc_binary for a given enclave. It combines the driver and enclave targets and ensures that the source is compiled with the host crosstool.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="debug_enclave_driver.name">
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>Name for the build target.
+          </p>
+        </td>
+      </tr>
+      <tr id="debug_enclave_driver.enclaves">
+        <td><code>enclaves</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>Dependent enclave target.
+          </p>
+        </td>
+      </tr>
+      <tr id="debug_enclave_driver.**kwargs">
+        <td><code>**kwargs</code></td>
+        <td><code>dictionary</code></td>
+        <td>
+          <p>[optional] cc_binary arguments.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2 id="enclave_test">enclave_test</h2>
+<section>
+  <p>The rule to build target for testing one or more enclave targets.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="enclave_test.name">
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>Name for the test.
+          </p>
+        </td>
+      </tr>
+      <tr id="enclave_test.enclaves">
+        <td><code>enclave</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] The enclave targets to test against.
+          </p>
+        </td>
+      </tr>
+      <tr id="enclave_test.tags">
+        <td><code>tags</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] Label attached to this test to allow for querying.
+          </p>
+        </td>
+      </tr>
+      <tr id="enclave_test.**kwargs">
+        <td><code>**kwargs</code></td>
+        <td><code>dictionary</code></td>
+        <td>
+          <p>[optional] cc_test arguments.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2 id="cc_enclave_test">cc_enclave_test</h2>
+<section>
+  <p>The rule that builds targets running cc_test srcs inside an enclave.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="cc_enclave_test.name">
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>Name for the test.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_enclave_test.srcs">
+        <td><code>srcs</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>The path of the source files to be built.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_enclave_test.tags">
+        <td><code>tags</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] Label attached to this test to allow for querying.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_enclave_test.deps">
+        <td><code>deps</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] The targets that this target depends on.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_enclave_tests.**kwargs">
+        <td><code>**kwargs</code></td>
+        <td><code>dictionary</code></td>
+        <td>
+          <p>[optional] cc_test arguments.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2 id="cc_test">cc_test</h2>
+<section>
+  <p>The rule that creates a cc_test target which runs a normal test, and optionally a cc_enclave_test target, which runs the test inside an enclave.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="cc_test.name">
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>Name for the test.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test.enclave_test_name">
+        <td><code>enclave_test_name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>[optional] Name for the generated cc_enclave_test.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test.srcs">
+        <td><code>srcs</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] The path of the source files to be built.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test.deps">
+        <td><code>deps</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] The targets that this target depends on.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test.**kwargs">
+        <td><code>**kwargs</code></td>
+        <td><code>dictionary</code></td>
+        <td>
+          <p>[optional] cc_test arguments.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2 id="cc_test_and_cc_enclave_test">cc_test_and_cc_enclave_test</h2>
+<section>
+  <p>This rule is similar as cc_test, but with a default enclave_test_name.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="cc_test_and_cc_enclave_test.name">
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>Name for the test.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test_and_cc_enclave_test.enclave_test_name">
+        <td><code>enclave_test_name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>[optional] See documentation for enclave_test_name in cc_test. If not provided and name ends with "_test", then default this to name with "_test" replaced with "_enclave_test". If not provided and name does not end with "_test", default this to name appended with "_enclave".
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test_and_cc_enclave_test.srcs">
+        <td><code>srcs</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] The path of the source files to be built.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test_and_cc_enclave_test.deps">
+        <td><code>deps</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>[optional] The targets that this target depends on.
+          </p>
+        </td>
+      </tr>
+      <tr id="cc_test_and_cc_enclave_test.**kwargs">
+        <td><code>**kwargs</code></td>
+        <td><code>dictionary</code></td>
+        <td>
+          <p>[optional] cc_test arguments.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<h2 id="sgx_enclave">sgx_enclave</h2>
+<section>
+  <p>The rule for creating SGX enclave shared object files signed for testing.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="sgx_enclave.name">
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>Name of the enclave target.
+          </p>
+        </td>
+      </tr>
+      <tr id="sgx_enclave.config">
+        <td><code>config</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>[optional] The sgx_enclave configuration rule.
+          </p>
+        </td>
+      </tr>
+      <tr id="sgx_enclave.testonly">
+        <td><code>testonly</code></td>
+        <td><code>bool</code></td>
+        <td>
+          <p>[optional] Set to 0 if the target is only used in tests.
+          </p>
+        </td>
+      </tr>
+      <tr id="sgx_enclave.**kwargs">
+        <td><code>**kwargs</code></td>
+        <td><code>dictionary</code></td>
+        <td>
+          <p>[optional] cc_test arguments.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

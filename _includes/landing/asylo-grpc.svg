@@ -1,0 +1,87 @@
+<svg version="1.1" id="Asylo gRPC" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 183.033 552 145.434" enable-background="new 0 183.033 552 145.434"
+	 xml:space="preserve">
+  <defs>
+    <style>
+      .ggrpc-1, .ggrpc-5 {
+        fill: #ffe082;
+      }
+
+      .ggrpc-1, .ggrpc-2, .ggrpc-3 {
+        stroke: #ff6f00;
+        stroke-miterlimit: 10;
+      }
+
+      .ggrpc-2, .ggrpc-6 {
+        fill: #ffca28;
+      }
+
+      .ggrpc-3, .ggrpc-7 {
+        fill: #ffb300;
+      }
+
+      .ggrpc-4 {
+        opacity: 0.5;
+      }
+    </style>
+    <g id="grpc-dots">
+      <circle fill="#0CC1C8" cx="30.258" cy="0" r="2.836"/>
+      <circle fill="#0CC1C8" cx="18.337" cy="0" r="2.003"/>
+      <circle fill="#0CC1C8" cx="8.718" cy="0" r="1.605"/>
+      <circle fill="#0CC1C8" cx="0" cy="0" r="1.189"/>
+    </g>
+  </defs>
+  <title>Enclave-protected gRPC service diagram</title>
+  <desc>A visualization of two enclaves communicating over an encrypted channel. Two computer monitors with Asylo logo overlays have a padlocked "A" between them, as homage to the similar graphic from grpc.io's front page that represents simple service definition.</desc>
+  <g id="simple_service" transform="scale(0.85) translate(60, 45)">
+    <g id="parties">
+      <g id="left-computer">
+        <path fill="#2E838C" d="M176.79,183.033H29.271c-3.34,0-6.048,2.691-6.048,6.014v111.398c0,3.322,2.708,6.016,6.048,6.016
+          h51.064v16.252H61.791v5.754h82.478v-5.754h-18.627v-16.252h51.148c3.339,0,6.047-2.693,6.047-6.016V189.047
+          C182.837,185.727,180.129,183.033,176.79,183.033z"/>
+  	<g id="grpc-Cubes" transform="scale(0.15) translate(500, 1400)">
+    <g>
+      <polygon class="ggrpc-1" points="202.107 34.408 29.749 134.085 87.364 167.404 202.107 233.761 316.849 167.404 374.464 134.085 202.107 34.408"/>
+      <polygon class="ggrpc-2" points="87.364 167.404 29.749 134.085 29.749 333.438 202.107 433.114 202.107 233.761 87.364 167.404"/>
+      <polygon class="ggrpc-3" points="316.849 167.404 202.107 233.761 202.107 433.114 374.464 333.438 374.464 134.085 316.849 167.404"/>
+    </g>
+    <g class="ggrpc-4">
+      <polygon class="ggrpc-5" points="202.107 0 0 116.881 67.559 155.951 202.107 233.762 336.654 155.951 404.213 116.881 202.107 0"/>
+      <polygon class="ggrpc-6" points="67.559 155.951 0 116.881 0 350.643 202.107 467.523 202.107 233.762 67.559 155.951"/>
+      <polygon class="ggrpc-7" points="336.654 155.951 202.107 233.762 202.107 467.523 404.213 350.643 404.213 116.881 336.654 155.951"/>
+    </g>
+        </g>
+        <polygon id="left-glare" opacity="0.25" fill="#FFFFFF" enable-background="new    " points="97.854,191.337 31.812,269.803 31.812,191.337"/>
+      </g>
+
+      <use id="right-computer" href="#left-computer" x="345.94" y="0" />
+    </g>
+    <g>
+    <g id="service-name" transform="scale(0.68) translate(308, 268)">
+      <path id="hook" stroke="none" fill="#BDBDBD" d="M96,8C71.7,8,52,27.7,52,52v24.02h20V52c0-13.25,10.75-24,24-24s24,10.75,24,24v24h20V52
+      C140,27.7,120.3,8,96,8z"/>
+      <path id="lock-base" stroke="none" fill="#FFC107" d="M152,184H40c-6.63,0-12-5.37-12-12V80c0-6.63,5.37-12,12-12h112c6.63,0,12,5.37,12,12v92
+			      C164,178.63,158.63,184,152,184z"/>
+      <path id="lock-right-edge" stroke="none" fill="#FFA726" d="M152,184h-4V68h4c6.63,0,12,5.37,12,12v92C164,178.63,158.63,184,152,184z"/>
+      <path id="lock-left-edge" stroke="none" fill="#FDD835" d="M40,68h4v116h-4c-6.63,0-12-5.37-12-12V80C28,73.37,33.37,68,40,68z"/>
+    </g>
+    <g id="service-braces" transform="translate(0,10)">
+      <path id="left-brace" fill="#0CC1C8" opacity="0.7" d="M251.206,286.348h-4.646c-2.316,0-4.062-0.598-5.228-1.779c-1.152-1.194-1.734-3.067-1.734-5.633v-17.563
+        c0-1.09-0.298-1.968-0.88-2.601c-0.582-0.645-1.548-0.961-2.897-0.961v-3.84c1.35,0,2.315-0.281,2.897-0.832
+        s0.88-1.463,0.88-2.74v-17.846c0-2.377,0.582-4.203,1.734-5.479c1.165-1.287,2.911-1.921,5.228-1.921h4.646v3.291h-2.316
+        c-1.165,0-2.032,0.271-2.614,0.818c-0.582,0.551-0.879,1.371-0.879,2.471v16.746c0,1.826-0.187,3.386-0.57,4.66
+        c-0.396,1.289-1.065,2.201-2.044,2.752c0.979,0.728,1.647,1.687,2.044,2.881c0.384,1.185,0.57,2.693,0.57,4.521v16.478
+        c0,1.088,0.297,1.92,0.879,2.471c0.582,0.539,1.449,0.818,2.614,0.818h2.316V286.348L251.206,286.348z"/>
+      <use href="#left-brace" x="0" y="0" transform="matrix(-1, 0, 0, 1, 549.54, 0)" />
+    </g>
+    <path id="service-A" fill="#345F60" opacity="0.7" transform="translate(0,10)"
+	  d="M282.238,265.459h-12.476l-2.417,7.666h-7.202l12.231-35.549h7.3l12.182,35.549h-7.201L282.238,265.459z
+					   M271.521,259.868h8.959l-4.395-13.968h-0.146L271.521,259.868z"/>
+
+    </g>
+    <g id="connection-dots" transform="translate(0,10)">
+      <use id="left-connection" href="#grpc-dots" x="192.205" y="255.75" />
+      <use id="right-connection" href="#grpc-dots" x="0" y="0" transform="matrix(-1, 0, 0, 1, 358.606, 255.75)" />
+    </g>
+  </g>
+</svg>

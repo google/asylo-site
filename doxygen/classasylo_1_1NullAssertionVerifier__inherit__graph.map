@@ -1,0 +1,4 @@
+<map id="asylo::NullAssertionVerifier" name="asylo::NullAssertionVerifier">
+<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions..." alt="" coords="11,80,215,107"/>
+<area shape="rect" id="node3" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="5,5,220,32"/>
+</map>

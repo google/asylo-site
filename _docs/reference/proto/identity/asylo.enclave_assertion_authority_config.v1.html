@@ -1,0 +1,43 @@
+---
+title: Enclave Assertion Authority Configuration
+overview: Configuration options for an enclave assertion authority.
+location: https://asylo.dev/docs/reference/proto/identity/asylo.enclave_assertion_authority_config.v1.html
+layout: protoc-gen-docs
+redirect_from: /docs/reference/proto/identity/enclave_assertion_authority_config.html
+number_of_entries: 1
+---
+<h2 id="EnclaveAssertionAuthorityConfig">EnclaveAssertionAuthorityConfig</h2>
+<section>
+<p>Configuration for an enclave assertion authority (i.e. an assertion generator
+or an assertion verifier).</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnclaveAssertionAuthorityConfig.description">
+<td><code>description</code></td>
+<td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.identity.v1.html#AssertionDescription">AssertionDescription</a></code></td>
+<td>
+<p>Describes the target enclave assertion authority.</p>
+
+</td>
+</tr>
+<tr id="EnclaveAssertionAuthorityConfig.config">
+<td><code>config</code></td>
+<td><code>bytes</code></td>
+<td>
+<p>A config to be used to initialize the authority. This field is an opaque
+string that may take on any format. It could, for example, be a serialized
+protobuf.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>

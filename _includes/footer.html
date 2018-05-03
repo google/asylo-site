@@ -1,0 +1,81 @@
+<footer class="d-print-none container-fluid">
+    <div class="row">
+        <div class="col-6 col-lg-4" role="navigation">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="icon">
+                        <span>asylo-users@</span>
+                        <a title="Join the asylo-users@ mailing list to participate in discussions and get help troubleshooting problems"
+                           href="https://groups.google.com/forum/#!forum/asylo-users" aria-label="asylo-users mailing list">
+                            {% include icons/mailing-list.svg %}
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <span>asylo-announce@</span>
+                        <a title="Join the lower bandwidth asylo-announce@ mailing list for interesting developments from the Asylo team"
+                           href="https://groups.google.com/forum/#!forum/asylo-announce" aria-label="asylo-announce mailing list">
+                            {% include icons/announce_onlinewebfonts.svg %}
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <span>twitter</span>
+                        <a title="Follow us on Twitter to get the latest news"
+                           href="https://twitter.com/asylodev" aria-label="Twitter">
+                            {% include icons/twitter.svg %}
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <span>stack overflow</span>
+                        <a title="Stack Overflow is where you can ask questions and find curated answers on using Asylo"
+                           href="https://stackoverflow.com/questions/tagged/asylo" aria-label="Stack Overflow">
+                            {% include icons/stackoverflow.svg %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-start d-none d-lg-flex">
+                    <p class="tag">for users</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-lg-4">
+            <p class="text-center copyright" role="contentinfo">
+                Asylo
+                {% if site.data.asylo.archive %}
+                    Archive
+                {% elsif site.data.asylo.preliminary %}
+                    Preliminary
+                {% endif %}
+                {{site.data.asylo.version}}<br>&copy; 2018 Asylo Authors<br>
+                Announcement icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> (licensed by CC BY 3.0)<br>
+                {% if site.data.asylo.archive %}
+                    Archived on {{site.data.asylo.archive_date}}
+                {% else %}
+                    Built on {{site.time | date_to_string | split: ' ' | join: '-'}}
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="col-6 col-lg-4 d-none d-lg-flex" role="navigation">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="icon">
+                        <span>github</span>
+                        <a title="GitHub is where development takes place on Asylo code"
+                           href="https://github.com/google/asylo" aria-label="GitHub">
+                            {% include icons/github.svg %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end text-right">
+                    <p class="tag">for developers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

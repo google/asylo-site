@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768.99876 194.00842">
+  <defs>
+    <style>
+      .exist-1, .exist-5 {
+        fill: #ffe082;
+      }
+
+      .exist-1, .exist-2, .exist-3 {
+        stroke: #ff6f00;
+      }
+
+      .exist-1, .exist-2, .exist-3, .exist-8, .exist-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .exist-2, .exist-6 {
+        fill: #ffca28;
+      }
+
+      .exist-3, .exist-7 {
+        fill: #ffb300;
+      }
+
+      .exist-4 {
+        opacity: 0.5;
+      }
+
+      .exist-8, .exist-9 {
+        fill: none;
+      }
+
+      .exist-8 {
+        stroke: #c65000;
+        stroke-width: 2px;
+        stroke-dasharray: 10;
+      }
+
+      .exist-9 {
+        stroke: #000;
+        stroke-width: 3px;
+      }
+
+      .exist-10 {
+        stroke: none;
+        fill-opacity: 0.15;
+      }
+    </style>
+  </defs>
+  <title>Folding Cube</title>
+  <desc>On the left, an ochre cube has been split along the its edges and unfolded flat on a plane. The unfolded cube is like a cardboard box cut along the seams and left flat on the floor. Dotted lines suggest folding instructions where the pieces could be refolded. Nested inside the outline is a solid ochre cube. There is an arrow from the unfolded cube suggesting motion to the right the shows the Asylo logo, which is a translucent outer ochre cube enclosing a solid ochre inner cube.</desc>
+  <g>
+    <g>
+      <g>
+        <g>
+          <g>
+            <polygon class="exist-1" points="702.304 31.217 645.425 64.111 664.438 75.106 702.304 97.004 740.168 75.106 759.181 64.111 702.304 31.217"/>
+            <polygon class="exist-2" points="664.438 75.106 645.425 64.111 645.425 129.897 702.304 162.79 702.304 97.004 664.438 75.106"/>
+            <polygon class="exist-3" points="740.168 75.106 702.304 97.004 702.304 162.79 759.181 129.897 759.181 64.111 740.168 75.106"/>
+          </g>
+          <g class="exist-4">
+            <polygon class="exist-5" points="702.304 19.863 635.608 58.434 657.903 71.327 702.304 97.004 746.704 71.327 768.999 58.434 702.304 19.863"/>
+            <polygon class="exist-6" points="657.903 71.327 635.608 58.434 635.608 135.575 702.304 174.146 702.304 97.004 657.903 71.327"/>
+            <polygon class="exist-7" points="746.704 71.327 702.304 97.004 702.304 174.146 768.999 135.575 768.999 58.434 746.704 71.327"/>
+          </g>
+        </g>
+        <g>
+          <polygon class="exist-1" points="134.389 39.148 67.694 77.719 89.989 90.612 134.389 116.29 178.79 90.612 201.084 77.719 134.389 39.148"/>
+          <polygon class="exist-1" points="267.78 116.29 201.084 154.86 223.379 167.753 267.78 193.431 312.18 167.753 334.475 154.86 267.78 116.29"/>
+          <polygon class="exist-1" points="134.389 116.29 67.694 154.86 89.989 167.753 134.389 193.431 178.79 167.753 201.084 154.86 134.389 116.29"/>
+          <polygon class="exist-1" points="201.084 0.578 134.389 39.148 156.684 52.041 201.084 77.719 245.485 52.041 267.779 39.148 201.084 0.578"/>
+          <polygon class="exist-1" points="267.78 116.29 201.084 154.86 223.379 167.753 267.78 193.431 312.18 167.753 334.475 154.86 267.78 116.29"/>
+          <polygon class="exist-1" points="67.694 0.578 0.999 39.148 23.293 52.041 67.694 77.719 112.094 52.041 134.389 39.148 67.694 0.578"/>
+          <polygon class="exist-1" points="201.084 77.719 134.389 116.29 156.684 129.183 201.084 154.86 245.485 129.183 267.779 116.29 201.084 77.719"/>
+          <polyline class="exist-8" points="267.779 116.29 201.084 154.86 134.389 116.29 201.084 77.719 134.389 39.148 67.694 77.719"/>
+          <g>
+            <polygon class="exist-1" points="201.084 64.481 170.795 81.998 180.92 87.853 201.084 99.515 221.249 87.853 231.374 81.998 201.084 64.481"/>
+            <polygon class="exist-2" points="180.92 87.853 170.795 81.998 170.795 117.031 201.084 134.548 201.084 99.515 180.92 87.853"/>
+            <polygon class="exist-3" points="221.249 87.853 201.084 99.515 201.084 134.548 231.374 117.031 231.374 81.998 221.249 87.853"/>
+          </g>
+        </g>
+        <g>
+          <line class="exist-9" x1="334.47459" y1="97.00421" x2="526.47007" y2="97.00421"/>
+          <polygon points="522.093 111.963 547.999 97.004 522.093 82.045 522.093 111.963"/>
+        </g>
+        <polygon class="exist-10" points="201.084 135.307 231.374 117.791 231.374 117.791 245.387 129.977 223.236 142.766 201.084 135.307"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+---
+title: Asylo SDK dependencies
+overview: Details about Asylo's repository rules for including SDK dependencies.
+home_location: https://asylo.dev/docs/reference/api/bazel/asylo_deps.bzl.v1.html
+layout: skylark-docs
+redirect_from: /docs/reference/api/bazel/asylo_deps.bzl.html
+number_of_entries: 3
+---
+
+<p>The file <code>bazel/asylo_deps.bzl</code> defines the Bazel repository rules needed to declare a dependency on different aspects of the Asylo SDK. You may include its macros (<em>e.g.</em>, <code>asylo_deps</code>) with the following line in your <code>WORKSPACE</code> file:
+</p>
+<pre id="asylo_deps.load"><code class="language-skylark">load("@com_google_asylo//asylo/bazel:asylo_deps.bzl", "asylo_deps")</code></pre>
+
+<h2 id="asylo_deps">asylo_deps</h2>
+<section>
+  <p>The rule used to depend on Asylo's critical dependencies.</p>
+</section>
+
+<h2 id="asylo_testonly_deps">asylo_testonly_deps</h2>
+<section>
+  <p>The rule used to depend on Asylo's testing-only dependencies.</p>
+</section>
+
+<h2 id="asylo_go_deps">asylo_go_deps</h2>
+<section>
+  <p>The rule used to depend on Asylo's Go dependencies.</p>
+</section>
+
+<h2 id="asylo_backend_deps">asylo_backend_deps</h2>
+<section>
+  <p>The rule used to depend on Asylo's tools for defining a backend.</p>
+</section>

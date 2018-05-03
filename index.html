@@ -1,0 +1,105 @@
+---
+layout: landing
+title: Asylo
+---
+{% include home.html %}
+
+<div class="hero">
+    <div class="container">
+        {% if site.data.asylo.archive %}
+            <h1 class="hero-label">Asylo Archive {{site.data.asylo.version}}</h1>
+        {% elsif site.data.asylo.preliminary %}
+            <h1 class="hero-label">Asylo Preliminary {{site.data.asylo.version}}</h1>
+        {% else %}
+            <h1 class="hero-label"><abbr title="Asylo is the Greek word άσυλο for 'safe place'. The pronunciation stresses the first A for AH-'see-lo. In IPA, /'ɑ.sil.oʊ/">Asylo</abbr></h1>
+        {% endif %}
+            <img class="hero-logo" alt="Asylo Logo" src="{{home}}/img/asylo-logo.svg" />
+            <h1 class="hero-lead">An open and flexible framework for enclave applications</h1>
+        <span onclick="getElementById('SCROLLME').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'})" class="hero-down-arrow fa fa-2
+        fa-caret-down"></span>
+        <span id="SCROLLME"></span>
+    </div>
+</div>
+
+<div class="container-fluid traffic color1">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 col-md-5">
+        {% include landing/portable-enclave.svg %}
+      </div>
+      <div class="col-12 col-md-5 landing-text">
+            <h2>Build portable enclave applications</h2>
+            <p>
+              The Asylo framework hides the complexity of the underlying technology with an enclave backend abstraction layer.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid resilience color2">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-md-5">
+        {% include landing/port-existing.svg %}
+        </div>
+        <div class="col-12 col-md-5 order-md-first landing-text">
+            <h2>Port your existing applications</h2>
+            <p>
+              Asylo provides a familiar POSIX model of application development without sacrificing security or bloating your trusted computing base.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid policy color1">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-md-5">
+            {% include landing/asylo-grpc.svg %}
+        </div>
+        <div class="col-12 col-md-5 landing-text">
+            <h2>Write enclave-protected gRPC services</h2>
+            <p>
+                Asylo integrates with gRPC for easy and secure inter-enclave and external communication.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid reporting color2">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-md-5">
+            {% include landing/code-data-protection.svg %}
+        </div>
+        <div class="col-12 col-md-5 order-md-first landing-text">
+            <h2>Protect your data and code in use and at rest</h2>
+            <p>
+                Use attestation to verify your enclave's integrity, and cryptographically bind your secrets to identity ACLs for safe storage.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid call color1">
+    <div class="row no-gutters">
+        <div class="col-12 col-md-6">
+            <h2>Want to learn more?</h2>
+            <p>Get started with Asylo by running through our quickstart guide.</p>
+            <a class="btn btn-asylo" href="{{home}}/docs/guides/quickstart.html">GET STARTED</a>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <h2>Ready to get started?</h2>
+            <p>Download the latest bits.</p>
+            <a class="btn btn-asylo" href="https://github.com/google/asylo/releases/">DOWNLOAD</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    header .navbar {
+        box-shadow: none;
+    }
+
+    body {
+        padding-top: 2.8rem;
+    }
+</style>
+

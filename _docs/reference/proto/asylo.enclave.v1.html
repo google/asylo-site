@@ -1,0 +1,265 @@
+---
+title: Enclave Boundary Messages
+overview: Protobuf definitions to interact with enclave entry-points.
+location: https://asylo.dev/docs/reference/proto/asylo.enclave.v1.html
+layout: protoc-gen-docs
+redirect_from: /docs/reference/proto/enclave.html
+number_of_entries: 8
+---
+<p>This file defines the messages for communicating with a trusted application&rsquo;s
+entry-points: <a href="#EnclaveConfig">initialization</a>, (re-entrant)
+execution <a href="#EnclaveInput">input</a> and
+<a href="#EnclaveOutput">output</a>, and <a href="#EnclaveFinal">finalization</a>.</p>
+
+<h2 id="EnclaveConfig">EnclaveConfig</h2>
+<section>
+<p>Configuration passed to an enclave during initialization. An enclave&rsquo;s
+configuration (an instance of this message) is part of its identity. The base
+configuration included in <code>EnclaveConfig</code> is used to support platform
+capabilities such as the logging API and POSIX APIs.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnclaveConfig.stdin_fd">
+<td><code>stdin_fd</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Host file descriptor to use for standard in. A negative value indicates no
+standard in should be opened.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.stdout_fd">
+<td><code>stdout_fd</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Host file descriptor to use for standard out. A negative value indicates no
+standard out should be opened.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.stderr_fd">
+<td><code>stderr_fd</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Host file descriptor to use for standard error. A negative value indicates
+no standard error should be opened.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.host_name">
+<td><code>host_name</code></td>
+<td><code>string</code></td>
+<td>
+<p>Host name of this enclave.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.current_working_directory">
+<td><code>current_working_directory</code></td>
+<td><code>string</code></td>
+<td>
+<p>Initial current working directory in enclave.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.host_config">
+<td><code>host_config</code></td>
+<td><code><a href="#HostConfig">HostConfig</a></code></td>
+<td>
+<p>System-specific enclave configuration. This configuration is expected to be
+the same for all enclaves running under the same instance of an OS.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.enclave_assertion_authority_configs">
+<td><code>enclave_assertion_authority_configs</code></td>
+<td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.enclave_assertion_authority_config.v1.html#EnclaveAssertionAuthorityConfig">EnclaveAssertionAuthorityConfig[]</a></code></td>
+<td>
+<p>Enclave assertion authority configuration. If the enclave makes use of an
+assertion authority that requires configuration, a config should be listed
+here.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.environment_variables">
+<td><code>environment_variables</code></td>
+<td><code><a href="#EnvironmentVariable">EnvironmentVariable[]</a></code></td>
+<td>
+<p>Environment variables that getenv understands inside the enclave.</p>
+
+</td>
+</tr>
+<tr id="EnclaveConfig.logging_config">
+<td><code>logging_config</code></td>
+<td><code><a href="#LoggingConfig">LoggingConfig</a></code></td>
+<td>
+<p>Configuration needed to initialize logging.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="EnclaveFinal">EnclaveFinal</h2>
+<section>
+<p>Input passed to an enclave during finalization.</p>
+
+</section>
+<h2 id="EnclaveInput">EnclaveInput</h2>
+<section>
+<p>Input passed to an enclave after it has been initialized with EnclaveConfig.</p>
+
+</section>
+<h2 id="EnclaveOutput">EnclaveOutput</h2>
+<section>
+<p>An output message produced by an enclave for an invocation of its <code>Run</code>
+entry-point. This message can be used to send information out of the enclave
+back to an untrusted caller.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnclaveOutput.status">
+<td><code>status</code></td>
+<td><code><a href="{{site.baseurl}}/docs/reference/proto/util/asylo.status.v1.html#StatusProto">StatusProto</a></code></td>
+<td>
+<p>Contains status information for the Run invocation. A non-OK status may
+indicate an error in either trusted or untrusted space.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="EnclaveSignal">EnclaveSignal</h2>
+<section>
+<p>A POSIX signal event that is routed to an enclave signal handler.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnclaveSignal.signum">
+<td><code>signum</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Number of the signal.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="EnvironmentVariable">EnvironmentVariable</h2>
+<section>
+<p>Represents an environment variable&rsquo;s value to communicate a baseline
+environment to <code>getenv</code>.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnvironmentVariable.name">
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>
+<p>The name of the variable (e.g., as input to <code>getenv</code>).</p>
+
+</td>
+</tr>
+<tr id="EnvironmentVariable.value">
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>
+<p>The initial value of the variable. An enclave can change the value later
+with e.g., <code>setenv</code>. The environment variable&rsquo;s value is not changed by
+changes in the host environment. The host&rsquo;s environment variable values are
+not inherited from the enclave.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="HostConfig">HostConfig</h2>
+<section>
+<p>A configuration message for the EnclaveManager to communicate with the
+attestation daemon.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="HostConfig.local_attestation_domain">
+<td><code>local_attestation_domain</code></td>
+<td><code>string</code></td>
+<td>
+<p>Local attestation domain of the enclave.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="LoggingConfig">LoggingConfig</h2>
+<section>
+<p>Initialization settings for the logging system in an enclave.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="LoggingConfig.vlog_level">
+<td><code>vlog_level</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Enclave logging levels for VLOG. Any VLOG with levels below or equal to
+this level will be logged, others will be ignored.</p>
+
+</td>
+</tr>
+<tr id="LoggingConfig.log_directory">
+<td><code>log_directory</code></td>
+<td><code>string</code></td>
+<td>
+<p>Directory under which to store enclave log files. Default: <code>&quot;/tmp/&quot;</code></p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
