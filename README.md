@@ -79,4 +79,4 @@ If you get a spelling error, you have three choices to address it:
 
 Many thanks to [@geeknoid](https://github.com/geeknoid) for his help basing this
 website off the clean and elegant
-(Istio.io)[https://github.com/istio/istio.github.io/].
+[Istio.io](https://github.com/istio/istio.github.io/).
