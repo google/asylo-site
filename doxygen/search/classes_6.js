@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['posixerrorspace',['PosixErrorSpace',['../classasylo_1_1error_1_1PosixErrorSpace.html',1,'asylo::error']]]
+  ['nullassertiongenerator',['NullAssertionGenerator',['../classasylo_1_1NullAssertionGenerator.html',1,'asylo']]],
+  ['nullassertionverifier',['NullAssertionVerifier',['../classasylo_1_1NullAssertionVerifier.html',1,'asylo']]]
 ];

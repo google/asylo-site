@@ -116,7 +116,7 @@ In Asylo, enclaves operate on
 all enclave inputs and outputs are protocol buffers.
 
 We refer to the process of switching from an untrusted application to an enclave
-as _entering the enclave_, and the process of switching from an enclave to an
+as _entering the enclave_ and the process of switching from an enclave to an
 untrusted application as _exiting an enclave_.
 
 In Asylo, all enclave interactions are handled through an abstract class called
@@ -329,9 +329,10 @@ developers to use enclaves in a way that is most suitable to their needs.
 
 ## Building and running an enclave application
 
-Asylo implements an enclave backend for a simulator-based environment. To
-build our enclave application, we define several targets that utilize this
-backend.
+To build our enclave application, we define several targets that utilize a
+simulated backend. See the
+[overview]({{home}}/about/overview.html#security-backends) for details
+on all supported backends.
 
 ```python
 asylo_proto_library(
@@ -386,7 +387,7 @@ you would like to encrypt.
 Note: The following command runs the enclave in simulation mode.
 
 ```bash
-docker run -it \
+docker run --rm \
     -v bazel-cache:/root/.cache/bazel \
     -v "${MY_PROJECT}":/opt/my-project \
     -w /opt/my-project \

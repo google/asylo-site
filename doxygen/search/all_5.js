@@ -33,5 +33,6 @@ var searchData=
   ['errorspace',['ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html',1,'asylo::error::ErrorSpace'],['../classasylo_1_1error_1_1ErrorSpace.html#a8f05223fa9eb52a201c513f59addecf9',1,'asylo::error::ErrorSpace::ErrorSpace()=default'],['../classasylo_1_1error_1_1ErrorSpace.html#a17746652501b1018ae8b05774bd90ae9',1,'asylo::error::ErrorSpace::ErrorSpace(const ErrorSpace &amp;other)=delete']]],
   ['errorspaceimplementationhelper',['ErrorSpaceImplementationHelper',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error::ErrorSpaceImplementationHelper&lt; ErrorSpaceT &gt;'],['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a2e6446c8b3117f9eb16547fd8c76a172',1,'asylo::error::ErrorSpaceImplementationHelper::ErrorSpaceImplementationHelper()']]],
   ['errorspaceimplementationhelper_3c_20googleerrorspace_20_3e',['ErrorSpaceImplementationHelper&lt; GoogleErrorSpace &gt;',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]],
-  ['errorspaceimplementationhelper_3c_20posixerrorspace_20_3e',['ErrorSpaceImplementationHelper&lt; PosixErrorSpace &gt;',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]]
+  ['errorspaceimplementationhelper_3c_20posixerrorspace_20_3e',['ErrorSpaceImplementationHelper&lt; PosixErrorSpace &gt;',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]],
+  ['evaluateidentityacl',['EvaluateIdentityAcl',['../namespaceasylo.html#a0384710f7dc26f288342cb53e9f722fe',1,'asylo']]]
 ];

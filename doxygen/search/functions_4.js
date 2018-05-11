@@ -10,5 +10,6 @@ var searchData=
   ['error_5fmessage',['error_message',['../classasylo_1_1Status.html#a77560ef0ef1fe98a49462083de63795d',1,'asylo::Status']]],
   ['error_5fspace',['error_space',['../classasylo_1_1Status.html#afbb75dd292ecbe385e0fdcb0be174af6',1,'asylo::Status']]],
   ['errorspace',['ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html#a8f05223fa9eb52a201c513f59addecf9',1,'asylo::error::ErrorSpace::ErrorSpace()=default'],['../classasylo_1_1error_1_1ErrorSpace.html#a17746652501b1018ae8b05774bd90ae9',1,'asylo::error::ErrorSpace::ErrorSpace(const ErrorSpace &amp;other)=delete']]],
-  ['errorspaceimplementationhelper',['ErrorSpaceImplementationHelper',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a2e6446c8b3117f9eb16547fd8c76a172',1,'asylo::error::ErrorSpaceImplementationHelper']]]
+  ['errorspaceimplementationhelper',['ErrorSpaceImplementationHelper',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a2e6446c8b3117f9eb16547fd8c76a172',1,'asylo::error::ErrorSpaceImplementationHelper']]],
+  ['evaluateidentityacl',['EvaluateIdentityAcl',['../namespaceasylo.html#a0384710f7dc26f288342cb53e9f722fe',1,'asylo']]]
 ];

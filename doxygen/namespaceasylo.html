@@ -108,6 +108,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManagerOptions.html">EnclaveManagerOptions</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enclave Manager configuration.  <a href="classasylo_1_1EnclaveManagerOptions.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1IdentityExpectationMatcher.html">IdentityExpectationMatcher</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines an abstract interface that describes how to match an <code>EnclaveIdentity</code> against an <code>EnclaveIdentityExpectation</code>.  <a href="classasylo_1_1IdentityExpectationMatcher.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html">LogMessage</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a log message created by a log macro.  <a href="classasylo_1_1LogMessage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +152,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3f5462b7ba5fbdec843b5b72d8108ee5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; grpc::ServerCredentials &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a3f5462b7ba5fbdec843b5b72d8108ee5">EnclaveServerCredentials</a> (const <a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> &amp;options)</td></tr>
 <tr class="memdesc:a3f5462b7ba5fbdec843b5b72d8108ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code>grpc::ServerCredentials</code> object for use in an enclave system.  <a href="#a3f5462b7ba5fbdec843b5b72d8108ee5">More...</a><br /></td></tr>
 <tr class="separator:a3f5462b7ba5fbdec843b5b72d8108ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0384710f7dc26f288342cb53e9f722fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a0384710f7dc26f288342cb53e9f722fe">EvaluateIdentityAcl</a> (const std::vector&lt; EnclaveIdentity &gt; &amp;identities, const IdentityAclPredicate &amp;acl, const <a class="el" href="classasylo_1_1IdentityExpectationMatcher.html">IdentityExpectationMatcher</a> &amp;matcher)</td></tr>
+<tr class="memdesc:a0384710f7dc26f288342cb53e9f722fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses <code>matcher</code> to evaluate whether <code>identities</code> satisfies <code>acl</code>.  <a href="#a0384710f7dc26f288342cb53e9f722fe">More...</a><br /></td></tr>
+<tr class="separator:a0384710f7dc26f288342cb53e9f722fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a830e6ca210017926c6f21138da33a6a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a830e6ca210017926c6f21138da33a6a6">SetEnclaveConfigDefaults</a> (const HostConfig &amp;host_config, EnclaveConfig *config)</td></tr>
 <tr class="memdesc:a830e6ca210017926c6f21138da33a6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets uninitialized fields in #config to default values.  <a href="#a830e6ca210017926c6f21138da33a6a6">More...</a><br /></td></tr>
 <tr class="separator:a830e6ca210017926c6f21138da33a6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -358,6 +364,60 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0384710f7dc26f288342cb53e9f722fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0384710f7dc26f288342cb53e9f722fe">&#9670;&nbsp;</a></span>EvaluateIdentityAcl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::EvaluateIdentityAcl </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; EnclaveIdentity &gt; &amp;&#160;</td>
+          <td class="paramname"><em>identities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IdentityAclPredicate &amp;&#160;</td>
+          <td class="paramname"><em>acl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1IdentityExpectationMatcher.html">IdentityExpectationMatcher</a> &amp;&#160;</td>
+          <td class="paramname"><em>matcher</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses <code>matcher</code> to evaluate whether <code>identities</code> satisfies <code>acl</code>. </p>
+<p>The ACL is provided in the form of an <code>IdentityAclPredicate</code>. An <code>IdentityAclPredicate</code> is a recursive proto, each layer of which must conform to the following constraints:</p>
+<ul>
+<li>A nested IdentityAclPredicate <code>predicate</code> must have <code>predicate.item</code> set.</li>
+<li>A nested IdentityAclGroup <code>group</code> must have a non-empty <code>group.predicates</code>.<ul>
+<li>If <code>group</code>.type is <code>GroupType::NOT</code>, <code>group.predicates</code> must contain exactly one predicate.</li>
+</ul>
+</li>
+</ul>
+<p>Returns a non-OK status if <code>acl</code> is malformed or if <code>matcher.Match()</code> returns a non-OK status when invoked with any of <code>identities</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">identities</td><td>A list of identities to match against the ACL. </td></tr>
+    <tr><td class="paramname">acl</td><td>An ACL specifying expectations on an identity. </td></tr>
+    <tr><td class="paramname">matcher</td><td>The matcher to use to evaluate <code>identities</code> against <code>acl</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool indicating whether the ACL evaluated to true, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if any if the inputs are invalid. </dd></dl>
 
 </div>
 </div>

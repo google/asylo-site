@@ -76,16 +76,17 @@ $(function() {
 </ul>
 <h2>Build Environment in Docker (Recommended)</h2>
 <p>Asylo provides a custom Docker image that contains all required dependencies, as well as Asylo's custom toolchain, which is required for compiling enclave applications for various enclave backends.</p>
-<div class="fragment"><div class="line">docker run -it gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>See the <a href="https://github.com/google/asylo/tree/master/asylo/distrib/Dockerfile">Dockerfile</a> for an in-depth view of what's inside the container image.</p>
+<div class="fragment"><div class="line">docker run -it --rm gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>See the <a href="https://github.com/google/asylo/tree/master/asylo/distrib/Dockerfile">Dockerfile</a> for an in-depth view of what's inside the container image.</p>
 <p>See this <a href="https://cloud.google.com/container-registry/docs/pushing-and-pulling#pulling_images_from_the_registry">guide</a> for additional details on how to pull images from Google's Container Registry.</p>
 <h3>Examples</h3>
 <h4>Running the <code>hello_world</code> example</h4>
 <p>To run the <code>hello_world</code> example, first use the following set of commands to grab the <a href="/asylo-examples.tar.gz">examples source code</a>, and save it to any directory of your choice.</p>
 <div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">mkdir -p &quot;${MY_PROJECT}&quot;</div><div class="line">wget -q -O - https://asylo.dev/asylo-examples.tar.gz | \</div><div class="line">    tar -zxv --directory &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Docker to build and run the <code>hello_world</code> application, which uses a simulated enclave backend.</p>
-<div class="fragment"><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">docker run -it \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -v &quot;${MY_PROJECT}&quot;:/opt/my-project \</div><div class="line">    -w /opt/my-project \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    bazel run --config=enc-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>You can also set <code>NAMES</code> to a comma-separated list of names and see the enclave's entry-point get invoked for each name.</p>
+<div class="fragment"><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">docker run --rm \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -v &quot;${MY_PROJECT}&quot;:/opt/my-project \</div><div class="line">    -w /opt/my-project \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    bazel run --config=enc-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>You can also set <code>NAMES</code> to a comma-separated list of names and see the enclave's entry-point get invoked for each name.</p>
 <h5>Docker flags</h5>
 <p>In the above example, we use the following Docker flags:</p>
 <ul>
+<li><code>--rm</code> is used to automatically delete the temporary container after the command completes so that unnecessary images don't persist on disk.</li>
 <li><code>-v</code> is used to map local files to paths inside the container.<ul>
 <li>The example project files are mapped to <code>/opt/my-project</code>.</li>
 <li>The local Bazel cache is mapped to <code>/root/.cache/bazel</code>, enabling incremental builds between <code>bazel</code> invocations.</li>
@@ -105,7 +106,7 @@ $(function() {
 <h4>Running the regression tests</h4>
 <p>To run our regression test suite, first clone the Asylo repository to a directory of your choice.</p>
 <div class="fragment"><div class="line">ASYLO_SDK=~/asylo-sdk</div><div class="line">git clone https://github.com/google/asylo.git &quot;${ASYLO_SDK}&quot;</div></div><!-- fragment --><p>The regression test suite includes tests that unit-test code directly as well as tests that run inside a simulated enclave environment. You can run it with the following command:</p>
-<div class="fragment"><div class="line">docker run -it \</div><div class="line">    -v &quot;${ASYLO_SDK}:/opt/asylo/sdk&quot; \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -w &quot;/opt/asylo/sdk&quot; \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    asylo/test/run_enclave_tests.sh</div></div><!-- fragment --><p>See <a href="#docker-flags">Docker flags</a> for a breakdown of the flags used in this command. Note that in this command we also use <code>-v</code> to map the Asylo SDK source files to <code>/opt/asylo/sdk</code>.</p>
+<div class="fragment"><div class="line">docker run --rm \</div><div class="line">    -v &quot;${ASYLO_SDK}:/opt/asylo/sdk&quot; \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -w &quot;/opt/asylo/sdk&quot; \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    asylo/test/run_enclave_tests.sh</div></div><!-- fragment --><p>See <a href="#docker-flags">Docker flags</a> for a breakdown of the flags used in this command. Note that in this command we also use <code>-v</code> to map the Asylo SDK source files to <code>/opt/asylo/sdk</code>.</p>
 <h2>Manual Installation</h2>
 <p>If you don't want to use the Asylo Docker image, you can manually install Asylo and its dependencies instead.</p>
 <p>See INSTALL.md for detailed installation steps.</p>
@@ -124,7 +125,7 @@ $(function() {
 <p>This repository contains source code for the Asylo framework. The <code>v0.2</code> release of the framework supports C++11 applications and a Bazel build environment.</p>
 <p>The following packages contain source code that may be of particular interest to users of the Asylo framework as well as those looking to contribute to Asylo development.</p>
 <ul>
-<li><a href="https://github.com/google/asylo/tree/master/asylo">asylo</a><ul>
+<li>[asylo](asylo)<ul>
 <li><a href="https://github.com/google/asylo/tree/master/asylo/crypto">crypto/</a><ul>
 <li>Crypto utilities and wrappers around BoringSSL.</li>
 </ul>

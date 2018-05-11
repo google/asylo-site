@@ -83,6 +83,11 @@ against the following threats:
 +   Compromised operating system
 +   Compromised BIOS
 
+With the initial 0.2.0 release Asylo supports a simulated enclave backend, which
+should not be used in production environments. Support for additional backends
+will be added over time to meet the varying needs and security requirements of
+Asylo users.
+
 ## Release information
 
 Asylo provides an API and toolchain to enable developers to develop and run

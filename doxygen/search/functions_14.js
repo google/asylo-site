@@ -6,6 +6,7 @@ var searchData=
   ['_7eenclaveloader',['~EnclaveLoader',['../classasylo_1_1EnclaveLoader.html#aacfadef88997d7479018ad9fcd5f60e6',1,'asylo::EnclaveLoader']]],
   ['_7eerrorspace',['~ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html#aee51c2ba30a026d072634cc8c1fbae20',1,'asylo::error::ErrorSpace']]],
   ['_7egoogleerrorspace',['~GoogleErrorSpace',['../classasylo_1_1error_1_1GoogleErrorSpace.html#a40b7adcd6c77d908c61172dcbc3be420',1,'asylo::error::GoogleErrorSpace']]],
+  ['_7eidentityexpectationmatcher',['~IdentityExpectationMatcher',['../classasylo_1_1IdentityExpectationMatcher.html#a4ee4114e9984b449c2d3d0791fbef46c',1,'asylo::IdentityExpectationMatcher']]],
   ['_7elogmessage',['~LogMessage',['../classasylo_1_1LogMessage.html#a243ed50c38ed3601a2414ff2554ff6bb',1,'asylo::LogMessage']]],
   ['_7eposixerrorspace',['~PosixErrorSpace',['../classasylo_1_1error_1_1PosixErrorSpace.html#aa2a37c45129a7de44bdb67a64afa7ba8',1,'asylo::error::PosixErrorSpace']]],
   ['_7esecretsealer',['~SecretSealer',['../classasylo_1_1SecretSealer.html#a1639d4e4d3f866c38bd31d2709a8777d',1,'asylo::SecretSealer']]],
