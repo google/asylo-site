@@ -99,8 +99,8 @@ if [[ -f "${ASYLO_LOCATION}" ]]; then
   ASYLO_LOCATION="${TEMP}"
 fi
 
-# Given the name of a .pb.html file, extract the $location marker and then
-# copy the file to that relative location in the _docs hierarchy.
+# Given the name of a .pb.html or .md file, extract the $location marker and
+# then copy the file to that relative location in the _docs hierarchy.
 function relocate_file() {
   local readonly FILENAME="$1"
   local readonly OUT_DIR="$2"
@@ -124,8 +124,12 @@ function relocate_file() {
   sed -e "s!href=\"${BASE_URL}!href=\"{{site.baseurl}}!g" \
     -e "s!\][(]${BASE_URL}!]({{home}}!g" ${FILENAME} > "${OUT_PATH}"
   # If an md file, replace header links that use _ spacing with -.
+  # Also remove jekyll-front-matter comment wrappers.
   if [[ "${FILENAME}" = *.md ]]; then
-    sed -i -e ':a' -e 's/\(][(]#[^)_]*\)_/\1-/;t a' "${OUT_PATH}"
+    sed -i -e ':a' -e 's/\(][(]#[^)_]*\)_/\1-/;t a' \
+      -e '/^\s*<!--jekyll-front-matter/d' \
+      -e '/^\s*jekyll-front-matter-->/d' \
+      "${OUT_PATH}"
   fi
 
   if [[ -n "${GIT_ADD}" ]]; then
