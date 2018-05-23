@@ -70,13 +70,13 @@ footer {
         line-height: 1.6em;
         font-size: 0.7em;
         text-align: right!important;
-        text-decoration: underline;
 
         @media (min-width: $bp-lg) {
             text-align: center!important;
         }
 
         a {
+            text-decoration: underline;
             &:hover {
                 color: $textBrandHighlightColor;
             }
