@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['checkopmessagebuilder',['CheckOpMessageBuilder',['../classasylo_1_1CheckOpMessageBuilder.html',1,'asylo']]],
-  ['configserverconnectionattributes',['ConfigServerConnectionAttributes',['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html',1,'asylo::EnclaveManagerOptions']]]
+  ['aesgcmsivcryptor',['AesGcmSivCryptor',['../classasylo_1_1AesGcmSivCryptor.html',1,'asylo']]],
+  ['aesgcmsivnoncegenerator',['AesGcmSivNonceGenerator',['../classasylo_1_1AesGcmSivNonceGenerator.html',1,'asylo']]]
 ];

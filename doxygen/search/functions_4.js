@@ -6,6 +6,7 @@ var searchData=
   ['enclaveservercredentials',['EnclaveServerCredentials',['../namespaceasylo.html#a3f5462b7ba5fbdec843b5b72d8108ee5',1,'asylo']]],
   ['ensuredirectory',['EnsureDirectory',['../namespaceasylo.html#a9bf29aaae59bd1a1fb9bbfb7a059e9ee',1,'asylo']]],
   ['enterandrun',['EnterAndRun',['../classasylo_1_1EnclaveClient.html#a39af8ef5ce1f49ff65cafaeebeecd5a6',1,'asylo::EnclaveClient']]],
+  ['enterenclaveandhandlesignal',['EnterEnclaveAndHandleSignal',['../classasylo_1_1EnclaveSignalDispatcher.html#a026f32c549a13d222ec172007a20b44a',1,'asylo::EnclaveSignalDispatcher']]],
   ['error_5fcode',['error_code',['../classasylo_1_1Status.html#a810414107562c448f504f47cbc5b6772',1,'asylo::Status']]],
   ['error_5fmessage',['error_message',['../classasylo_1_1Status.html#a77560ef0ef1fe98a49462083de63795d',1,'asylo::Status']]],
   ['error_5fspace',['error_space',['../classasylo_1_1Status.html#afbb75dd292ecbe385e0fdcb0be174af6',1,'asylo::Status']]],

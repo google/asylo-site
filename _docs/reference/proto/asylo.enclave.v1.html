@@ -166,6 +166,24 @@ indicate an error in either trusted or untrusted space.</p>
 
 </td>
 </tr>
+<tr id="EnclaveSignal.code">
+<td><code>code</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Code of the signal describing cause of the signal. Refer to siginfo(3) for
+more information.</p>
+
+</td>
+</tr>
+<tr id="EnclaveSignal.gregs">
+<td><code>gregs</code></td>
+<td><code>uint64[]</code></td>
+<td>
+<p>General registers defined in |uc_mcontext|. Refer to sys/ucontext.h for
+more information.</p>
+
+</td>
+</tr>
 </tbody>
 </table>
 </section>

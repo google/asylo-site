@@ -1,13 +1,16 @@
 <map id="asylo/util/status.h" name="asylo/util/status.h">
-<area shape="rect" id="node2" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="699,87,835,114"/>
+<area shape="rect" id="node2" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="757,87,893,114"/>
 <area shape="rect" id="node4" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="242,169,393,211"/>
 <area shape="rect" id="node5" href="$enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="200,259,355,300"/>
 <area shape="rect" id="node8" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="398,259,546,300"/>
 <area shape="rect" id="node13" href="$secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="991,169,1129,211"/>
-<area shape="rect" id="node14" href="$enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1153,169,1292,211"/>
-<area shape="rect" id="node15" href="$enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="964,80,1097,121"/>
-<area shape="rect" id="node16" href="$shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="1122,80,1313,121"/>
-<area shape="rect" id="node17" href="$trusted__application_8h.html" title="asylo/platform/core\l/trusted_application.h" alt="" coords="1337,80,1484,121"/>
+<area shape="rect" id="node14" href="$local__secret__sealer_8h.html" title="asylo/identity/sgx\l/local_secret_sealer.h" alt="" coords="1092,259,1241,300"/>
+<area shape="rect" id="node15" href="$aes__gcm__siv_8h.html" title="asylo/platform/crypto\l/aes_gcm_siv.h" alt="" coords="1204,169,1348,211"/>
+<area shape="rect" id="node16" href="$enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1396,169,1535,211"/>
+<area shape="rect" id="node17" href="$nonce__generator_8h.html" title="asylo/platform/crypto\l/nonce_generator.h" alt="" coords="1203,80,1347,121"/>
+<area shape="rect" id="node18" href="$enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="1421,80,1555,121"/>
+<area shape="rect" id="node19" href="$shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="1579,80,1770,121"/>
+<area shape="rect" id="node20" href="$trusted__application_8h.html" title="asylo/platform/core\l/trusted_application.h" alt="" coords="1795,80,1941,121"/>
 <area shape="rect" id="node3" href="$enclave__auth__context_8h.html" title="asylo/grpc/auth/enclave\l_auth_context.h" alt="" coords="519,169,679,211"/>
 <area shape="rect" id="node11" href="$identity__expectation__matcher_8h.html" title="asylo/identity/identity\l_expectation_matcher.h" alt="" coords="805,169,966,211"/>
 <area shape="rect" id="node12" href="$identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="753,259,898,300"/>

@@ -32,10 +32,10 @@ The main goals of Asylo are:
 
 ## Architecture
 
- Asylo allows an untrusted execution environment to host a trusted environment.
- The benefit is to enable sensitive workloads in an untrusted execution
- environment with the inherited confidentiality and integrity guarantees of the
- chosen trusted execution environment.
+Asylo allows an untrusted execution environment to host a trusted environment.
+The benefit is to enable sensitive workloads in an untrusted execution
+environment with the inherited confidentiality and integrity guarantees of the
+chosen trusted execution environment.
 
 {% include figure.html width='80%' ratio='46.36%' img='./img/asylo.png' alt='Asylo architecture' title='Asylo architecture' caption='Asylo architecture' %}
 The untrusted execution environment consists of surrounding infrastructure—for

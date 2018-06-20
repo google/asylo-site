@@ -63,7 +63,8 @@ $(function() {
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">asylo Namespace Reference</div>  </div>
 </div><!--header-->
@@ -78,6 +79,12 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1AesGcmSivCryptor.html">AesGcmSivCryptor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An AEAD cryptor that provides <a class="el" href="classasylo_1_1AesGcmSivCryptor.html#ac25992c49d663cf281badb08ee3bd323" title="Implements AEAD Authenticated Encryption (a.k.a. seal) functionality. ">Seal()</a> and <a class="el" href="classasylo_1_1AesGcmSivCryptor.html#a83124c26ceccccea0fe59a0305109f6c" title="Implements AEAD Authenticated Decryption (a.k.a. open) functionality. ">Open()</a> functionality using the AES GCM SIV cipher for both 128-bit and 256-bit keys.  <a href="classasylo_1_1AesGcmSivCryptor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1AesGcmSivNonceGenerator.html">AesGcmSivNonceGenerator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 96-bit <a class="el" href="classasylo_1_1NonceGenerator.html" title="Defines a nonce-generator interface. ">NonceGenerator</a> that returns a uniformly distributed random nonce on each invocation of <a class="el" href="classasylo_1_1AesGcmSivNonceGenerator.html#ad5ee5c1735fcda46ee2995a2c583accf">NextNonce()</a>.  <a href="classasylo_1_1AesGcmSivNonceGenerator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1CheckOpMessageBuilder.html">CheckOpMessageBuilder</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class for formatting "expr (V1 vs. V2)" in a CHECK_XX statement.  <a href="classasylo_1_1CheckOpMessageBuilder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +115,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManagerOptions.html">EnclaveManagerOptions</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enclave Manager configuration.  <a href="classasylo_1_1EnclaveManagerOptions.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveSignalDispatcher.html">EnclaveSignalDispatcher</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1IdentityExpectationMatcher.html">IdentityExpectationMatcher</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines an abstract interface that describes how to match an <code>EnclaveIdentity</code> against an <code>EnclaveIdentityExpectation</code>.  <a href="classasylo_1_1IdentityExpectationMatcher.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +128,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageVoidify.html">LogMessageVoidify</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is used just to take an <code>ostream</code> type and make it a <code>void</code> type to satisify the ternary operator in <code>LOG_IF</code>.  <a href="classasylo_1_1LogMessageVoidify.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1NonceGenerator.html">NonceGenerator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a nonce-generator interface.  <a href="classasylo_1_1NonceGenerator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1NullAssertionGenerator.html">NullAssertionGenerator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="classasylo_1_1EnclaveAssertionGenerator.html" title="Defines an interface for assertion authorities that create assertion offers and generate assertions...">EnclaveAssertionGenerator</a> interface for null assertions.  <a href="classasylo_1_1NullAssertionGenerator.html#details">More...</a><br /></td></tr>
@@ -194,6 +206,11 @@ Functions</h2></td></tr>
 <tr class="separator:a885e4e1efb5467dfd7b4fabe4a857434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a811c63d3a350c781b7c87f9d425beb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a7a811c63d3a350c781b7c87f9d425beb">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;status)</td></tr>
 <tr class="separator:a7a811c63d3a350c781b7c87f9d425beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a41b303e6a61ad2dddae522798de8322b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a41b303e6a61ad2dddae522798de8322b">kAesGcmSivNonceSize</a> = 12</td></tr>
+<tr class="separator:a41b303e6a61ad2dddae522798de8322b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a51fcb0ae5791d14eb8ef1c3a405dd0b7"></a>
@@ -746,6 +763,21 @@ template&lt;&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a41b303e6a61ad2dddae522798de8322b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b303e6a61ad2dddae522798de8322b">&#9670;&nbsp;</a></span>kAesGcmSivNonceSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t asylo::kAesGcmSivNonceSize = 12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

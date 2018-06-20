@@ -16,15 +16,15 @@ enclave applications.
 
 The following are the main classes for developing and using an enclave.
 
-* `TrustedApplication` is the trusted component of an enclave application that
-is responsible for sensitive computations.
+*   `TrustedApplication` is the trusted component of an enclave application that
+    is responsible for sensitive computations.
 
-* `EnclaveClient` is the untrusted component of an enclave application that is
-responsible for communicating messages with the trusted component.
+*   `EnclaveClient` is the untrusted component of an enclave application that is
+    responsible for communicating messages with the trusted component.
 
-* `EnclaveManager` is a singleton object in the untrusted system that is
-responsible for managing enclave lifetimes and shared resources between
-enclaves.
+*   `EnclaveManager` is a singleton object in the untrusted system that is
+    responsible for managing enclave lifetimes and shared resources between
+    enclaves.
 
 {% include figure.html width='80%' ratio='55.26%' img='./img/message_passing_interface.png' alt='Message passing interface' title='Message passing interface' caption='Message passing interface' %}
 We refer to the process of switching from an untrusted execution environment to
@@ -43,14 +43,14 @@ enclave.
 The `TrustedApplication` class declares methods corresponding to each entry
 point defined by the Asylo API.
 
-* `Initialize` initializes the enclave with configuration values that are bound
-to the enclave's identity. This should be used for security-sensitive
-configuration settings.
-* `Run` takes input messages from the untrusted environment
-code, performs trusted execution, and returns an output message to the untrusted
-environment.
-* `Finalize` takes finalization values from the untrusted
-environment and is called before the enclave is destroyed.
+*   `Initialize` initializes the enclave with configuration values that are
+    bound to the enclave's identity. This should be used for security-sensitive
+    configuration settings.
+*   `Run` takes input messages from the untrusted environment code, performs
+    trusted execution, and returns an output message to the untrusted
+    environment.
+*   `Finalize` takes finalization values from the untrusted environment and is
+    called before the enclave is destroyed.
 
 If any of these methods are not overridden, they simply return an `OkStatus`.
 
@@ -66,13 +66,13 @@ extensible by the developer.
 The `EnclaveClient` class is responsible for communicating messages with the
 trusted component.
 
-* `EnterAndInitialize` passes enclave configuration settings and optional
-user-defined configuration extensions to the enclave. The configuration
-information is essential to the identity of the enclave.
-* `EnterAndRun` passes an input message to the enclave, and receives an output
-message from the enclave. This method may be called an arbitrary number of times
-with different inputs after the enclave has been initialized.
-* `EnterAndFinalize` passes enclave finalization data to the enclave.
+*   `EnterAndInitialize` passes enclave configuration settings and optional
+    user-defined configuration extensions to the enclave. The configuration
+    information is essential to the identity of the enclave.
+*   `EnterAndRun` passes an input message to the enclave, and receives an output
+    message from the enclave. This method may be called an arbitrary number of
+    times with different inputs after the enclave has been initialized.
+*   `EnterAndFinalize` passes enclave finalization data to the enclave.
 
 Both `EnterAndInitialize` and `EnterAndFinalize` are private methods that are
 called by the friend class `EnclaveManager`.
@@ -82,9 +82,9 @@ called by the friend class `EnclaveManager`.
 The `EnclaveManager` class is responsible for creating and managing enclave
 instances. This class is a friend class to `EnclaveClient`.
 
-* `LoadEnclave` initializes the enclave with a call to `EnterAndInitialize`.
+*   `LoadEnclave` initializes the enclave with a call to `EnterAndInitialize`.
 
-* `DestroyEnclave` destroys the enclave with a call to `EnterAndFinalize`.
+*   `DestroyEnclave` destroys the enclave with a call to `EnterAndFinalize`.
 
 ## Entering an enclave from an untrusted execution environment
 
@@ -138,37 +138,37 @@ each part of the `main()` procedure.
 The untrusted application performs the following steps to initialize the trusted
 application:
 
-1. Configure a `SimLoader` object to fetch the enclave image from disk.
-2. Invoke the loader and bind the enclave to a name `"demo_enclave"` via
-`EnclaveManager::LoadEnclave`.
-3. The Asylo framework will implicitly use the client to initialize the platform
-and call the trusted application's `Initialize` method.
+1.  Configure a `SimLoader` object to fetch the enclave image from disk.
+2.  Invoke the loader and bind the enclave to a name `"demo_enclave"` via
+    `EnclaveManager::LoadEnclave`.
+3.  The Asylo framework will implicitly use the client to initialize the
+    platform and call the trusted application's `Initialize` method.
 
 ### Part 2: Secure execution
 
 The untrusted application performs the following steps to securely execute a
 workload in the trusted application:
 
-1. Get a handle to the enclave via `EnclaveManager::GetClient`.
-2. Provide arbitrary input data in an `EnclaveInput`. In this example, the
-enclave input is extended with a message that contains a string read from
-`stdin`.
-3. Invoke the enclave by calling `EnclaveClient::EnterAndRun`. This method is
-the primary entry point used to dispatch messages to the enclave. It can be
-called an arbitrary number of times.
-4. Receive the result from the enclave in an `EnclaveOutput`. Developers can
-extend the `EnclaveOutput` type to provide arbitrary output values from the
-enclave.
+1.  Get a handle to the enclave via `EnclaveManager::GetClient`.
+2.  Provide arbitrary input data in an `EnclaveInput`. In this example, the
+    enclave input is extended with a message that contains a string read from
+    `stdin`.
+3.  Invoke the enclave by calling `EnclaveClient::EnterAndRun`. This method is
+    the primary entry point used to dispatch messages to the enclave. It can be
+    called an arbitrary number of times.
+4.  Receive the result from the enclave in an `EnclaveOutput`. Developers can
+    extend the `EnclaveOutput` type to provide arbitrary output values from the
+    enclave.
 
 ### Part 3: Finalization
 
 The untrusted application performs the following steps to finalize the trusted
 application:
 
-1. Provide arbitrary finalization data to the enclave and destroy the enclave
-via `EnclaveManager::DestroyEnclave`.
-2. The Asylo framework will implicitly use the client to call the trusted
-application's `Finalize` method.
+1.  Provide arbitrary finalization data to the enclave and destroy the enclave
+    via `EnclaveManager::DestroyEnclave`.
+2.  The Asylo framework will implicitly use the client to call the trusted
+    application's `Finalize` method.
 
 ## Writing an enclave application
 
@@ -218,8 +218,8 @@ enclave is loaded by `EnclaveManager`.
 
 The Asylo framework guarantees this entry point is invoked exactly once, and
 that no other thread may enter until this method completes successfully. If
-initialization fails and returns a non-OK status, no further
-entry into the enclave is possible.
+initialization fails and returns a non-OK status, no further entry into the
+enclave is possible.
 
 ### Execution
 
@@ -242,13 +242,13 @@ The last category of enclave entry is finalization.
 The Asylo runtime will make a best-effort attempt to invoke the enclave
 finalization entry point when either of the following occurs:
 
-* Untrusted code destroys the enclave by calling
-`EnclaveManager::DestroyEnclave`.
+*   Untrusted code destroys the enclave by calling
+    `EnclaveManager::DestroyEnclave`.
 
-* The host application exits and the `EnclaveManager` itself is finalized.
+*   The host application exits and the `EnclaveManager` itself is finalized.
 
-The Asylo runtime guarantees that no further entry into the enclave
-is possible after finalization.
+The Asylo runtime guarantees that no further entry into the enclave is possible
+after finalization.
 
 Note that in the case the enclave exits abnormally, or in the event the
 untrusted runtime is compromised, it is not possible to guarantee that

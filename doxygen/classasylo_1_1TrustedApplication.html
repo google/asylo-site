@@ -84,11 +84,12 @@ $(function() {
 Public Types</h2></td></tr>
 <tr class="memitem:a2b7db58523b41fc2220fef8009c8e43d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">State</a> { <br />
 &#160;&#160;<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da518b13885544b3431069d8b44387de9c">State::kUninitialized</a>, 
-<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43daf2a73d6da4f1757992348e01f07c1abd">State::kInitializing</a>, 
+<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da74a0fb96206fdb3a302ef859367ab60d">State::kInternalInitializing</a>, 
+<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da26a2a57251e2f0aa4459947fae4e5ac9">State::kUserInitializing</a>, 
 <a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da2fc7fbf0d19294f85dd3880460dd3c0a">State::kRunning</a>, 
-<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da54dde0eb156436f81e0f0ebf1911b293">State::kFinalizing</a>, 
 <br />
-&#160;&#160;<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43daba210225b145d1d91ce8f90444cd103c">State::kFinalized</a>
+&#160;&#160;<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da54dde0eb156436f81e0f0ebf1911b293">State::kFinalizing</a>, 
+<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43daba210225b145d1d91ce8f90444cd103c">State::kFinalized</a>
 <br />
  }<tr class="memdesc:a2b7db58523b41fc2220fef8009c8e43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enumeration of possible enclave runtime states.  <a href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">More...</a><br /></td></tr>
 </td></tr>
@@ -164,11 +165,19 @@ Related Functions</h2></td></tr>
 
 <p>An enumeration of possible enclave runtime states. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da518b13885544b3431069d8b44387de9c"></a>kUninitialized&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43daf2a73d6da4f1757992348e01f07c1abd"></a>kInitializing&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da2fc7fbf0d19294f85dd3880460dd3c0a"></a>kRunning&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da54dde0eb156436f81e0f0ebf1911b293"></a>kFinalizing&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43daba210225b145d1d91ce8f90444cd103c"></a>kFinalized&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da518b13885544b3431069d8b44387de9c"></a>kUninitialized&#160;</td><td class="fielddoc"><p>Enclave initialization has not started. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da74a0fb96206fdb3a302ef859367ab60d"></a>kInternalInitializing&#160;</td><td class="fielddoc"><p>Asylo internals are initializing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da26a2a57251e2f0aa4459947fae4e5ac9"></a>kUserInitializing&#160;</td><td class="fielddoc"><p>Asylo internals are initialized. </p>
+<p>User-defined initialization is in-progress. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da2fc7fbf0d19294f85dd3880460dd3c0a"></a>kRunning&#160;</td><td class="fielddoc"><p>All initialization has completed. The enclave is running. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da54dde0eb156436f81e0f0ebf1911b293"></a>kFinalizing&#160;</td><td class="fielddoc"><p>The enclave is finalizing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43daba210225b145d1d91ce8f90444cd103c"></a>kFinalized&#160;</td><td class="fielddoc"><p>The enclave has finalized. </p>
+</td></tr>
 </table>
 
 </div>

@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classasylo_1_1SharedResourceManager.html" title="A manager object for shared resources. " alt="" coords="5,5,213,32"/>
+<area shape="rect" id="node1" href="$classasylo_1_1SecretSealer.html" title="asylo::SecretSealer" alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node2" href="$classasylo_1_1sgx_1_1LocalSecretSealer.html" title="An implementation of the SecretSealer abstract interface that binds the secrets to the enclave identi..." alt="" coords="189,5,385,32"/>
 </map>

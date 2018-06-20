@@ -11,5 +11,7 @@ var searchData=
   ['createassertionrequest',['CreateAssertionRequest',['../classasylo_1_1EnclaveAssertionVerifier.html#a1c8f9f36cbbec297c4a2ddaec9efeefe',1,'asylo::EnclaveAssertionVerifier::CreateAssertionRequest()'],['../classasylo_1_1NullAssertionVerifier.html#a9f0e72785190c1aebcdb75630b172683',1,'asylo::NullAssertionVerifier::CreateAssertionRequest()'],['../classasylo_1_1sgx_1_1LocalAssertionVerifier.html#a9b13af431ce246dba86f997ef9331952',1,'asylo::sgx::LocalAssertionVerifier::CreateAssertionRequest()']]],
   ['createdefaultenclaveconfig',['CreateDefaultEnclaveConfig',['../namespaceasylo.html#aceb4b276873d75168630811ff0456901',1,'asylo']]],
   ['createfromauthcontext',['CreateFromAuthContext',['../classasylo_1_1EnclaveAuthContext.html#a8edb18e91408fffa5e55ceeda7286f4b',1,'asylo::EnclaveAuthContext']]],
-  ['createfromservercontext',['CreateFromServerContext',['../classasylo_1_1EnclaveAuthContext.html#a15eb66c8bf51562524ec9d58ad5e8617',1,'asylo::EnclaveAuthContext']]]
+  ['createfromservercontext',['CreateFromServerContext',['../classasylo_1_1EnclaveAuthContext.html#a15eb66c8bf51562524ec9d58ad5e8617',1,'asylo::EnclaveAuthContext']]],
+  ['createmrenclavesecretsealer',['CreateMrenclaveSecretSealer',['../classasylo_1_1sgx_1_1LocalSecretSealer.html#acfe14a0d6274d7bcd228a713fdb99184',1,'asylo::sgx::LocalSecretSealer']]],
+  ['createmrsignersecretsealer',['CreateMrsignerSecretSealer',['../classasylo_1_1sgx_1_1LocalSecretSealer.html#a07021e6c74e6d4a2b024649efac00945',1,'asylo::sgx::LocalSecretSealer']]]
 ];

@@ -6,7 +6,7 @@ set -e
 readonly BASE_URL=https://asylo.dev
 readonly DOCS_URL="${BASE_URL}/docs"
 readonly DOCS_DIR="_docs"
-readonly SOURCES_DEFAULT=/opt/asylo/sdk
+readonly SOURCES_DEFAULT=/opt/asylo/docs
 
 readonly TEMP_ARCHIVE_PATH=/tmp/asylo.tar.gz
 # The path relative to the sources directory to a file that lists
@@ -187,9 +187,10 @@ function build_doxygen_docs() {
   if [[ "${CONFIG_BASEURL}" = "/" ]]; then
     CONFIG_BASEURL=""
   fi
-  find "${SITE}/doxygen" -name '*.html' -exec sed -i \
+  find "${SITE}/doxygen" \( -name '*.html' -o -name '*.js' -o -name '*.map' \) -exec sed -i \
     -e "s!href=\"${BASE_URL}!href=\"${CONFIG_BASEURL}!g" \
-    -e "s/SGXLoader/SimLoader/g" {} \;
+    -e "s/SGXLoader/SimLoader/g" \
+    -e "s/sgxloader/simloader/g" {} \;
   find "${SITE}/doxygen" -name '*SGXLoader*' \
     -exec sh -c 'mv {} $(sed -e 's/SGXLoader/SimLoader/g' <<< {})' \;
 
