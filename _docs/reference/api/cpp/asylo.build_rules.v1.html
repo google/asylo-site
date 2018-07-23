@@ -8,15 +8,15 @@ number_of_entries: 6
 order: 10
 ---
 
-<p>The file <code>bazel/asylo.bzl</code> defines the bazel repository rules needed to build enclave applications and enclave tests in your <code>WORKSPACE</code> file. Asylo provides the following rules and macros to build and test enclaves: `debug_enclave_driver`, `enclave_test`, `cc_test`, `cc_test_and_cc_enclave_test`, `cc_enclave_test`. The SGX backend provides a C++-specific macro: `sgx_enclave`.
-You may include asylo macros (<em>e.g.</em>, <code>debug_enclave_driver</code>) with the following line in your <code>WORKSPACE</code> file:
+<p>The file <code>bazel/asylo.bzl</code> defines the bazel repository rules needed to build enclave applications and enclave tests in your <code>WORKSPACE</code> file. Asylo provides the following rules and macros to build and test enclaves: `enclave_loader`, `enclave_test`, `cc_test`, `cc_test_and_cc_enclave_test`, `cc_enclave_test`. The SGX backend provides a C++-specific macro: `sgx_enclave`.
+You may include asylo macros (<em>e.g.</em>, <code>enclave_loader</code>) with the following line in your <code>WORKSPACE</code> file:
 </p>
-<pre id="debug_enclave_driver.load"><code class="language-skylark">load("@com_google_asylo//asylo/bazel:asylo.bzl", "debug_enclave_driver")</code></pre>
+<pre id="enclave_loader.load"><code class="language-skylark">load("@com_google_asylo//asylo/bazel:asylo.bzl", "enclave_loader")</code></pre>
 <p>You may include sgx macros (<em>e.g.</em>, <code>sgx_enclave</code>) with the following line in your <code>WORKSPACE</code> file:
 </p>
 <pre id="sgx_enclave.load"><code class="language-skylark">load("@linux_sgx//:sgx_sdk.bzl", "sgx_enclave")</code></pre>
 
-<h2 id="debug_enclave_driver">debug_enclave_driver</h2>
+<h2 id="enclave_loader">enclave_loader</h2>
 <section>
   <p>The rule used to create cc_binary for a given enclave. It combines the driver and enclave targets and ensures that the source is compiled with the host crosstool.</p>
   <table class="macro-arguments">
@@ -28,7 +28,7 @@ You may include asylo macros (<em>e.g.</em>, <code>debug_enclave_driver</code>) 
       </tr>
     </thead>
     <tbody>
-      <tr id="debug_enclave_driver.name">
+      <tr id="enclave_loader.name">
         <td><code>name</code></td>
         <td><code>string</code></td>
         <td>
@@ -36,15 +36,23 @@ You may include asylo macros (<em>e.g.</em>, <code>debug_enclave_driver</code>) 
           </p>
         </td>
       </tr>
-      <tr id="debug_enclave_driver.enclaves">
+      <tr id="enclave_loader.enclaves">
         <td><code>enclaves</code></td>
-        <td><code>list of strings</code></td>
+        <td><code>dictionary</code></td>
         <td>
-          <p>Dependent enclave target.
+          <p>Dictionary of enclave names to enclave dependency targets.
           </p>
         </td>
       </tr>
-      <tr id="debug_enclave_driver.**kwargs">
+      <tr id="enclave_loader.loader_args">
+        <td><code>loader_args</code></td>
+        <td><code>list of strings</code></td>
+        <td>
+          <p>List of arguments to pass to the enclave loader when executed. Placeholders for enclave names (e.g., <code>{my_enclave}</code> where <code>my_enclave</code> is present in the <code>enclaves</code> argument dictionary) will be replaced with the path to the enclave file.
+          </p>
+        </td>
+      </tr>
+      <tr id="enclave_loader.**kwargs">
         <td><code>**kwargs</code></td>
         <td><code>dictionary</code></td>
         <td>
