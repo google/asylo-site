@@ -1,5 +1,5 @@
 <map id="asylo::EnclaveAssertionGenerator" name="asylo::EnclaveAssertionGenerator">
-<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="5,162,201,189"/>
-<area shape="rect" id="node4" href="$classasylo_1_1sgx_1_1LocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="226,155,402,196"/>
-<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="101,5,316,32"/>
+<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="5,162,213,189"/>
+<area shape="rect" id="node4" href="$classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="237,155,416,196"/>
+<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="105,5,330,32"/>
 </map>

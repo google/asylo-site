@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Asylo: asylo::EnclaveAssertionGenerator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/_site/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -81,9 +81,9 @@ Inheritance diagram for asylo::EnclaveAssertionGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classasylo_1_1EnclaveAssertionGenerator__inherit__graph.png" border="0" usemap="#asylo_1_1EnclaveAssertionGenerator_inherit__map" alt="Inheritance graph"/></div>
 <map name="asylo_1_1EnclaveAssertionGenerator_inherit__map" id="asylo_1_1EnclaveAssertionGenerator_inherit__map">
-<area shape="rect" id="node3" href="classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="5,162,201,189"/>
-<area shape="rect" id="node4" href="classasylo_1_1sgx_1_1LocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="226,155,402,196"/>
-<area shape="rect" id="node2" href="classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="101,5,316,32"/>
+<area shape="rect" id="node3" href="classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="5,162,213,189"/>
+<area shape="rect" id="node4" href="classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="237,155,416,196"/>
+<area shape="rect" id="node2" href="classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="105,5,330,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -91,7 +91,7 @@ Collaboration diagram for asylo::EnclaveAssertionGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classasylo_1_1EnclaveAssertionGenerator__coll__graph.png" border="0" usemap="#asylo_1_1EnclaveAssertionGenerator_coll__map" alt="Collaboration graph"/></div>
 <map name="asylo_1_1EnclaveAssertionGenerator_coll__map" id="asylo_1_1EnclaveAssertionGenerator_coll__map">
-<area shape="rect" id="node2" href="classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="8,5,223,32"/>
+<area shape="rect" id="node2" href="classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="10,5,235,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -175,7 +175,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the assertion specified in <code>request</code> can be generated, and false if no errors occur during the operation but <code>request</code> cannot be fulfilled. Returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if this generator is not yet initialized or if an internal error occurs while attempting the operation. </dd></dl>
 
-<p>Implemented in <a class="el" href="classasylo_1_1sgx_1_1LocalAssertionGenerator.html#af78905507aefb0053ac08ceb5faa95b9">asylo::sgx::LocalAssertionGenerator</a>, and <a class="el" href="classasylo_1_1NullAssertionGenerator.html#a745efc29b9c9abb128544b26b3eb89bb">asylo::NullAssertionGenerator</a>.</p>
+<p>Implemented in <a class="el" href="classasylo_1_1NullAssertionGenerator.html#a745efc29b9c9abb128544b26b3eb89bb">asylo::NullAssertionGenerator</a>, and <a class="el" href="classasylo_1_1SgxLocalAssertionGenerator.html#a1f1c61f320c9a9aa14222ebf0e2e1140">asylo::SgxLocalAssertionGenerator</a>.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> indicating whether the offer was created. Returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if this generator is not initialized or if an internal error occurs while attempting the operation. </dd></dl>
 
-<p>Implemented in <a class="el" href="classasylo_1_1sgx_1_1LocalAssertionGenerator.html#acaba8650c9be588ace9a069e21f4ef87">asylo::sgx::LocalAssertionGenerator</a>, and <a class="el" href="classasylo_1_1NullAssertionGenerator.html#a21e94ee56e771b22269b7a843556bea1">asylo::NullAssertionGenerator</a>.</p>
+<p>Implemented in <a class="el" href="classasylo_1_1NullAssertionGenerator.html#a21e94ee56e771b22269b7a843556bea1">asylo::NullAssertionGenerator</a>, and <a class="el" href="classasylo_1_1SgxLocalAssertionGenerator.html#a3e57b000427b57665cfdb07a983886d3">asylo::SgxLocalAssertionGenerator</a>.</p>
 
 </div>
 </div>
@@ -268,7 +268,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> indicating whether an assertion was generated successfully. Returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the generator is not initialized or if an internal error occurs while attempting the operation. </dd></dl>
 
-<p>Implemented in <a class="el" href="classasylo_1_1sgx_1_1LocalAssertionGenerator.html#ab119681147abd5fd7826455d38e686ca">asylo::sgx::LocalAssertionGenerator</a>, and <a class="el" href="classasylo_1_1NullAssertionGenerator.html#ade08b3cc9b63f3289f96896934fc86dd">asylo::NullAssertionGenerator</a>.</p>
+<p>Implemented in <a class="el" href="classasylo_1_1NullAssertionGenerator.html#ade08b3cc9b63f3289f96896934fc86dd">asylo::NullAssertionGenerator</a>, and <a class="el" href="classasylo_1_1SgxLocalAssertionGenerator.html#aa95b3d1908d2791ea99f6495483c8838">asylo::SgxLocalAssertionGenerator</a>.</p>
 
 </div>
 </div>

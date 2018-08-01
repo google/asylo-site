@@ -1,4 +1,4 @@
-<map id="asylo/platform/crypto/nonce_generator.h" name="asylo/platform/crypto/nonce_generator.h">
-<area shape="rect" id="node2" href="$aes__gcm__siv_8h.html" title="asylo/platform/crypto\l/aes_gcm_siv.h" alt="" coords="8,95,152,136"/>
-<area shape="rect" id="node3" href="$local__secret__sealer_8h.html" title="asylo/identity/sgx\l/local_secret_sealer.h" alt="" coords="5,184,155,225"/>
+<map id="asylo/crypto/nonce_generator.h" name="asylo/crypto/nonce_generator.h">
+<area shape="rect" id="node2" href="$aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="21,95,180,136"/>
+<area shape="rect" id="node3" href="$sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="5,184,196,225"/>
 </map>

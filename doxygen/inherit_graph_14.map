@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classasylo_1_1LogMessageVoidify.html" title="This class is used just to take an ostream type and make it a void type to satisify the ternary opera..." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node1" href="$classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. " alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$classasylo_1_1LogMessageFatal.html" title="Default LogSeverity FATAL version of LogMessage. " alt="" coords="196,5,371,32"/>
 </map>

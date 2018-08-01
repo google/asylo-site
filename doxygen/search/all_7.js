@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['generate',['Generate',['../classasylo_1_1EnclaveAssertionGenerator.html#a22d2620a3791f01bf77327dfcff62d59',1,'asylo::EnclaveAssertionGenerator::Generate()'],['../classasylo_1_1NullAssertionGenerator.html#ade08b3cc9b63f3289f96896934fc86dd',1,'asylo::NullAssertionGenerator::Generate()'],['../classasylo_1_1sgx_1_1LocalAssertionGenerator.html#ab119681147abd5fd7826455d38e686ca',1,'asylo::sgx::LocalAssertionGenerator::Generate()']]],
+  ['generate',['Generate',['../classasylo_1_1EnclaveAssertionGenerator.html#a22d2620a3791f01bf77327dfcff62d59',1,'asylo::EnclaveAssertionGenerator::Generate()'],['../classasylo_1_1NullAssertionGenerator.html#ade08b3cc9b63f3289f96896934fc86dd',1,'asylo::NullAssertionGenerator::Generate()'],['../classasylo_1_1SgxLocalAssertionGenerator.html#aa95b3d1908d2791ea99f6495483c8838',1,'asylo::SgxLocalAssertionGenerator::Generate()']]],
   ['generateauthorityid',['GenerateAuthorityId',['../classasylo_1_1EnclaveAssertionAuthority.html#a634e1ad0b08597e8968e6252b9a43e07',1,'asylo::EnclaveAssertionAuthority']]],
   ['generatesealerid',['GenerateSealerId',['../classasylo_1_1SecretSealer.html#a3e3efc3f67478c870f296434f9b2106a',1,'asylo::SecretSealer']]],
   ['get_5fconfig_5fserver_5faddress',['get_config_server_address',['../classasylo_1_1EnclaveManagerOptions.html#aeeb0735eb3faa4f045b2c47eb5e5eb4f',1,'asylo::EnclaveManagerOptions']]],

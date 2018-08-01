@@ -1,6 +1,6 @@
 <map id="asylo/platform/core/shared_resource_manager.h" name="asylo/platform/core/shared_resource_manager.h">
-<area shape="rect" id="node5" href="$shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="515,95,648,136"/>
-<area shape="rect" id="node12" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1139,102,1264,129"/>
-<area shape="rect" id="node11" href="$shared__name__kind_8h.html" title="asylo/platform/core\l/shared_name_kind.h" alt="" coords="333,184,480,225"/>
-<area shape="rect" id="node17" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1405,191,1563,218"/>
+<area shape="rect" id="node5" href="$shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="534,95,677,136"/>
+<area shape="rect" id="node12" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1324,102,1452,129"/>
+<area shape="rect" id="node11" href="$shared__name__kind_8h.html" title="asylo/platform/core\l/shared_name_kind.h" alt="" coords="343,184,502,225"/>
+<area shape="rect" id="node17" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="820,191,988,218"/>
 </map>

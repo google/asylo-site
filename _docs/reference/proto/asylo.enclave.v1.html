@@ -3,6 +3,7 @@ title: Enclave Boundary Messages
 overview: Protobuf definitions to interact with enclave entry-points.
 location: https://asylo.dev/docs/reference/proto/asylo.enclave.v1.html
 layout: protoc-gen-docs
+generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/enclave.html
 number_of_entries: 8
 ---
@@ -27,7 +28,7 @@ capabilities such as the logging API and POSIX APIs.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveConfig.stdin_fd">
+<tr id="EnclaveConfig-stdin_fd">
 <td><code>stdin_fd</code></td>
 <td><code>int32</code></td>
 <td>
@@ -36,7 +37,7 @@ standard in should be opened.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.stdout_fd">
+<tr id="EnclaveConfig-stdout_fd">
 <td><code>stdout_fd</code></td>
 <td><code>int32</code></td>
 <td>
@@ -45,7 +46,7 @@ standard out should be opened.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.stderr_fd">
+<tr id="EnclaveConfig-stderr_fd">
 <td><code>stderr_fd</code></td>
 <td><code>int32</code></td>
 <td>
@@ -54,7 +55,7 @@ no standard error should be opened.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.host_name">
+<tr id="EnclaveConfig-host_name">
 <td><code>host_name</code></td>
 <td><code>string</code></td>
 <td>
@@ -62,7 +63,7 @@ no standard error should be opened.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.current_working_directory">
+<tr id="EnclaveConfig-current_working_directory">
 <td><code>current_working_directory</code></td>
 <td><code>string</code></td>
 <td>
@@ -70,7 +71,7 @@ no standard error should be opened.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.host_config">
+<tr id="EnclaveConfig-host_config">
 <td><code>host_config</code></td>
 <td><code><a href="#HostConfig">HostConfig</a></code></td>
 <td>
@@ -79,7 +80,7 @@ the same for all enclaves running under the same instance of an OS.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.enclave_assertion_authority_configs">
+<tr id="EnclaveConfig-enclave_assertion_authority_configs">
 <td><code>enclave_assertion_authority_configs</code></td>
 <td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.enclave_assertion_authority_config.v1.html#EnclaveAssertionAuthorityConfig">EnclaveAssertionAuthorityConfig[]</a></code></td>
 <td>
@@ -89,7 +90,7 @@ here.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.environment_variables">
+<tr id="EnclaveConfig-environment_variables">
 <td><code>environment_variables</code></td>
 <td><code><a href="#EnvironmentVariable">EnvironmentVariable[]</a></code></td>
 <td>
@@ -97,7 +98,7 @@ here.</p>
 
 </td>
 </tr>
-<tr id="EnclaveConfig.logging_config">
+<tr id="EnclaveConfig-logging_config">
 <td><code>logging_config</code></td>
 <td><code><a href="#LoggingConfig">LoggingConfig</a></code></td>
 <td>
@@ -133,7 +134,7 @@ back to an untrusted caller.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveOutput.status">
+<tr id="EnclaveOutput-status">
 <td><code>status</code></td>
 <td><code><a href="{{site.baseurl}}/docs/reference/proto/util/asylo.status.v1.html#StatusProto">StatusProto</a></code></td>
 <td>
@@ -158,7 +159,7 @@ indicate an error in either trusted or untrusted space.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveSignal.signum">
+<tr id="EnclaveSignal-signum">
 <td><code>signum</code></td>
 <td><code>int32</code></td>
 <td>
@@ -166,7 +167,7 @@ indicate an error in either trusted or untrusted space.</p>
 
 </td>
 </tr>
-<tr id="EnclaveSignal.code">
+<tr id="EnclaveSignal-code">
 <td><code>code</code></td>
 <td><code>int32</code></td>
 <td>
@@ -175,7 +176,7 @@ more information.</p>
 
 </td>
 </tr>
-<tr id="EnclaveSignal.gregs">
+<tr id="EnclaveSignal-gregs">
 <td><code>gregs</code></td>
 <td><code>uint64[]</code></td>
 <td>
@@ -201,7 +202,7 @@ environment to <code>getenv</code>.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnvironmentVariable.name">
+<tr id="EnvironmentVariable-name">
 <td><code>name</code></td>
 <td><code>string</code></td>
 <td>
@@ -209,7 +210,7 @@ environment to <code>getenv</code>.</p>
 
 </td>
 </tr>
-<tr id="EnvironmentVariable.value">
+<tr id="EnvironmentVariable-value">
 <td><code>value</code></td>
 <td><code>string</code></td>
 <td>
@@ -237,7 +238,7 @@ attestation daemon.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="HostConfig.local_attestation_domain">
+<tr id="HostConfig-local_attestation_domain">
 <td><code>local_attestation_domain</code></td>
 <td><code>string</code></td>
 <td>
@@ -261,7 +262,7 @@ attestation daemon.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="LoggingConfig.vlog_level">
+<tr id="LoggingConfig-vlog_level">
 <td><code>vlog_level</code></td>
 <td><code>int32</code></td>
 <td>
@@ -270,7 +271,7 @@ this level will be logged, others will be ignored.</p>
 
 </td>
 </tr>
-<tr id="LoggingConfig.log_directory">
+<tr id="LoggingConfig-log_directory">
 <td><code>log_directory</code></td>
 <td><code>string</code></td>
 <td>

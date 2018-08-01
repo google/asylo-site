@@ -3,6 +3,7 @@ title: Identity ACL
 overview: Representation of an enclave identity ACL (access control list).
 location: https://asylo.dev/docs/reference/proto/identity/asylo.identity_acl.v1.html
 layout: protoc-gen-docs
+generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/identity/identity_acl.html
 number_of_entries: 3
 ---
@@ -41,7 +42,7 @@ any of a given set of enclave identities.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="IdentityAclGroup.predicates">
+<tr id="IdentityAclGroup-predicates">
 <td><code>predicates</code></td>
 <td><code><a href="#IdentityAclPredicate">IdentityAclPredicate[]</a></code></td>
 <td>
@@ -49,9 +50,9 @@ any of a given set of enclave identities.</p>
 
 </td>
 </tr>
-<tr id="IdentityAclGroup.type">
+<tr id="IdentityAclGroup-type">
 <td><code>type</code></td>
-<td><code><a href="#IdentityAclGroup.GroupType">IdentityAclGroup.GroupType</a></code></td>
+<td><code><a href="#IdentityAclGroup-GroupType">IdentityAclGroup.GroupType</a></code></td>
 <td>
 <p>The type of this ACL group.</p>
 
@@ -60,7 +61,7 @@ any of a given set of enclave identities.</p>
 </tbody>
 </table>
 </section>
-<h2 id="IdentityAclGroup.GroupType">IdentityAclGroup.GroupType</h2>
+<h2 id="IdentityAclGroup-GroupType">IdentityAclGroup.GroupType</h2>
 <section>
 <p>Possible logical operators to use when evaluating the results of matching
 |predicates| against a set of identities.</p>
@@ -73,21 +74,21 @@ any of a given set of enclave identities.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="IdentityAclGroup.GroupType.OR">
+<tr id="IdentityAclGroup-GroupType-OR">
 <td><code>OR</code></td>
 <td>
 <p>Evaluates to true iff any predicates match.</p>
 
 </td>
 </tr>
-<tr id="IdentityAclGroup.GroupType.AND">
+<tr id="IdentityAclGroup-GroupType-AND">
 <td><code>AND</code></td>
 <td>
 <p>Evaluates to true iff all predicates match.</p>
 
 </td>
 </tr>
-<tr id="IdentityAclGroup.GroupType.NOT">
+<tr id="IdentityAclGroup-GroupType-NOT">
 <td><code>NOT</code></td>
 <td>
 <p>Evaluates to true iff no predicates match. |predicates| must have exactly
@@ -111,13 +112,13 @@ one element.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="IdentityAclPredicate.acl_group" class="oneof oneof-start">
+<tr id="IdentityAclPredicate-acl_group" class="oneof oneof-start">
 <td><code>acl_group</code></td>
 <td><code><a href="#IdentityAclGroup">IdentityAclGroup (oneof)</a></code></td>
 <td>
 </td>
 </tr>
-<tr id="IdentityAclPredicate.expectation" class="oneof">
+<tr id="IdentityAclPredicate-expectation" class="oneof">
 <td><code>expectation</code></td>
 <td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.identity.v1.html#EnclaveIdentityExpectation">EnclaveIdentityExpectation (oneof)</a></code></td>
 <td>

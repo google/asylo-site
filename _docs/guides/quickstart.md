@@ -1,5 +1,5 @@
 ---
-title: Asylo Quickstart Guide
+title: Quickstart Guide
 overview: Install Asylo, build, and run your first enclave!
 
 location: /_docs/guides/quickstart.md
@@ -10,6 +10,7 @@ type: markdown
 toc: true
 ---
 {% include home.html %}
+
 This guide demonstrates using Asylo to protect secret data from an attacker
 with root privileges.
 
@@ -388,7 +389,7 @@ you would like to encrypt.
 Note: The following command runs the enclave in simulation mode.
 
 ```bash
-docker run --rm \
+docker run -it --rm \
     -v bazel-cache:/root/.cache/bazel \
     -v "${MY_PROJECT}":/opt/my-project \
     -w /opt/my-project \

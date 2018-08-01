@@ -3,6 +3,7 @@ title: Identity, Identity Expectation, and Assertion
 overview: Representation of enclave identities, identity expectations, and identity assertions.
 location: https://asylo.dev/docs/reference/proto/identity/asylo.identity.v1.html
 layout: protoc-gen-docs
+generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/identity/identity.html
 number_of_entries: 9
 ---
@@ -19,7 +20,7 @@ number_of_entries: 9
 </tr>
 </thead>
 <tbody>
-<tr id="Assertion.description">
+<tr id="Assertion-description">
 <td><code>description</code></td>
 <td><code><a href="#AssertionDescription">AssertionDescription</a></code></td>
 <td>
@@ -29,7 +30,7 @@ type of assertion authority that is capable of verifying the assertion.</p>
 
 </td>
 </tr>
-<tr id="Assertion.assertion">
+<tr id="Assertion-assertion">
 <td><code>assertion</code></td>
 <td><code>bytes</code></td>
 <td>
@@ -55,7 +56,7 @@ the assertion-verification authority that verifies assertions matching
 </tr>
 </thead>
 <tbody>
-<tr id="AssertionDescription.identity_type">
+<tr id="AssertionDescription-identity_type">
 <td><code>identity_type</code></td>
 <td><code><a href="#EnclaveIdentityType">EnclaveIdentityType</a></code></td>
 <td>
@@ -63,7 +64,7 @@ the assertion-verification authority that verifies assertions matching
 
 </td>
 </tr>
-<tr id="AssertionDescription.authority_type">
+<tr id="AssertionDescription-authority_type">
 <td><code>authority_type</code></td>
 <td><code>string</code></td>
 <td>
@@ -108,7 +109,7 @@ an offer.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="AssertionOffer.description">
+<tr id="AssertionOffer-description">
 <td><code>description</code></td>
 <td><code><a href="#AssertionDescription">AssertionDescription</a></code></td>
 <td>
@@ -119,7 +120,7 @@ verifying the assertion.</p>
 
 </td>
 </tr>
-<tr id="AssertionOffer.additional_information">
+<tr id="AssertionOffer-additional_information">
 <td><code>additional_information</code></td>
 <td><code>bytes</code></td>
 <td>
@@ -159,7 +160,7 @@ request.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="AssertionRequest.description">
+<tr id="AssertionRequest-description">
 <td><code>description</code></td>
 <td><code><a href="#AssertionDescription">AssertionDescription</a></code></td>
 <td>
@@ -170,7 +171,7 @@ generating the assertion.</p>
 
 </td>
 </tr>
-<tr id="AssertionRequest.additional_information">
+<tr id="AssertionRequest-additional_information">
 <td><code>additional_information</code></td>
 <td><code>bytes</code></td>
 <td>
@@ -206,7 +207,7 @@ receiving party to do any of the following:</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveIdentities.identities">
+<tr id="EnclaveIdentities-identities">
 <td><code>identities</code></td>
 <td><code><a href="#EnclaveIdentity">EnclaveIdentity[]</a></code></td>
 <td>
@@ -232,7 +233,7 @@ an enclave entity.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveIdentity.description">
+<tr id="EnclaveIdentity-description">
 <td><code>description</code></td>
 <td><code><a href="#EnclaveIdentityDescription">EnclaveIdentityDescription</a></code></td>
 <td>
@@ -240,7 +241,7 @@ an enclave entity.</p>
 
 </td>
 </tr>
-<tr id="EnclaveIdentity.identity">
+<tr id="EnclaveIdentity-identity">
 <td><code>identity</code></td>
 <td><code>bytes</code></td>
 <td>
@@ -265,7 +266,7 @@ the authorization authority that handles identities matching <code>description</
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveIdentityDescription.identity_type">
+<tr id="EnclaveIdentityDescription-identity_type">
 <td><code>identity_type</code></td>
 <td><code><a href="#EnclaveIdentityType">EnclaveIdentityType</a></code></td>
 <td>
@@ -273,7 +274,7 @@ the authorization authority that handles identities matching <code>description</
 
 </td>
 </tr>
-<tr id="EnclaveIdentityDescription.authority_type">
+<tr id="EnclaveIdentityDescription-authority_type">
 <td><code>authority_type</code></td>
 <td><code>string</code></td>
 <td>
@@ -305,7 +306,7 @@ authorization authority of compatible type.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveIdentityExpectation.reference_identity">
+<tr id="EnclaveIdentityExpectation-reference_identity">
 <td><code>reference_identity</code></td>
 <td><code><a href="#EnclaveIdentity">EnclaveIdentity</a></code></td>
 <td>
@@ -317,7 +318,7 @@ RPC).</p>
 
 </td>
 </tr>
-<tr id="EnclaveIdentityExpectation.match_spec">
+<tr id="EnclaveIdentityExpectation-match_spec">
 <td><code>match_spec</code></td>
 <td><code>bytes</code></td>
 <td>
@@ -342,19 +343,19 @@ authorization authority.</p>
 </tr>
 </thead>
 <tbody>
-<tr id="EnclaveIdentityType.UNKNOWN_IDENTITY">
+<tr id="EnclaveIdentityType-UNKNOWN_IDENTITY">
 <td><code>UNKNOWN_IDENTITY</code></td>
 <td>
 </td>
 </tr>
-<tr id="EnclaveIdentityType.NULL_IDENTITY">
+<tr id="EnclaveIdentityType-NULL_IDENTITY">
 <td><code>NULL_IDENTITY</code></td>
 <td>
 <p>An identity used by entities without cryptographic credentials.</p>
 
 </td>
 </tr>
-<tr id="EnclaveIdentityType.CODE_IDENTITY">
+<tr id="EnclaveIdentityType-CODE_IDENTITY">
 <td><code>CODE_IDENTITY</code></td>
 <td>
 <p>A cryptographically-verifiable identity that can specify the code being
@@ -363,7 +364,7 @@ parameters that may affect code execution.</p>
 
 </td>
 </tr>
-<tr id="EnclaveIdentityType.CERT_IDENTITY">
+<tr id="EnclaveIdentityType-CERT_IDENTITY">
 <td><code>CERT_IDENTITY</code></td>
 <td>
 <p>An identity used by entities that possess credentials issued by a

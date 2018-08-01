@@ -12,8 +12,10 @@ var searchData=
   ['aesgcmsivnoncegenerator',['AesGcmSivNonceGenerator',['../classasylo_1_1AesGcmSivNonceGenerator.html',1,'asylo']]],
   ['already_5fexists',['ALREADY_EXISTS',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644aade7ccd6127415081c216650eee4f0dc',1,'asylo::error']]],
   ['asylo',['asylo',['../namespaceasylo.html',1,'']]],
-  ['authoritytype',['AuthorityType',['../classasylo_1_1EnclaveAssertionAuthority.html#a1adf0230a69b4443a2da50f3b4991307',1,'asylo::EnclaveAssertionAuthority::AuthorityType()'],['../classasylo_1_1NullAssertionGenerator.html#a31b0c54f97d2a1a0dd071773cc487c54',1,'asylo::NullAssertionGenerator::AuthorityType()'],['../classasylo_1_1NullAssertionVerifier.html#af1b8247fda5f666daa56fa6b0eafa2b9',1,'asylo::NullAssertionVerifier::AuthorityType()'],['../classasylo_1_1sgx_1_1LocalAssertionGenerator.html#ad759e62c5ab51507025ebb9aef1c91eb',1,'asylo::sgx::LocalAssertionGenerator::AuthorityType()'],['../classasylo_1_1sgx_1_1LocalAssertionVerifier.html#afcaaf9515c763813153a08f6197b4c8d',1,'asylo::sgx::LocalAssertionVerifier::AuthorityType()']]],
+  ['asylo_5fassign_5for_5freturn',['ASYLO_ASSIGN_OR_RETURN',['../status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f',1,'status_macros.h']]],
+  ['asylo_5freturn_5fif_5ferror',['ASYLO_RETURN_IF_ERROR',['../status__macros_8h.html#a884b0600610551e91852b3bc96c732c4',1,'status_macros.h']]],
+  ['authoritytype',['AuthorityType',['../classasylo_1_1EnclaveAssertionAuthority.html#a1adf0230a69b4443a2da50f3b4991307',1,'asylo::EnclaveAssertionAuthority::AuthorityType()'],['../classasylo_1_1NullAssertionGenerator.html#a31b0c54f97d2a1a0dd071773cc487c54',1,'asylo::NullAssertionGenerator::AuthorityType()'],['../classasylo_1_1NullAssertionVerifier.html#af1b8247fda5f666daa56fa6b0eafa2b9',1,'asylo::NullAssertionVerifier::AuthorityType()'],['../classasylo_1_1SgxLocalAssertionGenerator.html#a3ef036f7832b2926128c3fbd5887fbb0',1,'asylo::SgxLocalAssertionGenerator::AuthorityType()'],['../classasylo_1_1SgxLocalAssertionVerifier.html#ae72b59ad1810881948999fffc73e8992',1,'asylo::SgxLocalAssertionVerifier::AuthorityType()']]],
   ['error',['error',['../namespaceasylo_1_1error.html',1,'asylo']]],
-  ['asylo_20_2d_20an_20open_20and_20flexible_20framework_20for_20enclave_20applications',['Asylo - An open and flexible framework for enclave applications',['../index.html',1,'']]],
-  ['sgx',['sgx',['../namespaceasylo_1_1sgx.html',1,'asylo']]]
+  ['experimental',['experimental',['../namespaceasylo_1_1experimental.html',1,'asylo']]],
+  ['asylo_20_2d_20an_20open_20and_20flexible_20framework_20for_20enclave_20applications',['Asylo - An open and flexible framework for enclave applications',['../index.html',1,'']]]
 ];

@@ -6,9 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Asylo: asylo/platform/crypto/aes_gcm_siv.h File Reference</title>
+<title>Asylo: asylo/crypto/aes_gcm_siv.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/_site/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -60,7 +60,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_edc23f2ec6b899c33daf3900f962a909.html">asylo</a></li><li class="navelem"><a class="el" href="dir_01d4202cd1cdb36b79d5288c42fc7d28.html">platform</a></li><li class="navelem"><a class="el" href="dir_25dbdb05ef96eb61b30e2b78a8d768d2.html">crypto</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_edc23f2ec6b899c33daf3900f962a909.html">asylo</a></li><li class="navelem"><a class="el" href="dir_5a9410e7c3a4f9e5eab607dd670acca5.html">crypto</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -77,31 +77,31 @@ $(function() {
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;absl/strings/str_cat.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="nonce__generator_8h_source.html">asylo/crypto/nonce_generator.h</a>&quot;</code><br />
+<code>#include &quot;asylo/crypto/util/bssl_util.h&quot;</code><br />
+<code>#include &quot;asylo/crypto/util/bytes.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="logging_8h_source.html">asylo/util/logging.h</a>&quot;</code><br />
-<code>#include &quot;asylo/identity/util/bytes.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="nonce__generator_8h_source.html">asylo/platform/crypto/nonce_generator.h</a>&quot;</code><br />
-<code>#include &quot;asylo/platform/crypto/util/bssl_util.h&quot;</code><br />
 <code>#include &quot;asylo/util/cleansing_types.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="status_8h_source.html">asylo/util/status.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="statusor_8h_source.html">asylo/util/statusor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for aes_gcm_siv.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="aes__gcm__siv_8h__incl.png" border="0" usemap="#asylo_2platform_2crypto_2aes__gcm__siv_8h" alt=""/></div>
-<map name="asylo_2platform_2crypto_2aes__gcm__siv_8h" id="asylo_2platform_2crypto_2aes__gcm__siv_8h">
-<area shape="rect" id="node7" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="310,191,441,218"/>
-<area shape="rect" id="node14" href="nonce__generator_8h.html" title="asylo/platform/crypto\l/nonce_generator.h" alt="" coords="615,95,759,136"/>
-<area shape="rect" id="node15" href="status_8h.html" title="asylo/util/status.h" alt="" coords="845,191,970,218"/>
-<area shape="rect" id="node28" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="455,102,591,129"/>
-<area shape="rect" id="node20" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1253,281,1410,307"/>
+<div class="center"><img src="aes__gcm__siv_8h__incl.png" border="0" usemap="#asylo_2crypto_2aes__gcm__siv_8h" alt=""/></div>
+<map name="asylo_2crypto_2aes__gcm__siv_8h" id="asylo_2crypto_2aes__gcm__siv_8h">
+<area shape="rect" id="node7" href="nonce__generator_8h.html" title="asylo/crypto/nonce\l_generator.h" alt="" coords="635,95,776,136"/>
+<area shape="rect" id="node10" href="status_8h.html" title="asylo/util/status.h" alt="" coords="699,191,827,218"/>
+<area shape="rect" id="node41" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="1737,191,1874,218"/>
+<area shape="rect" id="node45" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1208,102,1349,129"/>
+<area shape="rect" id="node15" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="901,281,1069,307"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="aes__gcm__siv_8h__dep__incl.png" border="0" usemap="#asylo_2platform_2crypto_2aes__gcm__siv_8hdep" alt=""/></div>
-<map name="asylo_2platform_2crypto_2aes__gcm__siv_8hdep" id="asylo_2platform_2crypto_2aes__gcm__siv_8hdep">
-<area shape="rect" id="node2" href="local__secret__sealer_8h.html" title="asylo/identity/sgx\l/local_secret_sealer.h" alt="" coords="5,95,155,136"/>
+<div class="center"><img src="aes__gcm__siv_8h__dep__incl.png" border="0" usemap="#asylo_2crypto_2aes__gcm__siv_8hdep" alt=""/></div>
+<map name="asylo_2crypto_2aes__gcm__siv_8hdep" id="asylo_2crypto_2aes__gcm__siv_8hdep">
+<area shape="rect" id="node2" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="5,95,196,136"/>
 </map>
 </div>
 </div>
