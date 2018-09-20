@@ -52,7 +52,7 @@ NO_PROTOS=
 DOCS_MANIFEST=
 GIT_ADD=
 readonly LONG="manifest:,nodocs,nodoxygen,nojekyll,noprotos,git-add,help"
-readonly PARSED=$(getopt -o anjhxm: --long "${LONG}" -n "$(basename "$0")" -- "$@")
+readonly PARSED=$(getopt -o anjphxm: --long "${LONG}" -n "$(basename "$0")" -- "$@")
 eval set -- "${PARSED}"
 while true; do
   case "$1" in
