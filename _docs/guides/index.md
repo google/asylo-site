@@ -1,6 +1,6 @@
 ---
 title: Guides
-overview: Guides include a variety of fully working example uses for Istio that you can experiment with.
+overview: Guides include a number of Asylo examples and tutorials that you can experiment with.
 
 order: 30
 
