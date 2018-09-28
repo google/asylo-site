@@ -8,11 +8,12 @@ order: 20
 layout: about
 type: markdown
 ---
+
 ## Introduction
 
 Asylo enables you to take advantage of emerging hardware and software
-technologies that provide [trusted execution
-environments](https://en.wikipedia.org/wiki/Trusted_execution_environment),
+technologies that provide
+[trusted execution environments](https://en.wikipedia.org/wiki/Trusted_execution_environment),
 known as an *enclaves*. Asylo provides an API, trusted and untrusted runtime
 libraries, and C/C++ toolchain so you can integrate your application with an
 enclave backend of your choice. The benefit of running your application using an
@@ -37,12 +38,13 @@ The benefit is to enable sensitive workloads in an untrusted execution
 environment with the inherited confidentiality and integrity guarantees of the
 chosen trusted execution environment.
 
-{% include figure.html width='80%' ratio='46.36%' img='./img/asylo.png' alt='Asylo architecture' title='Asylo architecture' caption='Asylo architecture' %}
-The untrusted execution environment consists of surrounding infrastructure—for
-instance the operating system and system libraries—and human operators that are
-less trusted than an enclave. The trusted execution environment consists of one
-or more enclaves, which protect code and data in a sensitive workload. A trusted
-execution environment allows an enclave to:
+{% include figure.html width='80%' ratio='46.36%' img='./img/asylo.png'
+alt='Asylo architecture' title='Asylo architecture' caption='Asylo architecture'
+%} The untrusted execution environment consists of surrounding
+infrastructure—for instance the operating system and system libraries—and human
+operators that are less trusted than an enclave. The trusted execution
+environment consists of one or more enclaves, which protect code and data in a
+sensitive workload. A trusted execution environment allows an enclave to:
 
 +   Prevent vulnerabilities outside the enclave from compromising the workloads
     that run in the enclave. Depending on the enclave technology, this
@@ -83,10 +85,10 @@ against the following threats:
 +   Compromised operating system
 +   Compromised BIOS
 
-With the initial 0.2.0 release Asylo supports a simulated enclave backend, which
-should not be used in production environments. Support for additional backends
-will be added over time to meet the varying needs and security requirements of
-Asylo users.
+The v0.3 release of Asylo supports a simulated enclave backend, which should not
+be used in production environments. Support for additional backends will be
+added over time to meet the varying needs and security requirements of Asylo
+users.
 
 ## Release information
 
@@ -96,4 +98,4 @@ expanding subset of POSIX, which enables running POSIX applications in an
 enclave with little to no source modification. Iterations of Asylo are intended
 to release without requiring significant change to the programming model.
 
-This v0.2 release of Asylo is not intended for production use.
+The v0.3 release of Asylo is not intended for production use.

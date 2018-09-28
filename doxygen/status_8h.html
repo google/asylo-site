@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Asylo: asylo/util/status.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="/_site/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -79,6 +79,7 @@ $(function() {
 <code>#include &quot;absl/strings/string_view.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="error__space_8h_source.html">asylo/util/error_space.h</a>&quot;</code><br />
 <code>#include &quot;asylo/util/status.pb.h&quot;</code><br />
+<code>#include &quot;asylo/util/status_error_space.h&quot;</code><br />
 <code>#include &quot;asylo/util/status_internal.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for status.h:</div>
@@ -93,26 +94,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="status_8h__dep__incl.png" border="0" usemap="#asylo_2util_2status_8hdep" alt=""/></div>
 <map name="asylo_2util_2status_8hdep" id="asylo_2util_2status_8hdep">
-<area shape="rect" id="node2" href="nonce__generator_8h.html" title="asylo/crypto/nonce\l_generator.h" alt="" coords="157,80,299,121"/>
-<area shape="rect" id="node3" href="aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="27,169,186,211"/>
-<area shape="rect" id="node4" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="11,259,202,300"/>
-<area shape="rect" id="node5" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="745,87,887,114"/>
-<area shape="rect" id="node7" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="977,169,1138,211"/>
-<area shape="rect" id="node8" href="enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="361,259,530,300"/>
-<area shape="rect" id="node11" href="enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="979,259,1136,300"/>
-<area shape="rect" id="node16" href="secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="211,169,357,211"/>
-<area shape="rect" id="node17" href="enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1421,169,1571,211"/>
-<area shape="rect" id="node18" href="status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="1162,177,1345,203"/>
-<area shape="rect" id="node19" href="enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="1217,80,1359,121"/>
-<area shape="rect" id="node20" href="shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="1384,80,1592,121"/>
-<area shape="rect" id="node21" href="trusted__application_8h.html" title="asylo/platform/core\l/trusted_application.h" alt="" coords="1667,80,1823,121"/>
-<area shape="rect" id="node6" href="enclave__auth__context_8h.html" title="asylo/grpc/auth/enclave\l_auth_context.h" alt="" coords="731,169,901,211"/>
-<area shape="rect" id="node14" href="identity__expectation__matcher_8h.html" title="asylo/identity/identity\l_expectation_matcher.h" alt="" coords="483,169,656,211"/>
-<area shape="rect" id="node15" href="identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="586,259,739,300"/>
-<area shape="rect" id="node9" href="null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="270,348,437,404"/>
-<area shape="rect" id="node10" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="461,348,611,404"/>
-<area shape="rect" id="node12" href="null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="882,348,1049,404"/>
-<area shape="rect" id="node13" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="1073,348,1223,404"/>
+<area shape="rect" id="node2" href="nonce__generator_8h.html" title="asylo/crypto/nonce\l_generator.h" alt="" coords="53,80,194,121"/>
+<area shape="rect" id="node3" href="aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="92,259,251,300"/>
+<area shape="rect" id="node4" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="76,348,267,389"/>
+<area shape="rect" id="node5" href="status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="433,177,616,203"/>
+<area shape="rect" id="node6" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="591,259,752,300"/>
+<area shape="rect" id="node7" href="enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="587,348,756,389"/>
+<area shape="rect" id="node10" href="enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="1221,348,1378,389"/>
+<area shape="rect" id="node13" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="735,87,877,114"/>
+<area shape="rect" id="node17" href="secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="211,169,358,211"/>
+<area shape="rect" id="node18" href="enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1388,169,1539,211"/>
+<area shape="rect" id="node19" href="enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="1121,80,1264,121"/>
+<area shape="rect" id="node20" href="shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="1289,80,1497,121"/>
+<area shape="rect" id="node21" href="trusted__application_8h.html" title="asylo/platform/core\l/trusted_application.h" alt="" coords="1572,80,1728,121"/>
+<area shape="rect" id="node8" href="null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="496,437,663,493"/>
+<area shape="rect" id="node9" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="687,437,837,493"/>
+<area shape="rect" id="node11" href="null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="1124,437,1291,493"/>
+<area shape="rect" id="node12" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="1315,437,1465,493"/>
+<area shape="rect" id="node14" href="enclave__auth__context_8h.html" title="asylo/grpc/auth/enclave\l_auth_context.h" alt="" coords="843,169,1014,211"/>
+<area shape="rect" id="node15" href="identity__expectation__matcher_8h.html" title="asylo/identity/identity\l_expectation_matcher.h" alt="" coords="1038,169,1211,211"/>
+<area shape="rect" id="node16" href="identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="1077,259,1231,300"/>
 </map>
 </div>
 </div>

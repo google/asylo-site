@@ -8,6 +8,7 @@ order: 10
 layout: about
 type: markdown
 ---
+
 Asylo is an open framework for developing enclave applications. Asylo lets you
 take advantage of a range of emerging trusted execution environments, including
 both software and hardware isolation technologies.
@@ -22,6 +23,6 @@ Asylo provides:
 +   A choice of security backends.
 +   Portability of your application's source code across security backends.
 
-This is the initial release of Asylo. We want to expand Asylo's capabilities to
+Asylo is under active development. We want to expand Asylo's capabilities to
 meet more developers' needs. To do this, we plan to add support for more
 backends, libraries, and languages.

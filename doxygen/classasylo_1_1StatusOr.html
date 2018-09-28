@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Asylo: asylo::StatusOr&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="/_site/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -363,7 +363,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Move constructor. </p>
-<p>Sets <code>other</code> to contain a non-OK status with a <code>StatusError::INVALID</code> error code.</p>
+<p>Sets <code>other</code> to contain a non-OK status with a<code>StatusError::MOVED</code> error code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object to copy and set to a non-OK status. </td></tr>
@@ -467,7 +467,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Move-assignment operator. </p>
-<p>Sets <code>other</code> to contain a non-OK status with a <code>StatusError::INVALID</code> error code.</p>
+<p>Sets <code>other</code> to contain a non-OK status with a <code>StatusError::MOVED</code> error code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object to assign from and set to a non-OK status. </td></tr>
@@ -595,7 +595,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Moves and returns the internally-stored <code>T</code> value. </p>
-<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort. The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is invalidated after this call and will be updated to contain a non-OK status with a <code>StatusError::INVALID</code> error code.</p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort. The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is invalidated after this call and will be updated to contain a non-OK status with a <code>StatusError::MOVED</code> error code.</p>
 <dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
 
 </div>

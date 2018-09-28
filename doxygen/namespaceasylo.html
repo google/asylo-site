@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Asylo: asylo Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="/_site/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -226,6 +226,16 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a41b303e6a61ad2dddae522798de8322b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a41b303e6a61ad2dddae522798de8322b">kAesGcmSivNonceSize</a> = 12</td></tr>
 <tr class="separator:a41b303e6a61ad2dddae522798de8322b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1032c843094aa40800a8ba427f1a707d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a1032c843094aa40800a8ba427f1a707d">kValueMoveConstructorMsg</a> []</td></tr>
+<tr class="separator:a1032c843094aa40800a8ba427f1a707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addaf8c2e1f84c63c8d400f735a00db33"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#addaf8c2e1f84c63c8d400f735a00db33">kValueMoveAssignmentMsg</a> []</td></tr>
+<tr class="separator:addaf8c2e1f84c63c8d400f735a00db33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2173bc389d0a8ce045a05b7781382134"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a2173bc389d0a8ce045a05b7781382134">kStatusMoveConstructorMsg</a> []</td></tr>
+<tr class="separator:a2173bc389d0a8ce045a05b7781382134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1294ac18a4c566056585006189b8ef58"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a1294ac18a4c566056585006189b8ef58">kValueOrDieMovedMsg</a> [] = &quot;Value moved by <a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f">StatusOr::ValueOrDie</a>&quot;</td></tr>
+<tr class="separator:a1294ac18a4c566056585006189b8ef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d30b7316bacf1891cc572c0b8a5c709"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a8d30b7316bacf1891cc572c0b8a5c709">kStatusMoveAssignmentMsg</a> []</td></tr>
+<tr class="separator:a8d30b7316bacf1891cc572c0b8a5c709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="acb6845bbc7c89b991bb89df0dd8cb628"></a>
@@ -836,6 +846,76 @@ template&lt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr size_t asylo::kAesGcmSivNonceSize = 12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d30b7316bacf1891cc572c0b8a5c709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d30b7316bacf1891cc572c0b8a5c709">&#9670;&nbsp;</a></span>kStatusMoveAssignmentMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char asylo::kStatusMoveAssignmentMsg[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">    <span class="stringliteral">&quot;Status moved by StatusOr move assignment&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="a2173bc389d0a8ce045a05b7781382134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2173bc389d0a8ce045a05b7781382134">&#9670;&nbsp;</a></span>kStatusMoveConstructorMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char asylo::kStatusMoveConstructorMsg[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">    <span class="stringliteral">&quot;Status moved by StatusOr move constructor&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="addaf8c2e1f84c63c8d400f735a00db33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addaf8c2e1f84c63c8d400f735a00db33">&#9670;&nbsp;</a></span>kValueMoveAssignmentMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char asylo::kValueMoveAssignmentMsg[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">    <span class="stringliteral">&quot;Value moved by StatusOr move assignment&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="a1032c843094aa40800a8ba427f1a707d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1032c843094aa40800a8ba427f1a707d">&#9670;&nbsp;</a></span>kValueMoveConstructorMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char asylo::kValueMoveConstructorMsg[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">    <span class="stringliteral">&quot;Value moved by StatusOr move constructor&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="a1294ac18a4c566056585006189b8ef58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1294ac18a4c566056585006189b8ef58">&#9670;&nbsp;</a></span>kValueOrDieMovedMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char asylo::kValueOrDieMovedMsg[] = &quot;Value moved by <a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f">StatusOr::ValueOrDie</a>&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

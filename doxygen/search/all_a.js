@@ -9,8 +9,13 @@ var searchData=
   ['kmemblockname',['kMemBlockName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea621e9038c379a0d14aa590fb5df1e34a',1,'shared_name_kind.h']]],
   ['krunning',['kRunning',['../classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da2fc7fbf0d19294f85dd3880460dd3c0a',1,'asylo::TrustedApplication']]],
   ['ksocketname',['kSocketName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea1a35db811e8dd72628ca323f420a2b8b',1,'shared_name_kind.h']]],
+  ['kstatusmoveassignmentmsg',['kStatusMoveAssignmentMsg',['../namespaceasylo.html#a8d30b7316bacf1891cc572c0b8a5c709',1,'asylo']]],
+  ['kstatusmoveconstructormsg',['kStatusMoveConstructorMsg',['../namespaceasylo.html#a2173bc389d0a8ce045a05b7781382134',1,'asylo']]],
   ['ktimername',['kTimerName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afceab824b6eb0b4827cff6e96602198b601c',1,'shared_name_kind.h']]],
   ['kuninitialized',['kUninitialized',['../classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da518b13885544b3431069d8b44387de9c',1,'asylo::TrustedApplication']]],
   ['kunspecifiedname',['kUnspecifiedName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea7c9a44128c7112176129050b06b43e7e',1,'shared_name_kind.h']]],
-  ['kuserinitializing',['kUserInitializing',['../classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da26a2a57251e2f0aa4459947fae4e5ac9',1,'asylo::TrustedApplication']]]
+  ['kuserinitializing',['kUserInitializing',['../classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da26a2a57251e2f0aa4459947fae4e5ac9',1,'asylo::TrustedApplication']]],
+  ['kvaluemoveassignmentmsg',['kValueMoveAssignmentMsg',['../namespaceasylo.html#addaf8c2e1f84c63c8d400f735a00db33',1,'asylo']]],
+  ['kvaluemoveconstructormsg',['kValueMoveConstructorMsg',['../namespaceasylo.html#a1032c843094aa40800a8ba427f1a707d',1,'asylo']]],
+  ['kvalueordiemovedmsg',['kValueOrDieMovedMsg',['../namespaceasylo.html#a1294ac18a4c566056585006189b8ef58',1,'asylo']]]
 ];

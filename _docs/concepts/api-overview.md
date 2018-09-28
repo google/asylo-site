@@ -9,6 +9,7 @@ layout: docs
 type: markdown
 ---
 {% include home.html %}
+
 Asylo provides strong encapsulation around data and logic for developing and
 using an enclave. In the Asylo C++ API, an enclave application has trusted and
 untrusted components. The API has a central manager object for all hosted
@@ -26,10 +27,12 @@ The following are the main classes for developing and using an enclave.
     responsible for managing enclave lifetimes and shared resources between
     enclaves.
 
-{% include figure.html width='80%' ratio='55.26%' img='./img/message_passing_interface.png' alt='Message passing interface' title='Message passing interface' caption='Message passing interface' %}
-We refer to the process of switching from an untrusted execution environment to
-a trusted environment as _entering_ an enclave. Every enclave provides a limited
-number of entry points where trusted execution may begin or resume.
+    {% include figure.html width='80%' ratio='55.26%'
+    img='./img/message_passing_interface.png' alt='Message passing interface'
+    title='Message passing interface' caption='Message passing interface' %} We
+    refer to the process of switching from an untrusted execution environment to
+    a trusted environment as _entering_ an enclave. Every enclave provides a
+    limited number of entry points where trusted execution may begin or resume.
 
 ## Trusted environment
 
@@ -91,9 +94,9 @@ instances. This class is a friend class to `EnclaveClient`.
 Entering an enclave is analogous to making a system call. An enclave entry point
 implements a gateway to sensitive code with access to the enclave's resources.
 Arguments are copied into the enclave on entry and results are copied out on
-exit. The following is a snippet from our [Getting
-Started]({{home}}/docs/guides/quickstart.html) guide to writing your
-first Asylo application.
+exit. The following is a snippet from our
+[Getting Started]({{home}}/docs/guides/quickstart.html) guide to
+writing your first Asylo application.
 
 ```cpp
 int main(int argc, char *argv[]) {
@@ -176,8 +179,8 @@ We just saw how to initialize, run, and finalize an enclave using the Asylo SDK.
 These calls happen on the untrusted side of the enclave boundary. Now, let's
 take a look at the code on the trusted side. Building an enclave consists of
 deriving from the `TrustedApplication` class and overriding a number of virtual
-methods. Each method defines the logic to be invoked for an [enclave life
-cycle](#enclave-life-cycle) event.
+methods. Each method defines the logic to be invoked for an
+[enclave life cycle](#enclave-life-cycle) event.
 
 ```cpp
 class EnclaveDemo : public TrustedApplication {
