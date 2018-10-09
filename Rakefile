@@ -1,9 +1,7 @@
 require 'html-proofer'
 
 task :test do
-  sh "rm -fr _rakesite"
-  sh "mkdir _rakesite"
-  sh "bundle exec jekyll build --config _config.yml,_rake_config_override.yml"
+  sh "jekyll build -d /tmp/_site"
   typhoeus_configuration = {
   :timeout => 30,
 #  :verbose => true
@@ -26,6 +24,5 @@ task :test do
               ],
               :typhoeus => typhoeus_configuration,
             }
-  # TODO: enable after initial release
-  HTMLProofer.check_directory("./_rakesite", options).run
+  HTMLProofer.check_directory("/tmp/_site", options).run
 end
