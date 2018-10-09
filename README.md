@@ -19,24 +19,17 @@ To run the site locally with Docker, use the following command from the top leve
 `git clone https://github.com/google/asylo-site.git`)
 
 ```bash
-# First time: (slow)
-docker run --rm --label=asylo-jekyll --volume=$(pwd):/srv/jekyll -v $(pwd)/_site:$(pwd)/_site -it -p 127.0.0.1:4000:80 jekyll /jekyll:3.6.0 sh -c "bundle install && rake test && bundle exec jekyll serve --incremental --host 0.0.0.0"
-# Then open browser with url 127.0.0.1:4000 to see the change.
-# Subsequent, each time you want to see a new change and you stopped the previous run by ctrl+c: (much faster)
-docker start asylo-jekyll -a -i
-# Clean up, only needed if you won't be previewing website changes for a long time or you want to start over:
-docker rm asylo-jekyll
+docker run -it --rm -v ${PWD}:/srv/jekyll -p 4000:4000 jekyll/jekyll:pages \
+    jekyll serve -d /tmp/_site
+# Then open browser with url localhost:4000 to see the change.
 ```
 
-The `rake test` part is to make sure you are not introducing HTML errors or bad links, you should see
-
+Some tests are included to make sure you are not introducing HTML errors or bad
+links.
 ```bash
-HTML-Proofer finished successfully.
+docker run -it --rm -v ${PWD}:/srv/jekyll jekyll/jekyll:pages rake test
+# You should see "HTML-Proofer finished successfully" in the output.
 ```
-
-in the output
-
-> In some cases the `--incremental` may not work properly and you might have to remove it.
 
 Alternatively, if you just want to develop locally w/o Docker/Kubernetes/Minikube, you can try installing Jekyll locally.
 You may need to install other prerequisites manually (which is where using the docker image shines). Here's an example of doing
