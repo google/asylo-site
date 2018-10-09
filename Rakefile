@@ -10,7 +10,6 @@ task :test do
   }
   options = { :check_html => true,
               # :validation => { :report_missing_names => true, :report_invalid_tags => true },
-              :cache => { :timeframe => '2d'},
               :enforce_https => false, # we should turn this on eventually
               :directory_index_file => "index.html",
               :check_external_hash => false,
