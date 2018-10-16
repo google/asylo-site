@@ -13,6 +13,9 @@ The `build.sh` script fetches the Asylo SDK source from a given location,
 builds the documentation (unless given `-n` or `--nodocs`), and then
 builds the site in a docker container (unless given `-j` or `--nojekyll`).
 
+A `Dockerfile` is provided that builds a container image with the needed
+dependencies to run this script.
+
 To build documentation for the Asylo SDK already stored in `/opt/asylo/sdk`,
 run
 ```bash
