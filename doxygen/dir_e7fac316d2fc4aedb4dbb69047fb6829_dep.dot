@@ -1,0 +1,11 @@
+digraph "asylo/platform/core" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_01d4202cd1cdb36b79d5288c42fc7d28 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="platform" fontname="Helvetica", fontsize="10", URL="dir_01d4202cd1cdb36b79d5288c42fc7d28.html"]
+  dir_e7fac316d2fc4aedb4dbb69047fb6829 [shape=box, label="core", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e7fac316d2fc4aedb4dbb69047fb6829.html"];
+  }
+  dir_d76c6b9049ac6f6d284ddd4be15e6dfa [shape=box label="util" URL="dir_d76c6b9049ac6f6d284ddd4be15e6dfa.html"];
+  dir_e7fac316d2fc4aedb4dbb69047fb6829->dir_d76c6b9049ac6f6d284ddd4be15e6dfa [headlabel="5", labeldistance=1.5 headhref="dir_000008_000011.html"];
+}

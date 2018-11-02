@@ -7,7 +7,6 @@ var searchData=
   ['nonce_5fsize',['nonce_size',['../classasylo_1_1NonceGenerator.html#a63230ae92511372b403727d4ab610bdd',1,'asylo::NonceGenerator']]],
   ['noncegenerator',['NonceGenerator',['../classasylo_1_1NonceGenerator.html',1,'asylo::NonceGenerator&lt; Size &gt;'],['../classasylo_1_1NonceGenerator.html#a4211ceb4278085721e809046182c6007',1,'asylo::NonceGenerator::NonceGenerator()']]],
   ['noncegenerator_3c_20kaesgcmsivnoncesize_20_3e',['NonceGenerator&lt; kAesGcmSivNonceSize &gt;',['../classasylo_1_1NonceGenerator.html',1,'asylo']]],
-  ['not_5ffound',['NOT_FOUND',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644aa4d16e5f7cad014e8cf749bf7dceea5b',1,'asylo::error']]],
   ['null_5fassertion_5fgenerator_2eh',['null_assertion_generator.h',['../null__assertion__generator_8h.html',1,'']]],
   ['null_5fassertion_5fverifier_2eh',['null_assertion_verifier.h',['../null__assertion__verifier_8h.html',1,'']]],
   ['null_5fcredentials_5foptions_2eh',['null_credentials_options.h',['../null__credentials__options_8h.html',1,'']]],

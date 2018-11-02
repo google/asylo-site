@@ -79,7 +79,8 @@ var searchData=
   ['p_5fetimedout',['P_ETIMEDOUT',['../namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac96f0d595243685040afa975c0b1e8a5',1,'asylo::error']]],
   ['p_5fetxtbsy',['P_ETXTBSY',['../namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a718084ac1240ee3c2b1da156022d722f',1,'asylo::error']]],
   ['p_5fexdev',['P_EXDEV',['../namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a41631bde1de04dcceff5635f5ea8fcf3',1,'asylo::error']]],
-  ['permission_5fdenied',['PERMISSION_DENIED',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644a1414092e1d7c4422416ca889ca9766d3',1,'asylo::error']]],
+  ['peernullcredentialsoptions',['PeerNullCredentialsOptions',['../namespaceasylo.html#acf4324ed0a8827c59ee3f737173be7fa',1,'asylo']]],
+  ['peersgxlocalcredentialsoptions',['PeerSgxLocalCredentialsOptions',['../namespaceasylo.html#a8dc68a49014050276695e89b190eab7d',1,'asylo']]],
   ['posix_5ferror_5fspace_2eh',['posix_error_space.h',['../posix__error__space_8h.html',1,'']]],
   ['posixerror',['PosixError',['../namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9',1,'asylo::error']]],
   ['posixerrorspace',['PosixErrorSpace',['../classasylo_1_1error_1_1PosixErrorSpace.html',1,'asylo::error::PosixErrorSpace'],['../classasylo_1_1error_1_1PosixErrorSpace.html#ab70478691a100d6c6045d3107b97d653',1,'asylo::error::PosixErrorSpace::PosixErrorSpace()']]]

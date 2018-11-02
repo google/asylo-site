@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="asylo::EnclaveManagerOptions\l::ConfigServerConnectionAttributes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html",tooltip="Configuration server connection attributes. "];
+}

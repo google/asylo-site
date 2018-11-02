@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="asylo::LogMessageVoidify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classasylo_1_1LogMessageVoidify.html",tooltip="This class is used just to take an ostream type and make it a void type to satisify the ternary opera..."];
+}

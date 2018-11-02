@@ -17,7 +17,6 @@ var searchData=
   ['getname',['GetName',['../classasylo_1_1EnclaveManager.html#a2c402a5fb4bff66a54f7720c6a1a6e06',1,'asylo::EnclaveManager']]],
   ['getrecordprotocol',['GetRecordProtocol',['../classasylo_1_1EnclaveAuthContext.html#ac5f4b90b2e30f6722cb0ff9f0dd91e7c',1,'asylo::EnclaveAuthContext']]],
   ['getstate',['GetState',['../classasylo_1_1TrustedApplication.html#a50a6487856286b065e15eebf536167e4',1,'asylo::TrustedApplication']]],
-  ['googleerror',['GoogleError',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644',1,'asylo::error']]],
   ['googleerrorcode',['GoogleErrorCode',['../classasylo_1_1error_1_1ErrorSpace.html#afd5b02d48720bb72a51ee533ad4a44c5',1,'asylo::error::ErrorSpace::GoogleErrorCode()'],['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a303359a35e902e2839772816f5de9c98',1,'asylo::error::ErrorSpaceImplementationHelper::GoogleErrorCode()']]],
   ['googleerrorspace',['GoogleErrorSpace',['../classasylo_1_1error_1_1GoogleErrorSpace.html',1,'asylo::error::GoogleErrorSpace'],['../classasylo_1_1error_1_1GoogleErrorSpace.html#af27907019e4b95024110b15b030401fa',1,'asylo::error::GoogleErrorSpace::GoogleErrorSpace()']]]
 ];

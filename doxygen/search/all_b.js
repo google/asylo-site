@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['loadenclave',['LoadEnclave',['../classasylo_1_1EnclaveManager.html#ae09c64ddd4fed81dc0afefcc12f8951d',1,'asylo::EnclaveManager::LoadEnclave(const std::string &amp;name, const EnclaveLoader &amp;loader)'],['../classasylo_1_1EnclaveManager.html#a6e6752a31d56bee2e03f570772ad3847',1,'asylo::EnclaveManager::LoadEnclave(const std::string &amp;name, const EnclaveLoader &amp;loader, EnclaveConfig config)'],['../classasylo_1_1EnclaveLoader.html#aaa86debdc1e2db1f6a870386002f2ee4',1,'asylo::EnclaveLoader::LoadEnclave()']]],
+  ['loadenclave',['LoadEnclave',['../classasylo_1_1EnclaveManager.html#a7a1fc1d9d8bb0b3d33a68d190a163163',1,'asylo::EnclaveManager::LoadEnclave(const std::string &amp;name, const EnclaveLoader &amp;loader, void *base_address=nullptr)'],['../classasylo_1_1EnclaveManager.html#ab3e667a962d32e91d830ff95c461b291',1,'asylo::EnclaveManager::LoadEnclave(const std::string &amp;name, const EnclaveLoader &amp;loader, EnclaveConfig config, void *base_address=nullptr)'],['../classasylo_1_1EnclaveLoader.html#a185301ed0e950e8708f38b20ffb8289b',1,'asylo::EnclaveLoader::LoadEnclave(const std::string &amp;name) const'],['../classasylo_1_1EnclaveLoader.html#a23820f6b9b420fd92dd1ea2a4c20bdb1',1,'asylo::EnclaveLoader::LoadEnclave(const std::string &amp;name, void *base_address) const =0']]],
   ['log',['LOG',['../logging_8h.html#accad43a85d781d53381cd53a9894b6ae',1,'logging.h']]],
   ['log_5fif',['LOG_IF',['../logging_8h.html#a09f7d88282cf92c9f231270ac113e5c6',1,'logging.h']]],
   ['logging_2eh',['logging.h',['../logging_8h.html',1,'']]],

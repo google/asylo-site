@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cancelled',['CANCELLED',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644abda21ba8efbde39611ad156021b2d16e',1,'asylo::error']]],
   ['cangenerate',['CanGenerate',['../classasylo_1_1EnclaveAssertionGenerator.html#aacfc3b7a79527dba2c79e6d69d8280a2',1,'asylo::EnclaveAssertionGenerator::CanGenerate()'],['../classasylo_1_1NullAssertionGenerator.html#a745efc29b9c9abb128544b26b3eb89bb',1,'asylo::NullAssertionGenerator::CanGenerate()'],['../classasylo_1_1SgxLocalAssertionGenerator.html#a1f1c61f320c9a9aa14222ebf0e2e1140',1,'asylo::SgxLocalAssertionGenerator::CanGenerate()']]],
   ['canonicalcode',['CanonicalCode',['../classasylo_1_1Status.html#a05a5f86b8d9b3d0262d03d812f0f2dd4',1,'asylo::Status']]],
   ['canverify',['CanVerify',['../classasylo_1_1EnclaveAssertionVerifier.html#a11a669c28f64a376b4f5710a38708ac8',1,'asylo::EnclaveAssertionVerifier::CanVerify()'],['../classasylo_1_1NullAssertionVerifier.html#af853cca369a3bb69b9a37c3b61f46efd',1,'asylo::NullAssertionVerifier::CanVerify()'],['../classasylo_1_1SgxLocalAssertionVerifier.html#a2fdaff4b9f2e781197818f7833a1bf9d',1,'asylo::SgxLocalAssertionVerifier::CanVerify()']]],

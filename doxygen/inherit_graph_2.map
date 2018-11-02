@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="5,93,231,120"/>
-<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionGenerator.html" title="Defines an interface for assertion authorities that create assertion offers and generate assertions..." alt="" coords="279,64,513,91"/>
-<area shape="rect" id="node5" href="$classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions..." alt="" coords="289,123,503,149"/>
-<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="561,5,769,32"/>
-<area shape="rect" id="node4" href="$classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="576,57,755,98"/>
-<area shape="rect" id="node6" href="$classasylo_1_1NullAssertionVerifier.html" title="An implementation of the EnclaveAssertionVerifier interface for null assertions. " alt="" coords="571,123,759,149"/>
-<area shape="rect" id="node7" href="$classasylo_1_1SgxLocalAssertionVerifier.html" title="An implemention of the EnclaveAssertionVerifier interface for SGX local assertions. " alt="" coords="576,174,755,215"/>
-</map>

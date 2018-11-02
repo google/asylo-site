@@ -184,11 +184,11 @@ guide.
 
 To produce the final enclave binary, the signature must be combined with the
 original unsigned enclave binary using Intel's enclave signing tool. Copy the
-signature (generated in the [previous step](#step-3-sign-the-release-data))
-and the public key to `"${RELEASE_DIR}"`. Note that the following commands
-assume that `"${RELEASE_DIR}/release_data_to_sign.sig"` contains the signature
-and `"${RELEASE_DIR}/signing_key.pem.pub"` contains the public key corresponding
-to the private key used to produce the signature. `${BAZEL}` is defined as in
+signature (generated in the [previous step](#step-3-sign-the-release-data)) and
+the public key to `"${RELEASE_DIR}"`. Note that the following commands assume
+that `"${RELEASE_DIR}/release_data_to_sign.sig"` contains the signature and
+`"${RELEASE_DIR}/signing_key.pem.pub"` contains the public key corresponding to
+the private key used to produce the signature. `${BAZEL}` is defined as in
 [Step 2](#step-2-build-the-unsigned-enclave-using-the-asylo-toolchain).
 
 ```shell

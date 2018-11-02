@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['aborted',['ABORTED',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644a51ddc1b7e95d2d08f27929ac81b2d444',1,'asylo::error']]],
-  ['accepted_5fpeer_5fassertions',['accepted_peer_assertions',['../structasylo_1_1EnclaveCredentialsOptions.html#ae61ebd9b21fe957c4777f685d50a2af1',1,'asylo::EnclaveCredentialsOptions']]],
+  ['accepted_5fpeer_5fassertions',['accepted_peer_assertions',['../structasylo_1_1EnclaveCredentialsOptions.html#a925da1738609437efbbf1c2df73b51c3',1,'asylo::EnclaveCredentialsOptions']]],
   ['acquireresource',['AcquireResource',['../classasylo_1_1SharedResourceManager.html#a0b900bca8cc2dd24d94135a3752ff7a6',1,'asylo::SharedResourceManager']]],
+  ['add',['Add',['../structasylo_1_1EnclaveCredentialsOptions.html#ad17840319adbd66c6e20f884bb0db757',1,'asylo::EnclaveCredentialsOptions']]],
   ['additional_5fauthenticated_5fdata',['additional_authenticated_data',['../structasylo_1_1EnclaveCredentialsOptions.html#a1f48f58543b715f5fb4fb0aa0857c3ac',1,'asylo::EnclaveCredentialsOptions']]],
   ['address',['Address',['../classasylo_1_1SharedName.html#a59e58c1216011f16127e10eef5bea0c3',1,'asylo::SharedName']]],
   ['addtranslationmapentry',['AddTranslationMapEntry',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a8b972fee1b9e3d87f9fae8deed4391ad',1,'asylo::error::ErrorSpaceImplementationHelper']]],
@@ -10,7 +10,6 @@ var searchData=
   ['aesgcmsivcryptor',['AesGcmSivCryptor',['../classasylo_1_1AesGcmSivCryptor.html',1,'asylo::AesGcmSivCryptor'],['../classasylo_1_1AesGcmSivCryptor.html#ada9c4cc0c9bd31d105cba00ba98b7b9c',1,'asylo::AesGcmSivCryptor::AesGcmSivCryptor()']]],
   ['aesgcmsivnonce',['AesGcmSivNonce',['../classasylo_1_1AesGcmSivNonceGenerator.html#abddc3328d1141cc92567dd71415c8e31',1,'asylo::AesGcmSivNonceGenerator']]],
   ['aesgcmsivnoncegenerator',['AesGcmSivNonceGenerator',['../classasylo_1_1AesGcmSivNonceGenerator.html',1,'asylo']]],
-  ['already_5fexists',['ALREADY_EXISTS',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644aade7ccd6127415081c216650eee4f0dc',1,'asylo::error']]],
   ['asylo',['asylo',['../namespaceasylo.html',1,'']]],
   ['asylo_5fassign_5for_5freturn',['ASYLO_ASSIGN_OR_RETURN',['../status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f',1,'status_macros.h']]],
   ['asylo_5freturn_5fif_5ferror',['ASYLO_RETURN_IF_ERROR',['../status__macros_8h.html#a884b0600610551e91852b3bc96c732c4',1,'status_macros.h']]],

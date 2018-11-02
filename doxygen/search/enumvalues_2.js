@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['data_5floss',['DATA_LOSS',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644a2bbc0215d6a6d864b412770f8a729a5f',1,'asylo::error']]],
-  ['deadline_5fexceeded',['DEADLINE_EXCEEDED',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644a8b28e0b5a6bc9d8a317fefe8c141c3ad',1,'asylo::error']]]
+  ['info',['INFO',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da748005382152808a72b1a9177d9dc806',1,'logging.h']]]
 ];

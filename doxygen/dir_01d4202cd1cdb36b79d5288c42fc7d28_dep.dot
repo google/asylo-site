@@ -1,0 +1,15 @@
+digraph "asylo/platform" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_edc23f2ec6b899c33daf3900f962a909 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="asylo" fontname="Helvetica", fontsize="10", URL="dir_edc23f2ec6b899c33daf3900f962a909.html"]
+  subgraph clusterdir_01d4202cd1cdb36b79d5288c42fc7d28 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_01d4202cd1cdb36b79d5288c42fc7d28.html"];
+    dir_01d4202cd1cdb36b79d5288c42fc7d28 [shape=plaintext label="platform"];
+    dir_e7fac316d2fc4aedb4dbb69047fb6829 [shape=box label="core" color="black" fillcolor="white" style="filled" URL="dir_e7fac316d2fc4aedb4dbb69047fb6829.html"];
+  }
+  }
+  dir_d76c6b9049ac6f6d284ddd4be15e6dfa [shape=box label="util" URL="dir_d76c6b9049ac6f6d284ddd4be15e6dfa.html"];
+  dir_e7fac316d2fc4aedb4dbb69047fb6829->dir_d76c6b9049ac6f6d284ddd4be15e6dfa [headlabel="5", labeldistance=1.5 headhref="dir_000008_000011.html"];
+}

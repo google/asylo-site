@@ -1,0 +1,15 @@
+digraph "asylo/grpc" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_edc23f2ec6b899c33daf3900f962a909 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="asylo" fontname="Helvetica", fontsize="10", URL="dir_edc23f2ec6b899c33daf3900f962a909.html"]
+  subgraph clusterdir_b112826791527b379c675cf44df6a58b {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_b112826791527b379c675cf44df6a58b.html"];
+    dir_b112826791527b379c675cf44df6a58b [shape=plaintext label="grpc"];
+    dir_be5a00c19774a2a10af2fa23b7a192b9 [shape=box label="auth" color="black" fillcolor="white" style="filled" URL="dir_be5a00c19774a2a10af2fa23b7a192b9.html"];
+  }
+  }
+  dir_d76c6b9049ac6f6d284ddd4be15e6dfa [shape=box label="util" URL="dir_d76c6b9049ac6f6d284ddd4be15e6dfa.html"];
+  dir_be5a00c19774a2a10af2fa23b7a192b9->dir_d76c6b9049ac6f6d284ddd4be15e6dfa [headlabel="1", labeldistance=1.5 headhref="dir_000003_000011.html"];
+}

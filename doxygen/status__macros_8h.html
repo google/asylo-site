@@ -78,10 +78,6 @@ Include dependency graph for status_macros.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="status__macros_8h__incl.png" border="0" usemap="#asylo_2util_2status__macros_8h" alt=""/></div>
 <map name="asylo_2util_2status__macros_8h" id="asylo_2util_2status__macros_8h">
-<area shape="rect" id="node3" href="status_8h.html" title="asylo/util/status.h" alt="" coords="803,155,931,181"/>
-<area shape="rect" id="node15" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1188,80,1329,107"/>
-<area shape="rect" id="node9" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="481,237,649,263"/>
-<area shape="rect" id="node16" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="1462,155,1599,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -89,15 +85,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="status__macros_8h__dep__incl.png" border="0" usemap="#asylo_2util_2status__macros_8hdep" alt=""/></div>
 <map name="asylo_2util_2status__macros_8hdep" id="asylo_2util_2status__macros_8hdep">
-<area shape="rect" id="node2" href="aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="32,80,191,121"/>
-<area shape="rect" id="node4" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="224,80,385,121"/>
-<area shape="rect" id="node3" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="5,169,196,211"/>
-<area shape="rect" id="node5" href="enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="220,169,389,211"/>
-<area shape="rect" id="node8" href="enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="414,169,571,211"/>
-<area shape="rect" id="node6" href="null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="40,259,207,315"/>
-<area shape="rect" id="node7" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="231,259,381,315"/>
-<area shape="rect" id="node9" href="null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="408,259,575,315"/>
-<area shape="rect" id="node10" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="599,259,749,315"/>
 </map>
 </div>
 </div>
@@ -159,7 +146,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                       \</div><div class="line">  const ::asylo::Status _asylo_status_to_verify = (expr);  \</div><div class="line">  if (ABSL_PREDICT_FALSE(!_asylo_status_to_verify.ok())) { \</div><div class="line">    return _asylo_status_to_verify;                        \</div><div class="line">  }                                                        \</div><div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                       \</div><div class="line">  const <span class="keyword">auto</span> _asylo_status_to_verify = (expr);             \</div><div class="line">  if (ABSL_PREDICT_FALSE(!_asylo_status_to_verify.ok())) { \</div><div class="line">    return _asylo_status_to_verify;                        \</div><div class="line">  }                                                        \</div><div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div></div><!-- fragment -->
 <p>Evaluates an expression that produces an <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">asylo::Status</a></code>. </p>
 <p>If the status is non-OK, returns it from the current function.</p>
 <p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1Status.html">::asylo::Status</a> MultiStepFunction() {</div><div class="line">  <a class="code" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(Function(args...));</div><div class="line">  <a class="code" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(foo.Method(args...));</div><div class="line">  return ::asylo::Status::OkStatus();</div><div class="line">}</div></div><!-- fragment --> 

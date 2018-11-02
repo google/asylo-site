@@ -1,5 +1,0 @@
-<map id="asylo::EnclaveAssertionVerifier" name="asylo::EnclaveAssertionVerifier">
-<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionVerifier.html" title="An implementation of the EnclaveAssertionVerifier interface for null assertions. " alt="" coords="5,162,193,189"/>
-<area shape="rect" id="node4" href="$classasylo_1_1SgxLocalAssertionVerifier.html" title="An implemention of the EnclaveAssertionVerifier interface for SGX local assertions. " alt="" coords="218,155,397,196"/>
-<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="91,5,316,32"/>
-</map>

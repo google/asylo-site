@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['googleerror',['GoogleError',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644',1,'asylo::error']]]
+  ['logseverity',['LogSeverity',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d',1,'logging.h']]]
 ];

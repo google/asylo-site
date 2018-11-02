@@ -1,7 +1,0 @@
-<map id="asylo::error::ErrorSpace" name="asylo::error::ErrorSpace">
-<area shape="rect" id="node2" href="$classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="An intermediate template class that to help define an ErrorSpace subclass. " alt="" coords="224,5,395,61"/>
-<area shape="rect" id="node3" href="$classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="asylo::error::ErrorSpace\lImplementationHelper\&lt;\l GoogleErrorSpace \&gt;" alt="" coords="224,85,395,141"/>
-<area shape="rect" id="node5" href="$classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="asylo::error::ErrorSpace\lImplementationHelper\&lt;\l PosixErrorSpace \&gt;" alt="" coords="224,165,395,221"/>
-<area shape="rect" id="node4" href="$classasylo_1_1error_1_1GoogleErrorSpace.html" title="The implementation of the ErrorSpace interface for the GoogleError canonical error space..." alt="" coords="443,93,619,134"/>
-<area shape="rect" id="node6" href="$classasylo_1_1error_1_1PosixErrorSpace.html" title="An implementation of the ErrorSpace interface for POSIX error codes. " alt="" coords="449,173,613,214"/>
-</map>

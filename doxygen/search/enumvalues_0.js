@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['aborted',['ABORTED',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644a51ddc1b7e95d2d08f27929ac81b2d444',1,'asylo::error']]],
-  ['already_5fexists',['ALREADY_EXISTS',['../namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644aade7ccd6127415081c216650eee4f0dc',1,'asylo::error']]]
+  ['error',['ERROR',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90',1,'logging.h']]]
 ];

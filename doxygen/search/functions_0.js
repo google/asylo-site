@@ -1,6 +1,7 @@
 var searchData=
 [
   ['acquireresource',['AcquireResource',['../classasylo_1_1SharedResourceManager.html#a0b900bca8cc2dd24d94135a3752ff7a6',1,'asylo::SharedResourceManager']]],
+  ['add',['Add',['../structasylo_1_1EnclaveCredentialsOptions.html#ad17840319adbd66c6e20f884bb0db757',1,'asylo::EnclaveCredentialsOptions']]],
   ['address',['Address',['../classasylo_1_1SharedName.html#a59e58c1216011f16127e10eef5bea0c3',1,'asylo::SharedName']]],
   ['addtranslationmapentry',['AddTranslationMapEntry',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a8b972fee1b9e3d87f9fae8deed4391ad',1,'asylo::error::ErrorSpaceImplementationHelper']]],
   ['aesgcmsivcryptor',['AesGcmSivCryptor',['../classasylo_1_1AesGcmSivCryptor.html#ada9c4cc0c9bd31d105cba00ba98b7b9c',1,'asylo::AesGcmSivCryptor']]],

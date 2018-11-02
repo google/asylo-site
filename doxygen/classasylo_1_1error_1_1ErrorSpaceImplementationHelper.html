@@ -81,7 +81,6 @@ Inheritance diagram for asylo::error::ErrorSpaceImplementationHelper&lt; ErrorSp
 <div class="dyncontent">
 <div class="center"><img src="classasylo_1_1error_1_1ErrorSpaceImplementationHelper__inherit__graph.png" border="0" usemap="#asylo_1_1error_1_1ErrorSpaceImplementationHelper_3_01ErrorSpaceT_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="asylo_1_1error_1_1ErrorSpaceImplementationHelper_3_01ErrorSpaceT_01_4_inherit__map" id="asylo_1_1error_1_1ErrorSpaceImplementationHelper_3_01ErrorSpaceT_01_4_inherit__map">
-<area shape="rect" id="node2" href="classasylo_1_1error_1_1ErrorSpace.html" title="All implementations of error spaces are derived from this abstract class. " alt="" coords="5,5,176,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -89,7 +88,6 @@ Collaboration diagram for asylo::error::ErrorSpaceImplementationHelper&lt; Error
 <div class="dyncontent">
 <div class="center"><img src="classasylo_1_1error_1_1ErrorSpaceImplementationHelper__coll__graph.png" border="0" usemap="#asylo_1_1error_1_1ErrorSpaceImplementationHelper_3_01ErrorSpaceT_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="asylo_1_1error_1_1ErrorSpaceImplementationHelper_3_01ErrorSpaceT_01_4_coll__map" id="asylo_1_1error_1_1ErrorSpaceImplementationHelper_3_01ErrorSpaceT_01_4_coll__map">
-<area shape="rect" id="node2" href="classasylo_1_1error_1_1ErrorSpace.html" title="All implementations of error spaces are derived from this abstract class. " alt="" coords="5,5,176,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -98,7 +96,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2e6446c8b3117f9eb16547fd8c76a172"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a2e6446c8b3117f9eb16547fd8c76a172">ErrorSpaceImplementationHelper</a> (const std::string &amp;space_name, const std::string &amp;default_error_string=&quot;Unrecognized Code&quot;)</td></tr>
 <tr class="memdesc:a2e6446c8b3117f9eb16547fd8c76a172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html" title="An intermediate template class that to help define an ErrorSpace subclass. ">ErrorSpaceImplementationHelper</a> and registers it as <code>space_name</code>.  <a href="#a2e6446c8b3117f9eb16547fd8c76a172">More...</a><br /></td></tr>
 <tr class="separator:a2e6446c8b3117f9eb16547fd8c76a172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b972fee1b9e3d87f9fae8deed4391ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a8b972fee1b9e3d87f9fae8deed4391ad">AddTranslationMapEntry</a> (int code, const std::string &amp;error_string, <a class="el" href="namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644">GoogleError</a> google_error_code)</td></tr>
+<tr class="memitem:a8b972fee1b9e3d87f9fae8deed4391ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a8b972fee1b9e3d87f9fae8deed4391ad">AddTranslationMapEntry</a> (int code, const std::string &amp;error_string, GoogleError google_error_code)</td></tr>
 <tr class="memdesc:a8b972fee1b9e3d87f9fae8deed4391ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an interpretation of an error code as both a string and GoogleError.  <a href="#a8b972fee1b9e3d87f9fae8deed4391ad">More...</a><br /></td></tr>
 <tr class="separator:a8b972fee1b9e3d87f9fae8deed4391ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54565ff43ad0553757be650e1156567"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#aa54565ff43ad0553757be650e1156567">SpaceName</a> () const override</td></tr>
@@ -107,7 +105,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aaf02094bc6281bff78dc15b508694f39"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#aaf02094bc6281bff78dc15b508694f39">String</a> (int code) const override</td></tr>
 <tr class="memdesc:aaf02094bc6281bff78dc15b508694f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that describes the error code within the space.  <a href="#aaf02094bc6281bff78dc15b508694f39">More...</a><br /></td></tr>
 <tr class="separator:aaf02094bc6281bff78dc15b508694f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a303359a35e902e2839772816f5de9c98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644">GoogleError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a303359a35e902e2839772816f5de9c98">GoogleErrorCode</a> (int code) const override</td></tr>
+<tr class="memitem:a303359a35e902e2839772816f5de9c98"><td class="memItemLeft" align="right" valign="top">GoogleError&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a303359a35e902e2839772816f5de9c98">GoogleErrorCode</a> (int code) const override</td></tr>
 <tr class="memdesc:a303359a35e902e2839772816f5de9c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts <code>code</code> to an appropriate value in the GoogleError enum.  <a href="#a303359a35e902e2839772816f5de9c98">More...</a><br /></td></tr>
 <tr class="separator:a303359a35e902e2839772816f5de9c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -208,7 +206,7 @@ template&lt;typename ErrorSpaceT&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644">GoogleError</a>&#160;</td>
+          <td class="paramtype">GoogleError&#160;</td>
           <td class="paramname"><em>google_error_code</em>&#160;</td>
         </tr>
         <tr>
@@ -248,7 +246,7 @@ template&lt;typename ErrorSpaceT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceasylo_1_1error.html#a66173406b585ae306a7156b4be916644">GoogleError</a> <a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html">asylo::error::ErrorSpaceImplementationHelper</a>&lt; ErrorSpaceT &gt;::GoogleErrorCode </td>
+          <td class="memname">GoogleError <a class="el" href="classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html">asylo::error::ErrorSpaceImplementationHelper</a>&lt; ErrorSpaceT &gt;::GoogleErrorCode </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>code</em></td><td>)</td>

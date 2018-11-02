@@ -92,22 +92,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="logging_8h__dep__incl.png" border="0" usemap="#asylo_2util_2logging_8hdep" alt=""/></div>
 <map name="asylo_2util_2logging_8hdep" id="asylo_2util_2logging_8hdep">
-<area shape="rect" id="node2" href="aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="5,244,164,285"/>
-<area shape="rect" id="node4" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="497,80,638,107"/>
-<area shape="rect" id="node3" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="99,333,289,375"/>
-<area shape="rect" id="node5" href="status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="101,162,284,189"/>
-<area shape="rect" id="node6" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="605,244,767,285"/>
-<area shape="rect" id="node7" href="enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="489,333,659,375"/>
-<area shape="rect" id="node10" href="enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="722,333,879,375"/>
-<area shape="rect" id="node13" href="enclave__auth__context_8h.html" title="asylo/grpc/auth/enclave\l_auth_context.h" alt="" coords="359,155,530,196"/>
-<area shape="rect" id="node14" href="identity__expectation__matcher_8h.html" title="asylo/identity/identity\l_expectation_matcher.h" alt="" coords="882,155,1055,196"/>
-<area shape="rect" id="node15" href="identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="953,244,1107,285"/>
-<area shape="rect" id="node16" href="secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="229,244,375,285"/>
-<area shape="rect" id="node17" href="enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="656,155,807,196"/>
-<area shape="rect" id="node8" href="null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="320,423,487,479"/>
-<area shape="rect" id="node9" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="511,423,661,479"/>
-<area shape="rect" id="node11" href="null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="711,423,877,479"/>
-<area shape="rect" id="node12" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="901,423,1052,479"/>
 </map>
 </div>
 </div>
@@ -171,7 +155,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a7e03ec13560fa94a8fea569960d7efc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#a7e03ec13560fa94a8fea569960d7efc6">CHECK_GT</a>(val1,  val2)&#160;&#160;&#160;<a class="el" href="logging_8h.html#a5e079236bd9b8ce194b290a4f4e5bbcb">CHECK_OP</a>(Check_GT, &gt;, val1, val2)</td></tr>
 <tr class="memdesc:a7e03ec13560fa94a8fea569960d7efc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a <a class="el" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae" title="Creates a message and logs it to file. ">LOG(FATAL)</a> unless <code>val1</code> is greater than <code>val2</code>.  <a href="#a7e03ec13560fa94a8fea569960d7efc6">More...</a><br /></td></tr>
 <tr class="separator:a7e03ec13560fa94a8fea569960d7efc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4f4dc044a2ed1eb76fac50c769973fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#ab4f4dc044a2ed1eb76fac50c769973fa">CHECK_NOTNULL</a>(val)&#160;&#160;&#160;CheckNotNull(__FILE__, __LINE__, &quot;'&quot; #val &quot;' Must be non NULL&quot;, (val))</td></tr>
+<tr class="memitem:ab4f4dc044a2ed1eb76fac50c769973fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#ab4f4dc044a2ed1eb76fac50c769973fa">CHECK_NOTNULL</a>(val)&#160;&#160;&#160;<a class="el" href="namespaceasylo.html#a51fcb0ae5791d14eb8ef1c3a405dd0b7">asylo::CheckNotNull</a>(__FILE__, __LINE__, &quot;'&quot; #val &quot;' Must be non NULL&quot;, (val))</td></tr>
 <tr class="memdesc:ab4f4dc044a2ed1eb76fac50c769973fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that the argument is not null, and returns it.  <a href="#ab4f4dc044a2ed1eb76fac50c769973fa">More...</a><br /></td></tr>
 <tr class="separator:ab4f4dc044a2ed1eb76fac50c769973fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -428,7 +412,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">val</td><td>)</td>
-          <td>&#160;&#160;&#160;CheckNotNull(__FILE__, __LINE__, &quot;'&quot; #val &quot;' Must be non NULL&quot;, (val))</td>
+          <td>&#160;&#160;&#160;<a class="el" href="namespaceasylo.html#a51fcb0ae5791d14eb8ef1c3a405dd0b7">asylo::CheckNotNull</a>(__FILE__, __LINE__, &quot;'&quot; #val &quot;' Must be non NULL&quot;, (val))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -540,7 +524,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">while</span> (std::unique_ptr&lt;std::string&gt; _result = std::unique_ptr&lt;std::string&gt;(name##Impl( \</div><div class="line">             GetReferenceableValue(val1), GetReferenceableValue(val2),         \</div><div class="line">             #val1 <span class="stringliteral">&quot; &quot;</span> #op <span class="stringliteral">&quot; &quot;</span> #val2)))                                        \</div><div class="line">  log(__FILE__, __LINE__, *_result).stream()</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">while</span> (std::unique_ptr&lt;std::string&gt; _result = std::unique_ptr&lt;std::string&gt;( \</div><div class="line">             asylo::name##Impl(asylo::GetReferenceableValue(val1),  \</div><div class="line">                               asylo::GetReferenceableValue(val2),  \</div><div class="line">                               #val1 <span class="stringliteral">&quot; &quot;</span> #op <span class="stringliteral">&quot; &quot;</span> #val2)))           \</div><div class="line">  log(__FILE__, __LINE__, *_result).stream()</div></div><!-- fragment -->
 <p>Compares <code>val1</code> and <code>val2</code> with <code>op</code>, and does <code>log</code> if false. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
