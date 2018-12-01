@@ -14,6 +14,7 @@ var searchData=
   ['getclientforsignal',['GetClientForSignal',['../classasylo_1_1EnclaveSignalDispatcher.html#ae5d86191dc0f1f27cf8532942f5c0fd3',1,'asylo::EnclaveSignalDispatcher']]],
   ['geterrorspace',['GetErrorSpace',['../namespaceasylo_1_1error.html#a87efeadaadc07f636697e4c378cc8add',1,'asylo::error::GetErrorSpace(ErrorSpaceAdlTag&lt;::asylo::error::GoogleError &gt; tag)'],['../namespaceasylo_1_1error.html#aa4f261361e617d8be57d71cfc78d1539',1,'asylo::error::GetErrorSpace(ErrorSpaceAdlTag&lt; PosixError &gt; tag)']]],
   ['getinstance',['GetInstance',['../classasylo_1_1EnclaveSignalDispatcher.html#a18ab9c110ed4d8f08853e9ec698330a0',1,'asylo::EnclaveSignalDispatcher::GetInstance()'],['../classasylo_1_1error_1_1GoogleErrorSpace.html#a1f3ec8000a0d4ac72cf33db130aaba1d',1,'asylo::error::GoogleErrorSpace::GetInstance()'],['../classasylo_1_1error_1_1PosixErrorSpace.html#af08182ea4594e015b1ca20456969701c',1,'asylo::error::PosixErrorSpace::GetInstance()']]],
+  ['getloaderfromclient',['GetLoaderFromClient',['../classasylo_1_1EnclaveManager.html#ac3c11353c2e65e623eec3fdd35b6d291',1,'asylo::EnclaveManager']]],
   ['getname',['GetName',['../classasylo_1_1EnclaveManager.html#a2c402a5fb4bff66a54f7720c6a1a6e06',1,'asylo::EnclaveManager']]],
   ['getrecordprotocol',['GetRecordProtocol',['../classasylo_1_1EnclaveAuthContext.html#ac5f4b90b2e30f6722cb0ff9f0dd91e7c',1,'asylo::EnclaveAuthContext']]],
   ['getstate',['GetState',['../classasylo_1_1TrustedApplication.html#a50a6487856286b065e15eebf536167e4',1,'asylo::TrustedApplication']]],

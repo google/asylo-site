@@ -5,7 +5,7 @@ location: https://asylo.dev/docs/reference/proto/asylo.enclave.v1.html
 layout: protoc-gen-docs
 generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/enclave.html
-number_of_entries: 8
+number_of_entries: 9
 ---
 <p>This file defines the messages for communicating with a trusted application&rsquo;s
 entry-points: <a href="#EnclaveConfig">initialization</a>, (re-entrant)
@@ -106,6 +106,15 @@ here.</p>
 
 </td>
 </tr>
+<tr id="EnclaveConfig-enable_fork">
+<td><code>enable_fork</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Whether fork (which reserves an extra thread inside the enclave) is
+enabled.</p>
+
+</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -140,6 +149,14 @@ back to an untrusted caller.</p>
 <td>
 <p>Contains status information for the Run invocation. A non-OK status may
 indicate an error in either trusted or untrusted space.</p>
+
+</td>
+</tr>
+<tr id="EnclaveOutput-snapshot_layout">
+<td><code>snapshot_layout</code></td>
+<td><code><a href="#SnapshotLayout">SnapshotLayout</a></code></td>
+<td>
+<p>Contains the snapshot layout information for the take_snapshot invocation.</p>
 
 </td>
 </tr>
@@ -276,6 +293,108 @@ this level will be logged, others will be ignored.</p>
 <td><code>string</code></td>
 <td>
 <p>Directory under which to store enclave log files. Default: <code>&quot;/tmp/&quot;</code></p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="SnapshotLayout">SnapshotLayout</h2>
+<section>
+<p>A snapshot layout message that contains the base address and size of an
+enclave data/bss section, heap, and stack for the thread which took the
+snapshot.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SnapshotLayout-data_base">
+<td><code>data_base</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Start address of the data section in the snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-data_size">
+<td><code>data_size</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Size of the data section in the snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-bss_base">
+<td><code>bss_base</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Start address of the bss section in the snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-bss_size">
+<td><code>bss_size</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Size of the bss section in the snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-heap_base">
+<td><code>heap_base</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Start address of the heap in the snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-heap_size">
+<td><code>heap_size</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Size of the heap in the snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-thread_base">
+<td><code>thread_base</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Start address of the thread related information of thread which took the
+snpashot, including the stack gurad, stack last pointer, etc.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-thread_size">
+<td><code>thread_size</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Size of the thread related information of the thread which took the
+snapshot, including the stack guard, stack last pointer, etc.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-stack_base">
+<td><code>stack_base</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Start address of the stack of the thread which took the snapshot, in the
+snapshot in untrusted memory.</p>
+
+</td>
+</tr>
+<tr id="SnapshotLayout-stack_size">
+<td><code>stack_size</code></td>
+<td><code>uint64</code></td>
+<td>
+<p>Size of the stack of the thread which took the snapshot, in the snapshot in
+untrusted memory.</p>
 
 </td>
 </tr>
