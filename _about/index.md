@@ -1,6 +1,6 @@
 ---
 title: About Asylo
-overview: All about Asylo.
+overview: Get a bit more in-depth info about the Asylo project.
 
 order: 15
 

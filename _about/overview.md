@@ -1,6 +1,6 @@
 ---
 title: Asylo Overview
-overview: An introduction to the Asylo framework
+overview: Get a better understanding of the problem space and how Asylo is designed to enable solutions.
 
 location: /_about/overview.md
 order: 20
