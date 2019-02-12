@@ -63,8 +63,7 @@ digraph "asylo/identity/null_identity/null_assertion_generator.h"
   Node27 [label="asylo/util/status_macros.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$status__macros_8h.html"];
   Node27 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node28 [label="absl/base/optimization.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node27 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node27 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 [label="asylo/util/statusor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$statusor_8h.html"];
   Node29 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -81,7 +80,6 @@ digraph "asylo/identity/null_identity/null_assertion_generator.h"
   Node30 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

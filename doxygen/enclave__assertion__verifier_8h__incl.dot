@@ -58,8 +58,7 @@ digraph "asylo/identity/enclave_assertion_verifier.h"
   Node25 [label="asylo/util/status_macros.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$status__macros_8h.html"];
   Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node26 [label="absl/base/optimization.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node25 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 [label="asylo/util/statusor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$statusor_8h.html"];
   Node27 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -76,7 +75,6 @@ digraph "asylo/identity/enclave_assertion_verifier.h"
   Node28 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -88,8 +88,8 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a185301ed0e950e8708f38b20ffb8289b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; std::unique_ptr&lt; <a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveLoader.html#a185301ed0e950e8708f38b20ffb8289b">LoadEnclave</a> (const std::string &amp;name) const</td></tr>
 <tr class="separator:a185301ed0e950e8708f38b20ffb8289b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85a0009195fa4c5194e3e95fd4126c88"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; std::unique_ptr&lt; <a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveLoader.html#a85a0009195fa4c5194e3e95fd4126c88">LoadEnclave</a> (const std::string &amp;name, void *base_address, const EnclaveConfig &amp;config) const =0</td></tr>
-<tr class="separator:a85a0009195fa4c5194e3e95fd4126c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d5f3463c8711ce1544c5926ee7d4f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; std::unique_ptr&lt; <a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveLoader.html#a58d5f3463c8711ce1544c5926ee7d4f4">LoadEnclave</a> (const std::string &amp;name, void *base_address, const size_t enclave_size, const EnclaveConfig &amp;config) const =0</td></tr>
+<tr class="separator:a58d5f3463c8711ce1544c5926ee7d4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5ad79ff0c8d2774aba550bc261bd436"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; std::unique_ptr&lt; <a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveLoader.html#ae5ad79ff0c8d2774aba550bc261bd436">Copy</a> () const =0</td></tr>
 <tr class="separator:ae5ad79ff0c8d2774aba550bc261bd436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -179,8 +179,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a85a0009195fa4c5194e3e95fd4126c88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85a0009195fa4c5194e3e95fd4126c88">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[2/2]</span></h2>
+<a id="a58d5f3463c8711ce1544c5926ee7d4f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d5f3463c8711ce1544c5926ee7d4f4">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,6 +199,12 @@ Friends</h2></td></tr>
           <td></td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>base_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>enclave_size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -71,8 +71,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;absl/base/optimization.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="status_8h_source.html">asylo/util/status.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="statusor_8h_source.html">asylo/util/statusor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for status_macros.h:</div>
 <div class="dyncontent">
@@ -93,10 +91,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a884b0600610551e91852b3bc96c732c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(expr)</td></tr>
-<tr class="memdesc:a884b0600610551e91852b3bc96c732c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an expression that produces an <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">asylo::Status</a></code>.  <a href="#a884b0600610551e91852b3bc96c732c4">More...</a><br /></td></tr>
+<tr class="memdesc:a884b0600610551e91852b3bc96c732c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an expression that produces an <code>Status</code>-like object with a <code>.ok()</code> method.  <a href="#a884b0600610551e91852b3bc96c732c4">More...</a><br /></td></tr>
 <tr class="separator:a884b0600610551e91852b3bc96c732c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed04a682d62384eea1b02f6eec08d30f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f">ASYLO_ASSIGN_OR_RETURN</a>(lhs,  rexpr)</td></tr>
-<tr class="memdesc:aed04a682d62384eea1b02f6eec08d30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an expression <code>rexpr</code> that returns an <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">asylo::StatusOr</a>&lt;T&gt;</code>.  <a href="#aed04a682d62384eea1b02f6eec08d30f">More...</a><br /></td></tr>
+<tr class="memdesc:aed04a682d62384eea1b02f6eec08d30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an expression <code>rexpr</code> that returns a <code>StatusOr</code>-like object with <code>.ok()</code>, <code>.status()</code>, and <code>.ValueOrDie()</code> methods.  <a href="#aed04a682d62384eea1b02f6eec08d30f">More...</a><br /></td></tr>
 <tr class="separator:aed04a682d62384eea1b02f6eec08d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -126,8 +124,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                      \</div><div class="line">  auto _asylo_status_or_value = (rexpr);                  \</div><div class="line">  if (ABSL_PREDICT_FALSE(!_asylo_status_or_value.ok())) { \</div><div class="line">    return _asylo_status_or_value.status();               \</div><div class="line">  }                                                       \</div><div class="line">  lhs = std::move(_asylo_status_or_value).ValueOrDie();   \</div><div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div></div><!-- fragment -->
-<p>Evaluates an expression <code>rexpr</code> that returns an <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">asylo::StatusOr</a>&lt;T&gt;</code>. </p>
-<p>If the result is OK, moves its value into the variable defined by <code>lhs</code>, otherwise returns the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">asylo::Status</a></code> from the current function. The error <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">asylo::Status</a></code> is returned unchanged. If there is an error, <code>lhs</code> is not evaluated; thus any side effects that <code>lhs</code> may have only occur in the success case.</p>
+<p>Evaluates an expression <code>rexpr</code> that returns a <code>StatusOr</code>-like object with <code>.ok()</code>, <code>.status()</code>, and <code>.ValueOrDie()</code> methods. </p>
+<p>If the result is OK, moves its value into the variable defined by <code>lhs</code>, otherwise returns the result of the <code>.status()</code> from the current function. The error result of <code>.status</code> is returned unchanged. If there is an error, <code>lhs</code> is not evaluated: thus any side effects of evaluating <code>lhs</code> will only occur if <code>rexpr.ok()</code> is true.</p>
 <p>Interface: </p><div class="fragment"><div class="line"><a class="code" href="status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f">ASYLO_ASSIGN_OR_RETURN</a>(lhs, rexpr)</div></div><!-- fragment --><p>Example: Assigning to an existing variable: </p><div class="fragment"><div class="line">ValueType value;</div><div class="line"><a class="code" href="status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f">ASYLO_ASSIGN_OR_RETURN</a>(value, MaybeGetValue(arg));</div></div><!-- fragment --><p>Example: Assigning to an expression with side effects: </p><div class="fragment"><div class="line">MyProto data;</div><div class="line"><a class="code" href="status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f">ASYLO_ASSIGN_OR_RETURN</a>(*data.mutable_str(), MaybeGetValue(arg));</div><div class="line"><span class="comment">// No field &quot;str&quot; is added on error.</span></div></div><!-- fragment --><p>Example: Assigning to a <code>std::unique_ptr</code>. </p><div class="fragment"><div class="line">std::unique_ptr&lt;T&gt; ptr;</div><div class="line"><a class="code" href="status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f">ASYLO_ASSIGN_OR_RETURN</a>(ptr, MaybeGetPtr(arg));</div></div><!-- fragment --> 
 </div>
 </div>
@@ -147,8 +145,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                       \</div><div class="line">  const <span class="keyword">auto</span> _asylo_status_to_verify = (expr);             \</div><div class="line">  if (ABSL_PREDICT_FALSE(!_asylo_status_to_verify.ok())) { \</div><div class="line">    return _asylo_status_to_verify;                        \</div><div class="line">  }                                                        \</div><div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div></div><!-- fragment -->
-<p>Evaluates an expression that produces an <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">asylo::Status</a></code>. </p>
-<p>If the status is non-OK, returns it from the current function.</p>
+<p>Evaluates an expression that produces an <code>Status</code>-like object with a <code>.ok()</code> method. </p>
+<p>If this method returns false, the object is returned from the current function.</p>
 <p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1Status.html">::asylo::Status</a> MultiStepFunction() {</div><div class="line">  <a class="code" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(Function(args...));</div><div class="line">  <a class="code" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(foo.Method(args...));</div><div class="line">  return ::asylo::Status::OkStatus();</div><div class="line">}</div></div><!-- fragment --> 
 </div>
 </div>
