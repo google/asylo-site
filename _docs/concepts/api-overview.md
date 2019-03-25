@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
 
   asylo::EnclaveClient *client = manager->GetClient("demo_enclave");
   asylo::EnclaveInput input;
-  const string user_message = GetUserString();
+  const std::string user_message = GetUserString();
   SetEnclaveUserMessage(&input, user_message);
   status = client->EnterAndRun(input, /*output=*/nullptr);
   LOG_IF(QFATAL, !status.ok()) << "EnterAndRun failed: " << status;
@@ -188,14 +188,14 @@ class EnclaveDemo : public TrustedApplication {
   EnclaveDemo() = default;
 
   Status Run(const EnclaveInput &input, EnclaveOutput *output) {
-    string user_message = GetEnclaveUserMessage(input);
-    string encrypt_message = EncryptMessage(user_message);
+    std::string user_message = GetEnclaveUserMessage(input);
+    std::string encrypt_message = EncryptMessage(user_message);
     std::cout << "Encrypted message:" << std::endl
               << encrypt_message << std::endl;
     return Status::OkStatus();
   }
 
-  const string GetEnclaveUserMessage(const EnclaveInput &input) {
+  const std::string GetEnclaveUserMessage(const EnclaveInput &input) {
     return input.GetExtension(enclave_input_test_string).test_string();
   }
 ```
