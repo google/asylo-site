@@ -1,14 +1,21 @@
 ---
+
 title: Asylo API Overview
+
 overview: A general overview of Asylo application development
 
 location: /_docs/concepts/api-overview.md
+
 order: 10
 
 layout: docs
+
 type: markdown
+
 ---
+
 {% include home.html %}
+
 
 Asylo provides strong encapsulation around data and logic for developing and
 using an enclave. In the Asylo C++ API, an enclave application has trusted and
@@ -27,12 +34,13 @@ The following are the main classes for developing and using an enclave.
     responsible for managing enclave lifetimes and shared resources between
     enclaves.
 
-    {% include figure.html width='80%' ratio='55.26%'
-    img='./img/message_passing_interface.png' alt='Message passing interface'
-    title='Message passing interface' caption='Message passing interface' %} We
-    refer to the process of switching from an untrusted execution environment to
-    a trusted environment as _entering_ an enclave. Every enclave provides a
-    limited number of entry points where trusted execution may begin or resume.
+{% include figure.html width='80%' ratio='55.26%'
+img='./img/message_passing_interface.png' alt='Message passing interface'
+title='Message passing interface' caption='Message passing interface' %}
+
+We refer to the process of switching from an untrusted execution environment to
+a trusted environment as _entering_ an enclave. Every enclave provides a limited
+number of entry points where trusted execution may begin or resume.
 
 ## Trusted environment
 

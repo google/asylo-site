@@ -1,13 +1,19 @@
 ---
+
 title: Quickstart Guide
+
 overview: Install Asylo, build, and run your first enclave!
 
 location: /_docs/guides/quickstart.md
+
 order: 10
 
 layout: docs
+
 type: markdown
+
 toc: true
+
 ---
 {% include home.html %}
 
