@@ -1,13 +1,19 @@
 ---
+
 title: Intel SGX hardware release enclaves
+
 overview: Build, sign and launch an Intel SGX enclave in release mode.
 
 location: /_docs/guides/sgx_release_enclaves.md
+
 order: 30
 
 layout: docs
+
 type: markdown
+
 toc: true
+
 ---
 {% include home.html %}
 

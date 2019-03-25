@@ -1,13 +1,19 @@
 ---
+
 title: What is Asylo?
+
 overview: Learn why Asylo could be right for your application.
 
 location: /_about/about.md
+
 order: 10
 
 layout: about
+
 type: markdown
+
 ---
+
 
 Asylo is an open framework for developing enclave applications. Asylo lets you
 take advantage of a range of emerging trusted execution environments, including

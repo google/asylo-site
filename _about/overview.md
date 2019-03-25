@@ -1,13 +1,19 @@
 ---
+
 title: Asylo Overview
+
 overview: Get a better understanding of the problem space and how Asylo is designed to enable solutions.
 
 location: /_about/overview.md
+
 order: 20
 
 layout: about
+
 type: markdown
+
 ---
+
 
 ## Introduction
 
@@ -40,11 +46,13 @@ chosen trusted execution environment.
 
 {% include figure.html width='80%' ratio='46.36%' img='./img/asylo.png'
 alt='Asylo architecture' title='Asylo architecture' caption='Asylo architecture'
-%} The untrusted execution environment consists of surrounding
-infrastructure—for instance the operating system and system libraries—and human
-operators that are less trusted than an enclave. The trusted execution
-environment consists of one or more enclaves, which protect code and data in a
-sensitive workload. A trusted execution environment allows an enclave to:
+%}
+
+The untrusted execution environment consists of surrounding infrastructure—for
+instance the operating system and system libraries—and human operators that are
+less trusted than an enclave. The trusted execution environment consists of one
+or more enclaves, which protect code and data in a sensitive workload. A trusted
+execution environment allows an enclave to:
 
 +   Prevent vulnerabilities outside the enclave from compromising the workloads
     that run in the enclave. Depending on the enclave technology, this
