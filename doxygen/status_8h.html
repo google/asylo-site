@@ -67,6 +67,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">status.h File Reference</div>  </div>
@@ -77,6 +78,7 @@ $(function() {
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &quot;absl/meta/type_traits.h&quot;</code><br />
 <code>#include &quot;absl/strings/string_view.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="logging_8h_source.html">asylo/util/logging.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="error__space_8h_source.html">asylo/util/error_space.h</a>&quot;</code><br />
 <code>#include &quot;asylo/util/status.pb.h&quot;</code><br />
 <code>#include &quot;asylo/util/status_error_space.h&quot;</code><br />
@@ -109,6 +111,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceasylo"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html">asylo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a510c1a74f23973bd8e1eccf55846290f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="status_8h.html#a510c1a74f23973bd8e1eccf55846290f">ASYLO_CHECK_OK</a>(val)&#160;&#160;&#160;<a class="el" href="logging_8h.html#a7c0ce053b28d53aa4eaf3eb7fb71663b">CHECK_EQ</a>(::<a class="el" href="classasylo_1_1Status.html#ad40b6e307f9d08de21e1498c84c5c67c">asylo::Status::OkStatus</a>(), (val))</td></tr>
+<tr class="memdesc:a510c1a74f23973bd8e1eccf55846290f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that the <code>Status</code> object in <code>val</code> is OK.  <a href="#a510c1a74f23973bd8e1eccf55846290f">More...</a><br /></td></tr>
+<tr class="separator:a510c1a74f23973bd8e1eccf55846290f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aecb05d614b80b0147ae4af78a32cd41d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#aecb05d614b80b0147ae4af78a32cd41d">asylo::operator==</a> (const Status &amp;lhs, const Status &amp;rhs)</td></tr>
@@ -118,6 +126,27 @@ Functions</h2></td></tr>
 <tr class="memitem:a7a811c63d3a350c781b7c87f9d425beb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a7a811c63d3a350c781b7c87f9d425beb">asylo::operator&lt;&lt;</a> (std::ostream &amp;os, const Status &amp;status)</td></tr>
 <tr class="separator:a7a811c63d3a350c781b7c87f9d425beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a510c1a74f23973bd8e1eccf55846290f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510c1a74f23973bd8e1eccf55846290f">&#9670;&nbsp;</a></span>ASYLO_CHECK_OK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASYLO_CHECK_OK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="logging_8h.html#a7c0ce053b28d53aa4eaf3eb7fb71663b">CHECK_EQ</a>(::<a class="el" href="classasylo_1_1Status.html#ad40b6e307f9d08de21e1498c84c5c67c">asylo::Status::OkStatus</a>(), (val))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks that the <code>Status</code> object in <code>val</code> is OK. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

@@ -524,7 +524,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">while</span> (std::unique_ptr&lt;std::string&gt; _result = std::unique_ptr&lt;std::string&gt;( \</div><div class="line">             asylo::name##Impl(asylo::GetReferenceableValue(val1),  \</div><div class="line">                               asylo::GetReferenceableValue(val2),  \</div><div class="line">                               #val1 <span class="stringliteral">&quot; &quot;</span> #op <span class="stringliteral">&quot; &quot;</span> #val2)))           \</div><div class="line">  log(__FILE__, __LINE__, *_result).stream()</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">while</span> (std::unique_ptr&lt;std::string&gt; _result = std::unique_ptr&lt;std::string&gt;( \</div><div class="line">             asylo::name##Impl(asylo::GetReferenceableValue(val1),            \</div><div class="line">                               asylo::GetReferenceableValue(val2),            \</div><div class="line">                               #val1 <span class="stringliteral">&quot; &quot;</span> #op <span class="stringliteral">&quot; &quot;</span> #val2)))                     \</div><div class="line">  log(__FILE__, __LINE__, *_result).stream()</div></div><!-- fragment -->
 <p>Compares <code>val1</code> and <code>val2</code> with <code>op</code>, and does <code>log</code> if false. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

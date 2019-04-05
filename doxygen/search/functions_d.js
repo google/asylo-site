@@ -2,7 +2,7 @@ var searchData=
 [
   ['ok',['ok',['../classasylo_1_1Status.html#acdd05e49f1932d8bf7e277face442d81',1,'asylo::Status::ok()'],['../classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38',1,'asylo::StatusOr::ok()']]],
   ['okstatus',['OkStatus',['../classasylo_1_1Status.html#ad40b6e307f9d08de21e1498c84c5c67c',1,'asylo::Status']]],
-  ['open',['Open',['../classasylo_1_1AesGcmSivCryptor.html#a83124c26ceccccea0fe59a0305109f6c',1,'asylo::AesGcmSivCryptor']]],
+  ['open',['Open',['../classasylo_1_1experimental_1_1AeadCryptor.html#a3ec303b2d8b5769f1a2e9c014bc427ed',1,'asylo::experimental::AeadCryptor::Open()'],['../classasylo_1_1AesGcmSivCryptor.html#a83124c26ceccccea0fe59a0305109f6c',1,'asylo::AesGcmSivCryptor::Open()']]],
   ['operator_20_26',['operator &amp;',['../classasylo_1_1LogMessageVoidify.html#a1b0f5d86ef473d7d86e70be4188d43ce',1,'asylo::LogMessageVoidify']]],
   ['operator_21_3d',['operator!=',['../namespaceasylo.html#a885e4e1efb5467dfd7b4fabe4a857434',1,'asylo']]],
   ['operator_28_29',['operator()',['../structasylo_1_1SharedName_1_1Hash.html#a974d2e968b8ac45c1bdb07a7dd1bf071',1,'asylo::SharedName::Hash::operator()()'],['../structasylo_1_1SharedName_1_1Eq.html#a59c076aa05d757434f25fd7bd95d949a',1,'asylo::SharedName::Eq::operator()()']]],

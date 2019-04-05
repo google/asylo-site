@@ -67,6 +67,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classasylo_1_1EnclaveAuthContext-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">asylo::EnclaveAuthContext Class Reference</div>  </div>
@@ -80,15 +81,17 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac5f4b90b2e30f6722cb0ff9f0dd91e7c"><td class="memItemLeft" align="right" valign="top">RecordProtocol&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#ac5f4b90b2e30f6722cb0ff9f0dd91e7c">GetRecordProtocol</a> () const</td></tr>
-<tr class="memdesc:ac5f4b90b2e30f6722cb0ff9f0dd91e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the secure transport record-protocol used for securing frames over the connection.  <a href="#ac5f4b90b2e30f6722cb0ff9f0dd91e7c">More...</a><br /></td></tr>
-<tr class="separator:ac5f4b90b2e30f6722cb0ff9f0dd91e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e5b1968d890cc2e7889e5ebe48773b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a7e5b1968d890cc2e7889e5ebe48773b7">HasEnclaveIdentity</a> (const EnclaveIdentityDescription &amp;description) const</td></tr>
-<tr class="memdesc:a7e5b1968d890cc2e7889e5ebe48773b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the authenticated peer has an identity matching <code>description</code>.  <a href="#a7e5b1968d890cc2e7889e5ebe48773b7">More...</a><br /></td></tr>
-<tr class="separator:a7e5b1968d890cc2e7889e5ebe48773b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a5a5367d1e5489b4ba80cc7323b137c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; const EnclaveIdentity * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a9a5a5367d1e5489b4ba80cc7323b137c">FindEnclaveIdentity</a> (const EnclaveIdentityDescription &amp;description) const</td></tr>
-<tr class="memdesc:a9a5a5367d1e5489b4ba80cc7323b137c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and returns a peer identity matching <code>description</code>, if one exists.  <a href="#a9a5a5367d1e5489b4ba80cc7323b137c">More...</a><br /></td></tr>
-<tr class="separator:a9a5a5367d1e5489b4ba80cc7323b137c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e697dbf607b42fd10112721ef15382"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#aa1e697dbf607b42fd10112721ef15382">~EnclaveAuthContext</a> ()=default</td></tr>
+<tr class="separator:aa1e697dbf607b42fd10112721ef15382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb1efd9bb4ed086b4ae2caea5572107"><td class="memItemLeft" align="right" valign="top">virtual RecordProtocol&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a8bb1efd9bb4ed086b4ae2caea5572107">GetRecordProtocol</a> () const</td></tr>
+<tr class="memdesc:a8bb1efd9bb4ed086b4ae2caea5572107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the secure transport record-protocol used for securing frames over the connection.  <a href="#a8bb1efd9bb4ed086b4ae2caea5572107">More...</a><br /></td></tr>
+<tr class="separator:a8bb1efd9bb4ed086b4ae2caea5572107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9a34bb16ac34a6bacba000bf8bca0f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a9b9a34bb16ac34a6bacba000bf8bca0f">HasEnclaveIdentity</a> (const EnclaveIdentityDescription &amp;description) const</td></tr>
+<tr class="memdesc:a9b9a34bb16ac34a6bacba000bf8bca0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the authenticated peer has an identity matching <code>description</code>.  <a href="#a9b9a34bb16ac34a6bacba000bf8bca0f">More...</a><br /></td></tr>
+<tr class="separator:a9b9a34bb16ac34a6bacba000bf8bca0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96674aceb617807a23c4b521da0110d8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; const EnclaveIdentity * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a96674aceb617807a23c4b521da0110d8">FindEnclaveIdentity</a> (const EnclaveIdentityDescription &amp;description) const</td></tr>
+<tr class="memdesc:a96674aceb617807a23c4b521da0110d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and returns a peer identity matching <code>description</code>, if one exists.  <a href="#a96674aceb617807a23c4b521da0110d8">More...</a><br /></td></tr>
+<tr class="separator:a96674aceb617807a23c4b521da0110d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -98,11 +101,68 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af9912a11546fcb83df9d85201dbae14d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; <a class="el" href="classasylo_1_1EnclaveAuthContext.html">EnclaveAuthContext</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#af9912a11546fcb83df9d85201dbae14d">CreateFromAuthContext</a> (const ::grpc::AuthContext &amp;auth_context)</td></tr>
 <tr class="memdesc:af9912a11546fcb83df9d85201dbae14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classasylo_1_1EnclaveAuthContext.html" title="Encapsulates the authentication properties of an EKEP-based gRPC connection. ">EnclaveAuthContext</a> from the authentication properties in <code>auth_context</code>.  <a href="#af9912a11546fcb83df9d85201dbae14d">More...</a><br /></td></tr>
 <tr class="separator:af9912a11546fcb83df9d85201dbae14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a525256f00712952467c972e16e01ff26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a525256f00712952467c972e16e01ff26">EnclaveAuthContext</a> ()</td></tr>
+<tr class="separator:a525256f00712952467c972e16e01ff26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encapsulates the authentication properties of an EKEP-based gRPC connection. </p>
-<p>The authentication properties in an <a class="el" href="classasylo_1_1EnclaveAuthContext.html" title="Encapsulates the authentication properties of an EKEP-based gRPC connection. ">EnclaveAuthContext</a> object include the secure transport protocol and the peer's enclave identities. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p>The authentication properties in an <a class="el" href="classasylo_1_1EnclaveAuthContext.html" title="Encapsulates the authentication properties of an EKEP-based gRPC connection. ">EnclaveAuthContext</a> object include the secure transport protocol and the peer's enclave identities.</p>
+<p>Virtual functions are only for mocking. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa1e697dbf607b42fd10112721ef15382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e697dbf607b42fd10112721ef15382">&#9670;&nbsp;</a></span>~EnclaveAuthContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual asylo::EnclaveAuthContext::~EnclaveAuthContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a525256f00712952467c972e16e01ff26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525256f00712952467c972e16e01ff26">&#9670;&nbsp;</a></span>EnclaveAuthContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asylo::EnclaveAuthContext::EnclaveAuthContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="af9912a11546fcb83df9d85201dbae14d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9912a11546fcb83df9d85201dbae14d">&#9670;&nbsp;</a></span>CreateFromAuthContext()</h2>
 
@@ -172,20 +232,28 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9a5a5367d1e5489b4ba80cc7323b137c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a5a5367d1e5489b4ba80cc7323b137c">&#9670;&nbsp;</a></span>FindEnclaveIdentity()</h2>
+<a id="a96674aceb617807a23c4b521da0110d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96674aceb617807a23c4b521da0110d8">&#9670;&nbsp;</a></span>FindEnclaveIdentity()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;const EnclaveIdentity *&gt; asylo::EnclaveAuthContext::FindEnclaveIdentity </td>
+          <td class="memname">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;const EnclaveIdentity *&gt; asylo::EnclaveAuthContext::FindEnclaveIdentity </td>
           <td>(</td>
           <td class="paramtype">const EnclaveIdentityDescription &amp;&#160;</td>
           <td class="paramname"><em>description</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Finds and returns a peer identity matching <code>description</code>, if one exists. </p>
@@ -199,19 +267,27 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac5f4b90b2e30f6722cb0ff9f0dd91e7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5f4b90b2e30f6722cb0ff9f0dd91e7c">&#9670;&nbsp;</a></span>GetRecordProtocol()</h2>
+<a id="a8bb1efd9bb4ed086b4ae2caea5572107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb1efd9bb4ed086b4ae2caea5572107">&#9670;&nbsp;</a></span>GetRecordProtocol()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">RecordProtocol asylo::EnclaveAuthContext::GetRecordProtocol </td>
+          <td class="memname">virtual RecordProtocol asylo::EnclaveAuthContext::GetRecordProtocol </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the secure transport record-protocol used for securing frames over the connection. </p>
@@ -219,20 +295,28 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e5b1968d890cc2e7889e5ebe48773b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e5b1968d890cc2e7889e5ebe48773b7">&#9670;&nbsp;</a></span>HasEnclaveIdentity()</h2>
+<a id="a9b9a34bb16ac34a6bacba000bf8bca0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9a34bb16ac34a6bacba000bf8bca0f">&#9670;&nbsp;</a></span>HasEnclaveIdentity()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool asylo::EnclaveAuthContext::HasEnclaveIdentity </td>
+          <td class="memname">virtual bool asylo::EnclaveAuthContext::HasEnclaveIdentity </td>
           <td>(</td>
           <td class="paramtype">const EnclaveIdentityDescription &amp;&#160;</td>
           <td class="paramname"><em>description</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Indicates whether the authenticated peer has an identity matching <code>description</code>. </p>

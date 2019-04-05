@@ -101,6 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2c94f45f26570d0044b07987637b1692"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a2c94f45f26570d0044b07987637b1692">EnterAndRestore</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const SnapshotLayout &amp;snapshot_layout)</td></tr>
 <tr class="memdesc:a2c94f45f26570d0044b07987637b1692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters an enclave and restores it from an untrusted snapshot.  <a href="#a2c94f45f26570d0044b07987637b1692">More...</a><br /></td></tr>
 <tr class="separator:a2c94f45f26570d0044b07987637b1692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f1321a39cd193079cf65bc0f2fe232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a06f1321a39cd193079cf65bc0f2fe232">EnterAndTransferSecureSnapshotKey</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const ForkHandshakeConfig &amp;fork_handshake_config)</td></tr>
+<tr class="memdesc:a06f1321a39cd193079cf65bc0f2fe232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters an enclave and securely transfers snapshot key with another enclave.  <a href="#a06f1321a39cd193079cf65bc0f2fe232">More...</a><br /></td></tr>
+<tr class="separator:a06f1321a39cd193079cf65bc0f2fe232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0562377d34c3c7b878c1371972330c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1SharedResourceManager.html">SharedResourceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a0562377d34c3c7b878c1371972330c67">shared_resources</a> ()</td></tr>
 <tr class="memdesc:a0562377d34c3c7b878c1371972330c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the shared resource manager object.  <a href="#a0562377d34c3c7b878c1371972330c67">More...</a><br /></td></tr>
 <tr class="separator:a0562377d34c3c7b878c1371972330c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,6 +278,44 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">client</td><td>A client attached to the enclave to enter. </td></tr>
     <tr><td class="paramname">snapshot_layout</td><td>The snapshot layout in untrusted memory to be filled up by snapshotting. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a06f1321a39cd193079cf65bc0f2fe232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f1321a39cd193079cf65bc0f2fe232">&#9670;&nbsp;</a></span>EnterAndTransferSecureSnapshotKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::EnterAndTransferSecureSnapshotKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ForkHandshakeConfig &amp;&#160;</td>
+          <td class="paramname"><em>fork_handshake_config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enters an enclave and securely transfers snapshot key with another enclave. </p>
+<p>This method calls <code>client's</code> EnterAndTransferSecureSnapshotKey entry_point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>A client attached to the enclave to enter. </td></tr>
+    <tr><td class="paramname">fork_handshake_config</td><td>The input specifies the socket and type of enclave(parent/child). </td></tr>
   </table>
   </dd>
 </dl>

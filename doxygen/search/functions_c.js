@@ -5,6 +5,7 @@ var searchData=
   ['nextnonce',['NextNonce',['../classasylo_1_1AesGcmSivNonceGenerator.html#ad5ee5c1735fcda46ee2995a2c583accf',1,'asylo::AesGcmSivNonceGenerator::NextNonce()'],['../classasylo_1_1NonceGenerator.html#ac26e77a76d710b060411135f5fdefc74',1,'asylo::NonceGenerator::NextNonce()']]],
   ['nonce_5fsize',['nonce_size',['../classasylo_1_1NonceGenerator.html#a63230ae92511372b403727d4ab610bdd',1,'asylo::NonceGenerator']]],
   ['noncegenerator',['NonceGenerator',['../classasylo_1_1NonceGenerator.html#a4211ceb4278085721e809046182c6007',1,'asylo::NonceGenerator']]],
+  ['noncesize',['NonceSize',['../classasylo_1_1experimental_1_1AeadCryptor.html#a3df36204e2863853620ed9cc7e36a2ac',1,'asylo::experimental::AeadCryptor']]],
   ['nullassertiongenerator',['NullAssertionGenerator',['../classasylo_1_1NullAssertionGenerator.html#a1f01595bfb81daa2dd55a3326e26e597',1,'asylo::NullAssertionGenerator']]],
   ['nullassertionverifier',['NullAssertionVerifier',['../classasylo_1_1NullAssertionVerifier.html#a98b43d37ab2225f99217728d6d7470fa',1,'asylo::NullAssertionVerifier']]]
 ];

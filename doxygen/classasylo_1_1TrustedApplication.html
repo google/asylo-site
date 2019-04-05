@@ -125,10 +125,12 @@ Friends</h2></td></tr>
 <tr class="separator:a18d37c2c3179306385958c9a0a3a6dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ba88be8aa2a0718c2db58146381838"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#a78ba88be8aa2a0718c2db58146381838">__asylo_handle_signal</a> (const char *input, size_t input_len)</td></tr>
 <tr class="separator:a78ba88be8aa2a0718c2db58146381838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ff9b3402c22119b8f9694d9902fd28f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#a7ff9b3402c22119b8f9694d9902fd28f">__asylo_take_snapshot</a> (SnapshotLayout *snapshot_layout)</td></tr>
-<tr class="separator:a7ff9b3402c22119b8f9694d9902fd28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2a7cd6f692476a97c68a29427000227"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#af2a7cd6f692476a97c68a29427000227">__asylo_restore</a> (const SnapshotLayout &amp;snapshot_layout)</td></tr>
-<tr class="separator:af2a7cd6f692476a97c68a29427000227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab696afdca6d01e4db70d849041b58f14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#ab696afdca6d01e4db70d849041b58f14">__asylo_take_snapshot</a> (char **output, size_t *output_len)</td></tr>
+<tr class="separator:ab696afdca6d01e4db70d849041b58f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6365e9fdf5bbff2b2ab57e3024285dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#ae6365e9fdf5bbff2b2ab57e3024285dd">__asylo_restore</a> (const char *input, size_t input_len, char **output, size_t *output_len)</td></tr>
+<tr class="separator:ae6365e9fdf5bbff2b2ab57e3024285dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f23aebfa4144d46d14bd4aa3b206ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#ae7f23aebfa4144d46d14bd4aa3b206ab">__asylo_transfer_secure_snapshot_key</a> (const char *input, size_t input_len, char **output, size_t *output_len)</td></tr>
+<tr class="separator:ae7f23aebfa4144d46d14bd4aa3b206ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
 Related Functions</h2></td></tr>
@@ -388,8 +390,8 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af2a7cd6f692476a97c68a29427000227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2a7cd6f692476a97c68a29427000227">&#9670;&nbsp;</a></span>__asylo_restore</h2>
+<a id="ae6365e9fdf5bbff2b2ab57e3024285dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6365e9fdf5bbff2b2ab57e3024285dd">&#9670;&nbsp;</a></span>__asylo_restore</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,9 +402,31 @@ Related Functions</h2></td></tr>
         <tr>
           <td class="memname">int __asylo_restore </td>
           <td>(</td>
-          <td class="paramtype">const SnapshotLayout &amp;&#160;</td>
-          <td class="paramname"><em>snapshot_layout</em></td><td>)</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -414,8 +438,8 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7ff9b3402c22119b8f9694d9902fd28f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ff9b3402c22119b8f9694d9902fd28f">&#9670;&nbsp;</a></span>__asylo_take_snapshot</h2>
+<a id="ab696afdca6d01e4db70d849041b58f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab696afdca6d01e4db70d849041b58f14">&#9670;&nbsp;</a></span>__asylo_take_snapshot</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,9 +450,19 @@ Related Functions</h2></td></tr>
         <tr>
           <td class="memname">int __asylo_take_snapshot </td>
           <td>(</td>
-          <td class="paramtype">SnapshotLayout *&#160;</td>
-          <td class="paramname"><em>snapshot_layout</em></td><td>)</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -454,6 +488,54 @@ Related Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7f23aebfa4144d46d14bd4aa3b206ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f23aebfa4144d46d14bd4aa3b206ab">&#9670;&nbsp;</a></span>__asylo_transfer_secure_snapshot_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int __asylo_transfer_secure_snapshot_key </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>

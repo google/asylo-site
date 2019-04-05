@@ -3,6 +3,7 @@ var searchData=
   ['_7eaesgcmsivcryptor',['~AesGcmSivCryptor',['../classasylo_1_1AesGcmSivCryptor.html#a9e3a4c00516cb3b48d9a9fb4334aa623',1,'asylo::AesGcmSivCryptor']]],
   ['_7echeckopmessagebuilder',['~CheckOpMessageBuilder',['../classasylo_1_1CheckOpMessageBuilder.html#a84dece841f248931eb6c37a844db9933',1,'asylo::CheckOpMessageBuilder']]],
   ['_7eenclaveassertionauthority',['~EnclaveAssertionAuthority',['../classasylo_1_1EnclaveAssertionAuthority.html#a87d52690e1939abd2a4871f6873a3b73',1,'asylo::EnclaveAssertionAuthority']]],
+  ['_7eenclaveauthcontext',['~EnclaveAuthContext',['../classasylo_1_1EnclaveAuthContext.html#aa1e697dbf607b42fd10112721ef15382',1,'asylo::EnclaveAuthContext']]],
   ['_7eenclaveclient',['~EnclaveClient',['../classasylo_1_1EnclaveClient.html#ae9da12d428f7d5c27814359a243a8cdb',1,'asylo::EnclaveClient']]],
   ['_7eenclaveloader',['~EnclaveLoader',['../classasylo_1_1EnclaveLoader.html#aacfadef88997d7479018ad9fcd5f60e6',1,'asylo::EnclaveLoader']]],
   ['_7eerrorspace',['~ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html#aee51c2ba30a026d072634cc8c1fbae20',1,'asylo::error::ErrorSpace']]],
