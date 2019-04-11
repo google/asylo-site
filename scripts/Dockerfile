@@ -9,7 +9,8 @@ RUN apt-get update && \
         protobuf-compiler
 
 # Install prerequisite golang packages.
-RUN go get github.com/golang/protobuf/proto && \
+RUN go get github.com/client9/gospell && \
+    go get github.com/golang/protobuf/proto && \
     go get gopkg.in/russross/blackfriday.v2
 
 # Download the Istio tools.
