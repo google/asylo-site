@@ -1,0 +1,17 @@
+<map id="asylo/util/statusor.h" name="asylo/util/statusor.h">
+<area shape="rect" id="node2" href="$aead__cryptor_8h.html" title="asylo/crypto/aead_cryptor.h" alt="" coords="5,87,208,114"/>
+<area shape="rect" id="node3" href="$aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="233,80,397,121"/>
+<area shape="rect" id="node4" href="$enclave__auth__context_8h.html" title="asylo/grpc/auth/enclave\l_auth_context.h" alt="" coords="421,80,598,121"/>
+<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="674,80,841,121"/>
+<area shape="rect" id="node6" href="$enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="563,169,733,211"/>
+<area shape="rect" id="node9" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="765,169,931,211"/>
+<area shape="rect" id="node12" href="$identity__expectation__matcher_8h.html" title="asylo/identity/identity\l_expectation_matcher.h" alt="" coords="916,80,1095,121"/>
+<area shape="rect" id="node13" href="$identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="960,169,1125,211"/>
+<area shape="rect" id="node14" href="$secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="1169,80,1324,121"/>
+<area shape="rect" id="node16" href="$enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1349,80,1502,121"/>
+<area shape="rect" id="node7" href="$null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="373,259,547,315"/>
+<area shape="rect" id="node8" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="572,259,727,315"/>
+<area shape="rect" id="node10" href="$null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="759,259,934,315"/>
+<area shape="rect" id="node11" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="959,259,1113,315"/>
+<area shape="rect" id="node15" href="$sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="1151,169,1343,211"/>
+</map>

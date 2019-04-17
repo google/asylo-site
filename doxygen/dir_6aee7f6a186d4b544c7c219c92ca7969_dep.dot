@@ -1,9 +1,0 @@
-digraph "asylo/identity/null_identity" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_e1c0d852c20f7060122f8152bba123e1 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="identity" fontname="Helvetica", fontsize="10", URL="dir_e1c0d852c20f7060122f8152bba123e1.html"]
-  dir_6aee7f6a186d4b544c7c219c92ca7969 [shape=box, label="null_identity", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6aee7f6a186d4b544c7c219c92ca7969.html"];
-  }
-}

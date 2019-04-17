@@ -1,0 +1,10 @@
+<map id="asylo/util/status_macros.h" name="asylo/util/status_macros.h">
+<area shape="rect" id="node2" href="$aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="105,80,269,121"/>
+<area shape="rect" id="node3" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="293,80,460,121"/>
+<area shape="rect" id="node4" href="$enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="195,169,366,211"/>
+<area shape="rect" id="node7" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="391,169,557,211"/>
+<area shape="rect" id="node5" href="$null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="5,259,180,315"/>
+<area shape="rect" id="node6" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="205,259,359,315"/>
+<area shape="rect" id="node8" href="$null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="385,259,560,315"/>
+<area shape="rect" id="node9" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="585,259,739,315"/>
+</map>

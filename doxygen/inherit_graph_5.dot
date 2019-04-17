@@ -1,7 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="asylo::EnclaveCredentials\lOptions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structasylo_1_1EnclaveCredentialsOptions.html",tooltip="Options used to configure a ::grpc::ChannelCredentials object or a ::grpc::ServerCredentials object f..."];
-}
