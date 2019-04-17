@@ -5,6 +5,7 @@ RUN apt-get update && \
     apt-get install -y \
         doxygen \
         git \
+	graphviz \
         golang \
         protobuf-compiler
 
