@@ -95,15 +95,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afce9df15f32a024de63fa19f4e11ee0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#afce9df15f32a024de63fa19f4e11ee0d">DestroyEnclave</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const EnclaveFinal &amp;final_input, bool skip_finalize=false) LOCKS_EXCLUDED(client_table_lock_)</td></tr>
 <tr class="memdesc:afce9df15f32a024de63fa19f4e11ee0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an enclave.  <a href="#afce9df15f32a024de63fa19f4e11ee0d">More...</a><br /></td></tr>
 <tr class="separator:afce9df15f32a024de63fa19f4e11ee0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72d4da9f4f169905da2814cf866a480b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a72d4da9f4f169905da2814cf866a480b">EnterAndTakeSnapshot</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, SnapshotLayout *snapshot_layout)</td></tr>
-<tr class="memdesc:a72d4da9f4f169905da2814cf866a480b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters an enclave and takes a snapshot of its memory.  <a href="#a72d4da9f4f169905da2814cf866a480b">More...</a><br /></td></tr>
-<tr class="separator:a72d4da9f4f169905da2814cf866a480b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c94f45f26570d0044b07987637b1692"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a2c94f45f26570d0044b07987637b1692">EnterAndRestore</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const SnapshotLayout &amp;snapshot_layout)</td></tr>
-<tr class="memdesc:a2c94f45f26570d0044b07987637b1692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters an enclave and restores it from an untrusted snapshot.  <a href="#a2c94f45f26570d0044b07987637b1692">More...</a><br /></td></tr>
-<tr class="separator:a2c94f45f26570d0044b07987637b1692"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06f1321a39cd193079cf65bc0f2fe232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a06f1321a39cd193079cf65bc0f2fe232">EnterAndTransferSecureSnapshotKey</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const ForkHandshakeConfig &amp;fork_handshake_config)</td></tr>
-<tr class="memdesc:a06f1321a39cd193079cf65bc0f2fe232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters an enclave and securely transfers snapshot key with another enclave.  <a href="#a06f1321a39cd193079cf65bc0f2fe232">More...</a><br /></td></tr>
-<tr class="separator:a06f1321a39cd193079cf65bc0f2fe232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0562377d34c3c7b878c1371972330c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1SharedResourceManager.html">SharedResourceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a0562377d34c3c7b878c1371972330c67">shared_resources</a> ()</td></tr>
 <tr class="memdesc:a0562377d34c3c7b878c1371972330c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the shared resource manager object.  <a href="#a0562377d34c3c7b878c1371972330c67">More...</a><br /></td></tr>
 <tr class="separator:a0562377d34c3c7b878c1371972330c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,7 +118,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A manager object responsible for creating and managing enclave instances. </p>
 <p><a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> is a singleton class that tracks the status of enclaves within a process. Users of this class first supply a configuration using the static <a class="el" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902" title="Configures the enclave manager. ">Configure()</a> method, and then get a pointer to the singleton instance as specified by this configuration by calling the static <a class="el" href="classasylo_1_1EnclaveManager.html#a1ab1d6d8d1043a53cab1e99c82c5f1a3" title="Fetches the EnclaveManager singleton instance. ">Instance()</a> method. Note that the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> class must be configured before the instance pointer can be obtained.</p>
 <p>The <a class="el" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902" title="Configures the enclave manager. ">EnclaveManager::Configure()</a> method takes an instance of the <a class="el" href="classasylo_1_1EnclaveManagerOptions.html" title="Enclave Manager configuration. ">EnclaveManagerOptions</a> as its only input. This instance can be configured by calling its public setter methods. Note that these setter methods return an instance of the EnclaveManagerOptions() by reference so that the various setters could be chained together.</p>
-<p>Example Usage: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902">EnclaveManager::Configure</a>(</div><div class="line">  EnclaveManagerOptions()</div><div class="line">      .set_config_server_connection_attributes(</div><div class="line">          <span class="stringliteral">&quot;[::]:8000&quot;</span>,</div><div class="line">          absl::Milliseconds(100)));</div><div class="line"><span class="keyword">auto</span> manager_result = <a class="code" href="classasylo_1_1EnclaveManager.html#a1ab1d6d8d1043a53cab1e99c82c5f1a3">EnclaveManager::Instance</a>();</div><div class="line"><span class="keywordflow">if</span> (!manager_result.ok()) {</div><div class="line">  <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(QFATAL) &lt;&lt; manager_result.status();</div><div class="line">}</div><div class="line">EnclaveManager *manager = manager_result.ValueOrDie();</div><div class="line">...</div></div><!-- fragment --><p>One of the responsibilities of the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> class is to provide sane initial configuration to the enclaves it launches. The contents of the <a class="el" href="classasylo_1_1EnclaveManagerOptions.html" title="Enclave Manager configuration. ">EnclaveManagerOptions</a> instance control how the default values for the configuration are chosen. </p>
+<p>Example Usage: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902">EnclaveManager::Configure</a>(</div><div class="line">  EnclaveManagerOptions()</div><div class="line">      .set_config_server_connection_attributes(</div><div class="line">          <span class="stringliteral">&quot;[::]:8000&quot;</span>,</div><div class="line">          absl::Milliseconds(100)));</div><div class="line"><span class="keyword">auto</span> manager_result = <a class="code" href="classasylo_1_1EnclaveManager.html#a1ab1d6d8d1043a53cab1e99c82c5f1a3">EnclaveManager::Instance</a>();</div><div class="line"><span class="keywordflow">if</span> (!manager_result.ok()) {</div><div class="line">  <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da4f457e2eb75a762499cac70a9200c354">QFATAL</a>) &lt;&lt; manager_result.status();</div><div class="line">}</div><div class="line">EnclaveManager *manager = manager_result.ValueOrDie();</div><div class="line">...</div></div><!-- fragment --><p>One of the responsibilities of the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> class is to provide sane initial configuration to the enclaves it launches. The contents of the <a class="el" href="classasylo_1_1EnclaveManagerOptions.html" title="Enclave Manager configuration. ">EnclaveManagerOptions</a> instance control how the default values for the configuration are chosen. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9ef64308157a4609fd8c84034e801902"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ef64308157a4609fd8c84034e801902">&#9670;&nbsp;</a></span>Configure()</h2>
@@ -196,7 +187,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroys an enclave. </p>
-<p>Destroys an enclave. This method calls <code>client's</code> EnterAndFinalize entry point with final_input unless <code>skip_finalize</code> is true, then calls <code>client's</code> DestroyEnclave method, and then removes client's name from the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> client registry. The manager owns the client, so removing it calls client's destructor and frees its memory.</p>
+<p>Destroys an enclave. This method calls <code>client's</code> EnterAndFinalize entry point with final_input unless <code>skip_finalize</code> is true, then calls <code>client's</code> DestroyEnclave method, and then removes client's name from the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> client registry. The manager owns the client, so removing it calls client's destructor and frees its memory. The client is destroyed regardless of whether <code>client's</code> EnterAndFinalize method succeeds or fails. This method must not be invoked more than once.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">client</td><td>A client attached to the enclave to destroy. </td></tr>
@@ -205,120 +196,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a2c94f45f26570d0044b07987637b1692"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c94f45f26570d0044b07987637b1692">&#9670;&nbsp;</a></span>EnterAndRestore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::EnterAndRestore </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
-          <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const SnapshotLayout &amp;&#160;</td>
-          <td class="paramname"><em>snapshot_layout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enters an enclave and restores it from an untrusted snapshot. </p>
-<p>This method calls <code>client's</code> EnterAndRestore entry point, with snapshot layout (in untrusted memory) passed in |snapshot_layout|.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">client</td><td>A client attached to the enclave to enter. </td></tr>
-    <tr><td class="paramname">snapshot_layout</td><td>The snapshot layout in untrusted memory used to restore enclave states. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a72d4da9f4f169905da2814cf866a480b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72d4da9f4f169905da2814cf866a480b">&#9670;&nbsp;</a></span>EnterAndTakeSnapshot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::EnterAndTakeSnapshot </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
-          <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SnapshotLayout *&#160;</td>
-          <td class="paramname"><em>snapshot_layout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enters an enclave and takes a snapshot of its memory. </p>
-<p>This method calls <code>client's</code> EnterAndTakeSnapshot entry point, with snapshot layout (in untrusted memory) stored in |snapshot_layout|.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">client</td><td>A client attached to the enclave to enter. </td></tr>
-    <tr><td class="paramname">snapshot_layout</td><td>The snapshot layout in untrusted memory to be filled up by snapshotting. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a06f1321a39cd193079cf65bc0f2fe232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06f1321a39cd193079cf65bc0f2fe232">&#9670;&nbsp;</a></span>EnterAndTransferSecureSnapshotKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::EnterAndTransferSecureSnapshotKey </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
-          <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const ForkHandshakeConfig &amp;&#160;</td>
-          <td class="paramname"><em>fork_handshake_config</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enters an enclave and securely transfers snapshot key with another enclave. </p>
-<p>This method calls <code>client's</code> EnterAndTransferSecureSnapshotKey entry_point.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">client</td><td>A client attached to the enclave to enter. </td></tr>
-    <tr><td class="paramname">fork_handshake_config</td><td>The input specifies the socket and type of enclave(parent/child). </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> returned by the enclave's Finalize method, or an OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if that was skipped. </dd></dl>
 
 </div>
 </div>

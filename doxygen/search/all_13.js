@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['unseal',['Unseal',['../classasylo_1_1SecretSealer.html#ae0bcb8d3990b493f9251d5797a8dbe19',1,'asylo::SecretSealer::Unseal()'],['../classasylo_1_1SgxLocalSecretSealer.html#a298b9a250434c685b69467e064b221bc',1,'asylo::SgxLocalSecretSealer::Unseal()']]],
-  ['uses_5fkey_5fid',['uses_key_id',['../classasylo_1_1NonceGenerator.html#a9f8501bef2669e8729d1dc572efdbac6',1,'asylo::NonceGenerator']]]
+  ['timer',['Timer',['../classasylo_1_1SharedName.html#adaa19d4cbcbaceb3070cd446bfc76d1a',1,'asylo::SharedName']]],
+  ['tocanonical',['ToCanonical',['../classasylo_1_1Status.html#a17605875bec4bae0afb87e6390559452',1,'asylo::Status']]],
+  ['tootherstatus',['ToOtherStatus',['../classasylo_1_1Status.html#a0405921363d07cbaac544ddc74df5ca0',1,'asylo::Status']]],
+  ['tostring',['ToString',['../classasylo_1_1Status.html#a9ad95100716690faead6ef5e2abb58e9',1,'asylo::Status']]],
+  ['trusted_5fapplication_2eh',['trusted_application.h',['../trusted__application_8h.html',1,'']]],
+  ['trustedapplication',['TrustedApplication',['../classasylo_1_1TrustedApplication.html',1,'asylo']]]
 ];

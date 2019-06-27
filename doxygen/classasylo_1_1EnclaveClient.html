@@ -67,6 +67,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classasylo_1_1EnclaveClient-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -90,15 +91,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39af8ef5ce1f49ff65cafaeebeecd5a6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a39af8ef5ce1f49ff65cafaeebeecd5a6">EnterAndRun</a> (const EnclaveInput &amp;input, EnclaveOutput *output)=0</td></tr>
 <tr class="memdesc:a39af8ef5ce1f49ff65cafaeebeecd5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the enclave and invokes its execution entry point.  <a href="#a39af8ef5ce1f49ff65cafaeebeecd5a6">More...</a><br /></td></tr>
 <tr class="separator:a39af8ef5ce1f49ff65cafaeebeecd5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6da748c038a6b7d6af7c2d9282705b"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a9d6da748c038a6b7d6af7c2d9282705b">get_name</a> () const</td></tr>
+<tr class="memdesc:a9d6da748c038a6b7d6af7c2d9282705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the enclave.  <a href="#a9d6da748c038a6b7d6af7c2d9282705b">More...</a><br /></td></tr>
+<tr class="separator:a9d6da748c038a6b7d6af7c2d9282705b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:af53eef6ca5fce8681ea6218e264eb0b8"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#af53eef6ca5fce8681ea6218e264eb0b8">get_name</a> () const</td></tr>
-<tr class="memdesc:af53eef6ca5fce8681ea6218e264eb0b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the enclave.  <a href="#af53eef6ca5fce8681ea6218e264eb0b8">More...</a><br /></td></tr>
-<tr class="separator:af53eef6ca5fce8681ea6218e264eb0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04259c108101c0df0eaf4f40169aca86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a04259c108101c0df0eaf4f40169aca86">EnclaveClient</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a04259c108101c0df0eaf4f40169aca86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> to create a client instance.  <a href="#a04259c108101c0df0eaf4f40169aca86">More...</a><br /></td></tr>
 <tr class="separator:a04259c108101c0df0eaf4f40169aca86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4f67c9f19c0f4a61096bc2c1169fbf18"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; primitives::Client &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a4f67c9f19c0f4a61096bc2c1169fbf18">primitive_client_</a></td></tr>
+<tr class="separator:a4f67c9f19c0f4a61096bc2c1169fbf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -244,8 +250,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af53eef6ca5fce8681ea6218e264eb0b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af53eef6ca5fce8681ea6218e264eb0b8">&#9670;&nbsp;</a></span>get_name()</h2>
+<a id="a9d6da748c038a6b7d6af7c2d9282705b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6da748c038a6b7d6af7c2d9282705b">&#9670;&nbsp;</a></span>get_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +260,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string&amp; asylo::EnclaveClient::get_name </td>
+          <td class="memname">virtual const std::string&amp; asylo::EnclaveClient::get_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -262,7 +268,7 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -363,6 +369,29 @@ Friends</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4f67c9f19c0f4a61096bc2c1169fbf18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f67c9f19c0f4a61096bc2c1169fbf18">&#9670;&nbsp;</a></span>primitive_client_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;primitives::Client&gt; asylo::EnclaveClient::primitive_client_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

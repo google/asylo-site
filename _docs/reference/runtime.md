@@ -107,6 +107,15 @@ destructors supplied will be ignored.
 
 ### pwd.h
 
+#### `getpwuid`
+
+The enclave stores a global `passwd` struct. When `getpwuid` is called, it exits
+the enclave, calls host `getpwuid`, copies the buffers into the enclave global
+buffers, directs the pointers in the global `passwd` struct to the global
+buffers, and returns a pointer to that global struct. The size of each buffer is
+limited to 1024 bytes. And this call is not thread safe, same as the host
+`getpwuid`.
+
 #### `getpwuid_r` and `getpwnam_r`
 
 `getpwuid_r` and `getpwnam_r` are not implemented and will call `abort()`.
@@ -389,10 +398,10 @@ symbol such as `AF_UNIX` has its connotation forwarded to the host system, where
 
 ### sys/stat.h
 
-#### `chmod`
+#### `chmod`/`fchmod`
 
-When `chmod` is called inside an enclave, it exits the enclave and changes the
-file mode on the host.
+When `chmod` is called inside an enclave on a path or `fd` backed by a file on
+the host, the mode of the corresponding file mode on the host is changed.
 
 #### `lstat`
 
@@ -457,6 +466,14 @@ Asylo for maximum compatibility.
 When `wait3` is called inside an enclave, it exits enclave, waits on the host,
 and returns the resource usage from the host.
 
+#### `waitpid`
+
+When `waitpid` is called inside an enclave, it exits enclave and waits on the
+host. The result is returned back into the enclave after it finishes waiting.
+Since `waitpid` is returned from the untrusted side, a malicious `terminated`
+result may be returned from `waitpid` even when the forked child enclave is
+still running.
+
 ### sys/uio.h
 
 #### `writev(int fd, const struct iovec *iov, int iovcnt)`
@@ -482,12 +499,62 @@ string.
 
 ### unistd.h
 
+#### `rmdir(const char *pathname)`
+
+`rmdir` exits the enclave and deletes the directory on the host.
+
+#### `chown`/`fchown`
+
+When `chown` or `fchown` is called inside an enclave on a path or `fd` backed by
+a file on the host, the owner/group of the corresponding file will be changed on
+the host. If it is called on a secure `fd`, -1 is returned and `errno` is set to
+`ENOSYS`.
+
+#### `fsync(int fd)`/`fdatasync(int fd)`
+
+When `fsync` or `fdatasync` is called inside an enclave with an `fd` backed by a
+file on the host, it will be invoked on the corresponding file on the host.
+`fdatasync` inside the enclave is implemented through `fsync` so they do exactly
+the same thing.
+
 #### `fcntl(int fd, int cmd, ... /* arg */)`
 
 In current Asylo implementation of `fcntl()`, only the `cmd`s `F_GETFD`,
 `F_SETFD`, `F_GETFL`, `F_SETFL`, and `F_DUPFD` are implemented. -1 is returned
 if `fcntl()` is called with any other `cmd`, and `errno` will be set to
 `EINVAL`.
+
+#### `fork()`
+
+`fork()` is implemented in Asylo with security features added. When `fork()` is
+requested from inside an enclave, it takes a snapshot of the enclave, creates a
+child process, loads a new enclave in the child, and restores the child enclave
+from the snapshot. The following security features for `fork()` are provided:
+
+1.  Only the enclavized portion of the application can request a fork.
+2.  At most one snapshot can be created per fork request.
+3.  The cloned enclave has exactly the same identity as the parent enclave.
+4.  If no other threads were running inside the parent enclave when it called
+    `fork()`, the cloned enclave's state is the same as that of the parent
+    enclave when it called `fork()`.
+5.  The snapshot is encrypted by a randomly generated AES256-GCM-SIV key.
+6.  THe parent enclave will send the snapshot key to the child enclave only
+    after verifying the child enclave has exactly the same identity.
+7.  The key is encrypted while the parent sends it to the child, by a key
+    generated from a Diffie-Hellman key exchange.
+8.  The parent will only send the key to one child enclave.
+9.  If the encrypted snapshot is modified, the child enclave does not restore,
+    and will block all entries.
+
+WARNING: `fork()` in multithreaded applications may cause undefined behavior or
+potential security issues.
+
+#### `vfork()`
+
+`vfork()` is implemented through `fork()` in Asylo. When `vfork()` is requested
+from inside an enclave, `fork()` is invoked to create the child enclave. The
+parent thread then waits till the child exits before returning. Therefore,
+`vfork()` in an enclave does not have better performance than `fork()`.
 
 #### `getpid()`/`getppid()`
 
@@ -554,7 +621,12 @@ host. It it is called on a secure `fd`, -1 is returned and `errno` is set to
 
 #### `utime`
 
-When `utime` is called inside an enclave it makese the call on the host passing
+When `utime` is called inside an enclave it makes the call on the host passing
+the filename and times variable directly.
+
+#### `utimes`
+
+When `utimes` is called inside an enclave it makes the call on the host passing
 the filename and times variable directly.
 
 [^1]: The current implementation does not support multiple enclaves registering

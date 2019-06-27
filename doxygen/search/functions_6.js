@@ -7,7 +7,7 @@ var searchData=
   ['get_5fconfig_5fserver_5fconnection_5ftimeout',['get_config_server_connection_timeout',['../classasylo_1_1EnclaveManagerOptions.html#af65cfb05d362fc6aaab93e7f06e4411f',1,'asylo::EnclaveManagerOptions']]],
   ['get_5fhost_5fconfig',['get_host_config',['../classasylo_1_1EnclaveManagerOptions.html#a2ed10fa39374d7ef8b813f2b13f28f15',1,'asylo::EnclaveManagerOptions']]],
   ['get_5flog_5fdirectory',['get_log_directory',['../namespaceasylo.html#a2b2644ab2a74b608e5d3f3e5b228d5ae',1,'asylo']]],
-  ['get_5fname',['get_name',['../classasylo_1_1EnclaveClient.html#af53eef6ca5fce8681ea6218e264eb0b8',1,'asylo::EnclaveClient']]],
+  ['get_5fname',['get_name',['../classasylo_1_1EnclaveClient.html#a9d6da748c038a6b7d6af7c2d9282705b',1,'asylo::EnclaveClient']]],
   ['get_5fvlog_5flevel',['get_vlog_level',['../namespaceasylo.html#a93c7f45ff18036824b30e1d315306cfd',1,'asylo']]],
   ['getapplicationinstance',['GetApplicationInstance',['../classasylo_1_1TrustedApplication.html#ab3c7f03d7136b3704f8c1d7de7b5905e',1,'asylo::TrustedApplication']]],
   ['getclient',['GetClient',['../classasylo_1_1EnclaveManager.html#a49d6c42ba34a032209665280461f0940',1,'asylo::EnclaveManager']]],

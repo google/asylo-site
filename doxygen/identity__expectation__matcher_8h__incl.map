@@ -1,6 +1,6 @@
 <map id="asylo/identity/identity_expectation_matcher.h" name="asylo/identity/identity_expectation_matcher.h">
-<area shape="rect" id="node3" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="435,95,586,121"/>
-<area shape="rect" id="node6" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="437,251,584,278"/>
-<area shape="rect" id="node13" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="677,169,816,196"/>
-<area shape="rect" id="node16" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="659,251,834,278"/>
+<area shape="rect" id="node3" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="317,95,468,121"/>
+<area shape="rect" id="node6" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="319,251,466,278"/>
+<area shape="rect" id="node13" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="749,169,887,196"/>
+<area shape="rect" id="node18" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1243,251,1417,278"/>
 </map>

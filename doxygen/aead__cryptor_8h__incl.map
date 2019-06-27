@@ -1,6 +1,6 @@
 <map id="asylo/crypto/aead_cryptor.h" name="asylo/crypto/aead_cryptor.h">
-<area shape="rect" id="node33" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="641,87,791,114"/>
-<area shape="rect" id="node34" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="396,251,543,278"/>
-<area shape="rect" id="node37" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="729,169,868,196"/>
-<area shape="rect" id="node39" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="837,251,1011,278"/>
+<area shape="rect" id="node33" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1098,87,1249,114"/>
+<area shape="rect" id="node34" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="211,251,357,278"/>
+<area shape="rect" id="node37" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="981,169,1120,196"/>
+<area shape="rect" id="node40" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1154,251,1329,278"/>
 </map>

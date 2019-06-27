@@ -67,7 +67,7 @@ $(function() {
 <div class="textblock"><p>Copyright 2018 Asylo authors</p>
 <h2>Documentation</h2>
 <p>The Asylo project documentation can be found at <a href="/docs">asylo.dev</a>.</p>
-<p><a href="/asylo-examples.tar.gz">Example source code</a> that contains a working Bazel workspace can be downloaded from the Asylo website and used as a template for a new project.</p>
+<p><a href="https://github.com/google/asylo-examples/archive/master.tar.gz">Example source code</a> that contains a working Bazel workspace can be downloaded from the Asylo website and used as a template for a new project.</p>
 <h2>Support</h2>
 <p>There are several ways of getting support with Asylo:</p>
 <ul>
@@ -76,12 +76,12 @@ $(function() {
 </ul>
 <h2>Build Environment in Docker (Recommended)</h2>
 <p>Asylo provides a custom Docker image that contains all required dependencies, as well as Asylo's custom toolchain, which is required for compiling enclave applications for various enclave backends.</p>
-<div class="fragment"><div class="line">docker run -it --rm gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>See the <a href="https://github.com/google/asylo/tree/master/asylo/distrib/Dockerfile">Dockerfile</a> for an in-depth view of what's inside the container image.</p>
+<div class="fragment"><div class="line">docker run -it --rm gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>See the <a href="https://github.com/google/asylo/tree/master/asylo/distrib/toolchain/Dockerfile">Dockerfile</a> for an in-depth view of what's inside the container image.</p>
 <p>See this <a href="https://cloud.google.com/container-registry/docs/pushing-and-pulling#pulling_images_from_the_registry">guide</a> for additional details on how to pull images from Google's Container Registry.</p>
 <h3>Examples</h3>
 <h4>Running the <code>hello_world</code> example</h4>
-<p>To run the <code>hello_world</code> example, first use the following set of commands to grab the <a href="/asylo-examples.tar.gz">examples source code</a>, and save it to any directory of your choice.</p>
-<div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">mkdir -p &quot;${MY_PROJECT}&quot;</div><div class="line">wget -q -O - https://asylo.dev/asylo-examples.tar.gz | \</div><div class="line">    tar -zxv --directory &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Docker to build and run the <code>hello_world</code> application, using a simulated enclave backend.</p>
+<p>To run the <code>hello_world</code> example, first use the following set of commands to grab the <a href="https://github.com/google/asylo-examples/archive/master.tar.gz">examples source code</a>, and save it to any directory of your choice.</p>
+<div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">mkdir -p &quot;${MY_PROJECT}&quot;</div><div class="line">wget -q -O - https://github.com/google/asylo-examples/archive/master.tar.gz | \</div><div class="line">    tar -zxv --strip 1 --directory &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Docker to build and run the <code>hello_world</code> application, using a simulated enclave backend.</p>
 <div class="fragment"><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">docker run -it --rm \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -v &quot;${MY_PROJECT}&quot;:/opt/my-project \</div><div class="line">    -w /opt/my-project \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    bazel run --config=enc-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>You can also set <code>NAMES</code> to a comma-separated list of names and see the enclave's entry-point get invoked for each name.</p>
 <h5>Docker flags</h5>
 <p>In the above example, we use the following Docker flags:</p>
@@ -122,8 +122,8 @@ $(function() {
 <h3>Examples</h3>
 <p>The following examples assume that the Asylo SDK was installed at <code>ASYLO_SDK</code>, which can be a directory of your choice. For example:</p>
 <h4>Running the <code>hello_world</code> example</h4>
-<p>To run the <code>hello_world</code> example, first use the following commands to grab the <a href="/asylo-examples.tar.gz">examples source code</a> and save it to any directory of your choice.</p>
-<div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">mkdir -p &quot;${MY_PROJECT}&quot;</div><div class="line">wget -q -O - https://asylo.dev/asylo-examples.tar.gz | \</div><div class="line">    tar -zxv --directory &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Bazel to build and run the <code>hello_world</code> application, which uses a simulated enclave backend:</p>
+<p>To run the <code>hello_world</code> example, first use the following commands to grab the <a href="https://github.com/google/asylo-examples/archive/master.tar.gz">examples source code</a> and save it to any directory of your choice.</p>
+<div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">mkdir -p &quot;${MY_PROJECT}&quot;</div><div class="line">wget -q -O - https://github.com/google/asylo-examples/archive/master.tar.gz | \</div><div class="line">    tar -zxv --strip 1 --directory &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Bazel to build and run the <code>hello_world</code> application, which uses a simulated enclave backend:</p>
 <div class="fragment"><div class="line">cd &quot;${MY_PROJECT}&quot;</div><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">bazel run --config=enc-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>Refer to <a href="#bazel-flags-and-workspace-settings">Bazel flags and workspace settings</a> for an explanation of the flags and workspace configuration used in this example.</p>
 <h4>Running your own enclave application</h4>
 <p>You can follow the <a href="#running-the-hello_world-example-1">steps above</a> to build your own enclave application instead. You can use the examples code in <code>MY_PROJECT</code> as the start of your own project, or simply change <code>MY_PROJECT</code> to point to your own Bazel project instead.</p>
