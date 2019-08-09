@@ -1,7 +1,7 @@
 ---
 title: "Enclavise Redis And SQLite By Asylo"
 overview: Technical support to run real-world applications in an enclave
-publish_date: 2019-08-08
+publish_date: 2019-08-09
 subtitle: Technical support to run real-world applications in an enclave
 attribution: The Asylo Team
 
