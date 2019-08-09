@@ -117,7 +117,7 @@ When a signal handler is registered inside an enclave, either through the
 `sigaction` or `signal` system calls, Asylo stores the enclave-specified signal
 handler inside the enclave as a function pointer. Asylo then exits the enclave
 and registers an untrusted signal handler on the host. When the OS delivers the
-corresponding signal to the driver application, it invokes the untrusted signal
+corresponding signal to the loader application, it invokes the untrusted signal
 handler. This signal handler then invokes an enclave entry call to enter the
 enclave with all inputs of the signal handler (`signum`, `info`, `ucontext`).
 Once inside the enclave, Asylo looks up and invokes the enclave-side signal
