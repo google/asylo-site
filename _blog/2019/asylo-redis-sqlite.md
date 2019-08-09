@@ -1,8 +1,8 @@
 ---
-title: "Enclavise Redis And SQLite By Asylo"
-overview: Technical support to run real-world applications in an enclave
+title: "Real-World Applications in Enclaves"
+overview: Enclavizing Redis and SQLite
 publish_date: 2019-08-09
-subtitle: Technical support to run real-world applications in an enclave
+subtitle: Enclavizing Redis and SQLite
 attribution: The Asylo Team
 
 order: 18
@@ -12,7 +12,7 @@ type: markdown
 ---
 {% include home.html %}
 
-## Asylo Enables Enclavization of Redis and SQLite
+## Summary
 
 Enclaves provide the powerful property that they're protected and isolated from
 the system on which they run. This is very different from the traditional
@@ -39,17 +39,17 @@ Asylo provides a secure signal handling system that allows incoming signals to
 enter and notify the enclave, which invokes handlers registered inside the
 enclave.
 
-Another example is fork(). This is also widely used by real-world applications.
-For security reasons, enclaves are not cloneable. If fork() is called on the
-host operating system with a running enclave, the enclave will not exist in the
-new process (the address space for the enclave will simply be empty). Asylo
-provides secure fork() that safely encrypts a snapshot of the parent enclave and
-restores it in the child enclave.
+Another example is `fork()`. This is also widely used by real-world
+applications. For security reasons, enclaves are not cloneable. If `fork()` is
+called on the host operating system with a running enclave, the enclave will
+not exist in the new process (the address space for the enclave will simply be
+empty). Asylo provides secure `fork()` that safely encrypts a snapshot of the
+parent enclave and restores it in the child enclave.
 
 As Asylo continues to add more and more POSIX interfaces in this manner, it
 becomes easier and easier to port applications to run in enclaves. This blog
 post discusses the technical details behind some interesting new additions
-(including signals and fork) that significantly improve this. In fact, as of
+(including signals and `fork()`) that significantly improve this. In fact, as of
 Asylo 0.4.0, one can run a wide variety of real-world applications (including
 Redis and SQLite) without even modifying any of their source code!
 
@@ -66,7 +66,7 @@ To make it easy to run an application in an enclave, Asylo now provides an
 application wrapper, which enables users to easily run an existing application
 in an enclave without any source code modifications.
 
-Asylo now provides the [`cc_enclave_binary` Bazel macro](https://github.com/google/asylo/blob/master/asylo/bazel/asylo.bzl#L457)
+Asylo now provides the [`cc_enclave_binary` Bazel macro](https://github.com/google/asylo/blob/v0.4.0/asylo/bazel/asylo.bzl#L457)
 that allows users to wrap existing applications in an enclave. Users can simply
 put the existing application they want to run as a library in the deps field of
 this macro, and build/run it with Bazel. The binary will be linked in as a
@@ -74,16 +74,16 @@ library, instead of being loaded at runtime. The `application_enclave_config`
 field can be used to pass a custom configuration into the enclave.
 
 Every enclave application needs at least a small amount of non-enclave code
-called a "driver" that is launched by the OS. Asylo provides a stock driver
+called a "loader" that is launched by the OS. Asylo provides a stock loader
 that can launch the wrapped application inside an enclave. When running a
-`cc_enclave_binary` target, the application wrapper first runs its driver on the
-host side. The driver then loads the enclave and invokes its EnterAndRun method.
-The application wrapper's driver passes the command-line arguments to the
+`cc_enclave_binary` target, the application wrapper first runs its loader on the
+host side. The loader then loads the enclave and invokes its EnterAndRun method.
+The application wrapper's loader passes the command-line arguments to the
 enclave in an EnclaveInput message. Inside the enclave, the corresponding `Run`
 method invokes the wrapped application's main function with the provided
 command-line arguments. When main returns, `Run` places the return value from
-`main` in an `EnclaveOutput` message, which `EnterAndRun` returns to the driver.
-The application wrapper's driver then returns this value as the exit code to the
+`main` in an `EnclaveOutput` message, which `EnterAndRun` returns to the loader.
+The application wrapper's loader then returns this value as the exit code to the
 OS.
 
 By doing this, the binary accepts input and provides output in the same way as
@@ -132,9 +132,9 @@ still block signals from being delivered into the enclave).
 
 #### Enclave `fork()`
 
-Redis, and many other applications, also invoke the `fork` system call. Redis
+Redis, and many other applications, also invoke the `fork()` system call. Redis
 uses `fork()` for snapshotting its database state. Asylo provides support for
-the `fork` system call.
+the `fork()` system call.
 
 For security reasons, enclave backends such as SGX do not allow an untrusted OS
 to clone an enclave. To enable running applications that make `fork()` calls
@@ -144,29 +144,29 @@ of the enclave, creates a child process, loads a new enclave in the child, and
 restores that enclave from the snapshot. The Asylo `fork()` functionality
 provides the following security guarantees:
 
-1. Only the enclavized portion of the application can request a fork of the
+1. Only the enclavized portion of the application can request a `fork()` of the
    enclave.
 2. The cloned enclave has exactly the same identity as the parent enclave.
 3. If no other threads were running inside the parent enclave when it called
-   `fork`, the cloned enclave's state is the same as that of the parent enclave
-   when it called `fork`. Since the snapshot is currently not taken fully
-   atomically, other threads running in the enclave may cause the state restored
-   to the cloned enclave to not be fully consistent.
+   `fork()`, the cloned enclave's state is the same as that of the parent
+   enclave when it called `fork()`. Since the snapshot is currently not taken
+   fully atomically, other threads running in the enclave may cause the state
+   restored to the cloned enclave to not be fully consistent.
 4. The enclave state is only transferred to the clone in an encrypted form, with
    a randomly generated AES256-GCM-SIV encryption key.
 5. The parent securely transfers the snapshot encryption key to the child, and
    the child only restores its state from the parent’s encrypted snapshot. These
-   properties are guaranteed by the fork() implementation via a one-time
+   properties are guaranteed by the `fork()` implementation via a one-time
    authenticated EC-based Diffie-Hellman key exchange between the two enclaves.
-6. At most one cloned enclave will be created per fork request.
+6. At most one cloned enclave will be created per `fork()` request.
 7. If the encrypted snapshot is modified, the child enclave will not restore,
    and blocks all entries.
 
-To accomplish #3, when the parent enclave requests a fork, Asylo blocks any new
-entries into the enclave, sets an indicator that the parent enclave has
-requested a fork, and exits the enclave. The untrusted Asylo runtime then enters
-the parent enclave using a special entry point to generate an encrypted snapshot
-of the mutable state of the parent enclave.
+To accomplish #3, when the parent enclave requests a `fork()`, Asylo blocks any
+new entries into the enclave, sets an indicator that the parent enclave has
+requested a `fork()`, and exits the enclave. The untrusted Asylo runtime then
+enters the parent enclave using a special entry point to generate an encrypted
+snapshot of the mutable state of the parent enclave.
 
 #### More POSIX support
 

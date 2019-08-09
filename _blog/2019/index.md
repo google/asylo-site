@@ -2,7 +2,7 @@
 title: 2019 Posts
 overview: Blog posts for 2019
 
-order: 20
+order: 9
 
 layout: blog
 type: markdown
