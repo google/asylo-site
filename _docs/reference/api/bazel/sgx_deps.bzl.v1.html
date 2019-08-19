@@ -15,23 +15,4 @@ number_of_entries: 1
 <h2 id="sgx_deps">sgx_deps</h2>
 <section>
   <p>The rule used to depend on the Asylo SGX backend toolchain and supporting libraries.</p>
-  <table class="macro-arguments">
-    <thead>
-      <tr>
-        <th>Argument</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr id="sgx_deps.installation_path">
-        <td><code>installation_path</code></td>
-        <td><code>string</code></td>
-        <td>
-          <p>[optional] The absolute path to the installed Asylo toolchain for building SGX targets. The default value for this path comes either from the user installation path in <code>$HOME/.asylo/sgx_toolchain_location</code>, <code>/usr/local/share/asylo/sgx_toolchain_location</code>, or the default path <code>/opt/asylo/toolchains/sgx_x86_64</code> (see the installation script for details <a href="https://github.com/google/asylo/blob/master/asylo/distrib/sgx_x86_64/install-toolchain"><code>asylo/distrib/sgx_x86_64/install-toolchain</code></a>).
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </section>
