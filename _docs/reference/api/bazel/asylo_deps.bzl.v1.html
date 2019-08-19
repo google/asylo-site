@@ -14,6 +14,25 @@ number_of_entries: 3
 <h2 id="asylo_deps">asylo_deps</h2>
 <section>
   <p>The rule used to depend on Asylo's critical dependencies.</p>
+  <table class="macro-arguments">
+    <thead>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="asylo_deps.installation_path">
+        <td><code>installation_path</code></td>
+        <td><code>string</code></td>
+        <td>
+          <p>[optional] The absolute path to the installed Asylo toolchain for building enclave targets. The default value for this path comes either from the user installation path in <code>$HOME/.asylo/default_toolchain_location</code>, <code>/usr/local/share/asylo/default_toolchain_location</code>, or the default path <code>/opt/asylo/toolchains/default</code> (see the installation script for details <a href="https://github.com/google/asylo/blob/master/asylo/distrib/toolchain/install-toolchain"><code>asylo/distrib/toolchain/install-toolchain</code></a>).
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <h2 id="asylo_testonly_deps">asylo_testonly_deps</h2>

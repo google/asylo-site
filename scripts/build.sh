@@ -14,6 +14,10 @@ readonly TEMP_ARCHIVE_PATH=/tmp/asylo.tar.gz
 # generated for them.
 readonly PROTO_MANIFEST_PATH=asylo/public_protos.manifest
 # The path relative to the sources directory to a file that lists
+# the stardoc documentation labels to build, along with the output
+# files' destination directory.
+readonly BAZEL_MANIFEST_PATH=asylo/bzl_docs.manifest
+# The path relative to the sources directory to a file that lists
 # which prose markdown files
 readonly DOCS_MANIFEST_DEFAULT=asylo/docs.manifest
 
@@ -30,7 +34,8 @@ function usage() {
     -n,--nodocs          Run without building any documentation.
     -j,--nojekyll        Run without starting a Jekyll server in docker.
     -x,--nodoxygen       Run without building Doxygen documentation.
-    -p,--noprotos        Run without build protobuf documentation.
+    -p,--noprotos        Run without building protobuf documentation.
+    -b,--nobazel         Run without building bazel documentation.
     -m,--manifest <path> Perform relocation from a documentation manifest.
                          [default manifest path is asylo/docs.manifest]
     -h,--help            Print this message to stdout.
@@ -51,8 +56,8 @@ NO_DOXYGEN=
 NO_PROTOS=
 DOCS_MANIFEST=
 GIT_ADD=
-readonly LONG="manifest:,nodocs,nodoxygen,nojekyll,noprotos,git-add,help"
-readonly PARSED=$(getopt -o anjphxm: --long "${LONG}" -n "$(basename "$0")" -- "$@")
+readonly LONG="manifest:,nodocs,nobazel,nodoxygen,nojekyll,noprotos,git-add,help"
+readonly PARSED=$(getopt -o abnjphxm: --long "${LONG}" -n "$(basename "$0")" -- "$@")
 eval set -- "${PARSED}"
 while true; do
   case "$1" in
@@ -61,6 +66,7 @@ while true; do
     -j|--nojekyll) NO_JEKYLL=1; shift ;;
     -x|--nodoxygen) NO_DOXYGEN=1; shift ;;
     -p|--noprotos) NO_PROTOS=1; shift ;;
+    -b|--nobazel) NO_BAZEL=1; shift ;;
     -m|--manifest)
       if [[ "$2" = -* ]]; then  # No argument given.
         DOCS_MANIFEST="${DOCS_MANIFEST_DEFAULT}"
@@ -251,6 +257,62 @@ function build_proto_docs() {
   done < <(sed -e 's/#.*//' "${MANIFEST}")
 }
 
+function jekyll_bzl_transform() {
+  local original="$1"
+  local markdown="$2"
+  local output_file="$(mktemp --suffix=.md)"
+
+  # Find the comment block that starts website-docs-metadata
+  awk '{
+    if ($0 ~ /# website-docs-metadata/) {
+      getline
+      while ($0 ~ /^#/) {
+        gsub(/^#$/, "");
+        gsub(/^# /, "");
+        print
+        getline
+      }
+    }
+  }' "${original}" > "${output_file}"
+  cat "${markdown}" >> "${output_file}"
+  echo "${output_file}"
+}
+
+function build_bazel_docs() {
+  # Build the Starlark documentation.
+  local readonly MANIFEST="$1"
+  local paths=()
+  local out_dir="${SITE}"
+  local path
+  local source
+  while read path source; do
+    if [[ -n "${path}" ]]; then
+      # Build and record all output paths
+      local output=$(mktemp)
+      paths=($(bazel build "${path}" 2>&1 | tee "${output}" | grep -E '^[[:space:]]+bazel-' | sed 's/^\s*//g'))
+      if [[ "${#paths[@]}" -eq 0 ]]; then
+        echo "WARNING: No output for bazel documentation on ${path}" >&2
+        cat "${output}"
+      elif [[ "${#paths[@]}" -ne 1 ]]; then
+        echo "WARNING: unexpected multiple output files for ${path}: ${paths[@]}" >&2
+      fi
+      rm "${output}"
+      if [[ "${path:0:1}" = "@" ]]; then
+        source="$(bazel info execution_root)/${source}"
+      fi
+      # Copy each path to the Bazel documentation directory.
+      for path in "${paths[@]}"; do
+        # Put the front matter from the source bzl file in the output markdown header.
+        # The comment block that begins "# website-docs-metadata" will have its
+        # content, sans website-docs-metadata, written to the top of the md file.
+        local transformed=$(jekyll_bzl_transform "${source}" "${path}")
+        relocate_file "${transformed}" "${out_dir}"
+        rm "${transformed}"
+      done
+    fi
+  done < <(sed -e 's/#.*//' "${MANIFEST}")
+}
+
 function build_doxygen_docs() {
   # Build the C++ reference docs.
   rm -rf "${SITE}/doxygen"
@@ -301,6 +363,10 @@ function build_docs() {
 
   if [[ -z "${NO_PROTOS}" ]]; then
     build_proto_docs "${PROTO_MANIFEST_PATH}"
+  fi
+
+  if [[ -z "${NO_BAZEL}" ]]; then
+    build_bazel_docs "${BAZEL_MANIFEST_PATH}"
   fi
 
   if [[ -n "${DOCS_MANIFEST}" ]]; then
