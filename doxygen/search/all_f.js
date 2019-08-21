@@ -83,6 +83,5 @@ var searchData=
   ['peersgxlocalcredentialsoptions',['PeerSgxLocalCredentialsOptions',['../namespaceasylo.html#a8dc68a49014050276695e89b190eab7d',1,'asylo']]],
   ['posix_5ferror_5fspace_2eh',['posix_error_space.h',['../posix__error__space_8h.html',1,'']]],
   ['posixerror',['PosixError',['../namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9',1,'asylo::error']]],
-  ['posixerrorspace',['PosixErrorSpace',['../classasylo_1_1error_1_1PosixErrorSpace.html',1,'asylo::error::PosixErrorSpace'],['../classasylo_1_1error_1_1PosixErrorSpace.html#ab70478691a100d6c6045d3107b97d653',1,'asylo::error::PosixErrorSpace::PosixErrorSpace()']]],
-  ['primitive_5fclient_5f',['primitive_client_',['../classasylo_1_1EnclaveClient.html#a4f67c9f19c0f4a61096bc2c1169fbf18',1,'asylo::EnclaveClient']]]
+  ['posixerrorspace',['PosixErrorSpace',['../classasylo_1_1error_1_1PosixErrorSpace.html',1,'asylo::error::PosixErrorSpace'],['../classasylo_1_1error_1_1PosixErrorSpace.html#ab70478691a100d6c6045d3107b97d653',1,'asylo::error::PosixErrorSpace::PosixErrorSpace()']]]
 ];

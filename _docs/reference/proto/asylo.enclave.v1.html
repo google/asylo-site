@@ -5,7 +5,7 @@ location: https://asylo.dev/docs/reference/proto/asylo.enclave.v1.html
 layout: protoc-gen-docs
 generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/enclave.html
-number_of_entries: 8
+number_of_entries: 9
 ---
 <p>This file defines the messages for communicating with a trusted application&rsquo;s
 entry-points: <a href="#EnclaveConfig">initialization</a>, (re-entrant)
@@ -127,6 +127,32 @@ enabled.</p>
 <section>
 <p>Input passed to an enclave after it has been initialized with EnclaveConfig.</p>
 
+</section>
+<h2 id="EnclaveLoaderConfig">EnclaveLoaderConfig</h2>
+<section>
+<p>The configuration required to load an enclave. This message is extended for
+each backend supported by the Asylo primitive library. asylo::EnclaveLoader
+is passed an instance of this message for loading enclaves in Asylo.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnclaveLoaderConfig-name">
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>
+<p>Name of the enclave to be loaded.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
 </section>
 <h2 id="EnclaveOutput">EnclaveOutput</h2>
 <section>

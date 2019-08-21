@@ -56,6 +56,12 @@ deserialized there. It is important to note that Asylo only supports IPv4 and
 IPv6 address families. Consequently, all ifaddrs entries that don't have these
 formats are filtered out when they are passed to the enclave from the host.
 
+### netdb.h
+
+#### `getservbyname` and `getservbyport`
+
+These calls are not implemented and calls to them will result in `abort()`.
+
 ### poll.h
 
 #### `poll`
@@ -82,7 +88,7 @@ other system calls that operate with PIDs (e.g. `fork()`). Forwarding a returned
 PID of 0 could cause user code to take unexpected code paths, which could create
 a security vulnerability, so the enclave aborts as a precaution.
 
-### `int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const struct timespec *abstime)`
+#### `int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const struct timespec *abstime)`
 
 `pthread_cond_timedwait()` is similar to `pthread_cond_wait()`. Instead of
 blocking indefinitely, the `timedwait` variant takes an extra argument,
@@ -152,7 +158,7 @@ Shared (named) semaphores are not supported in Asylo. `sem_init()` must be
 called with `pshared=0`. Any other value will cause `sem_init` to fail with
 `ENOSYS`.
 
-### `sem_timedwait(sem_t *sem, const timespec *abstime)`
+#### `sem_timedwait(sem_t *sem, const timespec *abstime)`
 
 `sem_timedwait()` has a similar issue to `pthread_cond_timedwait()`. The lack of
 a secure time source in an enclave means that timeout semantics can not be

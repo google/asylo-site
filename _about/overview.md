@@ -93,8 +93,8 @@ against the following threats:
 +   Compromised operating system
 +   Compromised BIOS
 
-The v0.4 release of Asylo supports a simulated enclave backend, which should not
-be used in production environments. Support for additional backends will be
+The current release of Asylo supports a simulated enclave backend, which should
+not be used in production environments. Support for additional backends will be
 added over time to meet the varying needs and security requirements of Asylo
 users.
 
@@ -106,4 +106,4 @@ expanding subset of POSIX, which enables running POSIX applications in an
 enclave with little to no source modification. Iterations of Asylo are intended
 to release without requiring significant change to the programming model.
 
-The v0.4 release of Asylo is not intended for production use.
+The current release of Asylo is not intended for production use.

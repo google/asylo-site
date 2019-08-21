@@ -108,7 +108,7 @@ writing your first Asylo application.
 
 ```cpp
 int main(int argc, char *argv[]) {
-  ::google::ParseCommandLineFlags(&argc, &argv, /*remove_flags=*/true);
+  absl::ParseCommandLine(argc, argv);
 
   // Part 1: Initialization
 
@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
                                        << manager_result:status();
 
   asylo::EnclaveManager *manager = manager_result.ValueOrDie();
-  asylo::SimLoader loader(FLAGS_enclave_path, /*debug=*/true);
+  asylo::SimLoader loader(absl::GetFlag(FLAGS_enclave_path), /*debug=*/true);
   asylo::Status status = manager->LoadEnclave("demo_enclave", loader);
   LOG_IF(QFATAL, !status.ok()) << "LoadEnclave failed: " << status;
 

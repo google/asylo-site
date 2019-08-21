@@ -13,6 +13,7 @@ var searchData=
   ['error_5fspace',['error_space',['../classasylo_1_1Status.html#afbb75dd292ecbe385e0fdcb0be174af6',1,'asylo::Status']]],
   ['errorspace',['ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html#a8f05223fa9eb52a201c513f59addecf9',1,'asylo::error::ErrorSpace::ErrorSpace()=default'],['../classasylo_1_1error_1_1ErrorSpace.html#a17746652501b1018ae8b05774bd90ae9',1,'asylo::error::ErrorSpace::ErrorSpace(const ErrorSpace &amp;other)=delete']]],
   ['errorspaceimplementationhelper',['ErrorSpaceImplementationHelper',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html#a2e6446c8b3117f9eb16547fd8c76a172',1,'asylo::error::ErrorSpaceImplementationHelper']]],
+  ['evaluateacl',['EvaluateAcl',['../classasylo_1_1EnclaveAuthContext.html#a3f04dcd292c74c9cf37f2504d7060b6e',1,'asylo::EnclaveAuthContext::EvaluateAcl(const IdentityAclPredicate &amp;acl) const'],['../classasylo_1_1EnclaveAuthContext.html#a3d64b4047b059c9964ef123075993416',1,'asylo::EnclaveAuthContext::EvaluateAcl(const EnclaveIdentityExpectation &amp;expectation) const']]],
   ['evaluateidentityacl',['EvaluateIdentityAcl',['../namespaceasylo.html#a0384710f7dc26f288342cb53e9f722fe',1,'asylo']]],
   ['exectester',['ExecTester',['../classasylo_1_1experimental_1_1ExecTester.html#afaebbba920095a8c8cf5206fe4fff473',1,'asylo::experimental::ExecTester']]]
 ];
