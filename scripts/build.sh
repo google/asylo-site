@@ -137,7 +137,7 @@ function relocate_images() {
     git_add_destination="system(${git_add_command})"
   fi
   local transformed=$(mktemp)
-  awk "{
+  gawk "{
   if (\$0 ~ ${begin_re}) {
     destination = gensub(${begin_re}, \"\\\\1\", 1, \$0);
     do { getline; } while (\$0 ~ /^\\s*\$/);

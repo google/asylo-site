@@ -4,6 +4,7 @@ from debian:buster
 RUN apt-get update && \
     apt-get install -y \
         doxygen \
+        gawk \
         git \
 	graphviz \
         golang \
