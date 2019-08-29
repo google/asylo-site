@@ -130,3 +130,35 @@ location: /_about/about.md
 
 Do not add `redirect_from: /about/about.html` for this file because it will
 create a redirect loop.
+
+### Markdown image dependencies
+
+Markdown has an image embedding directive, `![Caption](url)`, that is not
+appropriate for the website. The alternative image placement markup states more
+specific information about size and ratios. Therefore the `build.sh` script
+interprets some comments related to image embeddings to replace
+`![Caption](url)` with a user-provided replacement. Additionally, since docs are
+sourced from the Asylo repo, the images are copied from their source path to a
+stated destination.
+
+```markdown
+<!--asylo:image-replace-begin(destination-path-relative-to-destination-doc)-->
+
+![Caption](source-path-relative-to-source-doc)
+<!--asylo:image-replace-with[...]-->
+```
+
+The `[...]` is any text you want, except `$destination` and `$description` will
+be replaced with `destination-path-relative-to-destination-doc` and `Caption`
+respectively, and newlines are unsupported.
+
+Example from the website:
+
+```markdown
+<!--asylo:image-replace-begin(./img/asylo.png)-->
+
+![Asylo architecture](images/asylo.png)
+<!--asylo:image-replace-with {% include figure.html width='80%' ratio='46.36%' img='$destination' alt='$description' title='$description' caption='$description' %} -->
+```
+
+The `-a` option to `build.sh` additionally applies to the relocated image files.
