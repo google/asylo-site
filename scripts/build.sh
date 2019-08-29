@@ -99,6 +99,82 @@ if [[ -f "${ASYLO_LOCATION}" ]]; then
   ASYLO_LOCATION="${TEMP}"
 fi
 
+# Find and transform image uses.
+#
+# <!--asylo:image-replace-begin(dest)-->
+#
+# ![description](source)
+# <!--asylo:image-replace-with replacement-->
+#
+# becomes
+#
+# replacement'
+#
+# where replacement' is replacement with $destination substituted for dest,
+# and $description substituded for description.
+#
+# The file source gets relocated to dest, relative to the image file's
+# relocation destination.
+# See [the README](README.md#markdown-image-dependencies) for more explanation.
+function relocate_images() {
+  local source_dir="$1"
+  local out_file="$2"
+  local out_dir="$3"
+  local replace_re='/(.*)<!--\s*asylo:image-replace-with(.*)-->(.*)/'
+  local begin_re='/<!--\s*asylo:image-replace-begin\(([^)]*)\)-->/'
+  local source_re='/!\[(.*)\]\((.*)\)/'
+  # Represents "$source_dir/$$source" where $source_dir is a bash variable and
+  # $$source is an awk variable.
+  local full_source=$(printf '\\"%s/" source "\\"' "${source_dir}")
+  # Represents "$out_dir/$$destination" similarly to full_source.
+  local full_destination=$(printf '\\"%s/\" destination "\\"' "${out_dir}")
+  local mkdir_command=$(printf '"mkdir -p $(dirname %s)"' "${full_destination}")
+  local copy_command=$(printf '"cp %s %s"' "${full_source}" "${full_destination}")
+  local git_add_destination=
+  local git_add_command=
+  if [[ -n "${GIT_ADD}" ]]; then
+    git_add_command=$(printf '"pushd \\"%s\\"; git add %s; popd"' "${SITE}" "${full_destination}")
+    git_add_destination="system(${git_add_command})"
+  fi
+  local transformed=$(mktemp)
+  awk "{
+  if (\$0 ~ ${begin_re}) {
+    destination = gensub(${begin_re}, \"\\\\1\", 1, \$0);
+    do { getline; } while (\$0 ~ /^\\s*\$/);
+    if (\$0 !~ ${source_re}) {
+      print \"Unexpected source image syntax \$0\" > \"/dev/stderr\"
+	exit 1
+    }
+    description = gensub(${source_re}, \"\\\\1\", 1, \$0);
+    source = gensub(${source_re}, \"\\\\2\", 1, \$0);
+    do { getline; } while (\$0 ~ /^\\s*\$/);
+    if (\$0 !~ ${replace_re}) {
+      print \"Unexpected image replacement syntax \$0\" > \"/dev/stderr\"
+      exit 1
+    }
+
+    # Fill in the $destination and $description variables in replacement text.
+    pre = gensub(${replace_re}, \"\\\\1\", 1, \$0);
+    replacement = gensub(${replace_re}, \"\\\\2\", 1, \$0);
+    post = gensub(${replace_re}, \"\\\\3\", 1, \$0);
+    replacement = gensub(/\$description/, description, \"g\", replacement);
+    replacement = gensub(/\$destination/, destination, \"g\", replacement);
+    print pre replacement post
+
+    # Ensure the destination directory exists.
+    system(${mkdir_command});
+
+    # Copy over the image.
+    print \"Writing file ${out_dir}/\" destination > \"/dev/stderr\"
+    system(${copy_command});
+
+    # Add the image to staging if -a given.
+    ${git_add_destination}
+  } else print
+  }" "${out_file}" > "${transformed}"
+  mv "${transformed}" "${out_file}"
+}
+
 # Given the name of a .pb.html or .md file, extract the $location marker and
 # then copy the file to that relative location in the _docs hierarchy.
 function relocate_file() {
@@ -130,6 +206,7 @@ function relocate_file() {
       -e '/^\s*<!--jekyll-front-matter/d' \
       -e '/^\s*jekyll-front-matter-->/d' \
       "${OUT_PATH}"
+    relocate_images $(dirname "${FILENAME}") "${OUT_PATH}" "${OUT_DIR}/${DIRNAME}"
   fi
 
   if [[ -n "${GIT_ADD}" ]]; then
@@ -227,9 +304,7 @@ function build_docs() {
   fi
 
   if [[ -n "${DOCS_MANIFEST}" ]]; then
-    if [[ -z "${NO_PROSE}" ]]; then
-      build_prose_docs "${DOCS_MANIFEST}"
-    fi
+    build_prose_docs "${DOCS_MANIFEST}"
   fi
 }
 
