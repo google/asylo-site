@@ -62,9 +62,13 @@ while true; do
     -x|--nodoxygen) NO_DOXYGEN=1; shift ;;
     -p|--noprotos) NO_PROTOS=1; shift ;;
     -m|--manifest)
-      if [[ "$2" = -* ]]; then  # No argument given.
+      # Followed by another flag, or explicitly "default"
+      if [[ "$2" = -* ]]; then
         DOCS_MANIFEST="${DOCS_MANIFEST_DEFAULT}"
         shift
+      elif [[ "$2" = default ]]; then
+        DOCS_MANIFEST="${DOCS_MANIFEST_DEFAULT}"
+        shift 2
       else
         DOCS_MANIFEST="$2";
         shift 2
@@ -113,6 +117,15 @@ fi
 # where replacement' is replacement with $destination substituted for dest,
 # and $description substituded for description.
 #
+# The more long-form replacement allows use of non ![desc](url) forms.
+#
+# <!--asylo:image-replace-begin(source => dest)-->
+# anything
+# <!--asylo:image-replace-with replacement-->
+#
+# becomes replacement with $destination substituted for dest. There is no
+# substitution for description.
+#
 # The file source gets relocated to dest, relative to the image file's
 # relocation destination.
 # See [the README](README.md#markdown-image-dependencies) for more explanation.
@@ -121,56 +134,66 @@ function relocate_images() {
   local out_file="$2"
   local out_dir="$3"
   local replace_re='/(.*)<!--\s*asylo:image-replace-with(.*)-->(.*)/'
+  local begin_move_re='/<!--\s*asylo:image-replace-begin\(([^=)]*)\s*=>\s([^)]*)*\)-->/'
   local begin_re='/<!--\s*asylo:image-replace-begin\(([^)]*)\)-->/'
   local source_re='/!\[(.*)\]\((.*)\)/'
-  # Represents "$source_dir/$$source" where $source_dir is a bash variable and
-  # $$source is an awk variable.
-  local full_source=$(printf '\\"%s/" source "\\"' "${source_dir}")
-  # Represents "$out_dir/$$destination" similarly to full_source.
   local full_destination=$(printf '\\"%s/\" destination "\\"' "${out_dir}")
   local mkdir_command=$(printf '"mkdir -p $(dirname %s)"' "${full_destination}")
-  local copy_command=$(printf '"cp %s %s"' "${full_source}" "${full_destination}")
+  local copy_command=$(printf '"cp " source " %s"' "${full_destination}")
   local git_add_destination=
   local git_add_command=
   if [[ -n "${GIT_ADD}" ]]; then
-    git_add_command=$(printf '"pushd \\"%s\\"; git add %s; popd"' "${SITE}" "${full_destination}")
+    git_add_command=$(printf '"git -C \\"%s\\" add %s"' "${SITE}" "${full_destination}")
     git_add_destination="system(${git_add_command})"
   fi
   local transformed=$(mktemp)
   gawk "{
-  if (\$0 ~ ${begin_re}) {
-    destination = gensub(${begin_re}, \"\\\\1\", 1, \$0);
-    do { getline; } while (\$0 ~ /^\\s*\$/);
-    if (\$0 !~ ${source_re}) {
-      print \"Unexpected source image syntax \$0\" > \"/dev/stderr\"
-	exit 1
-    }
-    description = gensub(${source_re}, \"\\\\1\", 1, \$0);
-    source = gensub(${source_re}, \"\\\\2\", 1, \$0);
-    do { getline; } while (\$0 ~ /^\\s*\$/);
-    if (\$0 !~ ${replace_re}) {
-      print \"Unexpected image replacement syntax \$0\" > \"/dev/stderr\"
-      exit 1
-    }
+    simple = (\$0 ~ ${begin_re});
+    extra = (\$0 ~ ${begin_move_re});
+    if (simple || extra) {
+      description = \"\";
+      destination = \"\";
+      source = \"\";
+      if (extra) {
+        source = gensub(${begin_move_re}, \"\\\\1\", 1, \$0);
+        destination = gensub(${begin_move_re}, \"\\\\2\", 1, \$0);
+        do { getline; } while (\$0 !~ ${replace_re});
+      } else if (simple) {
+        destination = gensub(${begin_re}, \"\\\\1\", 1, \$0);
+        do { getline; } while (\$0 ~ /^\\s*\$/);
+        if (\$0 !~ ${source_re}) {
+          print \"Unexpected source image syntax \" \$0 > \"/dev/stderr\"
+          exit 1
+        }
+        description = gensub(${source_re}, \"\\\\1\", 1, \$0);
+        source = gensub(${source_re}, \"\\\\2\", 1, \$0);
+        do { getline; } while (\$0 ~ /^\\s*\$/);
+      }
+      if (\$0 !~ ${replace_re}) {
+        print \"Unexpected image replacement syntax \" \$0 > \"/dev/stderr\"
+        exit 1
+      }
 
-    # Fill in the $destination and $description variables in replacement text.
-    pre = gensub(${replace_re}, \"\\\\1\", 1, \$0);
-    replacement = gensub(${replace_re}, \"\\\\2\", 1, \$0);
-    post = gensub(${replace_re}, \"\\\\3\", 1, \$0);
-    replacement = gensub(/\$description/, description, \"g\", replacement);
-    replacement = gensub(/\$destination/, destination, \"g\", replacement);
-    print pre replacement post
+      # Fill in the $destination and $description variables in replacement text.
+      pre = gensub(${replace_re}, \"\\\\1\", 1, \$0);
+      replacement = gensub(${replace_re}, \"\\\\2\", 1, \$0);
+      post = gensub(${replace_re}, \"\\\\3\", 1, \$0);
+      if (!extra) {
+        replacement = gensub(/\$description/, description, \"g\", replacement);
+      }
+      replacement = gensub(/\$destination/, destination, \"g\", replacement);
+      print pre replacement post
 
-    # Ensure the destination directory exists.
-    system(${mkdir_command});
+      # Ensure the destination directory exists.
+      system(${mkdir_command});
 
-    # Copy over the image.
-    print \"Writing file ${out_dir}/\" destination > \"/dev/stderr\"
-    system(${copy_command});
+      # Copy over the image.
+      print \"Writing file ${out_dir}/\" destination > \"/dev/stderr\"
+      system(${copy_command});
 
-    # Add the image to staging if -a given.
-    ${git_add_destination}
-  } else print
+      # Add the image to staging if -a given.
+      ${git_add_destination}
+    } else { print }
   }" "${out_file}" > "${transformed}"
   mv "${transformed}" "${out_file}"
 }
