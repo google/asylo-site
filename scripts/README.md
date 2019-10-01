@@ -63,7 +63,7 @@ but no two files may document it.
 
 ## Protobuf documentation format
 
-For full details, see the protobuf documentation extension's [README.md](https://github.com/istio/tools/tree/master/protoc-gen-docs).
+For full details, see the protobuf documentation extension's [README.md](https://github.com/istio/tools/tree/master/cmd/protoc-gen-docs).
 
 Documentation for a proto element is a leading comment or a trailing comment:
 
@@ -160,5 +160,27 @@ Example from the website:
 ![Asylo architecture](images/asylo.png)
 <!--asylo:image-replace-with {% include figure.html width='80%' ratio='46.36%' img='$destination' alt='$description' title='$description' caption='$description' %} -->
 ```
+
+A more flexible, but more verbose, image movement directive allows replacing
+any source text with the replacement. This method does _not_ substitute the
+`$description` variable in the replacment:
+
+```markdown
+<!--asylo:image-replace-begin(source => dest)-->
+anything
+<!--asylo:image-replace-with replacement-->
+```
+
+The source path cannot include a `)` or `=` to permit parsing the directive.
+An example of this syntax is
+
+```markdown
+<!--asylo:image-replace-begin(docs/assets/neato-protocol.png => ./img/diagram.png)-->
+
+`neato-diagram-syntax`
+
+<!--asylo:image-replace-with {% include figure.html width='80%' ratio='46.36%' img='$destination' alt='A sweet diagram' title='The sweet diagram' caption='Look at this sweet diagram' %} -->
+```
+
 
 The `-a` option to `build.sh` additionally applies to the relocated image files.
