@@ -186,9 +186,9 @@ function relocate_images() {
       replacement = gensub(${replace_re}, \"\\\\2\", 1, \$0);
       post = gensub(${replace_re}, \"\\\\3\", 1, \$0);
       if (!extra) {
-        replacement = gensub(/\$description/, description, \"g\", replacement);
+        replacement = gensub(/\\\$description/, description, \"g\", replacement);
       }
-      replacement = gensub(/\$destination/, destination, \"g\", replacement);
+      replacement = gensub(/\\\$destination/, destination, \"g\", replacement);
       print pre replacement post
 
       # Ensure the destination directory exists.
