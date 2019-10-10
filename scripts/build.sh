@@ -140,12 +140,13 @@ function relocate_images() {
   local out_file="$2"
   local out_dir="$3"
   local replace_re='/(.*)<!--\s*asylo:image-replace-with(.*)-->(.*)/'
-  local begin_move_re='/<!--\s*asylo:image-replace-begin\(([^=)]*)\s*=>\s([^)]*)*\)-->/'
+  local begin_move_re='/<!--\s*asylo:image-replace-begin\(([^=) ]*)\s*=>\s*([^)]*)*\)-->/'
   local begin_re='/<!--\s*asylo:image-replace-begin\(([^)]*)\)-->/'
   local source_re='/!\[(.*)\]\((.*)\)/'
+  local full_source=$(printf '\\"%s/\" source "\\"' "${ASYLO_LOCATION}/${source_dir}")
   local full_destination=$(printf '\\"%s/\" destination "\\"' "${out_dir}")
   local mkdir_command=$(printf '"mkdir -p $(dirname %s)"' "${full_destination}")
-  local copy_command=$(printf '"cp " source " %s"' "${full_destination}")
+  local copy_command=$(printf '"cp %s %s"' "${full_source}" "${full_destination}")
   local git_add_destination=
   local git_add_command=
   if [[ -n "${GIT_ADD}" ]]; then
