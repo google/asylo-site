@@ -5,6 +5,8 @@ publish_date: 2018-05-03
 subtitle: An open and flexible framework for enclave applications
 attribution: The Asylo Team
 
+keywords: blogs, blog posts, 2018 blogs, google, asylo blogs, asylo site posts, asylo posts
+
 order: 20
 
 layout: blog
@@ -34,4 +36,3 @@ get started with our
 [quickstart guide]({{home}}/docs/guides/quickstart.html) and dive into
 the [documentation]({{home}}/docs/). Be sure to check our website at
 [https://asylo.dev/]({{home}}/) for regular updates.
-

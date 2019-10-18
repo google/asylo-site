@@ -1,6 +1,7 @@
 ---
 title: 2019 Posts
 overview: Blog posts for 2019
+keywords: blogs, blog posts, 2019 blogs, google, asylo blogs, asylo site posts, asylo posts 2019, asylo 2019
 
 order: 9
 

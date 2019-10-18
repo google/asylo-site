@@ -5,6 +5,8 @@ publish_date: 2018-09-20
 subtitle: Hardware support and other enhancements
 attribution: The Asylo Team
 
+keywords: blogs, blog posts, 2018 blogs, google, asylo blogs, asylo site posts, asylo posts
+
 order: 19
 
 layout: blog

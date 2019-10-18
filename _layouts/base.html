@@ -2,7 +2,13 @@
 layout: default
 ---
 {% include home.html %}
-{% assign keywords = "google,asylo,opensource framework,flexible framework,opensource application,asylo-site,enclave,enclave application" %}
+
+{% if page.keywords == nil %}
+    {% assign keywords = "google,asylo,opensource framework,flexible framework,opensource application,asylo-site,enclave,enclave application" %}
+{% else %}
+    {% assign keywords = page.keywords %}
+{% endif %}
+
 
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
