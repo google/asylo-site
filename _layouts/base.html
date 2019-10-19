@@ -3,12 +3,6 @@ layout: default
 ---
 {% include home.html %}
 
-{% if page.keywords == nil %}
-    {% assign keywords = "google,asylo,opensource framework,flexible framework,opensource application,asylo-site,enclave,enclave application" %}
-{% else %}
-    {% assign keywords = page.keywords %}
-{% endif %}
-
 
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
@@ -22,6 +16,12 @@ layout: default
             {% assign description = "An open and flexible framework for enclave applications." %}
         {% else %}
             {% assign description = page.overview %}
+        {% endif %}
+
+        {% if page.keywords == nil %}
+            {% assign keywords = "google,asylo,opensource framework,flexible framework,opensource application,asylo-site,enclave,enclave application" %}
+        {% else %}
+            {% assign keywords = page.keywords %}
         {% endif %}
 
         <meta name="title" content="{{page.title}}">
