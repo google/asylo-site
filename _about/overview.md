@@ -4,7 +4,6 @@ title: Asylo Overview
 
 overview: Get a better understanding of the problem space and how Asylo is designed to enable solutions.
 
-keywords: about, about asylo, what is asylo?, asylo, info, about enclave application.
 
 location: /_about/overview.md
 

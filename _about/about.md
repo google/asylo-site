@@ -4,8 +4,6 @@ title: What is Asylo?
 
 overview: Learn why Asylo could be right for your application.
 
-keywords: about, about asylo, what is asylo?, asylo, info, about enclave application.
-
 location: /_about/about.md
 
 order: 10

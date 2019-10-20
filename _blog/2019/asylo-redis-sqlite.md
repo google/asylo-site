@@ -5,8 +5,6 @@ publish_date: 2019-08-09
 subtitle: Enclavizing Redis and SQLite
 attribution: The Asylo Team
 
-keywords: blogs, blog posts, 2019 blogs, google, asylo blogs, asylo site posts, asylo posts 2019, asylo 2019
-
 order: 18
 
 layout: blog

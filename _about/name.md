@@ -2,7 +2,6 @@
 title: Why the name Asylo?
 overview: Find out why the project name was chosen.
 
-keywords: about, about asylo, what is asylo?, asylo, info, about enclave application.
 
 location: /_about/name.md
 order: 30
