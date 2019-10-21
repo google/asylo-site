@@ -1,7 +1,6 @@
 ---
 title: Reference
 overview: The Reference section contains detailed authoritative reference material such as C++ API, and message-oriented API calling parameters.
-
 index: true
 
 order: 60
