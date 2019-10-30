@@ -229,11 +229,9 @@ function relocate_file() {
   # and for markdown [..]()
   sed -e "s!href=\"${BASE_URL}!href=\"{{site.baseurl}}!g" \
     -e "s!\][(]${BASE_URL}!]({{home}}!g" ${FILENAME} > "${OUT_PATH}"
-  # If an md file, replace header links that use _ spacing with -.
-  # Also remove jekyll-front-matter comment wrappers.
+  # If an md file, remove jekyll-front-matter comment wrappers.
   if [[ "${FILENAME}" = *.md ]]; then
-    sed -i -e ':a' -e 's/\(][(]#[^)_]*\)_/\1-/;t a' \
-      -e '/^\s*<!--jekyll-front-matter/d' \
+    sed -i -e '/^\s*<!--jekyll-front-matter/d' \
       -e '/^\s*jekyll-front-matter-->/d' \
       "${OUT_PATH}"
     relocate_images $(dirname "${FILENAME}") "${OUT_PATH}" "${OUT_DIR}/${DIRNAME}"
