@@ -90,15 +90,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39af8ef5ce1f49ff65cafaeebeecd5a6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a39af8ef5ce1f49ff65cafaeebeecd5a6">EnterAndRun</a> (const EnclaveInput &amp;input, EnclaveOutput *output)=0</td></tr>
 <tr class="memdesc:a39af8ef5ce1f49ff65cafaeebeecd5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the enclave and invokes its execution entry point.  <a href="#a39af8ef5ce1f49ff65cafaeebeecd5a6">More...</a><br /></td></tr>
 <tr class="separator:a39af8ef5ce1f49ff65cafaeebeecd5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d6da748c038a6b7d6af7c2d9282705b"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a9d6da748c038a6b7d6af7c2d9282705b">get_name</a> () const</td></tr>
-<tr class="memdesc:a9d6da748c038a6b7d6af7c2d9282705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the enclave.  <a href="#a9d6da748c038a6b7d6af7c2d9282705b">More...</a><br /></td></tr>
-<tr class="separator:a9d6da748c038a6b7d6af7c2d9282705b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f198225fdbaaca9139d886c680d4c8"><td class="memItemLeft" align="right" valign="top">virtual absl::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#ad4f198225fdbaaca9139d886c680d4c8">get_name</a> () const</td></tr>
+<tr class="memdesc:ad4f198225fdbaaca9139d886c680d4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the enclave.  <a href="#ad4f198225fdbaaca9139d886c680d4c8">More...</a><br /></td></tr>
+<tr class="separator:ad4f198225fdbaaca9139d886c680d4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a04259c108101c0df0eaf4f40169aca86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a04259c108101c0df0eaf4f40169aca86">EnclaveClient</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a04259c108101c0df0eaf4f40169aca86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> to create a client instance.  <a href="#a04259c108101c0df0eaf4f40169aca86">More...</a><br /></td></tr>
-<tr class="separator:a04259c108101c0df0eaf4f40169aca86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2054f75fb073474bf892585648ae57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#aae2054f75fb073474bf892585648ae57">EnclaveClient</a> (absl::string_view name)</td></tr>
+<tr class="memdesc:aae2054f75fb073474bf892585648ae57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the <a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> to create a client instance.  <a href="#aae2054f75fb073474bf892585648ae57">More...</a><br /></td></tr>
+<tr class="separator:aae2054f75fb073474bf892585648ae57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -106,8 +106,6 @@ Friends</h2></td></tr>
 <tr class="separator:a31f97d3da8745220f59b7a1358de5b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5973915de1c55e15da53de5c5ccd15a"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#ab5973915de1c55e15da53de5c5ccd15a">EnclaveSignalDispatcher</a></td></tr>
 <tr class="separator:ab5973915de1c55e15da53de5c5ccd15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f1dd40ffd007efb2ffeef231f14d8b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveClient.html#a3f1dd40ffd007efb2ffeef231f14d8b8">donate</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client)</td></tr>
-<tr class="separator:a3f1dd40ffd007efb2ffeef231f14d8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract enclave client. </p>
@@ -164,8 +162,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a04259c108101c0df0eaf4f40169aca86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04259c108101c0df0eaf4f40169aca86">&#9670;&nbsp;</a></span>EnclaveClient() <span class="overload">[2/2]</span></h2>
+<a id="aae2054f75fb073474bf892585648ae57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2054f75fb073474bf892585648ae57">&#9670;&nbsp;</a></span>EnclaveClient() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +174,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">asylo::EnclaveClient::EnclaveClient </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">absl::string_view&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
@@ -244,8 +242,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d6da748c038a6b7d6af7c2d9282705b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d6da748c038a6b7d6af7c2d9282705b">&#9670;&nbsp;</a></span>get_name()</h2>
+<a id="ad4f198225fdbaaca9139d886c680d4c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f198225fdbaaca9139d886c680d4c8">&#9670;&nbsp;</a></span>get_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +252,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::string&amp; asylo::EnclaveClient::get_name </td>
+          <td class="memname">virtual absl::string_view asylo::EnclaveClient::get_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -299,32 +297,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a3f1dd40ffd007efb2ffeef231f14d8b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f1dd40ffd007efb2ffeef231f14d8b8">&#9670;&nbsp;</a></span>donate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void donate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
-          <td class="paramname"><em>client</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a31f97d3da8745220f59b7a1358de5b85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31f97d3da8745220f59b7a1358de5b85">&#9670;&nbsp;</a></span>EnclaveManager</h2>
 
@@ -357,7 +329,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classasylo_1_1EnclaveSignalDispatcher.html">EnclaveSignalDispatcher</a></td>
+          <td class="memname">friend class EnclaveSignalDispatcher</td>
         </tr>
       </table>
   </td>

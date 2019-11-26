@@ -1,7 +1,7 @@
 <map id="asylo/platform/core/enclave_client.h" name="asylo/platform/core/enclave_client.h">
-<area shape="rect" id="node6" href="$shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="1804,95,1953,136"/>
-<area shape="rect" id="node13" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="863,102,1001,129"/>
-<area shape="rect" id="node12" href="$shared__name__kind_8h.html" title="asylo/platform/core\l/shared_name_kind.h" alt="" coords="2259,184,2421,225"/>
-<area shape="rect" id="node19" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1885,191,2032,218"/>
-<area shape="rect" id="node25" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="170,191,345,218"/>
+<area shape="rect" id="node5" href="$shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="589,95,739,136"/>
+<area shape="rect" id="node12" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1985,102,2124,129"/>
+<area shape="rect" id="node11" href="$shared__name__kind_8h.html" title="asylo/platform/core\l/shared_name_kind.h" alt="" coords="511,184,673,225"/>
+<area shape="rect" id="node18" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1004,191,1151,218"/>
+<area shape="rect" id="node24" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="2227,191,2402,218"/>
 </map>

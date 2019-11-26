@@ -1,6 +1,6 @@
 <map id="asylo/grpc/auth/enclave_auth_context.h" name="asylo/grpc/auth/enclave_auth_context.h">
-<area shape="rect" id="node10" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1075,102,1225,129"/>
-<area shape="rect" id="node13" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1609,266,1755,293"/>
-<area shape="rect" id="node19" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="943,184,1082,211"/>
-<area shape="rect" id="node24" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="533,266,708,293"/>
+<area shape="rect" id="node10" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1768,102,1919,129"/>
+<area shape="rect" id="node14" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="263,266,410,293"/>
+<area shape="rect" id="node21" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1382,184,1521,211"/>
+<area shape="rect" id="node26" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1215,266,1389,293"/>
 </map>

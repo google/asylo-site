@@ -1,9 +1,9 @@
 <map id="asylo/identity/null_identity/null_assertion_verifier.h" name="asylo/identity/null_identity/null_assertion_verifier.h">
-<area shape="rect" id="node4" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="1683,109,1849,151"/>
-<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="1683,199,1849,240"/>
-<area shape="rect" id="node16" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="919,377,1058,404"/>
-<area shape="rect" id="node35" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1052,295,1203,322"/>
-<area shape="rect" id="node34" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="2099,377,2292,404"/>
-<area shape="rect" id="node22" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1242,459,1389,486"/>
-<area shape="rect" id="node28" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1043,459,1217,486"/>
+<area shape="rect" id="node4" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="1597,109,1764,151"/>
+<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="1597,199,1764,240"/>
+<area shape="rect" id="node16" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="810,377,949,404"/>
+<area shape="rect" id="node36" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="911,295,1061,322"/>
+<area shape="rect" id="node35" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="2305,377,2499,404"/>
+<area shape="rect" id="node22" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="2083,459,2230,486"/>
+<area shape="rect" id="node28" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="167,459,341,486"/>
 </map>

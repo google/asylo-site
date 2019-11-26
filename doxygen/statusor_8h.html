@@ -73,8 +73,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<code>#include &quot;absl/base/attributes.h&quot;</code><br />
 <code>#include &quot;absl/meta/type_traits.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="logging_8h_source.html">asylo/util/logging.h</a>&quot;</code><br />
+<code>#include &quot;asylo/util/cleanup.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="status_8h_source.html">asylo/util/status.h</a>&quot;</code><br />
 <code>#include &quot;asylo/util/status_error_space.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -82,9 +84,9 @@ Include dependency graph for statusor.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="statusor_8h__incl.png" border="0" usemap="#asylo_2util_2statusor_8h" alt=""/></div>
 <map name="asylo_2util_2statusor_8h" id="asylo_2util_2statusor_8h">
-<area shape="rect" id="node4" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="319,162,466,189"/>
-<area shape="rect" id="node11" href="status_8h.html" title="asylo/util/status.h" alt="" coords="749,80,887,107"/>
-<area shape="rect" id="node16" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1243,162,1417,189"/>
+<area shape="rect" id="node5" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="319,162,466,189"/>
+<area shape="rect" id="node13" href="status_8h.html" title="asylo/util/status.h" alt="" coords="662,80,801,107"/>
+<area shape="rect" id="node18" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1243,162,1417,189"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -98,15 +100,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node5" href="identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="492,169,657,211"/>
 <area shape="rect" id="node6" href="enclave__auth__context_8h.html" title="asylo/grpc/auth/enclave\l_auth_context.h" alt="" coords="675,80,853,121"/>
 <area shape="rect" id="node7" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="929,80,1095,121"/>
-<area shape="rect" id="node8" href="enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="805,169,976,211"/>
-<area shape="rect" id="node11" href="enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="1001,169,1167,211"/>
-<area shape="rect" id="node14" href="secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="1171,80,1325,121"/>
-<area shape="rect" id="node16" href="enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1350,80,1503,121"/>
-<area shape="rect" id="node9" href="null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="615,259,790,315"/>
-<area shape="rect" id="node10" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="815,259,969,315"/>
-<area shape="rect" id="node12" href="null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="995,259,1170,315"/>
-<area shape="rect" id="node13" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="1195,259,1349,315"/>
-<area shape="rect" id="node15" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="1192,169,1384,211"/>
+<area shape="rect" id="node8" href="enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="812,169,983,211"/>
+<area shape="rect" id="node11" href="enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="1037,169,1203,211"/>
+<area shape="rect" id="node14" href="enclave__assertion__authority__configs_8h.html" title="Provides functions for creating enclave assertion authority configs. " alt="" coords="1171,80,1391,121"/>
+<area shape="rect" id="node15" href="secret__sealer_8h.html" title="asylo/identity/secret\l_sealer.h" alt="" coords="1416,80,1571,121"/>
+<area shape="rect" id="node17" href="sgx__identity__util_8h.html" title="asylo/identity/sgx\l/sgx_identity_util.h" alt="" coords="1595,80,1741,121"/>
+<area shape="rect" id="node18" href="enclave__manager_8h.html" title="asylo/platform/core\l/enclave_manager.h" alt="" coords="1766,80,1919,121"/>
+<area shape="rect" id="node9" href="null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="625,259,799,315"/>
+<area shape="rect" id="node10" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="824,259,979,315"/>
+<area shape="rect" id="node12" href="null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="1030,259,1205,315"/>
+<area shape="rect" id="node13" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="1229,259,1384,315"/>
+<area shape="rect" id="node16" href="sgx__local__secret__sealer_8h.html" title="asylo/identity/sgx\l/sgx_local_secret_sealer.h" alt="" coords="1397,169,1589,211"/>
 </map>
 </div>
 </div>
@@ -125,16 +129,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1032c843094aa40800a8ba427f1a707d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a1032c843094aa40800a8ba427f1a707d">asylo::kValueMoveConstructorMsg</a> []</td></tr>
-<tr class="separator:a1032c843094aa40800a8ba427f1a707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addaf8c2e1f84c63c8d400f735a00db33"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#addaf8c2e1f84c63c8d400f735a00db33">asylo::kValueMoveAssignmentMsg</a> []</td></tr>
-<tr class="separator:addaf8c2e1f84c63c8d400f735a00db33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2173bc389d0a8ce045a05b7781382134"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a2173bc389d0a8ce045a05b7781382134">asylo::kStatusMoveConstructorMsg</a> []</td></tr>
-<tr class="separator:a2173bc389d0a8ce045a05b7781382134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1294ac18a4c566056585006189b8ef58"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a1294ac18a4c566056585006189b8ef58">asylo::kValueOrDieMovedMsg</a> [] = &quot;Value moved by StatusOr::ValueOrDie&quot;</td></tr>
-<tr class="separator:a1294ac18a4c566056585006189b8ef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d30b7316bacf1891cc572c0b8a5c709"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a8d30b7316bacf1891cc572c0b8a5c709">asylo::kStatusMoveAssignmentMsg</a> []</td></tr>
-<tr class="separator:a8d30b7316bacf1891cc572c0b8a5c709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3761b184f111021d5bbee1139d21a7b9"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a3761b184f111021d5bbee1139d21a7b9">asylo::kValueMoveConstructorMsg</a> []</td></tr>
+<tr class="separator:a3761b184f111021d5bbee1139d21a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b5996a0b819b65f1a8d281beb8f4fff"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a6b5996a0b819b65f1a8d281beb8f4fff">asylo::kValueMoveAssignmentMsg</a> []</td></tr>
+<tr class="separator:a6b5996a0b819b65f1a8d281beb8f4fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd5688a45e23af3310b88489b7def41"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#affd5688a45e23af3310b88489b7def41">asylo::kStatusMoveConstructorMsg</a> []</td></tr>
+<tr class="separator:affd5688a45e23af3310b88489b7def41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65c326357c7452aac96ee0e128dd0e6"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ab65c326357c7452aac96ee0e128dd0e6">asylo::kValueOrDieMovedMsg</a> []</td></tr>
+<tr class="separator:ab65c326357c7452aac96ee0e128dd0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fac12ece837aca860004ddc0eecd5df"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a4fac12ece837aca860004ddc0eecd5df">asylo::kStatusMoveAssignmentMsg</a> []</td></tr>
+<tr class="separator:a4fac12ece837aca860004ddc0eecd5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

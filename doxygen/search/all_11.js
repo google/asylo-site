@@ -2,7 +2,6 @@ var searchData=
 [
   ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
   ['registermanagedresource',['RegisterManagedResource',['../classasylo_1_1SharedResourceManager.html#a6fa669fff218b8bc1384b03ac370314e',1,'asylo::SharedResourceManager']]],
-  ['registersignal',['RegisterSignal',['../classasylo_1_1EnclaveSignalDispatcher.html#a629035c7faaeb944c82af2f086e288e8',1,'asylo::EnclaveSignalDispatcher']]],
   ['registerunmanagedresource',['RegisterUnmanagedResource',['../classasylo_1_1SharedResourceManager.html#ae9b2e1b7c1da15f2db4b2763b72a76bf',1,'asylo::SharedResourceManager']]],
   ['releaseresource',['ReleaseResource',['../classasylo_1_1SharedResourceManager.html#a97f72b5d5277f7ea9f9f2d82bf6fae3c',1,'asylo::SharedResourceManager']]],
   ['reseal',['Reseal',['../classasylo_1_1SecretSealer.html#abb322e705202a11fff2ab10b254bff99',1,'asylo::SecretSealer']]],

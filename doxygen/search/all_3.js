@@ -16,11 +16,13 @@ var searchData=
   ['checkline',['CheckLine',['../classasylo_1_1experimental_1_1ExecTester.html#afac7bec5e9cfe5fcb9f5aa35f71103b7',1,'asylo::experimental::ExecTester']]],
   ['checknotnull',['CheckNotNull',['../namespaceasylo.html#a51fcb0ae5791d14eb8ef1c3a405dd0b7',1,'asylo']]],
   ['checkopmessagebuilder',['CheckOpMessageBuilder',['../classasylo_1_1CheckOpMessageBuilder.html',1,'asylo::CheckOpMessageBuilder'],['../classasylo_1_1CheckOpMessageBuilder.html#a91f81ef6d3d3101bd3d7112e4a147a6b',1,'asylo::CheckOpMessageBuilder::CheckOpMessageBuilder()']]],
+  ['cleansing_5ftypes_2eh',['cleansing_types.h',['../cleansing__types_8h.html',1,'']]],
+  ['cleansingstring',['CleansingString',['../namespaceasylo.html#a135dc48e2850e970403849e585300222',1,'asylo']]],
+  ['cleansingvector',['CleansingVector',['../namespaceasylo.html#a9aec28a454f8e329b3cd81ef525ea753',1,'asylo']]],
   ['code_5ftype',['code_type',['../classasylo_1_1error_1_1GoogleErrorSpace.html#af2ab5c86cf5023a82a0419d54c98c3f6',1,'asylo::error::GoogleErrorSpace::code_type()'],['../classasylo_1_1error_1_1PosixErrorSpace.html#a7873b558beeb4a7a8af1098802b90663',1,'asylo::error::PosixErrorSpace::code_type()']]],
-  ['configserverconnectionattributes',['ConfigServerConnectionAttributes',['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html',1,'asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes'],['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#ae29327e9d75c6b457a2155454e7048c5',1,'asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes::ConfigServerConnectionAttributes()']]],
+  ['configserverconnectionattributes',['ConfigServerConnectionAttributes',['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html',1,'asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes'],['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#a86af1bee7d588b6f78386e437744c5a8',1,'asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes::ConfigServerConnectionAttributes()']]],
   ['configure',['Configure',['../classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902',1,'asylo::EnclaveManager']]],
   ['connection_5ftimeout',['connection_timeout',['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#ae23e01705971619d5f03593e388170f3',1,'asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes']]],
-  ['copy',['Copy',['../classasylo_1_1EnclaveLoader.html#ae5ad79ff0c8d2774aba550bc261bd436',1,'asylo::EnclaveLoader']]],
   ['createaesgcmcryptor',['CreateAesGcmCryptor',['../classasylo_1_1experimental_1_1AeadCryptor.html#a0e5bf7e0a3f1899fa7c80de9781d15ed',1,'asylo::experimental::AeadCryptor']]],
   ['createaesgcmsivcryptor',['CreateAesGcmSivCryptor',['../classasylo_1_1experimental_1_1AeadCryptor.html#a54416804d942da5b4fc0fb818b474c5c',1,'asylo::experimental::AeadCryptor']]],
   ['createassertionoffer',['CreateAssertionOffer',['../classasylo_1_1EnclaveAssertionGenerator.html#abf50456178253a2b7c893f1558861d0a',1,'asylo::EnclaveAssertionGenerator::CreateAssertionOffer()'],['../classasylo_1_1NullAssertionGenerator.html#a21e94ee56e771b22269b7a843556bea1',1,'asylo::NullAssertionGenerator::CreateAssertionOffer()'],['../classasylo_1_1SgxLocalAssertionGenerator.html#a3e57b000427b57665cfdb07a983886d3',1,'asylo::SgxLocalAssertionGenerator::CreateAssertionOffer()']]],
@@ -29,5 +31,9 @@ var searchData=
   ['createfromauthcontext',['CreateFromAuthContext',['../classasylo_1_1EnclaveAuthContext.html#af9912a11546fcb83df9d85201dbae14d',1,'asylo::EnclaveAuthContext']]],
   ['createfromservercontext',['CreateFromServerContext',['../classasylo_1_1EnclaveAuthContext.html#af266368f9183364d7f12304aeb9b1ee7',1,'asylo::EnclaveAuthContext']]],
   ['createmrenclavesecretsealer',['CreateMrenclaveSecretSealer',['../classasylo_1_1SgxLocalSecretSealer.html#a6159d2205a9cf13ca1c38f113116d70b',1,'asylo::SgxLocalSecretSealer']]],
-  ['createmrsignersecretsealer',['CreateMrsignerSecretSealer',['../classasylo_1_1SgxLocalSecretSealer.html#acfb7e4abdf0f1b170123677d27dbb26e',1,'asylo::SgxLocalSecretSealer']]]
+  ['createmrsignersecretsealer',['CreateMrsignerSecretSealer',['../classasylo_1_1SgxLocalSecretSealer.html#acfb7e4abdf0f1b170123677d27dbb26e',1,'asylo::SgxLocalSecretSealer']]],
+  ['createnullassertionauthorityconfig',['CreateNullAssertionAuthorityConfig',['../namespaceasylo.html#a88125b3707d0c495049e944fb1b2122a',1,'asylo']]],
+  ['createsgxidentityexpectation',['CreateSgxIdentityExpectation',['../namespaceasylo.html#abd6ac352ae3f0b0a2caa5d611e32392b',1,'asylo::CreateSgxIdentityExpectation(SgxIdentity identity, SgxIdentityMatchSpec match_spec)'],['../namespaceasylo.html#a2dfcb5ff996e2fb15eb419fe4581305e',1,'asylo::CreateSgxIdentityExpectation(SgxIdentity identity, SgxIdentityMatchSpecOptions options)']]],
+  ['createsgxidentitymatchspec',['CreateSgxIdentityMatchSpec',['../namespaceasylo.html#a22a059eec748ce444409556e72e35bd6',1,'asylo']]],
+  ['createsgxlocalassertionauthorityconfig',['CreateSgxLocalAssertionAuthorityConfig',['../namespaceasylo.html#ac166310b0b726d04c9b42ded112ea66c',1,'asylo']]]
 ];

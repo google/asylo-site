@@ -80,30 +80,33 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc224568d4da53b0ec687d043854545f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#afc224568d4da53b0ec687d043854545f">LoadEnclave</a> (const std::string &amp;name, const <a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a> &amp;loader, void *base_address=nullptr, const size_t enclave_size=0)</td></tr>
-<tr class="memdesc:afc224568d4da53b0ec687d043854545f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an enclave.  <a href="#afc224568d4da53b0ec687d043854545f">More...</a><br /></td></tr>
-<tr class="separator:afc224568d4da53b0ec687d043854545f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0852583072930a4f5f165eca530d3e29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a0852583072930a4f5f165eca530d3e29">LoadEnclave</a> (const std::string &amp;name, const <a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a> &amp;loader, EnclaveConfig config, void *base_address=nullptr, const size_t enclave_size=0)</td></tr>
-<tr class="memdesc:a0852583072930a4f5f165eca530d3e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an enclave.  <a href="#a0852583072930a4f5f165eca530d3e29">More...</a><br /></td></tr>
-<tr class="separator:a0852583072930a4f5f165eca530d3e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49d6c42ba34a032209665280461f0940"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a49d6c42ba34a032209665280461f0940">GetClient</a> (const std::string &amp;name) const LOCKS_EXCLUDED(client_table_lock_)</td></tr>
-<tr class="memdesc:a49d6c42ba34a032209665280461f0940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a client to a loaded enclave.  <a href="#a49d6c42ba34a032209665280461f0940">More...</a><br /></td></tr>
-<tr class="separator:a49d6c42ba34a032209665280461f0940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a957d70baf503712bb8bcfc82c86d2017"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a957d70baf503712bb8bcfc82c86d2017">GetName</a> (const <a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client) const LOCKS_EXCLUDED(client_table_lock_)</td></tr>
-<tr class="memdesc:a957d70baf503712bb8bcfc82c86d2017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of an enclave client.  <a href="#a957d70baf503712bb8bcfc82c86d2017">More...</a><br /></td></tr>
-<tr class="separator:a957d70baf503712bb8bcfc82c86d2017"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce9df15f32a024de63fa19f4e11ee0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#afce9df15f32a024de63fa19f4e11ee0d">DestroyEnclave</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const EnclaveFinal &amp;final_input, bool skip_finalize=false) LOCKS_EXCLUDED(client_table_lock_)</td></tr>
-<tr class="memdesc:afce9df15f32a024de63fa19f4e11ee0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an enclave.  <a href="#afce9df15f32a024de63fa19f4e11ee0d">More...</a><br /></td></tr>
-<tr class="separator:afce9df15f32a024de63fa19f4e11ee0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb617a96b0be1c2e5ced47b733b033c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c">LoadEnclave</a> (const EnclaveLoadConfig &amp;load_config)</td></tr>
+<tr class="memdesc:abbb617a96b0be1c2e5ced47b733b033c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an enclave.  <a href="#abbb617a96b0be1c2e5ced47b733b033c">More...</a><br /></td></tr>
+<tr class="separator:abbb617a96b0be1c2e5ced47b733b033c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14ba086c624dd8df2db24167d02ca78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#aa14ba086c624dd8df2db24167d02ca78">LoadEnclave</a> (absl::string_view name, const <a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a> &amp;loader, void *base_address=nullptr, const size_t enclave_size=0)</td></tr>
+<tr class="memdesc:aa14ba086c624dd8df2db24167d02ca78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an enclave.  <a href="#aa14ba086c624dd8df2db24167d02ca78">More...</a><br /></td></tr>
+<tr class="separator:aa14ba086c624dd8df2db24167d02ca78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0beea9b584f6e0ce39a398b3e811c55e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a0beea9b584f6e0ce39a398b3e811c55e">LoadEnclave</a> (absl::string_view name, const <a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a> &amp;loader, EnclaveConfig config, void *base_address=nullptr, const size_t enclave_size=0)</td></tr>
+<tr class="memdesc:a0beea9b584f6e0ce39a398b3e811c55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an enclave.  <a href="#a0beea9b584f6e0ce39a398b3e811c55e">More...</a><br /></td></tr>
+<tr class="separator:a0beea9b584f6e0ce39a398b3e811c55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8c07f0884a9100ed8754935afe7db5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a6b8c07f0884a9100ed8754935afe7db5">GetClient</a> (absl::string_view name) const ABSL_LOCKS_EXCLUDED(client_table_lock_)</td></tr>
+<tr class="memdesc:a6b8c07f0884a9100ed8754935afe7db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a client to a loaded enclave.  <a href="#a6b8c07f0884a9100ed8754935afe7db5">More...</a><br /></td></tr>
+<tr class="separator:a6b8c07f0884a9100ed8754935afe7db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277ff884e89f6c43c48335eebdaa4ce4"><td class="memItemLeft" align="right" valign="top">const absl::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a277ff884e89f6c43c48335eebdaa4ce4">GetName</a> (const <a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client) const ABSL_LOCKS_EXCLUDED(client_table_lock_)</td></tr>
+<tr class="memdesc:a277ff884e89f6c43c48335eebdaa4ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of an enclave client.  <a href="#a277ff884e89f6c43c48335eebdaa4ce4">More...</a><br /></td></tr>
+<tr class="separator:a277ff884e89f6c43c48335eebdaa4ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee47d9f58ba53d0e275a3383c8413806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#aee47d9f58ba53d0e275a3383c8413806">DestroyEnclave</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client, const EnclaveFinal &amp;final_input, bool skip_finalize=false) ABSL_LOCKS_EXCLUDED(client_table_lock_)</td></tr>
+<tr class="memdesc:aee47d9f58ba53d0e275a3383c8413806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an enclave.  <a href="#aee47d9f58ba53d0e275a3383c8413806">More...</a><br /></td></tr>
+<tr class="separator:aee47d9f58ba53d0e275a3383c8413806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0562377d34c3c7b878c1371972330c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1SharedResourceManager.html">SharedResourceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#a0562377d34c3c7b878c1371972330c67">shared_resources</a> ()</td></tr>
 <tr class="memdesc:a0562377d34c3c7b878c1371972330c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the shared resource manager object.  <a href="#a0562377d34c3c7b878c1371972330c67">More...</a><br /></td></tr>
 <tr class="separator:a0562377d34c3c7b878c1371972330c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4122d89326019006fa949811c7be172"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classasylo_1_1SharedResourceManager.html">SharedResourceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#ab4122d89326019006fa949811c7be172">shared_resources</a> () const</td></tr>
 <tr class="memdesc:ab4122d89326019006fa949811c7be172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the shared resource manager object.  <a href="#ab4122d89326019006fa949811c7be172">More...</a><br /></td></tr>
 <tr class="separator:ab4122d89326019006fa949811c7be172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9b23f27641b2b7fd2ab8e167a5a3dad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#ae9b23f27641b2b7fd2ab8e167a5a3dad">GetLoaderFromClient</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client) LOCKS_EXCLUDED(client_table_lock_)</td></tr>
-<tr class="memdesc:ae9b23f27641b2b7fd2ab8e167a5a3dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the loader of an enclave.  <a href="#ae9b23f27641b2b7fd2ab8e167a5a3dad">More...</a><br /></td></tr>
-<tr class="separator:ae9b23f27641b2b7fd2ab8e167a5a3dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d59bbc5b14aaf6b03ab907699f89b5"><td class="memItemLeft" align="right" valign="top">EnclaveLoadConfig&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html#ae3d59bbc5b14aaf6b03ab907699f89b5">GetLoadConfigFromClient</a> (<a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *client) ABSL_LOCKS_EXCLUDED(client_table_lock_)</td></tr>
+<tr class="memdesc:ae3d59bbc5b14aaf6b03ab907699f89b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the load config of an enclave.  <a href="#ae3d59bbc5b14aaf6b03ab907699f89b5">More...</a><br /></td></tr>
+<tr class="separator:ae3d59bbc5b14aaf6b03ab907699f89b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -154,8 +157,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afce9df15f32a024de63fa19f4e11ee0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce9df15f32a024de63fa19f4e11ee0d">&#9670;&nbsp;</a></span>DestroyEnclave()</h2>
+<a id="aee47d9f58ba53d0e275a3383c8413806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee47d9f58ba53d0e275a3383c8413806">&#9670;&nbsp;</a></span>DestroyEnclave()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,8 +203,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a49d6c42ba34a032209665280461f0940"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49d6c42ba34a032209665280461f0940">&#9670;&nbsp;</a></span>GetClient()</h2>
+<a id="a6b8c07f0884a9100ed8754935afe7db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8c07f0884a9100ed8754935afe7db5">&#9670;&nbsp;</a></span>GetClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +212,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a>* asylo::EnclaveManager::GetClient </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">absl::string_view&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -227,14 +230,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae9b23f27641b2b7fd2ab8e167a5a3dad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9b23f27641b2b7fd2ab8e167a5a3dad">&#9670;&nbsp;</a></span>GetLoaderFromClient()</h2>
+<a id="ae3d59bbc5b14aaf6b03ab907699f89b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d59bbc5b14aaf6b03ab907699f89b5">&#9670;&nbsp;</a></span>GetLoadConfigFromClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classasylo_1_1EnclaveLoader.html">EnclaveLoader</a>* asylo::EnclaveManager::GetLoaderFromClient </td>
+          <td class="memname">EnclaveLoadConfig asylo::EnclaveManager::GetLoadConfigFromClient </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
           <td class="paramname"><em>client</em></td><td>)</td>
@@ -243,19 +246,19 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the loader of an enclave. </p>
-<p>This should only be used during fork in order to load an enclave with the same loader as the parent. </p>
+<p>Get the load config of an enclave. </p>
+<p>This should only be used during fork in order to load an enclave with the same load config as the parent. </p>
 
 </div>
 </div>
-<a id="a957d70baf503712bb8bcfc82c86d2017"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a957d70baf503712bb8bcfc82c86d2017">&#9670;&nbsp;</a></span>GetName()</h2>
+<a id="a277ff884e89f6c43c48335eebdaa4ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277ff884e89f6c43c48335eebdaa4ce4">&#9670;&nbsp;</a></span>GetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string asylo::EnclaveManager::GetName </td>
+          <td class="memname">const absl::string_view asylo::EnclaveManager::GetName </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classasylo_1_1EnclaveClient.html">EnclaveClient</a> *&#160;</td>
           <td class="paramname"><em>client</em></td><td>)</td>
@@ -303,8 +306,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afc224568d4da53b0ec687d043854545f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc224568d4da53b0ec687d043854545f">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[1/2]</span></h2>
+<a id="abbb617a96b0be1c2e5ced47b733b033c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb617a96b0be1c2e5ced47b733b033c">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +315,37 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::LoadEnclave </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const EnclaveLoadConfig &amp;&#160;</td>
+          <td class="paramname"><em>load_config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads an enclave. </p>
+<p>Loads a new enclave utilizing the passed enclave backend loader configuration settings. The loaded enclave is bound to the value of field <code>name</code> set in |load_config|. The enclave is initialized with custom enclave config settings if the <code>config</code> field is set in |load_config|. Else, the enclave is initialized with default Asylo enclave config settings.</p>
+<p>It is an error to specify a name which is already bound to an enclave.</p>
+<p>Example: 1) Load an enclave with custom enclave config settings</p>
+<div class="fragment"><div class="line">EnclaveConfig config;</div><div class="line">... <span class="comment">// populate config proto.</span></div><div class="line"></div><div class="line">EnclaveLoadConfig load_config;</div><div class="line">load_config.set_name(<span class="stringliteral">&quot;example&quot;</span>);</div><div class="line">load_config.set_config(config);</div><div class="line"></div><div class="line">load_config.SetExtension(example_backend_extension);</div><div class="line">... <span class="comment">// populate Asylo backend extension proto.</span></div><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c">LoadEnclave</a>(load_config);</div></div><!-- fragment --><p> 2) Load an enclave with default enclave config settings</p>
+<div class="fragment"><div class="line">EnclaveLoadConfig load_config;</div><div class="line">load_config.set_name(<span class="stringliteral">&quot;example&quot;</span>);</div><div class="line">load_config.SetExtension(example_backend_extension);</div><div class="line">... <span class="comment">// populate Asylo backend extension proto.</span></div><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c">LoadEnclave</a>(load_config);</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">load_config</td><td>Backend configuration options to load an enclave </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa14ba086c624dd8df2db24167d02ca78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa14ba086c624dd8df2db24167d02ca78">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::LoadEnclave </td>
+          <td>(</td>
+          <td class="paramtype">absl::string_view&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
@@ -344,7 +377,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Loads an enclave. </p>
 <p>Loads a new enclave with default enclave config settings and binds it to a name. The actual work of opening the enclave is delegated to the passed loader object.</p>
 <p>It is an error to specify a name which is already bound to an enclave.</p>
-<p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#afc224568d4da53b0ec687d043854545f">LoadEnclave</a>(<span class="stringliteral">&quot;/EchoEnclave&quot;</span>, SgxLoader(<span class="stringliteral">&quot;echoService.so&quot;</span>));</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c">LoadEnclave</a>(<span class="stringliteral">&quot;/EchoEnclave&quot;</span>, SgxLoader(<span class="stringliteral">&quot;echoService.so&quot;</span>));</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>Name to bind the loaded enclave under. </td></tr>
     <tr><td class="paramname">loader</td><td>Configured enclave loader to load from. </td></tr>
@@ -356,8 +389,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0852583072930a4f5f165eca530d3e29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0852583072930a4f5f165eca530d3e29">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[2/2]</span></h2>
+<a id="a0beea9b584f6e0ce39a398b3e811c55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0beea9b584f6e0ce39a398b3e811c55e">&#9670;&nbsp;</a></span>LoadEnclave() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +398,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::EnclaveManager::LoadEnclave </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">absl::string_view&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
@@ -404,7 +437,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Loads a new enclave with custom enclave config settings and binds it to a name. The actual work of opening the enclave is delegated to the passed loader object.</p>
 <p>It is an error to specify a name which is already bound to an enclave.</p>
 <p>Example:</p>
-<div class="fragment"><div class="line">EnclaveConfig config;</div><div class="line">... <span class="comment">// populate config proto.</span></div><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#afc224568d4da53b0ec687d043854545f">LoadEnclave</a>(<span class="stringliteral">&quot;/EchoEnclave&quot;</span>, SgxLoader(<span class="stringliteral">&quot;echoService.so&quot;</span>), config);</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">EnclaveConfig config;</div><div class="line">... <span class="comment">// populate config proto.</span></div><div class="line"><a class="code" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c">LoadEnclave</a>(<span class="stringliteral">&quot;/EchoEnclave&quot;</span>, SgxLoader(<span class="stringliteral">&quot;echoService.so&quot;</span>), config);</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>Name to bind the loaded enclave under. </td></tr>
     <tr><td class="paramname">loader</td><td>Configured enclave loader to load from. </td></tr>

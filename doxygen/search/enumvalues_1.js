@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fatal',['FATAL',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da651d8a47a6976d6fe05c0e03fb4cd2d0',1,'logging.h']]]
+  ['error',['ERROR',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90',1,'logging.h']]]
 ];

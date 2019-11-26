@@ -9,7 +9,6 @@ var searchData=
   ['enclaveloader',['EnclaveLoader',['../classasylo_1_1EnclaveLoader.html',1,'asylo']]],
   ['enclavemanager',['EnclaveManager',['../classasylo_1_1EnclaveManager.html',1,'asylo']]],
   ['enclavemanageroptions',['EnclaveManagerOptions',['../classasylo_1_1EnclaveManagerOptions.html',1,'asylo']]],
-  ['enclavesignaldispatcher',['EnclaveSignalDispatcher',['../classasylo_1_1EnclaveSignalDispatcher.html',1,'asylo']]],
   ['eq',['Eq',['../structasylo_1_1SharedName_1_1Eq.html',1,'asylo::SharedName']]],
   ['errorspace',['ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html',1,'asylo::error']]],
   ['errorspaceimplementationhelper',['ErrorSpaceImplementationHelper',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]],

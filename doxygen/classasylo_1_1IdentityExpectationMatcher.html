@@ -86,6 +86,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a68c1beafb19dd35c5abb839642a71f58"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1IdentityExpectationMatcher.html#a68c1beafb19dd35c5abb839642a71f58">Match</a> (const EnclaveIdentity &amp;identity, const EnclaveIdentityExpectation &amp;expectation) const =0</td></tr>
 <tr class="memdesc:a68c1beafb19dd35c5abb839642a71f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates whether <code>identity</code> matches <code>expectation</code>.  <a href="#a68c1beafb19dd35c5abb839642a71f58">More...</a><br /></td></tr>
 <tr class="separator:a68c1beafb19dd35c5abb839642a71f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320cac7aec1de3f187bd597c0306cbc8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1IdentityExpectationMatcher.html#a320cac7aec1de3f187bd597c0306cbc8">MatchAndExplain</a> (const EnclaveIdentity &amp;identity, const EnclaveIdentityExpectation &amp;expectation, std::string *explanation) const</td></tr>
+<tr class="memdesc:a320cac7aec1de3f187bd597c0306cbc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates whether <code>identity</code> matches <code>expectation</code>.  <a href="#a320cac7aec1de3f187bd597c0306cbc8">More...</a><br /></td></tr>
+<tr class="separator:a320cac7aec1de3f187bd597c0306cbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines an abstract interface that describes how to match an <code>EnclaveIdentity</code> against an <code>EnclaveIdentityExpectation</code>. </p>
@@ -188,6 +191,61 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">identity</td><td>An identity to match. </td></tr>
     <tr><td class="paramname">expectation</td><td>The identity expectation to match against. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool indicating whether the match succeeded, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> in the case of invalid arguments. </dd></dl>
+
+</div>
+</div>
+<a id="a320cac7aec1de3f187bd597c0306cbc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a320cac7aec1de3f187bd597c0306cbc8">&#9670;&nbsp;</a></span>MatchAndExplain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::IdentityExpectationMatcher::MatchAndExplain </td>
+          <td>(</td>
+          <td class="paramtype">const EnclaveIdentity &amp;&#160;</td>
+          <td class="paramname"><em>identity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const EnclaveIdentityExpectation &amp;&#160;</td>
+          <td class="paramname"><em>expectation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>explanation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates whether <code>identity</code> matches <code>expectation</code>. </p>
+<p>The behavior of this method is identical to that of <code>Match</code>, except that it also takes an <code>explanation</code> parameter, which is populated with an explanation of why the match failed in the case that this method returns false. <code>explanation</code> can be nullptr, in which case it is ignored.</p>
+<p>The default implementation of this method calls <code>Match</code>, ignoring the explanation parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">identity</td><td>An identity to match. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">expectation</td><td>The identity expectation to match against. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">explanation</td><td>An explanation of why the match failed, if the return value was false. </td></tr>
   </table>
   </dd>
 </dl>

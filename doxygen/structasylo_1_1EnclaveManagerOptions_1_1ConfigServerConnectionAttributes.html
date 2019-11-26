@@ -89,8 +89,8 @@ Collaboration diagram for asylo::EnclaveManagerOptions::ConfigServerConnectionAt
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae29327e9d75c6b457a2155454e7048c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#ae29327e9d75c6b457a2155454e7048c5">ConfigServerConnectionAttributes</a> (std::string address, absl::Duration timeout)</td></tr>
-<tr class="separator:ae29327e9d75c6b457a2155454e7048c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86af1bee7d588b6f78386e437744c5a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#a86af1bee7d588b6f78386e437744c5a8">ConfigServerConnectionAttributes</a> (absl::string_view address, absl::Duration timeout)</td></tr>
+<tr class="separator:a86af1bee7d588b6f78386e437744c5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -104,8 +104,8 @@ Public Attributes</h2></td></tr>
 <p>A part of an enclave's configuration is expected to be the same across all enclaves running under a single instance of an OS. An Enclave manager can obtain such configuration from the Asylo daemon running on the system. Alternately, the creator of the enclave manager can directly provide such configuration to the enclave manager. To this end, an <a class="el" href="classasylo_1_1EnclaveManagerOptions.html" title="Enclave Manager configuration. ">EnclaveManagerOptions</a> instance either holds the information necessary for connecting to the config server, or holds a HostConfig proto. If the enclave manager is configured with an options object containing the server-connection information, the enclave manager obtains the necessary information by contacting the Asylo daemon. Else, the enclave manager directly uses the HostConfig info stored within the options structure.</p>
 <p>The <a class="el" href="structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html" title="Configuration server connection attributes. ">ConfigServerConnectionAttributes</a> struct holds information necessary for contacting the config server running inside the Asylo daemon. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae29327e9d75c6b457a2155454e7048c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae29327e9d75c6b457a2155454e7048c5">&#9670;&nbsp;</a></span>ConfigServerConnectionAttributes()</h2>
+<a id="a86af1bee7d588b6f78386e437744c5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86af1bee7d588b6f78386e437744c5a8">&#9670;&nbsp;</a></span>ConfigServerConnectionAttributes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,7 +116,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes::ConfigServerConnectionAttributes </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">absl::string_view&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>

@@ -31,24 +31,77 @@ POSIX.
 
 ### dirent.h
 
-`closedir`, `opendir` , `readdir`, `rewinddir`, `seekdir`, and `telldir` all not
-implemented and will call abort().
+`closedir`, `opendir`, `readdir`, `rewinddir`, `seekdir`, and `telldir` are all
+not implemented and will call `abort`.
+
+### dlfcn.h
+
+`dlopen`, `dlsym`, `dlclose`, `dlerror` are not implemented and will call
+`abort`, as they may cause security issues.
+
+### fcntl.h
+
+#### `fcntl`
+
+In current Asylo implementation of `fcntl`, only the `cmd`s `F_GETFD`,
+`F_SETFD`, `F_GETFL`, `F_SETFL`, and `F_DUPFD` are implemented. -1 is returned
+if `fcntl` is called with any other `cmd`, and `errno` will be set to `EINVAL`.
+
+##### `F_SETFL`
+
+When `fcntl` is called inside an enclave with `cmd` `F_SETFL` on an `fd` backed
+by a file on the host, the file status flags will be set to `arg` on the host
+after exiting enclave. If it is called on a secure `fd`, -1 is returned and
+`errno` is set to `ENOSYS`.
+
+##### `F_GETFL`
+
+When `fcntl` is called inside an enclave with `cmd` `F_GETFL` on an `fd` backed
+by a file on the host, the file status flags will be obtained from the host. If
+it is called on a secure `fd`, -1 is returned and `errno` is set to `ENOSYS`.
+
+##### `F_SETFD`
+
+When `fcntl` is called inside an enclave with `cmd` `F_SETFD` on an `fd` backed
+by a file on the host, the file descriptor flags will be set to `arg` on the
+host after exiting enclave. If it is called on a secure `fd`, -1 is returned and
+`errno` is set to `ENOSYS`.
+
+##### `F_GETFL`
+
+When `fcntl` is called inside an enclave with `cmd` `F_GETFL` on an `fd` backed
+by a file on the host, the file descriptor flags will be obtained from the host.
+If it is called on a secure `fd`, -1 is returned and `errno` is set to `ENOSYS`.
+
+##### `F_DUPFD`
+
+When `fcntl` is called inside an enclave with `cmd` `F_DUPFD`, Asylo will
+duplicate the file descriptor `fd` using the lowest-numbered available file
+descriptor greater than or equal to `arg`. Since Asylo keeps track of all Asylo
+file descriptors, the process happens all inside an enclave.
+
+### `open`
+
+`open` generally exits the enclave and opens a file on the host. The host `fd`
+returned is stored inside the enclave, and an enclave specific `fd` is assigned
+and returned. However, if `open` is called on `/dev/random` or `/dev/urandom`,
+it assigns an enclave specific `fd` directly without exiting the enclave.
 
 ### fnmatch.h
 
 #### `fnmatch`
 
-`fnmatch` is not implemented and will `abort()`
+`fnmatch` is not implemented and will `abort`
 
 ### grp
 
 #### `getgrgid_r` and `getgrnam_r`
 
-`getgrgid_r` and `getgrnam_r` are not implemented and will `abort()`
+`getgrgid_r` and `getgrnam_r` are not implemented and will `abort`
 
 ### ifaddrs.h
 
-#### `getifaddrs(struct ifaddrs **ifap)`
+#### `getifaddrs`
 
 When `getifaddrs` is called from inside an enclave, it is invoked on the host.
 The resulting linked list is serialized and then copied into the enclave and
@@ -56,11 +109,31 @@ deserialized there. It is important to note that Asylo only supports IPv4 and
 IPv6 address families. Consequently, all ifaddrs entries that don't have these
 formats are filtered out when they are passed to the enclave from the host.
 
+### net/if.h
+
+#### `if_nametoindex`
+
+When `if_nametoindex` is called from inside an enclave, it exits the enclave and
+gets the index on the host, which is passed back into the enclave. It is not
+causing security issues as it only gets corresponding |ifindex| from the host.
+The index is obtained on the host though and is untrusted.
+
+#### `if_indextoname`
+
+When `if_indextoname` is called from inside an enclave, it exits the enclave and
+gets the name on the host, which is passed back into the enclave. It is not
+causing security issues as it only gets corresponding |ifname| from the host.
+The name is obtained on the host though and is untrusted.
+
 ### netdb.h
 
 #### `getservbyname` and `getservbyport`
 
-These calls are not implemented and calls to them will result in `abort()`.
+These calls are not implemented and calls to them will result in `abort`.
+
+### nl_types.h
+
+#### `catclose`, `catgets` and `catopen` are not implemented and return error.
 
 ### poll.h
 
@@ -73,30 +146,109 @@ Upon error, the return value and errono are set by the host.
 
 ### pthread.h
 
-#### `pthread_cancel(pthread_t thread_id)`
+All `pthread_foo` calls that contain a `mutex` parameter, `attr` parameter or a
+conditional vairable `cond` parameter first check whether the `mutex`, `attr`,
+or `cond` parameters point to a valid enclave address, and return `EFAULT` if
+not.
 
-`pthread_cancel` is not implemented and will always return `ENOSYS`.
+#### `pthread_attr_destroy`
+
+`pthread_attr_destroy` returns 0 after verifying `attr` is a valid enclave
+address.
+
+#### `pthread_attr_init`
+
+`pthread_attr_init` sets `detach_state` of `attr` to `PTHREAD_CREAT_JOINABLE`.
+
+#### `pthread_attr_setdetachstate`
+
+`pthread_attr_setdetachstate` sets `detach_state` of `attr` to `type`, unless
+`type` is `PTHREAD_CREATE_JOINABLE` or `PTHREAD_CREATE_DETACHED`.
+
+\#### `pthread_attr_getschedpolicy`/`pthread_attr_setschedpolicy`
+/`pthread_attr_getscope`/`pthread_attr_setscope`/`pthread_attr_getschedparam`
+/`pthread_attr_setschedparam`/`pthread_attr_getstacksize`
+/`pthread_attr_setstacksize`
+
+`pthread_attr_getschedpolicy`, `pthread_attr_setschedpolicy`,
+`pthread_attr_getscope`, `pthread_attr_setscope`, `pthread_attr_getschedparam`,
+`pthread_attr_setschedparam`, `pthread_attr_getstacksize`, and
+`pthread_attr_setstacksize` are not implemented and returns `ENOSYS`.
+
+#### `pthread_cancel`/`pthread_setcancelstate`/`pthread_setcanceltype`
+
+`pthread_cancel`, `pthread_setcancelstate` and `pthread_setcanceltype` are not
+implemented and will always return `ENOSYS`.
 
 #### `pthread_cleanup_push` and `pthread_cleanup_pop`
 
 The process and parent process identification numbers are obtained from the host
 operating system to make sure the value is consistent with the host.
 
-If the host `getpid()` call returns 0, the enclave will abort. Zero is not a
-valid return value for `getpid()` under POSIX, but it is used as a marker in
-other system calls that operate with PIDs (e.g. `fork()`). Forwarding a returned
-PID of 0 could cause user code to take unexpected code paths, which could create
-a security vulnerability, so the enclave aborts as a precaution.
+#### `pthread_cond_broadcast`
 
-#### `int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const struct timespec *abstime)`
+`pthread_cond_broadcast` checks the list waiting on `cond`, and wakes all
+threads in the list.
 
-`pthread_cond_timedwait()` is similar to `pthread_cond_wait()`. Instead of
-blocking indefinitely, the `timedwait` variant takes an extra argument,
-`abstime`, that specifies a deadline (in absolute UNIX time) after which the
-function should return `ETIMEDOUT`. However, as Asylo enclaves do not have a
-source of secure time, these semantics can not be guaranteed. A hostile host
-could cause `pthread_cond_timedwait()` to either return `ETIMEDOUT` immediately,
-or never time out, acting like `pthread_cond_wait()`.
+#### `pthread_cond_destroy`
+
+`pthread_cond_destroy` checks the list waiting on the conditional variable
+`cond`, and returns `EBUSY` if so. It returns 0 on success.
+
+#### `pthread_cond_init`
+
+`pthread_cond_init` always initializes `cond` to `PTHREAD_COND_INITIALIZER`.
+`attr` is ignored.
+
+#### `pthread_cond_signal`
+
+`pthread_cond_signal` checks the list waiting on `cond`, and wakes the first
+waiting thread.
+
+#### `pthread_cond_timedwait`
+
+`pthread_cond_timedwait` is similar to `pthread_cond_wait`. Instead of blocking
+indefinitely, the `timedwait` variant takes an extra argument, `abstime`, that
+specifies a deadline (in absolute UNIX time) after which the function should
+return `ETIMEDOUT`. However, as Asylo enclaves do not have a source of secure
+time, these semantics can not be guaranteed. A hostile host could cause
+`pthread_cond_timedwait` to either return `ETIMEDOUT` immediately, or never time
+out, acting like `pthread_cond_wait`.
+
+#### `pthread_cond_wait`
+
+`pthread_cond_wait` invokes `pthread_cond_timedwait` directly, with `deadline`
+parameter of `pthread_cond_timedwait` set as `nullptr`.
+
+#### `pthread_condattr_init`/`pthread_condattr_destroy`
+
+`pthread_condattr_init` and `pthread_condattr_destroy` are not implemented and
+returns 0 directly.
+
+#### `pthread_create`
+
+`pthread_create` exits the enclave, creates an untrusted thread, which invokes
+an EnterAndDonateThread entry point to enter the enclave in a bound trusted
+thread, and executes the user code for the thread.
+
+#### `pthread_detach`
+
+`pthread_detach` invokes `pthread_cond_broadcast` on a `state_change_cond`
+variable maintained by the `Thread` object corresponding to the thread id
+parameter to unblock threads currently waiting for a state change from the
+target thread, and marks the thread as detached.
+
+#### `pthread_getspecific`/`pthread_setspecific`
+
+A thread-local array of size 64 is stored inside the enclave.
+`pthread_setspecific` sets the values corresponding to the key, and
+`pthread_getspecific` returns value from the array. The key can not be larger
+than 64 and should be obtained through `pthread_key_create`.
+
+#### `pthread_join`
+
+`pthread_join` waits for the corresponding trusted thread to finish executing
+the job.
 
 #### `pthread_key_create`
 
@@ -109,7 +261,104 @@ destructors supplied will be ignored.
 
 #### `pthread_key_delete`
 
-`pthread_key_delete` is not implemented and will return 0.
+`pthread_key_delete` removes the key from the `used_thread_key` list and makes
+it available to be assigned again.
+
+\####
+`pthread_mutexattr_init`/`pthread_mutexattr_destroy`/`pthread_mutexattr_settype`
+
+`pthread_mutexattr_init`, `pthread_mutexattr_destroy`, and
+`pthread_mutexattr_settype` are not implemented and return 0.
+
+#### `pthread_mutex_init`
+
+`pthread_mutex_init` initializes `mutex` to `PTHREAD_MUTEX_INITIALIZER`. `attr`
+parameter is ignored.
+
+#### `pthread_mutex_destroy`
+
+`pthread_mutex_destroy` checks if there are threads waiting on `mutex`, and
+returns `EBUSY` if so.
+
+#### `pthread_mutex_lock`
+
+`pthread_mutex_lock` adds the calling thread to the list waiting for `mutex`. It
+then continuously checks whether mutex is available and the calling thread is in
+the front of the queue. If not, it calls `sched_yield` to lower the priority of
+the calling thread, until it checks the mutex list again. It removes the calling
+thread from the waiting list once it owns the mutex.
+
+#### `pthread_mutex_trylock`
+
+`pthread_mutex_trylock` checks whether `mutex` is taken, returns `EBUSY` if so,
+or 0 if the mutex is available.
+
+#### `pthread_mutex_unlock`
+
+`pthread_mutex_unlock` changes the state of `mutex` back to available. It
+returns `EINVAL` if the mutex is already available, or `EPERM` if `mutex` is not
+owned by the calling thread.
+
+#### `pthread_once`
+
+`pthread_once` checks the state of `once` and calls `init_routine` exactly once.
+
+#### `pthread_rwlock_destroy`
+
+`pthread_rwlock_destroy` returns 0 if `rwlock` has no writer owners and the
+waiting list is empty. Otherwise returns `EBUSY`.
+
+#### `pthread_equal`
+
+`pthread_equal` compares `thread_one` and `thread_two` directly, returns 0 if
+they are equal, and -1 if not.
+
+#### `pthread_rwlock_init`
+
+`pthread_rwlock_init` initializes `rwlock` to `PTHREAD_RWLOCK_INITIALIZER`.
+`attr` is ignored.
+
+#### `pthread_rwlock_tryrdlock`
+
+`pthread_rwlock_tryrdlock` checks if `rwlock` is owned by a write owner, and
+returns EBUSY if so. It then checks if the waiting queue is empty or the calling
+thread is in the front of the queue. If so, it increments the reader counter and
+removes the calling thread from the waiting queue, and returns 0.
+
+#### `pthread_rwlock_trywrlock`
+
+`pthread_rwlock_trywrlock` returns `EBUSY` if `rwlock` has either non-zero
+readers or a write owner. It returns `EDEADLK` if `rwlock` is owned by the
+current thread already. Otherwise, it checks whether the waiting queue is empty
+or the calling thread is in the front of the queue. If so, it takes write
+ownership of `rwlock` and returns 0.
+
+#### `pthread_rwlock_rdlock`
+
+`pthread_rwlock_rdlock` adds the calling thread to the waiting list on `rwlock`.
+It then keeps calling `pthread_rwlock_tryrdlock`, and invokes `sched_yield` to
+lower the priority of the calling thread, until `pthread_rwlock_tryrdlock`
+returns a result other than `EBUSY`.
+
+#### `pthread_rwlock_wrlock`
+
+`pthread_rwlock_wrlock` adds the calling thread to the waiting list on `rwlock`.
+It then keeps calling `pthread_rwlock_trywrlock`, and invokes `sched_yield` to
+lower the priority of the calling thread, until `pthread_rwlock_trywrlock`
+returns a result other than `EBUSY`.
+
+#### `pthread_rwlock_unlock`
+
+`pthread_rwlock_unlock` makes `rwlock` write lock available if the calling
+thread is the owner of the write lock. Otherwise, it decreases the reader
+reference of `rwlock` by 1.
+
+#### `pthread_self`
+
+`pthread_self` returns the address of a static thread-local variable. Since each
+thread is allocated a distinct instance of this variable, and all instances are
+in the same address space, this guarantees a distinct non-zero value is
+provisioned to each thread.
 
 ### pwd.h
 
@@ -124,11 +373,11 @@ limited to 1024 bytes. And this call is not thread safe, same as the host
 
 #### `getpwuid_r` and `getpwnam_r`
 
-`getpwuid_r` and `getpwnam_r` are not implemented and will call `abort()`.
+`getpwuid_r` and `getpwnam_r` are not implemented and will call `abort`.
 
 ### sched.h
 
-#### `sched_getaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask)`
+#### `sched_getaffinity`
 
 When `sched_getaffinity` is called inside an enclave, the enclave passes control
 to the host to make this call and then transmit mask back inside the enclave.
@@ -150,25 +399,55 @@ implementations of the following macros from CPU_SET(3) for use with in-enclave
 *   `int CPU_COUNT(cpu_set_t *set)`
 *   `int CPU_EQUAL(cpu_set_t *set1, cpu_set_t *set2)`
 
+### `sched_yield`
+
+`sched_yield` exits the enclave and invokes the corresponding syscall on the
+host.
+
 ### semaphore.h
 
-#### `sem_init(sem_t *sem, const int pshared, const unsigned int value)`
+For all `sem_foo` calls inside an enclave, the address of `sem` is first checked
+to ensure it is a valid enclave address. `EFAULT` is returned if not.
 
-Shared (named) semaphores are not supported in Asylo. `sem_init()` must be
-called with `pshared=0`. Any other value will cause `sem_init` to fail with
-`ENOSYS`.
+#### `sem_destroy`
 
-#### `sem_timedwait(sem_t *sem, const timespec *abstime)`
+`sem_destroy` destroys `sem` inside the enclave after verifying `sem` is in a
+valid enclave address space.
 
-`sem_timedwait()` has a similar issue to `pthread_cond_timedwait()`. The lack of
-a secure time source in an enclave means that timeout semantics can not be
-guaranteed. A hostile host could cause `sem_timedwait()` to either return
-immediately with `errno` set to `ETIMEDOUT`, or wait indefinitely as
-`sem_wait()` would.
+#### `sem_getvalue`
+
+`sem_getvalue` places the value of `sem` inside an enclave to `sval`.
+
+#### `sem_init`
+
+Shared (named) semaphores are not supported in Asylo. `sem_init` must be called
+with `pshared=0`. Any other value will cause `sem_init` to fail with `ENOSYS`.
+
+#### `sem_post`
+
+`sem_post` unlocks `sem` and unblocks a thread inside an enclave that might be
+waiting for it.
+
+#### `sem_timedwait`
+
+`sem_timedwait` has a similar issue to `pthread_cond_timedwait`. The lack of a
+secure time source in an enclave means that timeout semantics can not be
+guaranteed. A hostile host could cause `sem_timedwait` to either return
+immediately with `errno` set to `ETIMEDOUT`, or wait indefinitely as `sem_wait`
+would.
+
+#### `sem_trywait` invokes `sem_timedwait` with `abs_timeout` parameter passed
+
+as 0.
+
+#### `sem_wait`
+
+`sem_wait` invokes `sem_timedwait` with `abs_timeout` parameter passed as a
+`nullptr`.
 
 ### signal.h
 
-#### `sigaction(int signum, const struct sigaction *act, struct sigaction *oldact)`
+#### `sigaction`
 
 The User may register their own signal handlers inside an enclave. When a signal
 is registered inside an enclave, the signal-handling struct `sigaction` is
@@ -182,13 +461,14 @@ unregistered signals.
 In the signal handling struct `act`, registering a signal handler with either
 `sa_handler(int)` or `sa_sigaction(int, siginfo_t *, void *)` is supported. To
 use the latter, set `sa_flags` in `act` to `SA_SIGINFO`. Other flags are
-ignored. `sa_mask` is ignored.
+ignored. `sa_mask` is ignored. The `ucontext` parameter in `sa_sigaction` is
+also ignored while handling the signal.
 
 For intel sgx, `SIGILL` is registered and handled by sgx exception handler.
 `sigaction` returns error if it is called to register a signal handler for
 `SIGILL`.
 
-#### `sigprocmask(int how, const sigset_t *set, sigset_t *oldset)`
+#### `sigprocmask`
 
 A thread-local signal mask is stored inside an enclave. When `sigprocmask` is
 called, both the mask inside the enclave and the mask on the host are set
@@ -206,7 +486,11 @@ depends on the argument `how`:
     the enclave first, then both signals to block and unblock are processed on
     the host, finally signals to block are processed inside the enclave.
 
-#### `raise(int sig)`
+#### `pthread_sigmask`
+
+`pthread_sigmask` is implemented by invoking `sigprocmask` directly.
+
+#### `raise`
 
 When a signal is raised inside an enclave, it is sent to the host to be raised
 on the host side. If a handler has been registered for this signal in the
@@ -215,22 +499,22 @@ registered handler.
 
 ### stdlib.h
 
-#### `abort()`
+#### `abort`
 
-In the general case, the runtime cannot guarantee that `abort()` will destroy
-the enclave or terminate the client. These resources are controlled by the host
+In the general case, the runtime cannot guarantee that `abort` will destroy the
+enclave or terminate the client. These resources are controlled by the host
 operating system which must be assumed to behave in an adversarial fashion. The
 runtime is only able to provide for abnormal termination on a best-effort basis.
 
-The enclave implementation of `abort()` will prevent any further calls into the
+The enclave implementation of `abort` will prevent any further calls into the
 enclave through an enclave entry point, and it will prevent any thread from
 leaving the enclave by returning from an entry point handler. The mechanism used
 to prevent unsafe exits from an aborted enclave does not accommodate running
-untrusted code for signal handlers or `atexit()` callbacks. It is not guaranteed
+untrusted code for signal handlers or `atexit` callbacks. It is not guaranteed
 to raise `SIGABRT`, flush buffered I/O streams, or interrupt threads running in
 the enclave.
 
-#### `realpath(const char *pathname, char *resolved_path)`
+#### `realpath`
 
 `realpath` normalized the form of the path, but it does not resolve symbolic
 links present on the host for path components referring to items on the host.
@@ -247,7 +531,7 @@ return -1 and set errno to `EINVAL`.
 
 #### `epoll_create1`
 
-Since we do not yet support `fork()` `epoll_create1` forwards requests to
+Since we do not yet support `fork`, `epoll_create1` forwards requests to
 `epoll_create`.
 
 #### `epoll_ctl`
@@ -274,10 +558,8 @@ the host.
 
 #### `flock`
 
-In current Asylo implementation of `fcntl()`, only the `cmd`s `F_GETFD`,
-`F_SETFD`, `F_GETFL`, `F_SETFL`, `F_GETPIPE_SZ`, `F_SETPIPE_SZ` and `F_DUPFD`
-are implemented. -1 is returned if `fcntl()` is called with any other `cmd`, and
-`errno` will be set to `EINVAL`.
+When `flock` is called inside an enclave with an `fd` backed by a file on the
+host, it will be invoked on the corresponding file on the host.
 
 ### sys/ioctl
 
@@ -298,47 +580,12 @@ enclave, any events that are received from the host that cannot fit into the
 buffer supplied to `read` are queued and returned in a subsequent `read`. Only
 the IN_NONBLOCK flag is supported for `inotify_init1`.
 
-#### `F_SETFL`
-
-When `fcntl()` is called inside an enclave with `cmd` `F_SETFL` on an `fd`
-backed by a file on the host, the file status flags will be set to `arg` on the
-host after exiting enclave. If it is called on a secure `fd`, -1 is returned and
-`errno` is set to `ENOSYS`.
-
-#### `F_GETFL`
-
-When `fcntl()` is called inside an enclave with `cmd` `F_GETFL` on an `fd`
-backed by a file on the host, the file status flags will be obtained from the
-host. If it is called on a secure `fd`, -1 is returned and `errno` is set to
-`ENOSYS`.
-
-#### `F_SETFD`
-
-When `fcntl()` is called inside an enclave with `cmd` `F_SETFD` on an `fd`
-backed by a file on the host, the file descriptor flags will be set to `arg` on
-the host after exiting enclave. If it is called on a secure `fd`, -1 is returned
-and `errno` is set to `ENOSYS`.
-
-#### `F_GETFL`
-
-When `fcntl()` is called inside an enclave with `cmd` `F_GETFL` on an `fd`
-backed by a file on the host, the file descriptor flags will be obtained from
-the host. If it is called on a secure `fd`, -1 is returned and `errno` is set to
-`ENOSYS`.
-
-#### `F_DUPFD`
-
-When `fcntl()` is called inside an enclave with `cmd` `F_DUPFD`, Asylo will
-duplicate the file descriptor `fd` using the lowest-numbered available file
-descriptor greater than or equal to `arg`. Since Asylo keeps track of all Asylo
-file descriptors, the process happens all inside an enclave.
-
 ### sys/mman.h
 
-#### `mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)`
+#### `mmap`
 
-`mmap()` only supports simple `MAP_ANONYMOUS` mappings to allocate 4k-aligned
-blocks of memory; these are translated internally to `memalign()` calls. In
+`mmap` only supports simple `MAP_ANONYMOUS` mappings to allocate 4k-aligned
+blocks of memory; these are translated internally to `memalign` calls. In
 particular, the mapping of files is not supported.
 
 Specifically, `addr` must be NULL, `prot` must be `PROT_READ | PROT_WRITE`,
@@ -346,11 +593,11 @@ Specifically, `addr` must be NULL, `prot` must be `PROT_READ | PROT_WRITE`,
 must be `0`. If not, this call will return `MAP_FAILED` and will set `errno` to
 `ENOSYS`.
 
-#### `int munmap(void *addr, size_t length)`
+#### `int munmap`
 
-Because `mmap()` can only return pointers to heap-allocated memory, calls to
+Because `mmap` can only return pointers to heap-allocated memory, calls to
 `munmap(addr, length)` are translated to `free(addr)`, and this function will
-always return 0. If passed a pointer not returned by `mmap()`, behavior is
+always return 0. If passed a pointer not returned by `mmap`, behavior is
 undefined.
 
 ### sys/resource.h
@@ -413,29 +660,60 @@ the host, the mode of the corresponding file mode on the host is changed.
 
 `lstat` exits the enclave and gathers the stats from the host.
 
+If `lstat` is called on path `/dev/random` or `/udev/random`, it sets the values
+in the stat according to the values used in Linux random
+files(Documentation/admin-guide/devices.txt).
+
 #### `mkdir`
 
 `mkdir` exits the enclave and creates the directory on the host.
+
+#### `stat`/`fstat`
+
+When `stat` and `fstat` called inside an enclave on a directory or an `fd`
+backed by a file on the host, they exit the enclave and gathers the stats from
+the host.
+
+If `stat` or `fstat` is called on path `/dev/random` or `/udev/random`, or an
+`fd` representing these paths, it sets the stat inside the enclave according to
+the values used in Linux random files(Documentation/admin-guide/devices.txt).
+
+#### `umask`
+
+When `umask` is called inside enclave, the mask on the host side will be
+changed, and the old value is returned. Everytime `open` or `mkdir` is called,
+the mask will be checked on the host side. Since the mask is kept on the host
+side, it may be different from expected if the operating system is compromised.
+
+### sys/statfs.h
+
+#### `statfs` and `fstatfs`
+
+`statfs` and `fstatfs` exit the enclave and gathers the stats from the host.
+
+### sys/statvfs.h
+
+#### `statvfs` and `fstatvfs`
+
+`statvfs` and `fstatvfs` exit the enclave and gathers the stats from the host.
+
+### stdio.h
 
 #### `rename`
 
 `rename` exits the enclave and changes a file/directory name on the host.
 
-#### `umask(mode_t mask)`
-
-When `umask()` is called inside enclave, the mask on the host side will be
-changed, and the old value is returned. Everytime `open()` or `mkdir()` is
-called, the mask will be checked on the host side. Since the mask is kept on the
-host side, it may be different from expected if the operating system is
-compromised.
-
 ### sys/termios.h
 
 #### `tcgetattr` and `tcsetattr`
 
-`tcgetatter` and `tcsetattr` are not implemented and will `abort()`.
+`tcgetatter` and `tcsetattr` are not implemented and will `abort`.
 
 ### sys/time.h
+
+#### `gettimeofday`
+
+`gettimeofday` exits the enclave and gets the time on the host.
 
 #### `getitimer` and `setitimer`
 
@@ -444,16 +722,16 @@ enclave and get or set the timers on the host. Therefore, the events generated
 by the timers and the timing information received from them are not trustworthy.
 Supported timer types are `ITIMER_REAL`, `ITIMER_VIRTUAL` and `ITIMER_PROF`.
 
-#### `times()`
+#### `times`
 
-When `times()` is called inside an enclave, it exits the enclave, and returns
-the current process times from the host.
+When `times` is called inside an enclave, it exits the enclave, and returns the
+current process times from the host.
 
 ### sys/utsname.h
 
-#### `uname(struct utsname *buf)`
+#### `uname`
 
-`uname()` retrieves the system information from the host.
+`uname` retrieves the system information from the host.
 
 In glibc, `struct utsname` is defined to have fields of length 65 on Linux.
 However, according to IETF RFC 1035, fully qualified domain names, such as those
@@ -466,6 +744,11 @@ included in glibc if `_GNU_SOURCE` is defined. It is included unconditionally in
 Asylo for maximum compatibility.
 
 ### sys/wait.h
+
+#### `wait`
+
+When `wait` is called inside an enclave, it exits the enclave and waits on the
+host.
 
 #### `wait3`
 
@@ -482,13 +765,20 @@ still running.
 
 ### sys/uio.h
 
-#### `writev(int fd, const struct iovec *iov, int iovcnt)`
+#### `readv`
 
-Writev writes `iovcnt` buffers of data described by `iov` to the file specified
-by file descriptor `fd`. Inside an enclave, if `fd` is backed by a file on the
-host, a buffer is allocated in untrusted memory that is large enough to hold the
-content of all the `iov` buffers, and all the `iov` buffers are copied into this
-buffer. Then this single buffer in untrusted memory is written to the file.
+`readv` calculates the total size of all the buffers in |iov|, and invokes a
+`read` on the host with the total buffer size. It is then copied into each
+buffer in |iov|.
+
+#### `writev`
+
+`writev` writes `iovcnt` buffers of data described by `iov` to the file
+specified by file descriptor `fd`. Inside an enclave, if `fd` is backed by a
+file on the host, a buffer is allocated that is large enough to hold the content
+of all the `iov` buffers, and all the `iov` buffers are copied into this buffer.
+This buffer is serialized and copied to untrusted memory, which is wirtten to
+the file.
 
 ### syslog.h
 
@@ -503,46 +793,65 @@ When `syslog` is called inside an enclave, the format is converted to a single
 string, passed to the host, and `syslog` on the host is called with that message
 string.
 
+### time.h
+
+#### `clock_gettime`
+
+`clock_gettime` exits the enclave and gets the time on the host.
+
+#### `nanosleep`
+
+`nanosleep` exits the enclave and wait on the host.
+
 ### unistd.h
 
-#### `rmdir(const char *pathname)`
+#### `access`
 
-`rmdir` exits the enclave and deletes the directory on the host.
+When `access` is called inside an enclave on a `fd` backed by a file on the
+host, it exits the enclave and checks the file on the host.
 
-#### `chown`/`fchown`
+#### `chdir`
+
+The host name is set when enclave is initialized, and stored inside the
+enclave(see `gethostname`). `chdir` changes the current working directory stored
+inside the enclave.
+
+#### `chown` and `fchown`
 
 When `chown` or `fchown` is called inside an enclave on a path or `fd` backed by
 a file on the host, the owner/group of the corresponding file will be changed on
 the host. If it is called on a secure `fd`, -1 is returned and `errno` is set to
 `ENOSYS`.
 
-#### `fsync(int fd)`/`fdatasync(int fd)`
+If `chown` is called on an `fd` representing `/dev/random` or `/udev/random`, it
+sets errno to `ENOSYS` and returns -1.
 
-When `fsync` or `fdatasync` is called inside an enclave with an `fd` backed by a
-file on the host, it will be invoked on the corresponding file on the host.
-`fdatasync` inside the enclave is implemented through `fsync` so they do exactly
-the same thing.
+#### `close`
 
-#### `fcntl(int fd, int cmd, ... /* arg */)`
+When `close` is called inside an enclave on an `fd` backed by a file on the
+host, it exits the enclave and closes the file on the host.
 
-In current Asylo implementation of `fcntl()`, only the `cmd`s `F_GETFD`,
-`F_SETFD`, `F_GETFL`, `F_SETFL`, and `F_DUPFD` are implemented. -1 is returned
-if `fcntl()` is called with any other `cmd`, and `errno` will be set to
-`EINVAL`.
+if `close` is called on an `fd` representing `/dev/random` or `/udev/random`, it
+returns 0 directly.
 
-#### `fork()`
+#### `dup` and `dup2`
 
-`fork()` is implemented in Asylo with security features added. When `fork()` is
+`dup` and `dup2` creates a new file descriptor in `IOManager`, and make the new
+fd point to the same `IOContext`, without exiting the enclave.
+
+#### `fork`
+
+`fork` is implemented in Asylo with security features added. When `fork` is
 requested from inside an enclave, it takes a snapshot of the enclave, creates a
 child process, loads a new enclave in the child, and restores the child enclave
-from the snapshot. The following security features for `fork()` are provided:
+from the snapshot. The following security features for `fork` are provided:
 
 1.  Only the enclavized portion of the application can request a fork.
 2.  At most one snapshot can be created per fork request.
 3.  The cloned enclave has exactly the same identity as the parent enclave.
 4.  If no other threads were running inside the parent enclave when it called
-    `fork()`, the cloned enclave's state is the same as that of the parent
-    enclave when it called `fork()`.
+    `fork`, the cloned enclave's state is the same as that of the parent enclave
+    when it called `fork`.
 5.  The snapshot is encrypted by a randomly generated AES256-GCM-SIV key.
 6.  THe parent enclave will send the snapshot key to the child enclave only
     after verifying the child enclave has exactly the same identity.
@@ -552,28 +861,47 @@ from the snapshot. The following security features for `fork()` are provided:
 9.  If the encrypted snapshot is modified, the child enclave does not restore,
     and will block all entries.
 
-WARNING: `fork()` in multithreaded applications may cause undefined behavior or
-potential security issues.
+#### `fsync`/`fdatasync`
 
-#### `vfork()`
+When `fsync` or `fdatasync` is called inside an enclave with an `fd` backed by a
+file on the host, it will be invoked on the corresponding file on the host.
+`fdatasync` inside the enclave is implemented through `fsync` so they do exactly
+the same thing.
 
-`vfork()` is implemented through `fork()` in Asylo. When `vfork()` is requested
-from inside an enclave, `fork()` is invoked to create the child enclave. The
-parent thread then waits till the child exits before returning. Therefore,
-`vfork()` in an enclave does not have better performance than `fork()`.
+If `fsync` is called on an `fd` representing `/dev/random` or `/udev/random`, it
+returns 0 directly.
 
-#### `getpid()`/`getppid()`
+#### `getcwd`
+
+A current working directory can be set by the user through `EnclaveConfig` when
+the enclave is created. If it's not set by the user, it's default to be the
+current working directory on the host. It is then stored inside the enclave.
+`getcwd` returns that working directory without exiting the enclave. If `getcwd`
+is called prior to enclave is initialized, it returns a dummy value.
+
+#### `gethostname`
+
+A host name can be set by the user through `EnclaveConfig` when the enclave is
+created. If it's not set by the user, it's default to be the host name on the
+host. It is then stored inside the enclave. `gethostname` returns that host name
+without exiting the enclave.
+
+#### `getpagesize`
+
+`getpagesize` returns a constant representing the simulated page size (4096).
+
+#### `getpid`/`getppid`
 
 The process and parent process identification numbers are obtained from the host
 operating system to make sure the value is consistent with the host.
 
-If the host `getpid()` call returns 0, the enclave will abort. Zero is not a
-valid return value for `getpid()` under POSIX, but it is used as a marker in
-other system calls that operate with PIDs (e.g. `fork()`). Forwarding a returned
-PID of 0 could cause user code to take unexpected code paths, which could create
-a security vulnerability, so the enclave aborts as a precaution.
+If the host `getpid` call returns 0, the enclave will abort. Zero is not a valid
+return value for `getpid` under POSIX, but it is used as a marker in other
+system calls that operate with PIDs (e.g. `fork`). Forwarding a returned PID of
+0 could cause user code to take unexpected code paths, which could create a
+security vulnerability, so the enclave aborts as a precaution.
 
-#### `getuid()`/`geteuid()`/`getgid()`/`getegid()`
+#### `getuid`/`geteuid`/`getgid`/`getegid`
 
 The user and group identification numbers are obtained from the host operating
 system to make sure the value is consistent with the host, in case they change
@@ -587,17 +915,81 @@ In general, this is only a potential vulnerability if the enclave application
 uses operating system concepts like user ID to guard resources within the
 enclave itself. For instance, if a database application were to restrict access
 to a column on the basis of user ID then it must anticipate the case where the
-operating system has been compromised and `getuid()` returns an insecure value.
+operating system has been compromised and `getuid` returns an insecure value.
 
-#### `pipe()`/`pipe2()`
+#### `isatty`
+
+When `isatty` is called inside an enclave with an `fd` backed by a file on the
+host, it exits the enclave and invokes `isatty` on the host file.
+
+If `isatty` is called on an `fd` representing `/dev/random` or `/udev/random`,
+it returns 0 directly.
+
+#### `link`
+
+When `link` is called inside an enclave on an `fd` backed by a file on the host,
+it exits the enclave and creates the link on the host.
+
+If `link` is called on an `fd` representing `/dev/random` or `/udev/random`, it
+sets errno to `ENOSYS` and returns -1.
+
+#### `lseek`
+
+When `lseek` is called inside an enclave with an `fd` backed by a file on the
+host, it exits the enclave and repositions the offset of the host file.
+
+if `lseek` is called on an fd representing `/dev/random` or `/udev/random`, it
+returns 0 directly.
+
+#### `pipe`/`pipe2`
 
 Pipe reads and writes go through the host. In the enclave, `O_CLOEXEC` is a
-meaningless flag, since enclaves do not support `exec()`. However, users may
-still specify it as a flag to `pipe2()`, and subsequent calls to `fcntl()` to
-check the file descriptor flags on the pipe's file descriptors will show the
-`FD_CLOEXEC` flag as being set.
+meaningless flag, since enclaves do not support `exec`. However, users may still
+specify it as a flag to `pipe2`, and subsequent calls to `fcntl` to check the
+file descriptor flags on the pipe's file descriptors will show the `FD_CLOEXEC`
+flag as being set.
 
-#### `sysconf(int name)`
+#### `pread`
+
+When `pread` is called inside an enclave with an `fd` backed by a file on the
+host, it exits the enclave and calls `pread` the host file.
+
+#### `read`
+
+When `read` is called inside an enclave on an `fd` backed by a file on the host,
+it exits the enclave, reads the host file, and passes the message back into the
+enclave.
+
+In case `read` is called on an `fd` representing `/dev/random` or
+`/udev/random`:
+
+1.  If the backend is SGX hardware, it accesses SGX hardware to fill the buffer
+    with random values generated with the rdrand instruction from SGX hardware.
+
+1.  If the backend is SGX simulation mode, it fills the buffer generated by
+    rand(). This is not a cryptographically strong source of randomness and
+    should never be used in a secure application. It is only sufficient for the
+    simulation backend because it is not intended for production use.
+
+1.  Any other backends: `read` on random path is not supported.
+
+#### `rmdir`
+
+`rmdir` exits the enclave and deletes the directory on the host.
+
+#### `setsid`
+
+`setsid` exits the enclave and invokes `setsid` on the host.
+
+#### `sleep` and `usleep`
+
+`sleep` and `usleep` exits the enclave and sleeps on the host.
+
+#### `symlink`
+
+`symlink` exits the enclave and creates the symbolic link on the host.
+
+#### `sysconf`
 
 When `sysconf` is called inside the enclave, it attempts to return a reasonable
 value, often from the host. Currently, the only supported arguments are:
@@ -622,6 +1014,29 @@ When `truncate` or `ftruncate` is called inside an enclave on a path or `fd`
 backed by a file on the host, the corresponding file will be truncated on the
 host. It it is called on a secure `fd`, -1 is returned and `errno` is set to
 `ENOSYS`.
+
+#### `vfork`
+
+`vfork` is implemented through `fork` in Asylo. When `vfork` is requested from
+inside an enclave, `fork` is invoked to create the child enclave. The parent
+thread then waits till the child exits before returning. Therefore, `vfork` in
+an enclave does not have better performance than `fork`.
+
+#### `unlink`
+
+When `unlink` is called inside an enclave on an `fd` backed by a file on the
+host, it exits the enclave and deletes the file on the host.
+
+If `unlink` is called on an `fd` representing `/dev/random` or `/udev/random`,
+it sets errno to `ENOSYS` and returns -1.
+
+#### `write`
+
+When `write` is called inside an enclave on an `fd` backed by a file on the
+host, it passes the message to the host and writes to the host file.
+
+If `write` is called on an `fd` representing `/dev/random` or `/udev/random`, it
+sets errno to `EBADF` and returns -1, as they should be read-only.
 
 ### utime.h
 

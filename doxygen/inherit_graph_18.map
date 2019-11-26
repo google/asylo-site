@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classasylo_1_1NonceGenerator.html" title="Defines a nonce&#45;generator interface. " alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node1" href="$classasylo_1_1SecretSealer.html" title="asylo::SecretSealer" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$classasylo_1_1SgxLocalSecretSealer.html" title="An implementation of the SecretSealer abstract interface that binds the secrets to the enclave identi..." alt="" coords="200,5,405,32"/>
 </map>

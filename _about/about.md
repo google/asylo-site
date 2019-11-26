@@ -28,7 +28,3 @@ Asylo provides:
     develop and run applications that use one or more enclaves.
 +   A choice of security backends.
 +   Portability of your application's source code across security backends.
-
-Asylo is under active development. We want to expand Asylo's capabilities to
-meet more developers' needs. To do this, we plan to add support for more
-backends, libraries, and languages.

@@ -67,7 +67,6 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classasylo_1_1EnclaveAuthContext-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">asylo::EnclaveAuthContext Class Reference</div>  </div>
@@ -81,6 +80,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab7b1339452f956ff30d28f0d0b6e1b18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#ab7b1339452f956ff30d28f0d0b6e1b18">EnclaveAuthContext</a> ()=default</td></tr>
+<tr class="separator:ab7b1339452f956ff30d28f0d0b6e1b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e697dbf607b42fd10112721ef15382"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#aa1e697dbf607b42fd10112721ef15382">~EnclaveAuthContext</a> ()=default</td></tr>
 <tr class="separator:aa1e697dbf607b42fd10112721ef15382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bb1efd9bb4ed086b4ae2caea5572107"><td class="memItemLeft" align="right" valign="top">virtual RecordProtocol&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a8bb1efd9bb4ed086b4ae2caea5572107">GetRecordProtocol</a> () const</td></tr>
@@ -95,9 +96,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f04dcd292c74c9cf37f2504d7060b6e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a3f04dcd292c74c9cf37f2504d7060b6e">EvaluateAcl</a> (const IdentityAclPredicate &amp;acl) const</td></tr>
 <tr class="memdesc:a3f04dcd292c74c9cf37f2504d7060b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the peer's identities against <code>acl</code>.  <a href="#a3f04dcd292c74c9cf37f2504d7060b6e">More...</a><br /></td></tr>
 <tr class="separator:a3f04dcd292c74c9cf37f2504d7060b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a97e84c3db676a571484484ae2b0ba"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#ae0a97e84c3db676a571484484ae2b0ba">EvaluateAcl</a> (const IdentityAclPredicate &amp;acl, std::string *explanation) const</td></tr>
+<tr class="memdesc:ae0a97e84c3db676a571484484ae2b0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the peer's identities against <code>acl</code>.  <a href="#ae0a97e84c3db676a571484484ae2b0ba">More...</a><br /></td></tr>
+<tr class="separator:ae0a97e84c3db676a571484484ae2b0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d64b4047b059c9964ef123075993416"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a3d64b4047b059c9964ef123075993416">EvaluateAcl</a> (const EnclaveIdentityExpectation &amp;expectation) const</td></tr>
 <tr class="memdesc:a3d64b4047b059c9964ef123075993416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates whether any of the peer's identities match <code>expectation</code>.  <a href="#a3d64b4047b059c9964ef123075993416">More...</a><br /></td></tr>
 <tr class="separator:a3d64b4047b059c9964ef123075993416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f744dcc8607204aa8e63339b91eba32"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a8f744dcc8607204aa8e63339b91eba32">EvaluateAcl</a> (const EnclaveIdentityExpectation &amp;expectation, std::string *explanation) const</td></tr>
+<tr class="memdesc:a8f744dcc8607204aa8e63339b91eba32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates whether any of the peer's identities match <code>expectation</code>.  <a href="#a8f744dcc8607204aa8e63339b91eba32">More...</a><br /></td></tr>
+<tr class="separator:a8f744dcc8607204aa8e63339b91eba32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -107,17 +114,37 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af9912a11546fcb83df9d85201dbae14d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; <a class="el" href="classasylo_1_1EnclaveAuthContext.html">EnclaveAuthContext</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#af9912a11546fcb83df9d85201dbae14d">CreateFromAuthContext</a> (const ::grpc::AuthContext &amp;auth_context)</td></tr>
 <tr class="memdesc:af9912a11546fcb83df9d85201dbae14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classasylo_1_1EnclaveAuthContext.html" title="Encapsulates the authentication properties of an EKEP-based gRPC connection. ">EnclaveAuthContext</a> from the authentication properties in <code>auth_context</code>.  <a href="#af9912a11546fcb83df9d85201dbae14d">More...</a><br /></td></tr>
 <tr class="separator:af9912a11546fcb83df9d85201dbae14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a525256f00712952467c972e16e01ff26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveAuthContext.html#a525256f00712952467c972e16e01ff26">EnclaveAuthContext</a> ()</td></tr>
-<tr class="separator:a525256f00712952467c972e16e01ff26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encapsulates the authentication properties of an EKEP-based gRPC connection. </p>
 <p>The authentication properties in an <a class="el" href="classasylo_1_1EnclaveAuthContext.html" title="Encapsulates the authentication properties of an EKEP-based gRPC connection. ">EnclaveAuthContext</a> object include the secure transport protocol and the peer's enclave identities.</p>
 <p>Virtual functions are only for mocking. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab7b1339452f956ff30d28f0d0b6e1b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b1339452f956ff30d28f0d0b6e1b18">&#9670;&nbsp;</a></span>EnclaveAuthContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asylo::EnclaveAuthContext::EnclaveAuthContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa1e697dbf607b42fd10112721ef15382"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1e697dbf607b42fd10112721ef15382">&#9670;&nbsp;</a></span>~EnclaveAuthContext()</h2>
 
@@ -137,31 +164,6 @@ Protected Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a525256f00712952467c972e16e01ff26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a525256f00712952467c972e16e01ff26">&#9670;&nbsp;</a></span>EnclaveAuthContext()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">asylo::EnclaveAuthContext::EnclaveAuthContext </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -239,7 +241,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a3f04dcd292c74c9cf37f2504d7060b6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f04dcd292c74c9cf37f2504d7060b6e">&#9670;&nbsp;</a></span>EvaluateAcl() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f04dcd292c74c9cf37f2504d7060b6e">&#9670;&nbsp;</a></span>EvaluateAcl() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,8 +275,54 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae0a97e84c3db676a571484484ae2b0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a97e84c3db676a571484484ae2b0ba">&#9670;&nbsp;</a></span>EvaluateAcl() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::EnclaveAuthContext::EvaluateAcl </td>
+          <td>(</td>
+          <td class="paramtype">const IdentityAclPredicate &amp;&#160;</td>
+          <td class="paramname"><em>acl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>explanation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the peer's identities against <code>acl</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">acl</td><td>The ACL against which to evaluate the peer's identities. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">explanation</td><td>An explanation of why the peer's identities did not match <code>acl</code>, if the result is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool indicating whether the peer's identities match <code>acl</code>, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if an error occurred while evaluating the ACL. </dd></dl>
+
+</div>
+</div>
 <a id="a3d64b4047b059c9964ef123075993416"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d64b4047b059c9964ef123075993416">&#9670;&nbsp;</a></span>EvaluateAcl() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d64b4047b059c9964ef123075993416">&#9670;&nbsp;</a></span>EvaluateAcl() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,7 +352,53 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A bool indicating whether any of the peer's identities match <code>expectation, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if an error occurred while evaluating</code>expectation`. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool indicating whether any of the peer's identities match <code>expectation</code>, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if an error occurred while evaluating <code>expectation</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a8f744dcc8607204aa8e63339b91eba32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f744dcc8607204aa8e63339b91eba32">&#9670;&nbsp;</a></span>EvaluateAcl() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::EnclaveAuthContext::EvaluateAcl </td>
+          <td>(</td>
+          <td class="paramtype">const EnclaveIdentityExpectation &amp;&#160;</td>
+          <td class="paramname"><em>expectation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>explanation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates whether any of the peer's identities match <code>expectation</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">expectation</td><td>The expectation against which to evaluate the peer's identities. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">explanation</td><td>An explanation of why the peer's identities did not match <code>expectation</code>, if the result is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool indicating whether any of the peer's identities match <code>expectation</code>, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if an error occurred while evaluating <code>expectation</code>. </dd></dl>
 
 </div>
 </div>
