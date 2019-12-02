@@ -319,9 +319,7 @@ function build_bazel_docs() {
         echo "WARNING: unexpected multiple output files for ${path}: ${paths[@]}" >&2
       fi
       rm "${output}"
-      if [[ "${path:0:1}" = "@" ]]; then
-        source="$(bazel info execution_root)/${source}"
-      fi
+      source="$(bazel info execution_root)/${source}"
       # Copy each path to the Bazel documentation directory.
       for path in "${paths[@]}"; do
         # Put the front matter from the source bzl file in the output markdown header.
