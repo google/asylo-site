@@ -1,6 +1,6 @@
 ---
 
-title:  Asylo C++ build rules
+title:  //asylo/bazel:asylo.bzl
 
 overview: Build rules for defining enclaves and tests.
 
@@ -16,15 +16,18 @@ toc: true
 {% include home.html %}
 <!-- Generated with Stardoc: http://skydoc.bazel.build -->
 
-<a name="#asylo_tags"></a>
+<a name="#backend_debug_sign_enclave"></a>
 
-## asylo_tags
+## backend_debug_sign_enclave
 
 <pre>
-asylo_tags(<a href="#asylo_tags-backend_tag">backend_tag</a>)
+backend_debug_sign_enclave(<a href="#backend_debug_sign_enclave-name">name</a>, <a href="#backend_debug_sign_enclave-backend">backend</a>, <a href="#backend_debug_sign_enclave-unsigned">unsigned</a>, <a href="#backend_debug_sign_enclave-config">config</a>, <a href="#backend_debug_sign_enclave-kwargs">kwargs</a>)
 </pre>
 
-Returns appropriate tags for Asylo target.
+Defines the 'signed' version of an unsigned enclave target.
+
+The signer is backend-specific.
+
 
 ### Parameters
 
@@ -34,16 +37,146 @@ Returns appropriate tags for Asylo target.
     <col class="col-description" />
   </colgroup>
   <tbody>
-    <tr id="asylo_tags-backend_tag">
-      <td><code>backend_tag</code></td>
+    <tr id="backend_debug_sign_enclave-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          The rule name.
+        </p>
+      </td>
+    </tr>
+    <tr id="backend_debug_sign_enclave-backend">
+      <td><code>backend</code></td>
+      <td>
+        required.
+        <p>
+          An Asylo backend label.
+        </p>
+      </td>
+    </tr>
+    <tr id="backend_debug_sign_enclave-unsigned">
+      <td><code>unsigned</code></td>
+      <td>
+        required.
+        <p>
+          The label of the unsigned enclave target.
+        </p>
+      </td>
+    </tr>
+    <tr id="backend_debug_sign_enclave-config">
+      <td><code>config</code></td>
       <td>
         optional. default is <code>None</code>
         <p>
-          String that indicates the backend technology used. Can be
-             one of
-             * "asylo-sgx"
-             * "asylo-sim"
-             * None
+          An enclave signer configuration label. Optional.
+        </p>
+      </td>
+    </tr>
+    <tr id="backend_debug_sign_enclave-kwargs">
+      <td><code>kwargs</code></td>
+      <td>
+        optional.
+        <p>
+          Generic rule arguments like tags and testonly.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a name="#cc_backend_unsigned_enclave"></a>
+
+## cc_backend_unsigned_enclave
+
+<pre>
+cc_backend_unsigned_enclave(<a href="#cc_backend_unsigned_enclave-name">name</a>, <a href="#cc_backend_unsigned_enclave-backend">backend</a>, <a href="#cc_backend_unsigned_enclave-kwargs">kwargs</a>)
+</pre>
+
+Defines a C++ unsigned enclave target in the provided backend.
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="cc_backend_unsigned_enclave-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          The rule name.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_backend_unsigned_enclave-backend">
+      <td><code>backend</code></td>
+      <td>
+        required.
+        <p>
+          An Asylo backend label.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_backend_unsigned_enclave-kwargs">
+      <td><code>kwargs</code></td>
+      <td>
+        optional.
+        <p>
+          Arguments to cc_binary.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a name="#cc_backend_unsigned_enclave_experimental"></a>
+
+## cc_backend_unsigned_enclave_experimental
+
+<pre>
+cc_backend_unsigned_enclave_experimental(<a href="#cc_backend_unsigned_enclave_experimental-name">name</a>, <a href="#cc_backend_unsigned_enclave_experimental-backend">backend</a>, <a href="#cc_backend_unsigned_enclave_experimental-kwargs">kwargs</a>)
+</pre>
+
+Defines a C++ unsigned enclave target in the provided backend.
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="cc_backend_unsigned_enclave_experimental-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          The rule name.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_backend_unsigned_enclave_experimental-backend">
+      <td><code>backend</code></td>
+      <td>
+        required.
+        <p>
+          An Asylo backend label.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_backend_unsigned_enclave_experimental-kwargs">
+      <td><code>kwargs</code></td>
+      <td>
+        optional.
+        <p>
+          Arguments to cc_binary.
         </p>
       </td>
     </tr>
@@ -56,7 +189,7 @@ Returns appropriate tags for Asylo target.
 ## cc_enclave_binary
 
 <pre>
-cc_enclave_binary(<a href="#cc_enclave_binary-name">name</a>, <a href="#cc_enclave_binary-application_enclave_config">application_enclave_config</a>, <a href="#cc_enclave_binary-enclave_build_config">enclave_build_config</a>, <a href="#cc_enclave_binary-application_library_linkstatic">application_library_linkstatic</a>, <a href="#cc_enclave_binary-kwargs">kwargs</a>)
+cc_enclave_binary(<a href="#cc_enclave_binary-name">name</a>, <a href="#cc_enclave_binary-application_enclave_config">application_enclave_config</a>, <a href="#cc_enclave_binary-enclave_build_config">enclave_build_config</a>, <a href="#cc_enclave_binary-application_library_linkstatic">application_library_linkstatic</a>, <a href="#cc_enclave_binary-backends">backends</a>, <a href="#cc_enclave_binary-unsigned_name_by_backend">unsigned_name_by_backend</a>, <a href="#cc_enclave_binary-signed_name_by_backend">signed_name_by_backend</a>, <a href="#cc_enclave_binary-kwargs">kwargs</a>)
 </pre>
 
 Creates a cc_binary that runs an application inside an enclave.
@@ -97,8 +230,8 @@ fork() inside Asylo is enabled by default in this rule.
         optional. default is <code>""</code>
         <p>
           A target that defines a function called
-    ApplicationConfig() returning and EnclaveConfig. The returned config
-    is passed to the application enclave. Optional.
+  ApplicationConfig() returning and EnclaveConfig. The returned config
+  is passed to the application enclave. Optional.
         </p>
       </td>
     </tr>
@@ -107,8 +240,8 @@ fork() inside Asylo is enabled by default in this rule.
       <td>
         optional. default is <code>""</code>
         <p>
-          An sgx_enclave_configuration target to be passed to
-    the enclave. Optional.
+          A backend-specific configuration target to be
+  passed to the enclave signer. Optional.
         </p>
       </td>
     </tr>
@@ -118,8 +251,40 @@ fork() inside Asylo is enabled by default in this rule.
         optional. default is <code>True</code>
         <p>
           When building the application as a
-    library, whether to allow that library to be statically linked. See
-    the `linkstatic` option on `cc_library`. Optional.
+  library, whether to allow that library to be statically linked. See
+  the `linkstatic` option on `cc_library`. Optional.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_binary-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+  one. Defaults to all supported backends. If more than one, then
+  name is an alias to a select on backend value to backend-specialized
+  targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_binary-unsigned_name_by_backend">
+      <td><code>unsigned_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+  specific target label for the defined unsigned enclaves.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_binary-signed_name_by_backend">
+      <td><code>signed_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+  specific target label for the defined signed enclaves.
         </p>
       </td>
     </tr>
@@ -141,13 +306,13 @@ fork() inside Asylo is enabled by default in this rule.
 ## cc_enclave_test
 
 <pre>
-cc_enclave_test(<a href="#cc_enclave_test-name">name</a>, <a href="#cc_enclave_test-srcs">srcs</a>, <a href="#cc_enclave_test-enclave_config">enclave_config</a>, <a href="#cc_enclave_test-tags">tags</a>, <a href="#cc_enclave_test-deps">deps</a>, <a href="#cc_enclave_test-test_in_initialize">test_in_initialize</a>, <a href="#cc_enclave_test-kwargs">kwargs</a>)
+cc_enclave_test(<a href="#cc_enclave_test-name">name</a>, <a href="#cc_enclave_test-srcs">srcs</a>, <a href="#cc_enclave_test-enclave_config">enclave_config</a>, <a href="#cc_enclave_test-remote_proxy">remote_proxy</a>, <a href="#cc_enclave_test-tags">tags</a>, <a href="#cc_enclave_test-deps">deps</a>, <a href="#cc_enclave_test-test_in_initialize">test_in_initialize</a>, <a href="#cc_enclave_test-backends">backends</a>, <a href="#cc_enclave_test-unsigned_name_by_backend">unsigned_name_by_backend</a>, <a href="#cc_enclave_test-signed_name_by_backend">signed_name_by_backend</a>, <a href="#cc_enclave_test-test_name_by_backend">test_name_by_backend</a>, <a href="#cc_enclave_test-kwargs">kwargs</a>)
 </pre>
 
 Build target that runs a cc_test srcs inside of an enclave.
 
-This macro creates two targets, one sgx_enclave target with the test source.
-And another test runner application to launch the test enclave.
+This macro creates two targets, one debug_sign_enclave target with the test
+source. And another test runner application to launch the test enclave.
 
 
 ### Parameters
@@ -181,8 +346,19 @@ And another test runner application to launch the test enclave.
       <td>
         optional. default is <code>""</code>
         <p>
-          An sgx_enclave_configuration target to be passed to the
-    enclave. Optional.
+          A backend-specific configuration target to be passed to
+    the signer for each backend. Optional.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_test-remote_proxy">
+      <td><code>remote_proxy</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          Host-side executable that is going to run remote enclave
+    proxy server which will actually load the enclave(s). If empty, the
+    enclave(s) are loaded locally.
         </p>
       </td>
     </tr>
@@ -215,6 +391,48 @@ And another test runner application to launch the test enclave.
         </p>
       </td>
     </tr>
+    <tr id="cc_enclave_test-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+    one. Defaults to all supported backends. If more than one, then
+    name is an alias to a select on backend value to backend-specialized
+    targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_test-unsigned_name_by_backend">
+      <td><code>unsigned_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+    specific target label for the defined unsigned enclaves.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_test-signed_name_by_backend">
+      <td><code>signed_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+    specific target label for the defined signed enclaves.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_enclave_test-test_name_by_backend">
+      <td><code>test_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to
+    backend-specific name for the test target.
+        </p>
+      </td>
+    </tr>
     <tr id="cc_enclave_test-kwargs">
       <td><code>kwargs</code></td>
       <td>
@@ -233,7 +451,7 @@ And another test runner application to launch the test enclave.
 ## cc_test
 
 <pre>
-cc_test(<a href="#cc_test-name">name</a>, <a href="#cc_test-enclave_test_name">enclave_test_name</a>, <a href="#cc_test-enclave_test_config">enclave_test_config</a>, <a href="#cc_test-srcs">srcs</a>, <a href="#cc_test-deps">deps</a>, <a href="#cc_test-kwargs">kwargs</a>)
+cc_test(<a href="#cc_test-name">name</a>, <a href="#cc_test-enclave_test_name">enclave_test_name</a>, <a href="#cc_test-enclave_test_unsigned_name_by_backend">enclave_test_unsigned_name_by_backend</a>, <a href="#cc_test-enclave_test_signed_name_by_backend">enclave_test_signed_name_by_backend</a>, <a href="#cc_test-enclave_test_config">enclave_test_config</a>, <a href="#cc_test-srcs">srcs</a>, <a href="#cc_test-deps">deps</a>, <a href="#cc_test-backends">backends</a>, <a href="#cc_test-kwargs">kwargs</a>)
 </pre>
 
 Build macro that creates a cc_test target and a cc_enclave_test target.
@@ -269,13 +487,35 @@ inside of an enclave.
         </p>
       </td>
     </tr>
+    <tr id="cc_test-enclave_test_unsigned_name_by_backend">
+      <td><code>enclave_test_unsigned_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          Dictionary of backend label to
+  test name for backend-specific unsigned enclave targets generated by
+  cc_enclave_test. Optional.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_test-enclave_test_signed_name_by_backend">
+      <td><code>enclave_test_signed_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          Dictionary of backend label to
+  test name for backend-specific signed enclave targets generated by
+  cc_enclave_test. Optional.
+        </p>
+      </td>
+    </tr>
     <tr id="cc_test-enclave_test_config">
       <td><code>enclave_test_config</code></td>
       <td>
         optional. default is <code>""</code>
         <p>
-          An sgx_enclave_configuration target to be passed to
-    the enclave. Optional.
+          A backend-specific configuration target to be passed
+  to the enclave signer for each backend. Optional.
         </p>
       </td>
     </tr>
@@ -297,6 +537,18 @@ inside of an enclave.
         </p>
       </td>
     </tr>
+    <tr id="cc_test-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+  one. Defaults to all supported backends. If more than one, then
+  name is an alias to a select on backend value to backend-specialized
+  targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
     <tr id="cc_test-kwargs">
       <td><code>kwargs</code></td>
       <td>
@@ -315,7 +567,7 @@ inside of an enclave.
 ## cc_test_and_cc_enclave_test
 
 <pre>
-cc_test_and_cc_enclave_test(<a href="#cc_test_and_cc_enclave_test-name">name</a>, <a href="#cc_test_and_cc_enclave_test-enclave_test_name">enclave_test_name</a>, <a href="#cc_test_and_cc_enclave_test-enclave_test_config">enclave_test_config</a>, <a href="#cc_test_and_cc_enclave_test-srcs">srcs</a>, <a href="#cc_test_and_cc_enclave_test-deps">deps</a>, <a href="#cc_test_and_cc_enclave_test-kwargs">kwargs</a>)
+cc_test_and_cc_enclave_test(<a href="#cc_test_and_cc_enclave_test-name">name</a>, <a href="#cc_test_and_cc_enclave_test-enclave_test_name">enclave_test_name</a>, <a href="#cc_test_and_cc_enclave_test-enclave_test_config">enclave_test_config</a>, <a href="#cc_test_and_cc_enclave_test-srcs">srcs</a>, <a href="#cc_test_and_cc_enclave_test-deps">deps</a>, <a href="#cc_test_and_cc_enclave_test-backends">backends</a>, <a href="#cc_test_and_cc_enclave_test-kwargs">kwargs</a>)
 </pre>
 
 An alias for cc_test with a default enclave_test_name.
@@ -328,7 +580,7 @@ and enclave test unless given an enclave test name.
 
 This is most useful if imported as
   load(
-      _workspace_name + "/bazel:asylo.bzl",
+      "//asylo/bazel:asylo.bzl",
       cc_test = "cc_test_and_cc_enclave_test",
   )
 so any cc_test defined in the BUILD file will generate both native and
@@ -369,8 +621,8 @@ enclave tests.
       <td>
         optional. default is <code>""</code>
         <p>
-          An sgx_enclave_configuration target to be passed to
-    the enclave. Optional.
+          A backend-specific configuration target to be passed
+    to the signer. Optional.
         </p>
       </td>
     </tr>
@@ -392,6 +644,18 @@ enclave tests.
         </p>
       </td>
     </tr>
+    <tr id="cc_test_and_cc_enclave_test-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+    one. Defaults to all supported backends. If more than one, then
+    name is an alias to a select on backend value to backend-specialized
+    targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
     <tr id="cc_test_and_cc_enclave_test-kwargs">
       <td><code>kwargs</code></td>
       <td>
@@ -405,15 +669,15 @@ enclave tests.
 </table>
 
 
-<a name="#copy_from_host"></a>
+<a name="#cc_unsigned_enclave"></a>
 
-## copy_from_host
+## cc_unsigned_enclave
 
 <pre>
-copy_from_host(<a href="#copy_from_host-target">target</a>, <a href="#copy_from_host-output">output</a>, <a href="#copy_from_host-name">name</a>)
+cc_unsigned_enclave(<a href="#cc_unsigned_enclave-name">name</a>, <a href="#cc_unsigned_enclave-backends">backends</a>, <a href="#cc_unsigned_enclave-name_by_backend">name_by_backend</a>, <a href="#cc_unsigned_enclave-kwargs">kwargs</a>)
 </pre>
 
-Genrule that builds target with host CROSSTOOL.
+Creates a C++ unsigned enclave target in all or any backend.
 
 ### Parameters
 
@@ -423,22 +687,250 @@ Genrule that builds target with host CROSSTOOL.
     <col class="col-description" />
   </colgroup>
   <tbody>
-    <tr id="copy_from_host-target">
-      <td><code>target</code></td>
-      <td>
-        required.
-      </td>
-    </tr>
-    <tr id="copy_from_host-output">
-      <td><code>output</code></td>
-      <td>
-        required.
-      </td>
-    </tr>
-    <tr id="copy_from_host-name">
+    <tr id="cc_unsigned_enclave-name">
       <td><code>name</code></td>
       <td>
-        optional. default is <code>""</code>
+        required.
+        <p>
+          The rule name.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_unsigned_enclave-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+  one. Defaults to all supported backends. If more than one, then
+  name is an alias to a select on backend value to backend-specialized
+  targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_unsigned_enclave-name_by_backend">
+      <td><code>name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+  specific target label.
+        </p>
+      </td>
+    </tr>
+    <tr id="cc_unsigned_enclave-kwargs">
+      <td><code>kwargs</code></td>
+      <td>
+        optional.
+        <p>
+          Remainder arguments to the backend rule.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a name="#debug_sign_enclave"></a>
+
+## debug_sign_enclave
+
+<pre>
+debug_sign_enclave(<a href="#debug_sign_enclave-name">name</a>, <a href="#debug_sign_enclave-unsigned">unsigned</a>, <a href="#debug_sign_enclave-backends">backends</a>, <a href="#debug_sign_enclave-config">config</a>, <a href="#debug_sign_enclave-testonly">testonly</a>, <a href="#debug_sign_enclave-name_by_backend">name_by_backend</a>)
+</pre>
+
+Signs an unsigned enclave according the the backend's signing procedure.
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="debug_sign_enclave-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          The signed enclave target name.
+        </p>
+      </td>
+    </tr>
+    <tr id="debug_sign_enclave-unsigned">
+      <td><code>unsigned</code></td>
+      <td>
+        required.
+        <p>
+          The label to the unsigned enclave.
+        </p>
+      </td>
+    </tr>
+    <tr id="debug_sign_enclave-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+  one. Defaults to all supported backends. If more than one, then
+  name is an alias to a select on backend value to backend-specialized
+  targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="debug_sign_enclave-config">
+      <td><code>config</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          A label to a config target that the backend-specific signing
+  tool uses.
+        </p>
+      </td>
+    </tr>
+    <tr id="debug_sign_enclave-testonly">
+      <td><code>testonly</code></td>
+      <td>
+        optional. default is <code>0</code>
+        <p>
+          True if the target should only be used in tests.
+        </p>
+      </td>
+    </tr>
+    <tr id="debug_sign_enclave-name_by_backend">
+      <td><code>name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+  specific target label.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a name="#dlopen_enclave_loader"></a>
+
+## dlopen_enclave_loader
+
+<pre>
+dlopen_enclave_loader(<a href="#dlopen_enclave_loader-name">name</a>, <a href="#dlopen_enclave_loader-enclaves">enclaves</a>, <a href="#dlopen_enclave_loader-embedded_enclaves">embedded_enclaves</a>, <a href="#dlopen_enclave_loader-loader_args">loader_args</a>, <a href="#dlopen_enclave_loader-remote_proxy">remote_proxy</a>, <a href="#dlopen_enclave_loader-kwargs">kwargs</a>)
+</pre>
+
+Thin wrapper around enclave loader, adds necessary linkopts and testonly=1
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="dlopen_enclave_loader-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          Name for build target.
+        </p>
+      </td>
+    </tr>
+    <tr id="dlopen_enclave_loader-enclaves">
+      <td><code>enclaves</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          Dictionary from enclave names to target dependencies. The
+  dictionary must be injective. This dictionary is used to format each
+  string in `loader_args` after each enclave target is interpreted as the
+  path to its output binary.
+        </p>
+      </td>
+    </tr>
+    <tr id="dlopen_enclave_loader-embedded_enclaves">
+      <td><code>embedded_enclaves</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          Dictionary from ELF section names (that do not start
+  with '.') to target dependencies. Each target in the dictionary is
+  embedded in the loader binary under the corresponding ELF section.
+        </p>
+      </td>
+    </tr>
+    <tr id="dlopen_enclave_loader-loader_args">
+      <td><code>loader_args</code></td>
+      <td>
+        optional. default is <code>[]</code>
+        <p>
+          List of arguments to be passed to `loader`. Arguments may
+  contain {enclave_name}-style references to keys from the `enclaves` dict,
+  each of which will be replaced with the path to the named enclave.
+        </p>
+      </td>
+    </tr>
+    <tr id="dlopen_enclave_loader-remote_proxy">
+      <td><code>remote_proxy</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          Host-side executable that is going to run remote enclave
+  proxy server which will actually load the enclave(s). If empty, the
+  enclave(s) are loaded locally.
+        </p>
+      </td>
+    </tr>
+    <tr id="dlopen_enclave_loader-kwargs">
+      <td><code>kwargs</code></td>
+      <td>
+        optional.
+        <p>
+          cc_binary arguments.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a name="#dlopen_enclave_test"></a>
+
+## dlopen_enclave_test
+
+<pre>
+dlopen_enclave_test(<a href="#dlopen_enclave_test-name">name</a>, <a href="#dlopen_enclave_test-kwargs">kwargs</a>)
+</pre>
+
+Thin wrapper around enclave test, adds 'asylo-dlopen' tag and necessary linkopts
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="dlopen_enclave_test-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          enclave_test name
+        </p>
+      </td>
+    </tr>
+    <tr id="dlopen_enclave_test-kwargs">
+      <td><code>kwargs</code></td>
+      <td>
+        optional.
+        <p>
+          same as enclave_test kwargs
+        </p>
       </td>
     </tr>
   </tbody>
@@ -516,12 +1008,87 @@ an error message stating that the file is in the wrong format.
 </table>
 
 
+<a name="#enclave_build_test"></a>
+
+## enclave_build_test
+
+<pre>
+enclave_build_test(<a href="#enclave_build_test-name">name</a>, <a href="#enclave_build_test-enclaves">enclaves</a>, <a href="#enclave_build_test-tap">tap</a>, <a href="#enclave_build_test-tags">tags</a>, <a href="#enclave_build_test-name_by_backend">name_by_backend</a>, <a href="#enclave_build_test-backends">backends</a>)
+</pre>
+
+Tests that the given enclaves build in the specified backends.
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="enclave_build_test-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          The rule name and base name for backend-specific name
+    derivations.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_build_test-enclaves">
+      <td><code>enclaves</code></td>
+      <td>
+        optional. default is <code>[]</code>
+        <p>
+          A list of enclave labels.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_build_test-tap">
+      <td><code>tap</code></td>
+      <td>
+        optional. default is <code>False</code>
+      </td>
+    </tr>
+    <tr id="enclave_build_test-tags">
+      <td><code>tags</code></td>
+      <td>
+        optional. default is <code>[]</code>
+        <p>
+          Tags to apply to the test targets.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_build_test-name_by_backend">
+      <td><code>name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+    specific test name.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_build_test-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          A list of Asylo backend labels.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <a name="#enclave_loader"></a>
 
 ## enclave_loader
 
 <pre>
-enclave_loader(<a href="#enclave_loader-name">name</a>, <a href="#enclave_loader-enclaves">enclaves</a>, <a href="#enclave_loader-embedded_enclaves">embedded_enclaves</a>, <a href="#enclave_loader-loader_args">loader_args</a>, <a href="#enclave_loader-kwargs">kwargs</a>)
+enclave_loader(<a href="#enclave_loader-name">name</a>, <a href="#enclave_loader-enclaves">enclaves</a>, <a href="#enclave_loader-embedded_enclaves">embedded_enclaves</a>, <a href="#enclave_loader-loader_args">loader_args</a>, <a href="#enclave_loader-remote_proxy">remote_proxy</a>, <a href="#enclave_loader-backends">backends</a>, <a href="#enclave_loader-name_by_backend">name_by_backend</a>, <a href="#enclave_loader-deprecation">deprecation</a>, <a href="#enclave_loader-kwargs">kwargs</a>)
 </pre>
 
 Wraps a cc_binary with a dependency on enclave availability at runtime.
@@ -529,6 +1096,8 @@ Wraps a cc_binary with a dependency on enclave availability at runtime.
 Creates a loader for the given enclaves and containing the given embedded
 enclaves. Passes flags according to `loader_args`, which can contain
 references to targets from `enclaves`.
+
+The loader is subject to a backend transition by the specified backends.
 
 This macro creates three build targets:
   1) name: shell script that runs `name_host_loader`.
@@ -564,7 +1133,8 @@ This macro creates three build targets:
           Dictionary from enclave names to target dependencies. The
   dictionary must be injective. This dictionary is used to format each
   string in `loader_args` after each enclave target is interpreted as the
-  path to its output binary.
+  path to its output binary. Enclaves are built under a backend
+  transition.
         </p>
       </td>
     </tr>
@@ -590,6 +1160,49 @@ This macro creates three build targets:
         </p>
       </td>
     </tr>
+    <tr id="enclave_loader-remote_proxy">
+      <td><code>remote_proxy</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          Host-side executable that is going to run remote enclave
+  proxy server which will actually load the enclave(s). If empty, the
+  enclave(s) are loaded locally.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_loader-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+    one. Defaults to all supported backends. If more than one, then
+    name is an alias to a select on backend value to backend-specialized
+    targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_loader-name_by_backend">
+      <td><code>name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+    specific loader script name.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_loader-deprecation">
+      <td><code>deprecation</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          A string deprecation message for uses of this macro that
+    have been marked deprecated. Optional.
+        </p>
+      </td>
+    </tr>
     <tr id="enclave_loader-kwargs">
       <td><code>kwargs</code></td>
       <td>
@@ -608,7 +1221,7 @@ This macro creates three build targets:
 ## enclave_test
 
 <pre>
-enclave_test(<a href="#enclave_test-name">name</a>, <a href="#enclave_test-enclaves">enclaves</a>, <a href="#enclave_test-embedded_enclaves">embedded_enclaves</a>, <a href="#enclave_test-test_args">test_args</a>, <a href="#enclave_test-tags">tags</a>, <a href="#enclave_test-kwargs">kwargs</a>)
+enclave_test(<a href="#enclave_test-name">name</a>, <a href="#enclave_test-enclaves">enclaves</a>, <a href="#enclave_test-embedded_enclaves">embedded_enclaves</a>, <a href="#enclave_test-test_args">test_args</a>, <a href="#enclave_test-remote_proxy">remote_proxy</a>, <a href="#enclave_test-tags">tags</a>, <a href="#enclave_test-backends">backends</a>, <a href="#enclave_test-test_name_by_backend">test_name_by_backend</a>, <a href="#enclave_test-deprecation">deprecation</a>, <a href="#enclave_test-kwargs">kwargs</a>)
 </pre>
 
 Build target for testing one or more enclaves.
@@ -659,8 +1272,8 @@ This macro creates three build targets:
         optional. default is <code>{}</code>
         <p>
           Dictionary from ELF section names (that do not start
- with '.') to target dependencies. Each target in the dictionary is
- embedded in the test binary under the corresponding ELF section.
+  with '.') to target dependencies. Each target in the dictionary is
+  embedded in the test binary under the corresponding ELF section.
         </p>
       </td>
     </tr>
@@ -670,9 +1283,20 @@ This macro creates three build targets:
         optional. default is <code>[]</code>
         <p>
           List of arguments to be passed to the test binary. Arguments may
- contain {enclave_name}-style references to keys from the `enclaves` dict,
- each of which will be replaced with the path to the named enclave. This
- replacement only occurs for non-embedded enclaves.
+  contain {enclave_name}-style references to keys from the `enclaves` dict,
+  each of which will be replaced with the path to the named enclave. This
+  replacement only occurs for non-embedded enclaves.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_test-remote_proxy">
+      <td><code>remote_proxy</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          Host-side executable that is going to run remote enclave
+  proxy server which will actually load the enclave(s). If empty, the
+  enclave(s) are loaded locally.
         </p>
       </td>
     </tr>
@@ -682,6 +1306,34 @@ This macro creates three build targets:
         optional. default is <code>[]</code>
         <p>
           Label attached to this test to allow for querying.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_test-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], name_derivation = "_sgx_hw", order = 2, tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], name_derivation = "_sgx_sim", order = 1, tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+  one. Defaults to all supported backends. If more than one, then
+  name is an alias to a select on backend value to backend-specialized
+  targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="enclave_test-test_name_by_backend">
+      <td><code>test_name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+      </td>
+    </tr>
+    <tr id="enclave_test-deprecation">
+      <td><code>deprecation</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          A string deprecation message for uses of this macro that
+  have been marked deprecated. Optional.
         </p>
       </td>
     </tr>
@@ -706,7 +1358,7 @@ This macro creates three build targets:
 sgx_enclave_test(<a href="#sgx_enclave_test-name">name</a>, <a href="#sgx_enclave_test-srcs">srcs</a>, <a href="#sgx_enclave_test-kwargs">kwargs</a>)
 </pre>
 
-Build target for testing one or more instances of 'sgx_enclave'.
+Build target for testing one or more instances of 'sgx.debug_enclave'.
 
 This macro invokes enclave_test with the "asylo-sgx" tag added.
 
@@ -743,165 +1395,6 @@ This macro invokes enclave_test with the "asylo-sgx" tag added.
         optional.
         <p>
           enclave_test arguments.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<a name="#sim_enclave"></a>
-
-## sim_enclave
-
-<pre>
-sim_enclave(<a href="#sim_enclave-name">name</a>, <a href="#sim_enclave-kwargs">kwargs</a>)
-</pre>
-
-Build rule for creating simulated enclave object files signed for testing.
-
-The enclave simulation backend currently makes use of the SGX simulator.
-However, this is subject to change and users of this rule should not make
-assumptions about it being related to SGX.
-
-
-### Parameters
-
-<table class="params-table">
-  <colgroup>
-    <col class="col-param" />
-    <col class="col-description" />
-  </colgroup>
-  <tbody>
-    <tr id="sim_enclave-name">
-      <td><code>name</code></td>
-      <td>
-        required.
-        <p>
-          The name of the signed enclave object file.
-        </p>
-      </td>
-    </tr>
-    <tr id="sim_enclave-kwargs">
-      <td><code>kwargs</code></td>
-      <td>
-        optional.
-        <p>
-          cc_binary arguments.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<a name="#sim_enclave_loader"></a>
-
-## sim_enclave_loader
-
-<pre>
-sim_enclave_loader(<a href="#sim_enclave_loader-name">name</a>, <a href="#sim_enclave_loader-enclaves">enclaves</a>, <a href="#sim_enclave_loader-embedded_enclaves">embedded_enclaves</a>, <a href="#sim_enclave_loader-loader_args">loader_args</a>, <a href="#sim_enclave_loader-kwargs">kwargs</a>)
-</pre>
-
-Thin wrapper around enclave loader, adds necessary linkopts and testonly=1
-
-### Parameters
-
-<table class="params-table">
-  <colgroup>
-    <col class="col-param" />
-    <col class="col-description" />
-  </colgroup>
-  <tbody>
-    <tr id="sim_enclave_loader-name">
-      <td><code>name</code></td>
-      <td>
-        required.
-        <p>
-          Name for build target.
-        </p>
-      </td>
-    </tr>
-    <tr id="sim_enclave_loader-enclaves">
-      <td><code>enclaves</code></td>
-      <td>
-        optional. default is <code>{}</code>
-        <p>
-          Dictionary from enclave names to target dependencies. The
-  dictionary must be injective. This dictionary is used to format each
-  string in `loader_args` after each enclave target is interpreted as the
-  path to its output binary.
-        </p>
-      </td>
-    </tr>
-    <tr id="sim_enclave_loader-embedded_enclaves">
-      <td><code>embedded_enclaves</code></td>
-      <td>
-        optional. default is <code>{}</code>
-        <p>
-          Dictionary from ELF section names (that do not start
-  with '.') to target dependencies. Each target in the dictionary is
-  embedded in the loader binary under the corresponding ELF section.
-        </p>
-      </td>
-    </tr>
-    <tr id="sim_enclave_loader-loader_args">
-      <td><code>loader_args</code></td>
-      <td>
-        optional. default is <code>[]</code>
-        <p>
-          List of arguments to be passed to `loader`. Arguments may
-  contain {enclave_name}-style references to keys from the `enclaves` dict,
-  each of which will be replaced with the path to the named enclave.
-        </p>
-      </td>
-    </tr>
-    <tr id="sim_enclave_loader-kwargs">
-      <td><code>kwargs</code></td>
-      <td>
-        optional.
-        <p>
-          cc_binary arguments.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<a name="#sim_enclave_test"></a>
-
-## sim_enclave_test
-
-<pre>
-sim_enclave_test(<a href="#sim_enclave_test-name">name</a>, <a href="#sim_enclave_test-kwargs">kwargs</a>)
-</pre>
-
-Thin wrapper around enclave test, adds 'asylo-sim' tag and necessary linkopts
-
-### Parameters
-
-<table class="params-table">
-  <colgroup>
-    <col class="col-param" />
-    <col class="col-description" />
-  </colgroup>
-  <tbody>
-    <tr id="sim_enclave_test-name">
-      <td><code>name</code></td>
-      <td>
-        required.
-        <p>
-          enclave_test name
-        </p>
-      </td>
-    </tr>
-    <tr id="sim_enclave_test-kwargs">
-      <td><code>kwargs</code></td>
-      <td>
-        optional.
-        <p>
-          same as enclave_test kwargs
         </p>
       </td>
     </tr>
