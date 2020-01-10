@@ -1,8 +1,6 @@
 <map id="asylo/identity/enclave_assertion_authority.h" name="asylo/identity/enclave_assertion_authority.h">
-<area shape="rect" id="node2" href="$enclave__assertion__generator_8h.html" title="asylo/identity/enclave\l_assertion_generator.h" alt="" coords="195,95,366,136"/>
-<area shape="rect" id="node5" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/enclave\l_assertion_verifier.h" alt="" coords="391,95,557,136"/>
-<area shape="rect" id="node3" href="$null__assertion__generator_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_generator.h" alt="" coords="5,184,180,240"/>
-<area shape="rect" id="node4" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="205,184,359,240"/>
-<area shape="rect" id="node6" href="$null__assertion__verifier_8h.html" title="asylo/identity/null\l_identity/null_assertion\l_verifier.h" alt="" coords="385,184,560,240"/>
-<area shape="rect" id="node7" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="585,184,739,240"/>
+<area shape="rect" id="node2" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="6,95,231,136"/>
+<area shape="rect" id="node4" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="256,95,464,136"/>
+<area shape="rect" id="node3" href="$null__assertion__generator_8h.html" title="asylo/identity/attestation\l/null/null_assertion_generator.h" alt="" coords="5,184,232,225"/>
+<area shape="rect" id="node5" href="$null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="257,184,466,225"/>
 </map>

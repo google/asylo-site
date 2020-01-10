@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Asylo: Asylo ([asylo.dev](https://asylo.dev))</title>
+<title>Asylo: Asylo ([asylo.dev](https://asylo.dev)) [![Build status](https://badge.buildkite.com/34525fbee9a2289bba7f3ac74df984c8916e5e1725f45941fa.svg)](https://buildkite.com/asylo/asylo-docker-test-for-master-branch)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Asylo ([asylo.dev](<a href="">https://asylo.dev</a>)) </div>  </div>
+<div class="title">Asylo ([asylo.dev](<a href="">https://asylo.dev</a>)) [![Build status](<a href="https://badge.buildkite.com/34525fbee9a2289bba7f3ac74df984c8916e5e1725f45941fa.svg">https://badge.buildkite.com/34525fbee9a2289bba7f3ac74df984c8916e5e1725f45941fa.svg</a>)](<a href="https://buildkite.com/asylo/asylo-docker-test-for-master-branch">https://buildkite.com/asylo/asylo-docker-test-for-master-branch</a>) </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Asylo is an open and flexible framework for developing enclave applications. Asylo lets you take advantage of a range of emerging trusted execution environments (TEEs), including both software and hardware isolation technologies.</p>
@@ -84,7 +84,7 @@ $(function() {
 </ul>
 <h2>Build Environment in Docker (Recommended)</h2>
 <p>Asylo provides a custom Docker image that contains all required dependencies, as well as Asylo's custom toolchain, which is required for compiling enclave applications for various enclave backends.</p>
-<div class="fragment"><div class="line">docker run -it --rm gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>See the <a href="/asylo/distrib/toolchain/Dockerfile">Dockerfile</a> for an in-depth view of what's inside the container image.</p>
+<div class="fragment"><div class="line">docker run -it --rm gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>See the <a href="https://github.com/google/asylo/blob/master/asylo/distrib/toolchain/Dockerfile">Dockerfile</a> for an in-depth view of what's inside the container image.</p>
 <p>See this <a href="https://cloud.google.com/container-registry/docs/pushing-and-pulling#pulling_images_from_the_registry">guide</a> for additional details on how to pull images from Google's Container Registry.</p>
 <p>Some of Asylo's tests require IPv6 to be enabled in your Docker daemon. See this <a href="https://docs.docker.com/config/daemon/ipv6/">guide</a> for how to enable IPv6.</p>
 <p><b>Note</b>: If the Docker daemon fails to start with <code>"ipv6": true</code> added to the daemon.json file, you may also need to explicitly configure IPv6 subnet as shown <a href="https://docs.docker.com/v17.09/engine/userguide/networking/default_network/ipv6/">here</a>.</p>
@@ -105,7 +105,7 @@ $(function() {
 </li>
 <li><code>-w</code> is used to set the working directory in the container so that <code>bazel run</code> command is executed in the example project.</li>
 </ul>
-<p>If using the Intel SGX hardware backend (see the <a href="/INSTALL.md#intel-sgx-hardware-backend-support">Manual Installation guide</a>), the following Docker flags are needed to propagate the necessary capabilities from the host:</p>
+<p>If using the Intel SGX hardware backend (see the <a href="https://github.com/google/asylo/blob/master/INSTALL.md#intel-sgx-hardware-backend-support">Manual Installation guide</a>), the following Docker flags are needed to propagate the necessary capabilities from the host:</p>
 <ul>
 <li><code>--device=/dev/isgx</code> gives the container access to the SGX device that is used to interact with the SGX hardware features.</li>
 <li><code>-v /var/run/aesmd/aesm.socket:/var/run/aesmd/aesm.socket</code> allows the container to access the Architectural Enclave Service Manager (AESM) daemon running on the host.</li>
@@ -128,7 +128,7 @@ $(function() {
 <div class="fragment"><div class="line">docker run -it --rm \</div><div class="line">    -v &quot;${ASYLO_SDK}:/opt/asylo/sdk&quot; \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -w &quot;/opt/asylo/sdk&quot; \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    asylo/test/run_enclave_tests.sh</div></div><!-- fragment --><p>See <a href="#docker-flags">Docker flags</a> for a breakdown of the flags used in this command. Note that in this command we also use <code>-v</code> to map the Asylo SDK source files to <code>/opt/asylo/sdk</code>.</p>
 <h2>Manual Installation</h2>
 <p>If you don't want to use the Asylo Docker image, you can manually install Asylo and its dependencies instead.</p>
-<p>See /INSTALL.md "INSTALL.md" for detailed installation steps.</p>
+<p>See https://github.com/google/asylo/blob/master/INSTALL.md "INSTALL.md" for detailed installation steps.</p>
 <h3>Examples</h3>
 <p>The following examples assume that the Asylo SDK was installed at <code>ASYLO_SDK</code>, which can be a directory of your choice. For example:</p>
 <h4>Running the <code>hello_world</code> example</h4>
@@ -141,46 +141,50 @@ $(function() {
 <p>If you haven't already, use the following commands to clone the Asylo source code repository and copy it to a directory of your choice.</p>
 <div class="fragment"><div class="line">ASYLO_SDK=~/asylo-sdk</div><div class="line">git clone https://github.com/google/asylo.git &quot;${ASYLO_SDK}&quot;</div></div><!-- fragment --><p>The regression test suite includes tests that unit-test code directly as well as tests that run inside a simulated enclave environment. You can run it with the following command:</p>
 <div class="fragment"><div class="line">&quot;${ASYLO_SDK}&quot;/asylo/test/run_enclave_tests.sh</div></div><!-- fragment --><h2>Repository Structure &amp; Status</h2>
-<p>This repository contains source code for the Asylo framework. The 0.3 release of the framework supports C++11 applications and a Bazel build environment.</p>
+<p>This repository contains source code for the Asylo framework. The framework supports C++17 applications (from release 0.4) and a Bazel build environment.</p>
 <p>The following packages contain source code that may be of particular interest to users of the Asylo framework as well as those looking to contribute to Asylo development.</p>
 <ul>
-<li><a href="/asylo">asylo</a><ul>
-<li><a href="/asylo/crypto">crypto/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo">asylo/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/bazel">bazel/</a><ul>
+<li>Libraries for Asylo development in the Bazel build system.</li>
+</ul>
+</li>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/crypto">crypto/</a><ul>
 <li>Crypto utilities and wrappers around BoringSSL.</li>
 </ul>
 </li>
-<li><a href="/asylo/distrib">distrib/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/distrib">distrib/</a><ul>
 <li>Asylo toolchain and dependencies.</li>
 </ul>
 </li>
-<li><a href="/asylo/examples">examples/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/examples">examples/</a><ul>
 <li>Sample applications written with the Asylo framework.</li>
 </ul>
 </li>
-<li><a href="/asylo/grpc">grpc/</a><ul>
-<li><a href="/asylo/grpc/auth">auth/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/grpc">grpc/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/grpc/auth">auth/</a><ul>
 <li>gRPC authentication support.</li>
 </ul>
 </li>
-<li><a href="/asylo/grpc/util">util/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/grpc/util">util/</a><ul>
 <li>Utilities for using gRPC from a trusted application.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="/asylo/identity">identity/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/identity">identity/</a><ul>
 <li>Identity and attestation support.</li>
 </ul>
 </li>
-<li><a href="/asylo/platform">platform/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/platform">platform/</a><ul>
 <li>Implementation of enclave platforms and backends.</li>
 </ul>
 </li>
-<li><a href="/asylo/test">test/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/test">test/</a><ul>
 <li>Testing utilities provided to application writers.</li>
 </ul>
 </li>
-<li><a href="/asylo/util">util/</a><ul>
+<li><a href="https://github.com/google/asylo/tree/master/asylo/util">util/</a><ul>
 <li>Common utilities provided for use both inside and outside an enclave environment.</li>
 </ul>
 </li>
@@ -188,7 +192,7 @@ $(function() {
 </li>
 </ul>
 <h2>License</h2>
-<p>Asylo is released under the <a href="/LICENSE">Apache 2.0 license</a>.</p>
+<p>Asylo is released under the <a href="https://github.com/google/asylo/blob/master/LICENSE">Apache 2.0 license</a>.</p>
 <div class="fragment"><div class="line">Copyright 2018 Asylo authors</div><div class="line"></div><div class="line">Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</div><div class="line">you may not use this file except in compliance with the License.</div><div class="line">You may obtain a copy of the License at</div><div class="line"></div><div class="line">    http://www.apache.org/licenses/LICENSE-2.0</div><div class="line"></div><div class="line">Unless required by applicable law or agreed to in writing, software</div><div class="line">distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</div><div class="line">WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</div><div class="line">See the License for the specific language governing permissions and</div><div class="line">limitations under the License.</div></div><!-- fragment --><h2>Disclaimers</h2>
 <p>This is not an officially supported Google product.</p>
 <p>Asylo's support for various enclave backend technologies does not constitute an endorsement of those technologies or the security properties therein. Users of Asylo should perform due diligence in evaluating whether a backend technology meets the security requirements of their application. Users are advised to use defense-in-depth measures to protect their sensitive applications. </p>

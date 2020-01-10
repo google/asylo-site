@@ -1,5 +1,6 @@
 var searchData=
 [
   ['self_5fassertions',['self_assertions',['../structasylo_1_1EnclaveCredentialsOptions.html#ad51e5553932ca805400a8b50fbf38089',1,'asylo::EnclaveCredentialsOptions']]],
-  ['server_5faddress',['server_address',['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#a495569dc247846cb2c5829dc67709205',1,'asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes']]]
+  ['severity_5f',['severity_',['../classasylo_1_1LogMessage.html#a59809d3cddf5f055144616a34273069f',1,'asylo::LogMessage']]],
+  ['stream_5f',['stream_',['../classasylo_1_1LogMessage.html#a20e4d5adf791ba0ea44bda79854a5f58',1,'asylo::LogMessage']]]
 ];

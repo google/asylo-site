@@ -5,5 +5,7 @@ var searchData=
   ['tootherstatus',['ToOtherStatus',['../classasylo_1_1Status.html#a0405921363d07cbaac544ddc74df5ca0',1,'asylo::Status']]],
   ['tostring',['ToString',['../classasylo_1_1Status.html#a9ad95100716690faead6ef5e2abb58e9',1,'asylo::Status']]],
   ['trusted_5fapplication_2eh',['trusted_application.h',['../trusted__application_8h.html',1,'']]],
-  ['trustedapplication',['TrustedApplication',['../classasylo_1_1TrustedApplication.html',1,'asylo']]]
+  ['trusted_5fprimitives_2eh',['trusted_primitives.h',['../trusted__primitives_8h.html',1,'']]],
+  ['trustedapplication',['TrustedApplication',['../classasylo_1_1TrustedApplication.html',1,'asylo']]],
+  ['trustedprimitives',['TrustedPrimitives',['../classasylo_1_1primitives_1_1TrustedPrimitives.html',1,'asylo::primitives']]]
 ];

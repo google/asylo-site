@@ -78,7 +78,7 @@ modifications:
 Note that although there are a number of similarities between the two protocols,
 an EKEP endpoint is not compatible with an ALTS endpoint.
 
-The complete spec for the Enclave Key Exchange Protocol can be found
+The specification for the Enclave Key Exchange Protocol can be found
 [here]({{home}}/docs/concepts/ekep.html).
 
 ## Authentication
@@ -167,7 +167,7 @@ asylo::EnclaveConfig config;
 
 *   [SGX local credentials options documentation]({{home}}/doxygen/sgx__local__credentials__options_8h.html)
 *   [`CreateSgxLocalAssertionAuthorityConfig()` documentation]({{home}}/doxygen/namespaceasylo.html#ac166310b0b726d04c9b42ded112ea66c)
-*   [`SgxLocalAssertionAuthorityConfig` and "Attestation Domain" documentation]({{home}}/docs/reference/proto/asylo.sgx_local_assertion_authority_config.v1.html)
+*   [`SgxLocalAssertionAuthorityConfig` and "Attestation Domain" documentation]({{home}}/docs/reference/proto/identity/asylo.sgx_local_assertion_authority_config.v1.html)
 
 ### Bidirectional Null Authentication
 
@@ -255,7 +255,7 @@ types of identities are required to be presented by the peer) are set with
 ### Server Credentials
 
 The
-[`asylo::EnclaveServerCredentials()`]({{home}}/doxygen/namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919)
+[`asylo::EnclaveServerCredentials()`]({{home}}/doxygen/namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe)
 function can be used to create a `grpc::ServerCredentials` that enforces the
 authentication policy defined in a given `asylo::EnclaveCredentialsOptions`
 object. The resulting credentials object can be used to build and start a gRPC
@@ -284,7 +284,7 @@ builder.AddListeningPort("localhost:1234", server_credentials);
 
 Configuring a gRPC client's authentication policy is similar to configuring a
 gRPC server. The
-[`asylo::EnclaveChannelCredentials()`]({{home}}/doxygen/namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c)
+[`asylo::EnclaveChannelCredentials()`]({{home}}/doxygen/namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b)
 function can be used to create a `grpc::ChannelCredentials` object that enforces
 the authentication policy defined in a given `asylo::EnclaveCredentialsOptions`
 object. The resulting credentials object can be used to create a
@@ -342,11 +342,11 @@ spec that is applied to that identity.
 #### SGX Identity ACLs
 
 ACLs for SGX identities are defined as
-[`asylo::SgxIdentityExpectation`]({{home}}/docs/reference/proto/asylo.sgx_identity.v1.html#SgxIdentityExpectation)
+[`asylo::SgxIdentityExpectation`]({{home}}/docs/reference/proto/identity/asylo.sgx_identity.v1.html#SgxIdentityExpectation)
 messages. An `asylo::SgxIdentityExpectation` is composed of an
-[`asylo::SgxIdentity`]({{home}}/docs/reference/proto/asylo.sgx_identity.v1.html#SgxIdentity)
+[`asylo::SgxIdentity`]({{home}}/docs/reference/proto/identity/asylo.sgx_identity.v1.html#SgxIdentity)
 and an
-[`asylo::SgxIdentityMatchSpec`]({{home}}/docs/reference/proto/asylo.sgx_identity.v1.html#SgxIdentityMatchSpec).
+[`asylo::SgxIdentityMatchSpec`]({{home}}/docs/reference/proto/identity/asylo.sgx_identity.v1.html#SgxIdentityMatchSpec).
 It can be serialized into the `match_spec` field of an
 `asylo::EnclaveIdentityExpectation`.
 
@@ -427,6 +427,8 @@ examined directly using the
 [`asylo::EnclaveAuthContext::FindEnclaveIdentity()`]({{home}}/doxygen/classasylo_1_1EnclaveAuthContext.html#a96674aceb617807a23c4b521da0110d8)
 method. Users can select specific identities by specifying an
 [`asylo::EnclaveIdentityDescription`]({{home}}/docs/reference/proto/identity/asylo.identity.v1.html).
+See
+[all supported identity types]({{home}}/doxygen/descriptions_8h.html).
 
 ```c++
 #include "asylo/grpc/auth/enclave_auth_context.h"
@@ -456,6 +458,3 @@ method. Users can select specific identities by specifying an
  …
 }
 ```
-
-See
-[all supported identity types]({{home}}/doxygen/descriptions_8h.html).

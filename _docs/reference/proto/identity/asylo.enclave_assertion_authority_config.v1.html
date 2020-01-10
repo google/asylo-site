@@ -7,10 +7,14 @@ generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/identity/enclave_assertion_authority_config.html
 number_of_entries: 1
 ---
+<p>This package defines EnclaveAssertionAuthorityConfig, which is used to
+initialize an assertion authority (an assertion generator or an assertion
+verifier).</p>
+
 <h2 id="EnclaveAssertionAuthorityConfig">EnclaveAssertionAuthorityConfig</h2>
 <section>
-<p>Configuration for an enclave assertion authority (i.e. an assertion generator
-or an assertion verifier).</p>
+<p>Configuration used to initialize an enclave assertion authority (an assertion
+generator or an assertion verifier).</p>
 
 <table class="message-fields">
 <thead>
@@ -18,6 +22,7 @@ or an assertion verifier).</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -28,6 +33,9 @@ or an assertion verifier).</p>
 <p>Describes the target enclave assertion authority.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveAssertionAuthorityConfig-config">
 <td><code>config</code></td>
@@ -37,6 +45,9 @@ or an assertion verifier).</p>
 string that may take on any format. It could, for example, be a serialized
 protobuf.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>

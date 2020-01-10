@@ -848,18 +848,22 @@ from the snapshot. The following security features for `fork` are provided:
 
 1.  Only the enclavized portion of the application can request a fork.
 2.  At most one snapshot can be created per fork request.
-3.  The cloned enclave has exactly the same identity as the parent enclave.
-4.  If no other threads were running inside the parent enclave when it called
-    `fork`, the cloned enclave's state is the same as that of the parent enclave
-    when it called `fork`.
-5.  The snapshot is encrypted by a randomly generated AES256-GCM-SIV key.
-6.  THe parent enclave will send the snapshot key to the child enclave only
+3.  `fork` is thread-safe. The thread that requests `fork` blocks enclave
+    entries and waits till all other threads are blocked before proceeding to
+    take a snapshot.
+4.  The cloned enclave has exactly the same identity as the parent enclave.
+5.  The cloned enclave's state is the same as that of the parent enclave when it
+    called `fork`.
+6.  The snapshot is encrypted by a randomly generated AES256-GCM-SIV key.
+7.  The parent enclave will send the snapshot key to the child enclave only
     after verifying the child enclave has exactly the same identity.
-7.  The key is encrypted while the parent sends it to the child, by a key
+8.  The key is encrypted while the parent sends it to the child, by a key
     generated from a Diffie-Hellman key exchange.
-8.  The parent will only send the key to one child enclave.
-9.  If the encrypted snapshot is modified, the child enclave does not restore,
-    and will block all entries.
+9.  The parent will only send the key to one child enclave.
+10. If there are other threads running in the child enclave while restoring,
+    restore terminates and rejects all entries into the enclave.
+11. If the encrypted snapshot is modified, the child enclave does not restore,
+    and rejects all entries.
 
 #### `fsync`/`fdatasync`
 

@@ -25,6 +25,7 @@ capabilities such as the logging API and POSIX APIs.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -36,6 +37,9 @@ capabilities such as the logging API and POSIX APIs.</p>
 standard in should be opened.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveConfig-stdout_fd">
 <td><code>stdout_fd</code></td>
@@ -44,6 +48,9 @@ standard in should be opened.</p>
 <p>Host file descriptor to use for standard out. A negative value indicates no
 standard out should be opened.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="EnclaveConfig-stderr_fd">
@@ -54,6 +61,9 @@ standard out should be opened.</p>
 no standard error should be opened.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveConfig-host_name">
 <td><code>host_name</code></td>
@@ -61,6 +71,9 @@ no standard error should be opened.</p>
 <td>
 <p>Host name of this enclave.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="EnclaveConfig-current_working_directory">
@@ -70,14 +83,8 @@ no standard error should be opened.</p>
 <p>Initial current working directory in enclave.</p>
 
 </td>
-</tr>
-<tr id="EnclaveConfig-host_config">
-<td><code>host_config</code></td>
-<td><code><a href="#HostConfig">HostConfig</a></code></td>
 <td>
-<p>System-specific enclave configuration. This configuration is expected to be
-the same for all enclaves running under the same instance of an OS.</p>
-
+No
 </td>
 </tr>
 <tr id="EnclaveConfig-enclave_assertion_authority_configs">
@@ -89,6 +96,9 @@ assertion authority that requires configuration, a config should be listed
 here.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveConfig-environment_variables">
 <td><code>environment_variables</code></td>
@@ -96,6 +106,9 @@ here.</p>
 <td>
 <p>Environment variables that getenv understands inside the enclave.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="EnclaveConfig-logging_config">
@@ -105,6 +118,9 @@ here.</p>
 <p>Configuration needed to initialize logging.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveConfig-enable_fork">
 <td><code>enable_fork</code></td>
@@ -113,6 +129,21 @@ here.</p>
 <p>Whether fork (which reserves an extra thread inside the enclave) is
 enabled.</p>
 
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="EnclaveConfig-host_config" class="deprecated ">
+<td><code>host_config</code></td>
+<td><code><a href="#HostConfig">HostConfig</a></code></td>
+<td>
+<p>System-specific enclave configuration. This configuration is expected to be
+the same for all enclaves running under the same instance of an OS.</p>
+
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -141,6 +172,7 @@ loading enclaves in Asylo.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -151,6 +183,9 @@ loading enclaves in Asylo.</p>
 <p>Name of the enclave to be loaded.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveLoadConfig-config">
 <td><code>config</code></td>
@@ -159,6 +194,9 @@ loading enclaves in Asylo.</p>
 <p>Configuration passed to an enclave during initialization.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveLoadConfig-exit_logging">
 <td><code>exit_logging</code></td>
@@ -166,6 +204,9 @@ loading enclaves in Asylo.</p>
 <td>
 <p>Should enclave exit call logging be enabled.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -183,6 +224,7 @@ back to an untrusted caller.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -193,6 +235,9 @@ back to an untrusted caller.</p>
 <p>Contains status information for the Run invocation. A non-OK status may
 indicate an error in either trusted or untrusted space.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -208,6 +253,7 @@ indicate an error in either trusted or untrusted space.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -218,6 +264,9 @@ indicate an error in either trusted or untrusted space.</p>
 <p>Number of the signal.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveSignal-code">
 <td><code>code</code></td>
@@ -227,6 +276,9 @@ indicate an error in either trusted or untrusted space.</p>
 more information.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveSignal-gregs">
 <td><code>gregs</code></td>
@@ -235,6 +287,9 @@ more information.</p>
 <p>General registers defined in |uc_mcontext|. Refer to sys/ucontext.h for
 more information.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -251,6 +306,7 @@ environment to <code>getenv</code>.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -260,6 +316,9 @@ environment to <code>getenv</code>.</p>
 <td>
 <p>The name of the variable (e.g., as input to <code>getenv</code>).</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="EnvironmentVariable-value">
@@ -271,6 +330,9 @@ with e.g., <code>setenv</code>. The environment variable&rsquo;s value is not ch
 changes in the host environment. The host&rsquo;s environment variable values are
 not inherited from the enclave.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -287,6 +349,7 @@ attestation daemon.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -296,6 +359,9 @@ attestation daemon.</p>
 <td>
 <p>Local attestation domain of the enclave.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -311,6 +377,7 @@ attestation daemon.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -322,6 +389,9 @@ attestation daemon.</p>
 this level will be logged, others will be ignored.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="LoggingConfig-log_directory">
 <td><code>log_directory</code></td>
@@ -329,6 +399,9 @@ this level will be logged, others will be ignored.</p>
 <td>
 <p>Directory under which to store enclave log files. Default: <code>&quot;/tmp/&quot;</code></p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>

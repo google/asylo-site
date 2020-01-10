@@ -78,9 +78,16 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceasylo_1_1experimental"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html">experimental</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceasylo_1_1primitives"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1primitives.html">primitives</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceasylo_1_1sgx"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html">sgx</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1AeadCryptor.html">AeadCryptor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An AEAD cryptor that provides <a class="el" href="classasylo_1_1AeadCryptor.html#a7198e92c0f96db5c4c8b49b7383bd95a" title="Implements the AEAD Seal operation. ">Seal()</a> and <a class="el" href="classasylo_1_1AeadCryptor.html#ad4a80effdadf95628736d3610a1d9e66" title="Implements the AEAD Open operation. ">Open()</a> functionality.  <a href="classasylo_1_1AeadCryptor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1AesGcmSivCryptor.html">AesGcmSivCryptor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An AEAD cryptor that provides <a class="el" href="classasylo_1_1AesGcmSivCryptor.html#ac25992c49d663cf281badb08ee3bd323" title="Implements AEAD Authenticated Encryption (a.k.a. seal) functionality. ">Seal()</a> and <a class="el" href="classasylo_1_1AesGcmSivCryptor.html#a83124c26ceccccea0fe59a0305109f6c" title="Implements AEAD Authenticated Decryption (a.k.a. open) functionality. ">Open()</a> functionality using the AES GCM SIV cipher for both 128-bit and 256-bit keys.  <a href="classasylo_1_1AesGcmSivCryptor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,7 +122,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A manager object responsible for creating and managing enclave instances.  <a href="classasylo_1_1EnclaveManager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManagerOptions.html">EnclaveManagerOptions</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enclave Manager configuration.  <a href="classasylo_1_1EnclaveManagerOptions.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1IdentityExpectationMatcher.html">IdentityExpectationMatcher</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines an abstract interface that describes how to match an <code>EnclaveIdentity</code> against an <code>EnclaveIdentityExpectation</code>.  <a href="classasylo_1_1IdentityExpectationMatcher.html#details">More...</a><br /></td></tr>
@@ -124,7 +130,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a log message created by a log macro.  <a href="classasylo_1_1LogMessage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageFatal.html">LogMessageFatal</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default LogSeverity FATAL version of <a class="el" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. ">LogMessage</a>.  <a href="classasylo_1_1LogMessageFatal.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A LogSeverity FATAL (or QFATAL) version of <a class="el" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. ">LogMessage</a> that the compiler can interpret as noreturn.  <a href="classasylo_1_1LogMessageFatal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageVoidify.html">LogMessageVoidify</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is used just to take an <code>ostream</code> type and make it a <code>void</code> type to satisify the ternary operator in <code>LOG_IF</code>.  <a href="classasylo_1_1LogMessageVoidify.html#details">More...</a><br /></td></tr>
@@ -139,12 +145,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions...">EnclaveAssertionVerifier</a> interface for null assertions.  <a href="classasylo_1_1NullAssertionVerifier.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1SecretSealer.html">SecretSealer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1SgxLocalAssertionGenerator.html">SgxLocalAssertionGenerator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="classasylo_1_1EnclaveAssertionGenerator.html" title="Defines an interface for assertion authorities that create assertion offers and generate assertions...">EnclaveAssertionGenerator</a> interface for SGX local assertions.  <a href="classasylo_1_1SgxLocalAssertionGenerator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1SgxLocalAssertionVerifier.html">SgxLocalAssertionVerifier</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implemention of the <a class="el" href="classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions...">EnclaveAssertionVerifier</a> interface for SGX local assertions.  <a href="classasylo_1_1SgxLocalAssertionVerifier.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1SgxLocalSecretSealer.html">SgxLocalSecretSealer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="classasylo_1_1SecretSealer.html">SecretSealer</a> abstract interface that binds the secrets to the enclave identity on a local machine.  <a href="classasylo_1_1SgxLocalSecretSealer.html#details">More...</a><br /></td></tr>
@@ -186,12 +186,21 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0168f42004cae8cee44ed8d76698ca7c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt;::grpc::ChannelCredentials &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a> (const <a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> &amp;options)</td></tr>
-<tr class="memdesc:a0168f42004cae8cee44ed8d76698ca7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code>grpc::ChannelCredentials</code> object for use in an enclave system.  <a href="#a0168f42004cae8cee44ed8d76698ca7c">More...</a><br /></td></tr>
-<tr class="separator:a0168f42004cae8cee44ed8d76698ca7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a021c90011f4ddfbaa193dea89450d919"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt;::grpc::ServerCredentials &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a> (const <a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> &amp;options)</td></tr>
-<tr class="memdesc:a021c90011f4ddfbaa193dea89450d919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code>grpc::ServerCredentials</code> object for use in an enclave system.  <a href="#a021c90011f4ddfbaa193dea89450d919">More...</a><br /></td></tr>
-<tr class="separator:a021c90011f4ddfbaa193dea89450d919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb535adde7099f90ae8da5b9670d3ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; Sha256HashProto &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#aebb535adde7099f90ae8da5b9670d3ab">CreateSha256HashProto</a> (absl::string_view hash_hex)</td></tr>
+<tr class="memdesc:aebb535adde7099f90ae8da5b9670d3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code>Sha256HashProto</code> with the hash of the given |hex_string|, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the provided string is an invalid hex-encoded SHA-256 hash.  <a href="#aebb535adde7099f90ae8da5b9670d3ab">More...</a><br /></td></tr>
+<tr class="separator:aebb535adde7099f90ae8da5b9670d3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51945598697c3b053fa6012c76b6b7e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a51945598697c3b053fa6012c76b6b7e7">operator==</a> (const Sha256HashProto &amp;lhs, const Sha256HashProto &amp;rhs)</td></tr>
+<tr class="memdesc:a51945598697c3b053fa6012c76b6b7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <code>Sha256HashProto</code> messages for equality.  <a href="#a51945598697c3b053fa6012c76b6b7e7">More...</a><br /></td></tr>
+<tr class="separator:a51945598697c3b053fa6012c76b6b7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f73c209a6586e3f32086549ab16f57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ac6f73c209a6586e3f32086549ab16f57">operator!=</a> (const Sha256HashProto &amp;lhs, const Sha256HashProto &amp;rhs)</td></tr>
+<tr class="memdesc:ac6f73c209a6586e3f32086549ab16f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <code>Sha256HashProto</code> messages for inequality.  <a href="#ac6f73c209a6586e3f32086549ab16f57">More...</a><br /></td></tr>
+<tr class="separator:ac6f73c209a6586e3f32086549ab16f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6172f61ca6679f7d266b9aebbbc5238b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt;::grpc::ChannelCredentials &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a> (<a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> options)</td></tr>
+<tr class="memdesc:a6172f61ca6679f7d266b9aebbbc5238b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code>grpc::ChannelCredentials</code> object for use in an enclave system.  <a href="#a6172f61ca6679f7d266b9aebbbc5238b">More...</a><br /></td></tr>
+<tr class="separator:a6172f61ca6679f7d266b9aebbbc5238b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ae5afd47e724b67e79da0ef6d923fe"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt;::grpc::ServerCredentials &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a> (<a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> options)</td></tr>
+<tr class="memdesc:a41ae5afd47e724b67e79da0ef6d923fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code>grpc::ServerCredentials</code> object for use in an enclave system.  <a href="#a41ae5afd47e724b67e79da0ef6d923fe">More...</a><br /></td></tr>
+<tr class="separator:a41ae5afd47e724b67e79da0ef6d923fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb6845bbc7c89b991bb89df0dd8cb628"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#acb6845bbc7c89b991bb89df0dd8cb628">BidirectionalNullCredentialsOptions</a> ()</td></tr>
 <tr class="memdesc:acb6845bbc7c89b991bb89df0dd8cb628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates options suitable for configuring a credential used in establishing a bidirectionally-unauthenticated gRPC channel between two enclave entities.  <a href="#acb6845bbc7c89b991bb89df0dd8cb628">More...</a><br /></td></tr>
 <tr class="separator:acb6845bbc7c89b991bb89df0dd8cb628"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,9 +240,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ac166310b0b726d04c9b42ded112ea66c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ac166310b0b726d04c9b42ded112ea66c">CreateSgxLocalAssertionAuthorityConfig</a> (std::string attestation_domain)</td></tr>
 <tr class="memdesc:ac166310b0b726d04c9b42ded112ea66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX local assertion authority.  <a href="#ac166310b0b726d04c9b42ded112ea66c">More...</a><br /></td></tr>
 <tr class="separator:ac166310b0b726d04c9b42ded112ea66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b5e92b8a0786a6995601418978d3fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a41b5e92b8a0786a6995601418978d3fa">CreateSgxAgeRemoteAssertionAuthorityConfig</a> (std::vector&lt; Certificate &gt; certificates, std::string server_address)</td></tr>
+<tr class="memdesc:a41b5e92b8a0786a6995601418978d3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX AGE remote assertion authority.  <a href="#a41b5e92b8a0786a6995601418978d3fa">More...</a><br /></td></tr>
+<tr class="separator:a41b5e92b8a0786a6995601418978d3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a559b541071895273683819703beb78b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a559b541071895273683819703beb78b9">EvaluateIdentityAcl</a> (const std::vector&lt; EnclaveIdentity &gt; &amp;identities, const IdentityAclPredicate &amp;acl, const <a class="el" href="classasylo_1_1IdentityExpectationMatcher.html">IdentityExpectationMatcher</a> &amp;matcher, std::string *explanation=nullptr)</td></tr>
 <tr class="memdesc:a559b541071895273683819703beb78b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses <code>matcher</code> to evaluate whether <code>identities</code> satisfies <code>acl</code>.  <a href="#a559b541071895273683819703beb78b9">More...</a><br /></td></tr>
 <tr class="separator:a559b541071895273683819703beb78b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb1acb66c35996d48d999435931d5f4"><td class="memItemLeft" align="right" valign="top">EnclaveIdentityExpectation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a5bb1acb66c35996d48d999435931d5f4">CreateNullIdentityExpectation</a> ()</td></tr>
+<tr class="memdesc:a5bb1acb66c35996d48d999435931d5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a default null identity expectation.  <a href="#a5bb1acb66c35996d48d999435931d5f4">More...</a><br /></td></tr>
+<tr class="separator:a5bb1acb66c35996d48d999435931d5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89433d74e8a613ec3dd232172d787136"><td class="memItemLeft" align="right" valign="top">SgxIdentity&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a89433d74e8a613ec3dd232172d787136">GetSelfSgxIdentity</a> ()</td></tr>
 <tr class="memdesc:a89433d74e8a613ec3dd232172d787136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current enclave's identity.  <a href="#a89433d74e8a613ec3dd232172d787136">More...</a><br /></td></tr>
 <tr class="separator:a89433d74e8a613ec3dd232172d787136"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -274,12 +289,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a8c6ea453b59f2ef701998d8e1ecfdb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes <code>sgx_expectation</code>, returning an <code>EnclaveIdentityExpectation</code> on success or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> on failure.  <a href="#a8c6ea453b59f2ef701998d8e1ecfdb1e">More...</a><br /></td></tr>
 <tr class="separator:a8c6ea453b59f2ef701998d8e1ecfdb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a830e6ca210017926c6f21138da33a6a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a830e6ca210017926c6f21138da33a6a6">SetEnclaveConfigDefaults</a> (const HostConfig &amp;host_config, EnclaveConfig *config)</td></tr>
-<tr class="memdesc:a830e6ca210017926c6f21138da33a6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets uninitialized fields in #config to default values.  <a href="#a830e6ca210017926c6f21138da33a6a6">More...</a><br /></td></tr>
 <tr class="separator:a830e6ca210017926c6f21138da33a6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8053438ddafe4f065854cdee4a42c907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a8053438ddafe4f065854cdee4a42c907">SetEnclaveConfigDefaults</a> (EnclaveConfig *config)</td></tr>
+<tr class="memdesc:a8053438ddafe4f065854cdee4a42c907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets critical uninitialized fields in <code>config</code> to default values.  <a href="#a8053438ddafe4f065854cdee4a42c907">More...</a><br /></td></tr>
+<tr class="separator:a8053438ddafe4f065854cdee4a42c907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceb4b276873d75168630811ff0456901"><td class="memItemLeft" align="right" valign="top">EnclaveConfig&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#aceb4b276873d75168630811ff0456901">CreateDefaultEnclaveConfig</a> (const HostConfig &amp;host_config)</td></tr>
-<tr class="memdesc:aceb4b276873d75168630811ff0456901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an EnclaveConfig proto with critical fields initialized to default values.  <a href="#aceb4b276873d75168630811ff0456901">More...</a><br /></td></tr>
 <tr class="separator:aceb4b276873d75168630811ff0456901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a005bb1a1f2f6b589f32ff69440fa6bf6"><td class="memItemLeft" align="right" valign="top">primitives::Client *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a005bb1a1f2f6b589f32ff69440fa6bf6">LoadEnclaveInChildProcess</a> (absl::string_view enclave_name, void *enclave_base_address, size_t enclave_size)</td></tr>
+<tr class="memitem:a7592607563d6205bc9dfe82deaf0a28e"><td class="memItemLeft" align="right" valign="top">EnclaveConfig&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a7592607563d6205bc9dfe82deaf0a28e">CreateDefaultEnclaveConfig</a> ()</td></tr>
+<tr class="memdesc:a7592607563d6205bc9dfe82deaf0a28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an EnclaveConfig proto with critical fields initialize to default values.  <a href="#a7592607563d6205bc9dfe82deaf0a28e">More...</a><br /></td></tr>
+<tr class="separator:a7592607563d6205bc9dfe82deaf0a28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005bb1a1f2f6b589f32ff69440fa6bf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1primitives_1_1Client.html">primitives::Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a005bb1a1f2f6b589f32ff69440fa6bf6">LoadEnclaveInChildProcess</a> (absl::string_view enclave_name, void *enclave_base_address, size_t enclave_size)</td></tr>
 <tr class="separator:a005bb1a1f2f6b589f32ff69440fa6bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0df277b8e6121d40882faf3c2bc44bb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ac0df277b8e6121d40882faf3c2bc44bb">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classasylo_1_1SharedName.html">SharedName</a> &amp;name)</td></tr>
 <tr class="separator:ac0df277b8e6121d40882faf3c2bc44bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -344,7 +363,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A string that zeros its memory on free. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use <code>CleansingVector</code> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>Use <code>CleansingVector</code> instead. </dd></dl>
 
 </div>
 </div>
@@ -431,8 +450,8 @@ template&lt;typename T &gt; </div>
 <p>Creates options suitable for configuring a credential used in establishing a bidirectionally-unauthenticated gRPC channel between two enclave entities. </p>
 <p>A credential configured with these options enforces bidirectional authentication using the null identity. The null identity specifies no identity in particular, which means that the resulting connection is essentially unauthenticated.</p>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#acb6845bbc7c89b991bb89df0dd8cb628">BidirectionalNullCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#acb6845bbc7c89b991bb89df0dd8cb628">BidirectionalNullCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a bidirectionally-unauthenticated channel. </dd></dl>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#acb6845bbc7c89b991bb89df0dd8cb628">BidirectionalNullCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#acb6845bbc7c89b991bb89df0dd8cb628">BidirectionalNullCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a bidirectionally-unauthenticated channel. </dd></dl>
 
 </div>
 </div>
@@ -454,8 +473,8 @@ template&lt;typename T &gt; </div>
 <p>Creates options suitable for configuring a credential used in establishing a bidirectionally-authenticated gRPC channel between two local SGX enclaves. </p>
 <p>A credential configured with these options enforces bidirectional authentication using SGX enclave code identity.</p>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a3491454b2415fc24fa03394354f09d10">BidirectionalSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a3491454b2415fc24fa03394354f09d10">BidirectionalSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a bidirectionally-authenticated channel between SGX enclaves on the same platform. </dd></dl>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a3491454b2415fc24fa03394354f09d10">BidirectionalSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a3491454b2415fc24fa03394354f09d10">BidirectionalSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a bidirectionally-authenticated channel between SGX enclaves on the same platform. </dd></dl>
 
 </div>
 </div>
@@ -514,7 +533,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="aceb4b276873d75168630811ff0456901"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceb4b276873d75168630811ff0456901">&#9670;&nbsp;</a></span>CreateDefaultEnclaveConfig()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb4b276873d75168630811ff0456901">&#9670;&nbsp;</a></span>CreateDefaultEnclaveConfig() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,14 +547,33 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Returns an EnclaveConfig proto with critical fields initialized to default values. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>Returns an EnclaveConfig proto with critical fields initialized to default values.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">host_config</td><td>Input used to fill in the host_config field of the returned EnclaveConfig. </td></tr>
+    <tr><td class="paramname">host_config</td><td>This parameter is ignored. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>An EnclaveConfig proto with critical fields initialized to their default values. </dd></dl>
+
+</div>
+</div>
+<a id="a7592607563d6205bc9dfe82deaf0a28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7592607563d6205bc9dfe82deaf0a28e">&#9670;&nbsp;</a></span>CreateDefaultEnclaveConfig() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EnclaveConfig asylo::CreateDefaultEnclaveConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns an EnclaveConfig proto with critical fields initialize to default values. </p>
 <dl class="section return"><dt>Returns</dt><dd>An EnclaveConfig proto with critical fields initialized to their default values. </dd></dl>
 
 </div>
@@ -558,6 +596,64 @@ template&lt;typename T &gt; </div>
 <p>Creates a configuration for the null assertion authority. </p>
 <p>This configuration is required when using the <a class="el" href="classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ...">NullAssertionGenerator</a> or <a class="el" href="classasylo_1_1NullAssertionVerifier.html" title="An implementation of the EnclaveAssertionVerifier interface for null assertions. ">NullAssertionVerifier</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>A config for the null assertion authority. </dd></dl>
+
+</div>
+</div>
+<a id="a5bb1acb66c35996d48d999435931d5f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb1acb66c35996d48d999435931d5f4">&#9670;&nbsp;</a></span>CreateNullIdentityExpectation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EnclaveIdentityExpectation asylo::CreateNullIdentityExpectation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a default null identity expectation. </p>
+
+</div>
+</div>
+<a id="a41b5e92b8a0786a6995601418978d3fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b5e92b8a0786a6995601418978d3fa">&#9670;&nbsp;</a></span>CreateSgxAgeRemoteAssertionAuthorityConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;EnclaveAssertionAuthorityConfig&gt; asylo::CreateSgxAgeRemoteAssertionAuthorityConfig </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; Certificate &gt;&#160;</td>
+          <td class="paramname"><em>certificates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>server_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a configuration for the SGX AGE remote assertion authority. </p>
+<p>This configuration is required when using the SgxAgeRemoteAssertionGenerator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">certificates</td><td>A vector of X.509-formatted CA certificates that can be used to verify whether an assertion is valid. </td></tr>
+    <tr><td class="paramname">server_address</td><td>The address of the AGE's service. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A config for the SGX AGE remote assertion authority. </dd></dl>
 
 </div>
 </div>
@@ -658,7 +754,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Creates a configuration for the SGX local assertion authority. </p>
-<p>This configuration is required when using the <a class="el" href="classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. ">SgxLocalAssertionGenerator</a> or <a class="el" href="classasylo_1_1SgxLocalAssertionVerifier.html" title="An implemention of the EnclaveAssertionVerifier interface for SGX local assertions. ">SgxLocalAssertionVerifier</a>.</p>
+<p>This configuration is required when using the SgxLocalAssertionGenerator or SgxLocalAssertionVerifier.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">attestation_domain</td><td>A 16-byte unique identifier for the SGX machine. </td></tr>
@@ -669,8 +765,28 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a0168f42004cae8cee44ed8d76698ca7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0168f42004cae8cee44ed8d76698ca7c">&#9670;&nbsp;</a></span>EnclaveChannelCredentials()</h2>
+<a id="aebb535adde7099f90ae8da5b9670d3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb535adde7099f90ae8da5b9670d3ab">&#9670;&nbsp;</a></span>CreateSha256HashProto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;Sha256HashProto&gt; asylo::CreateSha256HashProto </td>
+          <td>(</td>
+          <td class="paramtype">absl::string_view&#160;</td>
+          <td class="paramname"><em>hash_hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <code>Sha256HashProto</code> with the hash of the given |hex_string|, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the provided string is an invalid hex-encoded SHA-256 hash. </p>
+
+</div>
+</div>
+<a id="a6172f61ca6679f7d266b9aebbbc5238b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6172f61ca6679f7d266b9aebbbc5238b">&#9670;&nbsp;</a></span>EnclaveChannelCredentials()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -678,7 +794,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; asylo::EnclaveChannelCredentials </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a>&#160;</td>
           <td class="paramname"><em>options</em></td><td>)</td>
           <td></td>
         </tr>
@@ -701,8 +817,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a021c90011f4ddfbaa193dea89450d919"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a021c90011f4ddfbaa193dea89450d919">&#9670;&nbsp;</a></span>EnclaveServerCredentials()</h2>
+<a id="a41ae5afd47e724b67e79da0ef6d923fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ae5afd47e724b67e79da0ef6d923fe">&#9670;&nbsp;</a></span>EnclaveServerCredentials()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -710,7 +826,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">std::shared_ptr&lt;::grpc::ServerCredentials&gt; asylo::EnclaveServerCredentials </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structasylo_1_1EnclaveCredentialsOptions.html">EnclaveCredentialsOptions</a>&#160;</td>
           <td class="paramname"><em>options</em></td><td>)</td>
           <td></td>
         </tr>
@@ -995,7 +1111,7 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">primitives::Client* asylo::LoadEnclaveInChildProcess </td>
+          <td class="memname"><a class="el" href="classasylo_1_1primitives_1_1Client.html">primitives::Client</a>* asylo::LoadEnclaveInChildProcess </td>
           <td>(</td>
           <td class="paramtype">absl::string_view&#160;</td>
           <td class="paramname"><em>enclave_name</em>, </td>
@@ -1052,8 +1168,38 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="ac6f73c209a6586e3f32086549ab16f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f73c209a6586e3f32086549ab16f57">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const Sha256HashProto &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Sha256HashProto &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares two <code>Sha256HashProto</code> messages for inequality. </p>
+
+</div>
+</div>
 <a id="a885e4e1efb5467dfd7b4fabe4a857434"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a885e4e1efb5467dfd7b4fabe4a857434">&#9670;&nbsp;</a></span>operator!=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a885e4e1efb5467dfd7b4fabe4a857434">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1144,8 +1290,38 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="a51945598697c3b053fa6012c76b6b7e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51945598697c3b053fa6012c76b6b7e7">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const Sha256HashProto &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Sha256HashProto &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares two <code>Sha256HashProto</code> messages for equality. </p>
+
+</div>
+</div>
 <a id="aecb05d614b80b0147ae4af78a32cd41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecb05d614b80b0147ae4af78a32cd41d">&#9670;&nbsp;</a></span>operator==()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb05d614b80b0147ae4af78a32cd41d">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1250,8 +1426,8 @@ template&lt;&gt; </div>
 <p>Creates options suitable for configuring a credential used in establishing a unidirectionally-unauthenticated gRPC channel between two enclave entities. </p>
 <p>A credential configured with these options enforces unidirectional authentication using the null identity. The null identity specifies no identity in particular, which means that in the resulting connection the peer does not authenticate.</p>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#acf4324ed0a8827c59ee3f737173be7fa">PeerNullCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#acf4324ed0a8827c59ee3f737173be7fa">PeerNullCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unauthenticated on the peer's end. </dd></dl>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#acf4324ed0a8827c59ee3f737173be7fa">PeerNullCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#acf4324ed0a8827c59ee3f737173be7fa">PeerNullCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unauthenticated on the peer's end. </dd></dl>
 
 </div>
 </div>
@@ -1273,8 +1449,8 @@ template&lt;&gt; </div>
 <p>Creates options suitable for configuring a credential used in establishing a unidirectionally-authenticated gRPC channel between two local SGX enclaves. </p>
 <p>A credential configured with these options enforces that the peer authenticates using SGX enclave code identity.</p>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a8dc68a49014050276695e89b190eab7d">PeerSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a8dc68a49014050276695e89b190eab7d">PeerSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unidirectionally-authenticated on the peer's end using SGX enclave code identity. </dd></dl>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a8dc68a49014050276695e89b190eab7d">PeerSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a8dc68a49014050276695e89b190eab7d">PeerSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unidirectionally-authenticated on the peer's end using SGX enclave code identity. </dd></dl>
 
 </div>
 </div>
@@ -1296,8 +1472,8 @@ template&lt;&gt; </div>
 <p>Creates options suitable for configuring a credential used in establishing a unidirectionally-unauthenticated gRPC channel between two enclave entities. </p>
 <p>A credential configured with these options enforces unidirectional authentication using the null identity. The null identity specifies no identity in particular, which means that in the resulting connection the credential holder does not authenticate.</p>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#ab1196326488d3e0a06805d29ff9ccf52">SelfNullCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#ab1196326488d3e0a06805d29ff9ccf52">SelfNullCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unauthenticated on the credential holder's end. </dd></dl>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#ab1196326488d3e0a06805d29ff9ccf52">SelfNullCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#ab1196326488d3e0a06805d29ff9ccf52">SelfNullCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unauthenticated on the credential holder's end. </dd></dl>
 
 </div>
 </div>
@@ -1319,8 +1495,8 @@ template&lt;&gt; </div>
 <p>Creates options suitable for configuring a credential used in establishing a unidirectionally-authenticated gRPC channel between two local SGX enclaves. </p>
 <p>A credential configured with these options enforces that the credential holder authenticates using SGX enclave code identity.</p>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a0168f42004cae8cee44ed8d76698ca7c">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a80ff2ebca6691694992b41a14fa8abc1">SelfSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
-<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a021c90011f4ddfbaa193dea89450d919">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a80ff2ebca6691694992b41a14fa8abc1">SelfSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unidirectionally-authenticated on the credential holder's end using SGX enclave code identity. </dd></dl>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a80ff2ebca6691694992b41a14fa8abc1">SelfSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a80ff2ebca6691694992b41a14fa8abc1">SelfSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unidirectionally-authenticated on the credential holder's end using SGX enclave code identity. </dd></dl>
 
 </div>
 </div>
@@ -1440,7 +1616,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="a830e6ca210017926c6f21138da33a6a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a830e6ca210017926c6f21138da33a6a6">&#9670;&nbsp;</a></span>SetEnclaveConfigDefaults()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a830e6ca210017926c6f21138da33a6a6">&#9670;&nbsp;</a></span>SetEnclaveConfigDefaults() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1464,11 +1640,36 @@ template&lt;&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Sets uninitialized fields in #config to default values. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>Sets critical uninitialized fields in <code>config</code> to default values.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">host_config</td><td>Values to set in the host_config field of #config. </td></tr>
+    <tr><td class="paramname">host_config</td><td>Values to set in the <code>host_config</code> field of <code>config</code>. </td></tr>
+    <tr><td class="paramname">config[out]</td><td>EnclaveConfig object to populate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8053438ddafe4f065854cdee4a42c907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8053438ddafe4f065854cdee4a42c907">&#9670;&nbsp;</a></span>SetEnclaveConfigDefaults() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void asylo::SetEnclaveConfigDefaults </td>
+          <td>(</td>
+          <td class="paramtype">EnclaveConfig *&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets critical uninitialized fields in <code>config</code> to default values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">config[out]</td><td>EnclaveConfig object to populate. </td></tr>
   </table>
   </dd>

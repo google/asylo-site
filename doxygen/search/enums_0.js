@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logseverity',['LogSeverity',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d',1,'logging.h']]]
+  ['attributebit',['AttributeBit',['../namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188',1,'asylo::sgx']]]
 ];

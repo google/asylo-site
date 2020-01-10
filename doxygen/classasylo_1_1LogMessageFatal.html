@@ -72,7 +72,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Default LogSeverity FATAL version of <a class="el" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. ">LogMessage</a>.  
+<p>A LogSeverity FATAL (or QFATAL) version of <a class="el" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. ">LogMessage</a> that the compiler can interpret as noreturn.  
  <a href="classasylo_1_1LogMessageFatal.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="logging_8h_source.html">logging.h</a>&gt;</code></p>
@@ -89,15 +89,23 @@ Collaboration diagram for asylo::LogMessageFatal:</div>
 <div class="dyncontent">
 <div class="center"><img src="classasylo_1_1LogMessageFatal__coll__graph.png" border="0" usemap="#asylo_1_1LogMessageFatal_coll__map" alt="Collaboration graph"/></div>
 <map name="asylo_1_1LogMessageFatal_coll__map" id="asylo_1_1LogMessageFatal_coll__map">
-<area shape="rect" id="node2" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. " alt="" coords="21,5,166,32"/>
+<area shape="rect" id="node2" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. " alt="" coords="24,428,169,455"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="26,339,167,365"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="5,248,188,289"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="24,157,169,199"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="11,81,182,108"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="43,5,150,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a98642c9cfa358d5487748c0d809267ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageFatal.html#a98642c9cfa358d5487748c0d809267ec">LogMessageFatal</a> (const char *file, int line)</td></tr>
-<tr class="memdesc:a98642c9cfa358d5487748c0d809267ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new message with FATAL severity.  <a href="#a98642c9cfa358d5487748c0d809267ec">More...</a><br /></td></tr>
-<tr class="separator:a98642c9cfa358d5487748c0d809267ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b4f821d28a6b08284094df7e6a9288"><td class="memItemLeft" align="right" valign="top">ABSL_ATTRIBUTE_NORETURN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageFatal.html#ad1b4f821d28a6b08284094df7e6a9288">~LogMessageFatal</a> ()</td></tr>
+<tr class="memdesc:ad1b4f821d28a6b08284094df7e6a9288"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor flushes the message and does not return.  <a href="#ad1b4f821d28a6b08284094df7e6a9288">More...</a><br /></td></tr>
+<tr class="separator:ad1b4f821d28a6b08284094df7e6a9288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7349c383e53a652af6cac2aad28f36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageFatal.html#a0f7349c383e53a652af6cac2aad28f36">LogMessageFatal</a> (const char *file, int line, <a class="el" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d">LogSeverity</a> severity)</td></tr>
+<tr class="memdesc:a0f7349c383e53a652af6cac2aad28f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new message with FATAL severity.  <a href="#a0f7349c383e53a652af6cac2aad28f36">More...</a><br /></td></tr>
+<tr class="separator:a0f7349c383e53a652af6cac2aad28f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a094cc3eaf33c386b7306b44091bd5a49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessageFatal.html#a094cc3eaf33c386b7306b44091bd5a49">LogMessageFatal</a> (const char *file, int line, const std::string &amp;result)</td></tr>
 <tr class="memdesc:a094cc3eaf33c386b7306b44091bd5a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a message with FATAL severity for use by CHECK macros.  <a href="#a094cc3eaf33c386b7306b44091bd5a49">More...</a><br /></td></tr>
 <tr class="separator:a094cc3eaf33c386b7306b44091bd5a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,12 +125,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c6cb5b8dae66f3df9d14b8b604d794e inherit pub_methods_classasylo_1_1LogMessage"><td class="memItemLeft" align="right" valign="top">std::ostringstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#a7c6cb5b8dae66f3df9d14b8b604d794e">stream</a> ()</td></tr>
 <tr class="memdesc:a7c6cb5b8dae66f3df9d14b8b604d794e inherit pub_methods_classasylo_1_1LogMessage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the underlying string stream.  <a href="classasylo_1_1LogMessage.html#a7c6cb5b8dae66f3df9d14b8b604d794e">More...</a><br /></td></tr>
 <tr class="separator:a7c6cb5b8dae66f3df9d14b8b604d794e inherit pub_methods_classasylo_1_1LogMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classasylo_1_1LogMessage"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classasylo_1_1LogMessage')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classasylo_1_1LogMessage.html">asylo::LogMessage</a></td></tr>
+<tr class="memitem:aaf770aaf8d40c3292f49e836f838691f inherit pro_methods_classasylo_1_1LogMessage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#aaf770aaf8d40c3292f49e836f838691f">SendToLog</a> (const std::string &amp;message_text)</td></tr>
+<tr class="separator:aaf770aaf8d40c3292f49e836f838691f inherit pro_methods_classasylo_1_1LogMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classasylo_1_1LogMessage"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classasylo_1_1LogMessage')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classasylo_1_1LogMessage.html">asylo::LogMessage</a></td></tr>
+<tr class="memitem:a59809d3cddf5f055144616a34273069f inherit pro_attribs_classasylo_1_1LogMessage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d">LogSeverity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#a59809d3cddf5f055144616a34273069f">severity_</a></td></tr>
+<tr class="separator:a59809d3cddf5f055144616a34273069f inherit pro_attribs_classasylo_1_1LogMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e4d5adf791ba0ea44bda79854a5f58 inherit pro_attribs_classasylo_1_1LogMessage"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#a20e4d5adf791ba0ea44bda79854a5f58">stream_</a></td></tr>
+<tr class="separator:a20e4d5adf791ba0ea44bda79854a5f58 inherit pro_attribs_classasylo_1_1LogMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default LogSeverity FATAL version of <a class="el" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. ">LogMessage</a>. </p>
+<div class="textblock"><p>A LogSeverity FATAL (or QFATAL) version of <a class="el" href="classasylo_1_1LogMessage.html" title="Class representing a log message created by a log macro. ">LogMessage</a> that the compiler can interpret as noreturn. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a98642c9cfa358d5487748c0d809267ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98642c9cfa358d5487748c0d809267ec">&#9670;&nbsp;</a></span>LogMessageFatal() <span class="overload">[1/2]</span></h2>
+<a id="ad1b4f821d28a6b08284094df7e6a9288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b4f821d28a6b08284094df7e6a9288">&#9670;&nbsp;</a></span>~LogMessageFatal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ABSL_ATTRIBUTE_NORETURN asylo::LogMessageFatal::~LogMessageFatal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The destructor flushes the message and does not return. </p>
+
+</div>
+</div>
+<a id="a0f7349c383e53a652af6cac2aad28f36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7349c383e53a652af6cac2aad28f36">&#9670;&nbsp;</a></span>LogMessageFatal() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +178,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>line</em>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d">LogSeverity</a>&#160;</td>
+          <td class="paramname"><em>severity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,6 +204,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">file</td><td>The source file that produced the log. </td></tr>
     <tr><td class="paramname">line</td><td>The source code line that produced the log. </td></tr>
+    <tr><td class="paramname">severity</td><td>The severity for the message (FATAL or QFATAL). </td></tr>
   </table>
   </dd>
 </dl>

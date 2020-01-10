@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning',['WARNING',['../logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da984de77c680eaff141ec910e25568a81',1,'logging.h']]]
+  ['mode64bit',['MODE64BIT',['../namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188ad5291ed62be922d03847a8c292174ad4',1,'asylo::sgx']]]
 ];

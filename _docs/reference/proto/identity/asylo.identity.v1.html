@@ -7,6 +7,9 @@ generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/identity/identity.html
 number_of_entries: 9
 ---
+<p>This package defines the core building blocks of identity, identity
+expectations, and assertions of identity.</p>
+
 <h2 id="Assertion">Assertion</h2>
 <section>
 <p>A cryptographically-verifiable statement of an identity.</p>
@@ -17,6 +20,7 @@ number_of_entries: 9
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -29,6 +33,9 @@ of enclave identity that is asserted. <code>description.authority_type</code> is
 type of assertion authority that is capable of verifying the assertion.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="Assertion-assertion">
 <td><code>assertion</code></td>
@@ -38,6 +45,9 @@ type of assertion authority that is capable of verifying the assertion.</p>
 the assertion-verification authority that verifies assertions matching
 <code>description</code>.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -53,6 +63,7 @@ the assertion-verification authority that verifies assertions matching
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -62,6 +73,9 @@ the assertion-verification authority that verifies assertions matching
 <td>
 <p>The type of enclave identity that is asserted by this assertion.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="AssertionDescription-authority_type">
@@ -88,6 +102,9 @@ authority type &ldquo;Any&rdquo; is reserved for assertions that are not associa
 with any particular authority (e.g. the null assertion).</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 </tbody>
 </table>
@@ -106,6 +123,7 @@ an offer.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -118,6 +136,9 @@ enclave identity that is asserted in the offered assertion.
 <code>description.authority_type</code> is the type of assertion authority capable of
 verifying the assertion.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="AssertionOffer-additional_information">
@@ -139,6 +160,9 @@ receiving party to do any of the following:</p>
 </ul>
 
 </td>
+<td>
+No
+</td>
 </tr>
 </tbody>
 </table>
@@ -157,6 +181,7 @@ request.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -169,6 +194,9 @@ of enclave identity asserted in the requested assertion.
 <code>description.authority_type</code> is the type of assertion authority capable of
 generating the assertion.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="AssertionRequest-additional_information">
@@ -190,6 +218,9 @@ receiving party to do any of the following:</p>
 </ul>
 
 </td>
+<td>
+No
+</td>
 </tr>
 </tbody>
 </table>
@@ -204,6 +235,7 @@ receiving party to do any of the following:</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -211,6 +243,9 @@ receiving party to do any of the following:</p>
 <td><code>identities</code></td>
 <td><code><a href="#EnclaveIdentity">EnclaveIdentity[]</a></code></td>
 <td>
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -230,6 +265,7 @@ an enclave entity.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -240,6 +276,9 @@ an enclave entity.</p>
 <p>Describes the identity contained in <code>identity</code>.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveIdentity-identity">
 <td><code>identity</code></td>
@@ -248,6 +287,9 @@ an enclave entity.</p>
 <p>Bytes containing the identity. The interpretation of these bytes is up to
 the authorization authority that handles identities matching <code>description</code>.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="EnclaveIdentity-version">
@@ -258,6 +300,9 @@ the authorization authority that handles identities matching <code>description</
 distinguishing between different <code>identity</code> serializations, even when the
 underlying identity <code>description</code> is identical.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -273,6 +318,7 @@ underlying identity <code>description</code> is identical.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -282,6 +328,9 @@ underlying identity <code>description</code> is identical.</p>
 <td>
 <p>The type of enclave identity.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 <tr id="EnclaveIdentityDescription-authority_type">
@@ -293,6 +342,9 @@ the authorization authority that handles the described identity (i.e. an
 authority that authorizes operations for entities possessing the described
 identity).</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -313,6 +365,7 @@ authorization authority of compatible type.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -327,6 +380,9 @@ expected enclave identity that is authorized for a particular purpose
 RPC).</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="EnclaveIdentityExpectation-match_spec">
 <td><code>match_spec</code></td>
@@ -336,6 +392,9 @@ RPC).</p>
 target identity. The interpretation of these bytes is specific to the
 authorization authority.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>

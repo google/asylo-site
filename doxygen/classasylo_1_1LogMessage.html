@@ -66,6 +66,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classasylo_1_1LogMessage-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">asylo::LogMessage Class Reference</div>  </div>
@@ -81,7 +83,19 @@ Inheritance diagram for asylo::LogMessage:</div>
 <div class="dyncontent">
 <div class="center"><img src="classasylo_1_1LogMessage__inherit__graph.png" border="0" usemap="#asylo_1_1LogMessage_inherit__map" alt="Inheritance graph"/></div>
 <map name="asylo_1_1LogMessage_inherit__map" id="asylo_1_1LogMessage_inherit__map">
-<area shape="rect" id="node2" href="classasylo_1_1LogMessageFatal.html" title="Default LogSeverity FATAL version of LogMessage. " alt="" coords="5,80,181,107"/>
+<area shape="rect" id="node2" href="classasylo_1_1LogMessageFatal.html" title="A LogSeverity FATAL (or QFATAL) version of LogMessage that the compiler can interpret as noreturn..." alt="" coords="5,80,181,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for asylo::LogMessage:</div>
+<div class="dyncontent">
+<div class="center"><img src="classasylo_1_1LogMessage__coll__graph.png" border="0" usemap="#asylo_1_1LogMessage_coll__map" alt="Collaboration graph"/></div>
+<map name="asylo_1_1LogMessage_coll__map" id="asylo_1_1LogMessage_coll__map">
+<area shape="rect" id="node2" title="STL class. " alt="" coords="26,339,167,365"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="5,248,188,289"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="24,157,169,199"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="11,81,182,108"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="43,5,150,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -102,6 +116,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c6cb5b8dae66f3df9d14b8b604d794e"><td class="memItemLeft" align="right" valign="top">std::ostringstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#a7c6cb5b8dae66f3df9d14b8b604d794e">stream</a> ()</td></tr>
 <tr class="memdesc:a7c6cb5b8dae66f3df9d14b8b604d794e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the underlying string stream.  <a href="#a7c6cb5b8dae66f3df9d14b8b604d794e">More...</a><br /></td></tr>
 <tr class="separator:a7c6cb5b8dae66f3df9d14b8b604d794e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aaf770aaf8d40c3292f49e836f838691f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#aaf770aaf8d40c3292f49e836f838691f">SendToLog</a> (const std::string &amp;message_text)</td></tr>
+<tr class="separator:aaf770aaf8d40c3292f49e836f838691f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a59809d3cddf5f055144616a34273069f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d">LogSeverity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#a59809d3cddf5f055144616a34273069f">severity_</a></td></tr>
+<tr class="separator:a59809d3cddf5f055144616a34273069f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e4d5adf791ba0ea44bda79854a5f58"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1LogMessage.html#a20e4d5adf791ba0ea44bda79854a5f58">stream_</a></td></tr>
+<tr class="separator:a20e4d5adf791ba0ea44bda79854a5f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing a log message created by a log macro. </p>
@@ -251,6 +277,32 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaf770aaf8d40c3292f49e836f838691f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf770aaf8d40c3292f49e836f838691f">&#9670;&nbsp;</a></span>SendToLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void asylo::LogMessage::SendToLog </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message_text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7c6cb5b8dae66f3df9d14b8b604d794e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c6cb5b8dae66f3df9d14b8b604d794e">&#9670;&nbsp;</a></span>stream()</h2>
 
@@ -276,6 +328,51 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets a reference to the underlying string stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the underlying string stream. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a59809d3cddf5f055144616a34273069f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59809d3cddf5f055144616a34273069f">&#9670;&nbsp;</a></span>severity_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3d">LogSeverity</a> asylo::LogMessage::severity_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20e4d5adf791ba0ea44bda79854a5f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e4d5adf791ba0ea44bda79854a5f58">&#9670;&nbsp;</a></span>stream_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostringstream asylo::LogMessage::stream_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

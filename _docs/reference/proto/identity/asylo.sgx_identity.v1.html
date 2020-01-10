@@ -1,0 +1,351 @@
+---
+title: SGX Identity
+overview: Protobuf definition for SgxIdentity and related submessages.
+location: https://asylo.dev/docs/reference/proto/identity/asylo.sgx_identity.v1.html
+layout: protoc-gen-docs
+generator: protoc-gen-docs
+redirect_from: /docs/reference/proto/identity/sgx_identity.html
+number_of_entries: 7
+---
+<p>This package defines messages for SGX identity and identity expectations.</p>
+
+<h2 id="SgxIdentity">SgxIdentity</h2>
+<section>
+<p>A high-level representation of the identity of an SGX enclave, which includes
+the properties of its code identity (<code>sgx.CodeIdentity</code>) and the
+security-relevant properties of its execution environment
+(<code>sgx.MachineConfiguration</code>).</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SgxIdentity-code_identity">
+<td><code>code_identity</code></td>
+<td><code><a href="#asylo-sgx-CodeIdentity">CodeIdentity</a></code></td>
+<td>
+<p>The enclave&rsquo;s code identity properties. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SgxIdentity-machine_configuration">
+<td><code>machine_configuration</code></td>
+<td><code><a href="#asylo-sgx-MachineConfiguration">MachineConfiguration</a></code></td>
+<td>
+<p>Describes the security-relevant configuration of the machine on which the
+enclave is running. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="SgxIdentityExpectation">SgxIdentityExpectation</h2>
+<section>
+<p>A verifier&rsquo;s expectation on an <code>SgxIdentity</code>.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SgxIdentityExpectation-reference_identity">
+<td><code>reference_identity</code></td>
+<td><code><a href="#SgxIdentity">SgxIdentity</a></code></td>
+<td>
+<p>Reference identity matched against the target identity per <code>match_spec</code>.
+Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SgxIdentityExpectation-match_spec">
+<td><code>match_spec</code></td>
+<td><code><a href="#SgxIdentityMatchSpec">SgxIdentityMatchSpec</a></code></td>
+<td>
+<p>Specification of which fields from the target enclave identity to match.
+Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="SgxIdentityMatchSpec">SgxIdentityMatchSpec</h2>
+<section>
+<p>Specification of which fields from <code>SgxIdentity</code> to match.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SgxIdentityMatchSpec-code_identity_match_spec">
+<td><code>code_identity_match_spec</code></td>
+<td><code><a href="#asylo-sgx-CodeIdentityMatchSpec">CodeIdentityMatchSpec</a></code></td>
+<td>
+<p>A specification of which fields from <code>CodeIdentity</code> to match. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SgxIdentityMatchSpec-machine_configuration_match_spec">
+<td><code>machine_configuration_match_spec</code></td>
+<td><code><a href="#asylo-sgx-MachineConfigurationMatchSpec">MachineConfigurationMatchSpec</a></code></td>
+<td>
+<p>A specification of which fields from <code>MachineConfiguration</code> to match.
+Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="asylo-sgx-CodeIdentity">asylo.sgx.CodeIdentity</h2>
+<section>
+<p>An enclave&rsquo;s code identity as specified by the SGX architecture. Some of the
+fields in this proto are required fields, while others are optional fields
+(this is indicated in the comments for individual fields). If a required
+field is missing, then the entire proto is considered invalid. On the other
+hand, it is OK for an optional field to be missing, if the enclave identity
+verifier does not care about matching that particular field (as specified
+by the <code>CodeIdentityMatchSpec</code> proto).</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="asylo-sgx-CodeIdentity-mrenclave">
+<td><code>mrenclave</code></td>
+<td><code><a href="#Sha256HashProto">Sha256HashProto</a></code></td>
+<td>
+<p>SHA256 hash of a string representing the enclave build process (see Intel
+Software Developer&rsquo;s Manual for futher explanation). Optional.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-CodeIdentity-signer_assigned_identity">
+<td><code>signer_assigned_identity</code></td>
+<td><code><a href="#asylo-sgx-SignerAssignedIdentity">SignerAssignedIdentity</a></code></td>
+<td>
+<p>Identity assigned by the signer of the enclave to this enclave. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-CodeIdentity-miscselect">
+<td><code>miscselect</code></td>
+<td><code>uint32</code></td>
+<td>
+<p>Extended information about the enclave (see Intel Software Developer&rsquo;s
+Manual for details). Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-CodeIdentity-attributes">
+<td><code>attributes</code></td>
+<td><code><a href="#asylo-sgx-Attributes">Attributes</a></code></td>
+<td>
+<p>ATTRIBUTES bit vector defined by SGX architecture. It holds various
+potentially security-sensitive attributes of the enclave. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="asylo-sgx-CodeIdentityMatchSpec">asylo.sgx.CodeIdentityMatchSpec</h2>
+<section>
+<p>Specification of which fields from <code>CodeIdentity</code> to match.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="asylo-sgx-CodeIdentityMatchSpec-is_mrenclave_match_required">
+<td><code>is_mrenclave_match_required</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Flag indicating whether to perform a match on MRENCLAVE. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-CodeIdentityMatchSpec-is_mrsigner_match_required">
+<td><code>is_mrsigner_match_required</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Flag indicating whether to perform a match on MRSIGNER. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-CodeIdentityMatchSpec-miscselect_match_mask">
+<td><code>miscselect_match_mask</code></td>
+<td><code>uint32</code></td>
+<td>
+<p>Mask indicating which bits from MISCSELECT must be matched. A value of
+one in a bit position implies the corresponding bit in MISCSELECT must be
+matched. Value of zero implies the corresponding bit must be ignored.
+Note that this is a required field. If this field is skipped, no
+<code>CodeIdentity</code> will match this identity expectation. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-CodeIdentityMatchSpec-attributes_match_mask">
+<td><code>attributes_match_mask</code></td>
+<td><code><a href="#asylo-sgx-Attributes">Attributes</a></code></td>
+<td>
+<p>Mask indicating which bits from ATTRIBUTES should be matched. Semantics
+similar to the miscselect mask.  Note that this is a required field. If
+this field is skipped, no <code>CodeIdentity</code> will match this identity
+expectation. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="asylo-sgx-MachineConfiguration">asylo.sgx.MachineConfiguration</h2>
+<section>
+<p>Security-relevant machine configuration properties.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="asylo-sgx-MachineConfiguration-cpu_svn">
+<td><code>cpu_svn</code></td>
+<td><code><a href="#asylo-sgx-CpuSvn">CpuSvn</a></code></td>
+<td>
+<p>Optional.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-MachineConfiguration-sgx_type">
+<td><code>sgx_type</code></td>
+<td><code><a href="#asylo-sgx-SgxType">SgxType</a></code></td>
+<td>
+<p>Optional.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="asylo-sgx-MachineConfigurationMatchSpec">asylo.sgx.MachineConfigurationMatchSpec</h2>
+<section>
+<p>Specification of which fields from <code>MachineConfiguration</code> to match.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="asylo-sgx-MachineConfigurationMatchSpec-is_cpu_svn_match_required">
+<td><code>is_cpu_svn_match_required</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-MachineConfigurationMatchSpec-is_sgx_type_match_required">
+<td><code>is_sgx_type_match_required</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>

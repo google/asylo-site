@@ -1,5 +1,5 @@
 var searchData=
 [
   ['checkopmessagebuilder',['CheckOpMessageBuilder',['../classasylo_1_1CheckOpMessageBuilder.html',1,'asylo']]],
-  ['configserverconnectionattributes',['ConfigServerConnectionAttributes',['../structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html',1,'asylo::EnclaveManagerOptions']]]
+  ['client',['Client',['../classasylo_1_1primitives_1_1Client.html',1,'asylo::primitives']]]
 ];

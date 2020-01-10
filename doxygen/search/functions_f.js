@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['registerentryhandler',['RegisterEntryHandler',['../classasylo_1_1primitives_1_1TrustedPrimitives.html#ab94cd4537abde482357779f46afb659a',1,'asylo::primitives::TrustedPrimitives']]],
+  ['registerexithandler',['RegisterExitHandler',['../classasylo_1_1primitives_1_1Client_1_1ExitCallProvider.html#a5ce9a5b7bd6e3b69fc0cfd92becef6d5',1,'asylo::primitives::Client::ExitCallProvider']]],
+  ['registerexithandlers',['RegisterExitHandlers',['../classasylo_1_1primitives_1_1Client.html#ad13f0b5753af3a8733d3158f4c1655f9',1,'asylo::primitives::Client']]],
   ['registermanagedresource',['RegisterManagedResource',['../classasylo_1_1SharedResourceManager.html#a6fa669fff218b8bc1384b03ac370314e',1,'asylo::SharedResourceManager']]],
   ['registerunmanagedresource',['RegisterUnmanagedResource',['../classasylo_1_1SharedResourceManager.html#ae9b2e1b7c1da15f2db4b2763b72a76bf',1,'asylo::SharedResourceManager']]],
   ['releaseresource',['ReleaseResource',['../classasylo_1_1SharedResourceManager.html#a97f72b5d5277f7ea9f9f2d82bf6fae3c',1,'asylo::SharedResourceManager']]],

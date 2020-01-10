@@ -84,8 +84,8 @@ $(function() {
 <code>#include &quot;<a class="el" href="enclave__client_8h_source.html">asylo/platform/core/enclave_client.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="enclave__config__util_8h_source.html">asylo/platform/core/enclave_config_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="shared__resource__manager_8h_source.html">asylo/platform/core/shared_resource_manager.h</a>&quot;</code><br />
-<code>#include &quot;asylo/platform/primitives/enclave_type.h&quot;</code><br />
-<code>#include &quot;asylo/platform/primitives/untrusted_primitives.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="untrusted__primitives_8h_source.html">asylo/platform/primitives/untrusted_primitives.h</a>&quot;</code><br />
+<code>#include &quot;asylo/platform/primitives/util/message.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="status_8h_source.html">asylo/util/status.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="statusor_8h_source.html">asylo/util/statusor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -93,14 +93,19 @@ Include dependency graph for enclave_manager.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="enclave__manager_8h__incl.png" border="0" usemap="#asylo_2platform_2core_2enclave__manager_8h" alt=""/></div>
 <map name="asylo_2platform_2core_2enclave__manager_8h" id="asylo_2platform_2core_2enclave__manager_8h">
-<area shape="rect" id="node11" href="enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="718,95,868,136"/>
-<area shape="rect" id="node16" href="status_8h.html" title="asylo/util/status.h" alt="" coords="1230,191,1369,218"/>
-<area shape="rect" id="node28" href="enclave__config__util_8h.html" title="asylo/platform/core\l/enclave_config_util.h" alt="" coords="892,95,1054,136"/>
-<area shape="rect" id="node29" href="shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="350,95,559,136"/>
-<area shape="rect" id="node48" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1444,102,1595,129"/>
-<area shape="rect" id="node12" href="shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="433,184,582,225"/>
-<area shape="rect" id="node20" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="562,281,709,307"/>
-<area shape="rect" id="node24" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1472,281,1647,307"/>
+<area shape="rect" id="node11" href="enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="2852,95,3001,136"/>
+<area shape="rect" id="node18" href="status_8h.html" title="asylo/util/status.h" alt="" coords="1653,281,1792,307"/>
+<area shape="rect" id="node31" href="enclave__config__util_8h.html" title="asylo/platform/core\l/enclave_config_util.h" alt="" coords="3127,95,3289,136"/>
+<area shape="rect" id="node32" href="shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="2514,95,2723,136"/>
+<area shape="rect" id="node33" href="untrusted__primitives_8h.html" title="asylo/platform/primitives\l/untrusted_primitives.h" alt="" coords="823,95,1009,136"/>
+<area shape="rect" id="node42" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1297,191,1447,218"/>
+<area shape="rect" id="node12" href="shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="2852,184,3001,225"/>
+<area shape="rect" id="node17" href="shared__name__kind_8h.html" title="asylo/platform/core\l/shared_name_kind.h" alt="" coords="2997,273,3158,315"/>
+<area shape="rect" id="node22" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="1649,370,1796,397"/>
+<area shape="rect" id="node27" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1450,370,1625,397"/>
+<area shape="rect" id="node35" href="extent_8h.html" title="asylo/platform/primitives\l/extent.h" alt="" coords="772,184,959,225"/>
+<area shape="rect" id="node37" href="primitive__status_8h.html" title="asylo/platform/primitives\l/primitive_status.h" alt="" coords="199,184,385,225"/>
+<area shape="rect" id="node39" href="primitives_8h.html" title="asylo/platform/primitives\l/primitives.h" alt="" coords="28,273,215,315"/>
 </map>
 </div>
 </div>
@@ -109,10 +114,6 @@ Include dependency graph for enclave_manager.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManagerOptions.html">asylo::EnclaveManagerOptions</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enclave Manager configuration.  <a href="classasylo_1_1EnclaveManagerOptions.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html">asylo::EnclaveManagerOptions::ConfigServerConnectionAttributes</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration server connection attributes.  <a href="structasylo_1_1EnclaveManagerOptions_1_1ConfigServerConnectionAttributes.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1EnclaveManager.html">asylo::EnclaveManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A manager object responsible for creating and managing enclave instances.  <a href="classasylo_1_1EnclaveManager.html#details">More...</a><br /></td></tr>

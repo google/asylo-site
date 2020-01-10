@@ -19,7 +19,7 @@ toc: true
 
 This guide demonstrates using Asylo with a Remote Backend. It assumes the reader
 has knowledge introduced in the
-[quickstart guide]({{home}}/docs/guides/quickstart.html).
+[quickstart guide](https://github.com/google/asylo/examples/quickstart/README.md).
 
 ## Introduction
 

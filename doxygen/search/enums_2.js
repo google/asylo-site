@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['sgxidentitymatchspecoptions',['SgxIdentityMatchSpecOptions',['../namespaceasylo.html#ad9ce7785495cca99df26647b7762dcbd',1,'asylo']]],
-  ['sharednamekind',['SharedNameKind',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afce',1,'shared_name_kind.h']]],
-  ['state',['State',['../classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d',1,'asylo::TrustedApplication']]]
+  ['miscselectbit',['MiscselectBit',['../namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed',1,'asylo::sgx']]]
 ];

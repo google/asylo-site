@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classasylo_1_1EnclaveAuthContext.html" title="Encapsulates the authentication properties of an EKEP&#45;based gRPC connection. " alt="" coords="5,5,203,32"/>
+<area shape="rect" id="node1" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="5,31,243,57"/>
+<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionGenerator.html" title="Defines an interface for assertion authorities that create assertion offers and generate assertions..." alt="" coords="291,5,533,32"/>
+<area shape="rect" id="node4" href="$classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions..." alt="" coords="301,56,523,83"/>
+<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="581,5,799,32"/>
+<area shape="rect" id="node5" href="$classasylo_1_1NullAssertionVerifier.html" title="An implementation of the EnclaveAssertionVerifier interface for null assertions. " alt="" coords="591,56,789,83"/>
 </map>

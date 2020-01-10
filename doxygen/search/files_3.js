@@ -12,5 +12,6 @@ var searchData=
   ['enclave_5fmanager_2eh',['enclave_manager.h',['../enclave__manager_8h.html',1,'']]],
   ['enclave_5fserver_5fcredentials_2eh',['enclave_server_credentials.h',['../enclave__server__credentials_8h.html',1,'']]],
   ['error_5fspace_2eh',['error_space.h',['../error__space_8h.html',1,'']]],
-  ['exec_5ftester_2eh',['exec_tester.h',['../exec__tester_8h.html',1,'']]]
+  ['exec_5ftester_2eh',['exec_tester.h',['../exec__tester_8h.html',1,'']]],
+  ['extent_2eh',['extent.h',['../extent_8h.html',1,'']]]
 ];

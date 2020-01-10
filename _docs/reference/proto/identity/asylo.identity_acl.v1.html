@@ -39,6 +39,7 @@ any of a given set of enclave identities.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -49,13 +50,19 @@ any of a given set of enclave identities.</p>
 <p>The predicates that make up this group. Must be non-empty.</p>
 
 </td>
+<td>
+No
+</td>
 </tr>
 <tr id="IdentityAclGroup-type">
 <td><code>type</code></td>
-<td><code><a href="#IdentityAclGroup-GroupType">IdentityAclGroup.GroupType</a></code></td>
+<td><code><a href="#IdentityAclGroup-GroupType">GroupType</a></code></td>
 <td>
 <p>The type of this ACL group.</p>
 
+</td>
+<td>
+No
 </td>
 </tr>
 </tbody>
@@ -109,6 +116,7 @@ one element.</p>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
@@ -117,11 +125,17 @@ one element.</p>
 <td><code><a href="#IdentityAclGroup">IdentityAclGroup (oneof)</a></code></td>
 <td>
 </td>
+<td>
+Yes
+</td>
 </tr>
 <tr id="IdentityAclPredicate-expectation" class="oneof">
 <td><code>expectation</code></td>
 <td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.identity.v1.html#EnclaveIdentityExpectation">EnclaveIdentityExpectation (oneof)</a></code></td>
 <td>
+</td>
+<td>
+Yes
 </td>
 </tr>
 </tbody>

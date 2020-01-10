@@ -481,7 +481,7 @@ It has the following constraints:
 
 The client examines `SERVER_PRECOMMIT` messages for compatibility. If any of the
 following conditions are true, then the client sends an `ABORT` message with a
-PROTOCOL_ERROR code:
+`PROTOCOL_ERROR` code:
 
 *   `selected_ekep_version` is not a version offered by the client
 *   `selected_record_protocol` is not a record protocol offered by the client
@@ -522,7 +522,7 @@ It has the following constraints:
 
 After receiving a `CLIENT_ID` message, the server verifies all assertions
 included in that message. The server sends an `ABORT` message with a
-BAD_ASSERTION error code if any of the following are true:
+`BAD_ASSERTION` error code if any of the following are true:
 
 *   One or more of the assertions in `assertions` cannot be verified
 *   One or more of the assertions in `assertions` is not bound to
