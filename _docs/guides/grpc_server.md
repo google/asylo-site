@@ -28,7 +28,7 @@ removed. Instead, the enclave's `Run` method just stores the assigned port in
 `EnclaveOutput` and returns immediately.
 
 **NOTE:** The `GrpcSeverEnclave` driver code was also restructured to have a
-separate [`grpc_server_util`](#grpc_server_util-module) module, where the bulk
+separate [`grpc_server_util`](#grpc-server-util-module) module, where the bulk
 of the logic that invokes the `GrpcServerEnclave`'s entry-points now resides.
 
 This guide assumes that you are familiar with:
@@ -287,13 +287,13 @@ ABSL_FLAG(int32_t, server_max_lifetime, 300,
 
 ABSL_FLAG(int32_t, port, 0, "Port that the server listens to");
 
-constexpr char kServerAddress[] = "[::1]";
+constexpr char kServerAddress[] = "localhost";
 ```
 
-The address `[::1]` indicates that the server should run locally. Default port
-value 0 indicates that the port will be chosen by the operating system.
+The `localhost` address indicates that the server should run locally. Default
+port value 0 indicates that the port will be chosen by the operating system.
 
-#### `grpc_server_util` module
+#### gRPC server util module
 
 The driver interacts with the enclave using the `grpc_server_util` module. This
 module contains the core logic for invoking the `GrpcServerEnclave`'s
@@ -393,7 +393,7 @@ The driver's `main` function starts by parsing command-line arguments:
 #### Starting the enclave
 
 The driver configures the `EnclaveManager` and calls `LoadGrpcServerEnclave` in
-[`grpc_server_util`](#grpc_server_util-module) module to load the enclave,
+[`grpc_server_util`](#grpc-server-util-module) module to load the enclave,
 indicating the desired server port (if specified) and whether to start the
 enclave in debug mode. The call to `LoadGrpcServerEnclave` triggers a call to
 the `Initialize` method of the `TrustedApplication`:
@@ -484,7 +484,6 @@ cc_library(
         "@com_google_absl//absl/container:flat_hash_map",
         "@com_google_absl//absl/strings",
         "@com_google_absl//absl/synchronization",
-        "//asylo/grpc/auth:enclave_auth_context",
         "@com_github_grpc_grpc//:grpc++",
     ],
 )

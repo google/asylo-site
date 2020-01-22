@@ -67,19 +67,23 @@ $(function() {
 <div class="textblock"><dl class="reflist">
 <dt><a class="anchor" id="_deprecated000002"></a>Class <a class="el" href="classasylo_1_1AesGcmSivCryptor.html">asylo::AesGcmSivCryptor</a>  </dt>
 <dd>Do not use. This class will be removed in a future release.  </dd>
-<dt><a class="anchor" id="_deprecated000009"></a>Member <a class="el" href="namespaceasylo.html#a135dc48e2850e970403849e585300222">asylo::CleansingString</a>  </dt>
+<dt><a class="anchor" id="_deprecated000011"></a>Member <a class="el" href="namespaceasylo.html#a135dc48e2850e970403849e585300222">asylo::CleansingString</a>  </dt>
 <dd>Use <code>CleansingVector</code> instead.  </dd>
 <dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="namespaceasylo.html#aceb4b276873d75168630811ff0456901">asylo::CreateDefaultEnclaveConfig</a>  (const HostConfig &amp;host_config)</dt>
 <dd>Returns an EnclaveConfig proto with critical fields initialized to default values. </dd>
 <dt><a class="anchor" id="_deprecated000006"></a>Class <a class="el" href="classasylo_1_1EnclaveManager.html">asylo::EnclaveManager</a>  </dt>
 <dd>Users of this class first supply a configuration using the static <a class="el" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902">Configure()</a> method, and then get a pointer to the singleton instance as specified by this configuration by calling the static <a class="el" href="classasylo_1_1EnclaveManager.html#a1ab1d6d8d1043a53cab1e99c82c5f1a3" title="Fetches the EnclaveManager singleton instance. ">Instance()</a> method.  </dd>
-<dt><a class="anchor" id="_deprecated000007"></a>Member <a class="el" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902">asylo::EnclaveManager::Configure</a>  (const <a class="el" href="classasylo_1_1EnclaveManagerOptions.html">EnclaveManagerOptions</a> &amp;options)</dt>
-<dd>Configures the enclave manager. </dd>
+<dt><a class="anchor" id="_deprecated000007"></a>Member <a class="el" href="classasylo_1_1EnclaveManager.html#a9ef64308157a4609fd8c84034e801902">asylo::EnclaveManager::Configure</a>  (const <a class="el" href="classasylo_1_1EnclaveManagerOptions.html" title="Enclave Manager configuration. ">EnclaveManagerOptions</a> &amp;options)</dt>
+<dd><a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> no longer needs to be configured. </dd>
+<dt><a class="anchor" id="_deprecated000008"></a>Member <a class="el" href="classasylo_1_1EnclaveManager.html#aa14ba086c624dd8df2db24167d02ca78">asylo::EnclaveManager::LoadEnclave</a>  (absl::string_view name, const <a class="el" href="classasylo_1_1EnclaveLoader.html" title="An abstract enclave loader. ">EnclaveLoader</a> &amp;loader, void *base_address=nullptr, const size_t enclave_size=0)</dt>
+<dd>Use <a class="el" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c" title="Loads an enclave. ">LoadEnclave(const EnclaveLoadConfig &amp;load_config)</a>  </dd>
+<dt><a class="anchor" id="_deprecated000009"></a>Member <a class="el" href="classasylo_1_1EnclaveManager.html#a0beea9b584f6e0ce39a398b3e811c55e">asylo::EnclaveManager::LoadEnclave</a>  (absl::string_view name, const <a class="el" href="classasylo_1_1EnclaveLoader.html" title="An abstract enclave loader. ">EnclaveLoader</a> &amp;loader, EnclaveConfig config, void *base_address=nullptr, const size_t enclave_size=0)</dt>
+<dd>Use <a class="el" href="classasylo_1_1EnclaveManager.html#abbb617a96b0be1c2e5ced47b733b033c" title="Loads an enclave. ">LoadEnclave(const EnclaveLoadConfig &amp;load_config)</a>  </dd>
 <dt><a class="anchor" id="_deprecated000005"></a>Class <a class="el" href="classasylo_1_1EnclaveManagerOptions.html">asylo::EnclaveManagerOptions</a>  </dt>
-<dd>Enclave Manager configuration. </dd>
+<dd><a class="el" href="classasylo_1_1EnclaveManager.html" title="A manager object responsible for creating and managing enclave instances. ">EnclaveManager</a> no longer needs to be configured.  </dd>
 <dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="namespaceasylo_1_1experimental.html#a3e62146c265a872c6c2a991bc317534e">asylo::experimental::AeadCryptor</a>  </dt>
 <dd><code><a class="el" href="classasylo_1_1AeadCryptor.html" title="An AEAD cryptor that provides Seal() and Open() functionality. ">AeadCryptor</a></code> has been moved to the <code>asylo</code> top-level namespace. </dd>
-<dt><a class="anchor" id="_deprecated000008"></a>Member <a class="el" href="classasylo_1_1experimental_1_1ExecTester.html#af841da4cb61cac701ed6ab45245fe256">asylo::experimental::ExecTester::BuildSiblingPath</a>  (const std::string &amp;path, const std::string &amp;file_name)</dt>
+<dt><a class="anchor" id="_deprecated000010"></a>Member <a class="el" href="classasylo_1_1experimental_1_1ExecTester.html#af841da4cb61cac701ed6ab45245fe256">asylo::experimental::ExecTester::BuildSiblingPath</a>  (const std::string &amp;path, const std::string &amp;file_name)</dt>
 <dd>Use Bazel's runfiles library for file paths.  </dd>
 <dt><a class="anchor" id="_deprecated000003"></a>Member <a class="el" href="namespaceasylo.html#a830e6ca210017926c6f21138da33a6a6">asylo::SetEnclaveConfigDefaults</a>  (const HostConfig &amp;host_config, EnclaveConfig *config)</dt>
 <dd>Sets critical uninitialized fields in <code>config</code> to default values.</dd>

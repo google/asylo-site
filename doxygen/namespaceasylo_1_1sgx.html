@@ -66,6 +66,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">asylo::sgx Namespace Reference</div>  </div>
@@ -102,14 +103,85 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr class="separator:af2430f2b59169a5124e35da907fc02ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a01a88747c8a3d6085361c79c0c860841"><td class="memItemLeft" align="right" valign="top">Attributes&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a01a88747c8a3d6085361c79c0c860841">operator &amp;</a> (const Attributes &amp;lhs, const Attributes &amp;rhs)</td></tr>
+<tr class="memdesc:a01a88747c8a3d6085361c79c0c860841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the bitwise AND of two Attributes protos.  <a href="#a01a88747c8a3d6085361c79c0c860841">More...</a><br /></td></tr>
+<tr class="separator:a01a88747c8a3d6085361c79c0c860841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ac1ff4f0bb489387771b9646c89dd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a39ac1ff4f0bb489387771b9646c89dd9">operator==</a> (const Attributes &amp;lhs, const Attributes &amp;rhs)</td></tr>
+<tr class="memdesc:a39ac1ff4f0bb489387771b9646c89dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks two Attributes protos for equality.  <a href="#a39ac1ff4f0bb489387771b9646c89dd9">More...</a><br /></td></tr>
+<tr class="separator:a39ac1ff4f0bb489387771b9646c89dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c9e44edd294794e7aa2831fedad623"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a81c9e44edd294794e7aa2831fedad623">operator!=</a> (const Attributes &amp;lhs, const Attributes &amp;rhs)</td></tr>
+<tr class="memdesc:a81c9e44edd294794e7aa2831fedad623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks two Attributes protos for inequality.  <a href="#a81c9e44edd294794e7aa2831fedad623">More...</a><br /></td></tr>
+<tr class="separator:a81c9e44edd294794e7aa2831fedad623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146fd2416f0d910ede4692750cd2f520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a146fd2416f0d910ede4692750cd2f520">SetAttributeBit</a> (<a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a> bit, Attributes *attributes)</td></tr>
+<tr class="memdesc:a146fd2416f0d910ede4692750cd2f520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given <code>bit</code> of <code>attributes</code> to true, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid.  <a href="#a146fd2416f0d910ede4692750cd2f520">More...</a><br /></td></tr>
+<tr class="separator:a146fd2416f0d910ede4692750cd2f520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1070afe74eba7280f0cb3f6c3ff3f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a9b1070afe74eba7280f0cb3f6c3ff3f5">ClearAttributeBit</a> (<a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a> bit, Attributes *attributes)</td></tr>
+<tr class="memdesc:a9b1070afe74eba7280f0cb3f6c3ff3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given <code>bit</code> of <code>attributes</code> to false, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid.  <a href="#a9b1070afe74eba7280f0cb3f6c3ff3f5">More...</a><br /></td></tr>
+<tr class="separator:a9b1070afe74eba7280f0cb3f6c3ff3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7f89d4e9e0a0c4f320c195f01a4cf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a5b7f89d4e9e0a0c4f320c195f01a4cf8">IsAttributeBitSet</a> (<a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a> bit, const Attributes &amp;attributes)</td></tr>
+<tr class="memdesc:a5b7f89d4e9e0a0c4f320c195f01a4cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the given <code>bit</code> of <code>attributes</code> is set, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid.  <a href="#a5b7f89d4e9e0a0c4f320c195f01a4cf8">More...</a><br /></td></tr>
+<tr class="separator:a5b7f89d4e9e0a0c4f320c195f01a4cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c23efd52685366a107078e00eda87a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; absl::string_view &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a03c23efd52685366a107078e00eda87a">GetPrintableAttributeList</a> (const Attributes &amp;attributes)</td></tr>
+<tr class="memdesc:a03c23efd52685366a107078e00eda87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a printable list of the bits set in <code>attributes</code>.  <a href="#a03c23efd52685366a107078e00eda87a">More...</a><br /></td></tr>
+<tr class="separator:a03c23efd52685366a107078e00eda87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe53f48645b4d2d07ee53b4ab536c1fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#afe53f48645b4d2d07ee53b4ab536c1fd">operator==</a> (const Miscselect &amp;lhs, const Miscselect &amp;rhs)</td></tr>
+<tr class="memdesc:afe53f48645b4d2d07ee53b4ab536c1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks two Miscselect protos for equality.  <a href="#afe53f48645b4d2d07ee53b4ab536c1fd">More...</a><br /></td></tr>
+<tr class="separator:afe53f48645b4d2d07ee53b4ab536c1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf5e4086f9560e12aa854ace59d843b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#adf5e4086f9560e12aa854ace59d843b4">operator!=</a> (const Miscselect &amp;lhs, const Miscselect &amp;rhs)</td></tr>
+<tr class="memdesc:adf5e4086f9560e12aa854ace59d843b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks two Miscselect protos for inequality.  <a href="#adf5e4086f9560e12aa854ace59d843b4">More...</a><br /></td></tr>
+<tr class="separator:adf5e4086f9560e12aa854ace59d843b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121a72e86c9aec1482d6a90d92b6eed2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a121a72e86c9aec1482d6a90d92b6eed2">SetMiscselectBit</a> (<a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a> bit, uint32_t *miscselect)</td></tr>
+<tr class="memdesc:a121a72e86c9aec1482d6a90d92b6eed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given <code>bit</code> of <code>miscselect</code> to true, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid.  <a href="#a121a72e86c9aec1482d6a90d92b6eed2">More...</a><br /></td></tr>
+<tr class="separator:a121a72e86c9aec1482d6a90d92b6eed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11c57be9c03f83caca78b573c2c3568"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ab11c57be9c03f83caca78b573c2c3568">SetMiscselectBit</a> (<a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a> bit, Miscselect *miscselect)</td></tr>
+<tr class="separator:ab11c57be9c03f83caca78b573c2c3568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24be3ada8c647aeb12f192552384d54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ac24be3ada8c647aeb12f192552384d54">ClearMiscselectBit</a> (<a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a> bit, uint32_t *miscselect)</td></tr>
+<tr class="memdesc:ac24be3ada8c647aeb12f192552384d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given <code>bit</code> of <code>miscselect</code> to false, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid.  <a href="#ac24be3ada8c647aeb12f192552384d54">More...</a><br /></td></tr>
+<tr class="separator:ac24be3ada8c647aeb12f192552384d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a35c2b82ae22cf6f2e962b5bc6d11a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a2a35c2b82ae22cf6f2e962b5bc6d11a0">ClearMiscselectBit</a> (<a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a> bit, Miscselect *miscselect)</td></tr>
+<tr class="separator:a2a35c2b82ae22cf6f2e962b5bc6d11a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b9324ee5eadd35f0911b9b491ca92c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ab1b9324ee5eadd35f0911b9b491ca92c">IsMiscselectBitSet</a> (<a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a> bit, uint32_t miscselect)</td></tr>
+<tr class="memdesc:ab1b9324ee5eadd35f0911b9b491ca92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the given <code>bit</code> of <code>miscselect</code> is set, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid.  <a href="#ab1b9324ee5eadd35f0911b9b491ca92c">More...</a><br /></td></tr>
+<tr class="separator:ab1b9324ee5eadd35f0911b9b491ca92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd11b6b01a543077e88a023cba98ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#afcd11b6b01a543077e88a023cba98ec4">IsMiscselectBitSet</a> (<a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a> bit, const Miscselect &amp;miscselect)</td></tr>
+<tr class="separator:afcd11b6b01a543077e88a023cba98ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7629991720c0f46564d27c133a8002"><td class="memItemLeft" align="right" valign="top">std::vector&lt; absl::string_view &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#aba7629991720c0f46564d27c133a8002">GetPrintableMiscselectList</a> (uint32_t miscselect)</td></tr>
+<tr class="memdesc:aba7629991720c0f46564d27c133a8002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a printable list of the bits set in <code>miscselect</code>.  <a href="#aba7629991720c0f46564d27c133a8002">More...</a><br /></td></tr>
+<tr class="separator:aba7629991720c0f46564d27c133a8002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb477dd8b9d5cfbbf86ce6f3708b91c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; absl::string_view &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a9cb477dd8b9d5cfbbf86ce6f3708b91c">GetPrintableMiscselectList</a> (const Miscselect &amp;miscselect)</td></tr>
+<tr class="separator:a9cb477dd8b9d5cfbbf86ce6f3708b91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a83a73b8eb8ed08a794f4e5243bbb8656"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a83a73b8eb8ed08a794f4e5243bbb8656">kAllAttributeBits</a> [15]</td></tr>
 <tr class="memdesc:a83a73b8eb8ed08a794f4e5243bbb8656"><td class="mdescLeft">&#160;</td><td class="mdescRight">All valid bit positions in the ATTRIBUTES bit vector.  <a href="#a83a73b8eb8ed08a794f4e5243bbb8656">More...</a><br /></td></tr>
 <tr class="separator:a83a73b8eb8ed08a794f4e5243bbb8656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac835148d5ddc3d3d98c7171462a4786f"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ac835148d5ddc3d3d98c7171462a4786f">kNumAttributeFlagBits</a></td></tr>
+<tr class="memdesc:ac835148d5ddc3d3d98c7171462a4786f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of ATTRIBUTES flag bits.  <a href="#ac835148d5ddc3d3d98c7171462a4786f">More...</a><br /></td></tr>
+<tr class="separator:ac835148d5ddc3d3d98c7171462a4786f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab222bc5e21070f105321444799630121"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ab222bc5e21070f105321444799630121">kNumAttributeXfrmBits</a></td></tr>
+<tr class="memdesc:ab222bc5e21070f105321444799630121"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of ATTRIBUTES XFRM bits.  <a href="#ab222bc5e21070f105321444799630121">More...</a><br /></td></tr>
+<tr class="separator:ab222bc5e21070f105321444799630121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1342cb63a9dab3943105133236e59835"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a1342cb63a9dab3943105133236e59835">kNumAttributeBits</a></td></tr>
+<tr class="memdesc:a1342cb63a9dab3943105133236e59835"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of ATTRIBUTES bits.  <a href="#a1342cb63a9dab3943105133236e59835">More...</a><br /></td></tr>
+<tr class="separator:a1342cb63a9dab3943105133236e59835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1467fd6daf92307799ca02fdb188d9da"><td class="memItemLeft" align="right" valign="top">const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a1467fd6daf92307799ca02fdb188d9da">kValidAttributeFlagsBitmask</a></td></tr>
+<tr class="memdesc:a1467fd6daf92307799ca02fdb188d9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitmask over all valid ATTRIBUTES flag bits.  <a href="#a1467fd6daf92307799ca02fdb188d9da">More...</a><br /></td></tr>
+<tr class="separator:a1467fd6daf92307799ca02fdb188d9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69cc8242e448c27755c23dac6f8af94"><td class="memItemLeft" align="right" valign="top">const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ac69cc8242e448c27755c23dac6f8af94">kValidAttributeXfrmBitmask</a></td></tr>
+<tr class="memdesc:ac69cc8242e448c27755c23dac6f8af94"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitmask over all valid ATTRIBUTES XFRM bits.  <a href="#ac69cc8242e448c27755c23dac6f8af94">More...</a><br /></td></tr>
+<tr class="separator:ac69cc8242e448c27755c23dac6f8af94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa356b4effc322b16858d1a3cfcc5905a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#aa356b4effc322b16858d1a3cfcc5905a">kAllMiscselectBits</a> [1]</td></tr>
 <tr class="memdesc:aa356b4effc322b16858d1a3cfcc5905a"><td class="mdescLeft">&#160;</td><td class="mdescRight">All valid bit positions in the MISCSELECT bit vector.  <a href="#aa356b4effc322b16858d1a3cfcc5905a">More...</a><br /></td></tr>
 <tr class="separator:aa356b4effc322b16858d1a3cfcc5905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4f2b981e00f33137cee50bf0a43969"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#aed4f2b981e00f33137cee50bf0a43969">kNumMiscselectBits</a></td></tr>
+<tr class="memdesc:aed4f2b981e00f33137cee50bf0a43969"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of MISCSELECT bits.  <a href="#aed4f2b981e00f33137cee50bf0a43969">More...</a><br /></td></tr>
+<tr class="separator:aed4f2b981e00f33137cee50bf0a43969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f15e2ce3ab414f69492e364b68d9a5"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a50f15e2ce3ab414f69492e364b68d9a5">kValidMiscselectBitmask</a></td></tr>
+<tr class="memdesc:a50f15e2ce3ab414f69492e364b68d9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitmask over all valid MISCSELECT bits.  <a href="#a50f15e2ce3ab414f69492e364b68d9a5">More...</a><br /></td></tr>
+<tr class="separator:a50f15e2ce3ab414f69492e364b68d9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ab2d05c25632137511aa7a5fda4cb9188"></a>
@@ -199,6 +271,479 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a9b1070afe74eba7280f0cb3f6c3ff3f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1070afe74eba7280f0cb3f6c3ff3f5">&#9670;&nbsp;</a></span>ClearAttributeBit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::sgx::ClearAttributeBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Attributes *&#160;</td>
+          <td class="paramname"><em>attributes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the given <code>bit</code> of <code>attributes</code> to false, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid. </p>
+
+</div>
+</div>
+<a id="ac24be3ada8c647aeb12f192552384d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24be3ada8c647aeb12f192552384d54">&#9670;&nbsp;</a></span>ClearMiscselectBit() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::sgx::ClearMiscselectBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>miscselect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the given <code>bit</code> of <code>miscselect</code> to false, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid. </p>
+
+</div>
+</div>
+<a id="a2a35c2b82ae22cf6f2e962b5bc6d11a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a35c2b82ae22cf6f2e962b5bc6d11a0">&#9670;&nbsp;</a></span>ClearMiscselectBit() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::sgx::ClearMiscselectBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Miscselect *&#160;</td>
+          <td class="paramname"><em>miscselect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03c23efd52685366a107078e00eda87a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c23efd52685366a107078e00eda87a">&#9670;&nbsp;</a></span>GetPrintableAttributeList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;absl::string_view&gt; asylo::sgx::GetPrintableAttributeList </td>
+          <td>(</td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>attributes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a printable list of the bits set in <code>attributes</code>. </p>
+
+</div>
+</div>
+<a id="aba7629991720c0f46564d27c133a8002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7629991720c0f46564d27c133a8002">&#9670;&nbsp;</a></span>GetPrintableMiscselectList() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;absl::string_view&gt; asylo::sgx::GetPrintableMiscselectList </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>miscselect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a printable list of the bits set in <code>miscselect</code>. </p>
+
+</div>
+</div>
+<a id="a9cb477dd8b9d5cfbbf86ce6f3708b91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb477dd8b9d5cfbbf86ce6f3708b91c">&#9670;&nbsp;</a></span>GetPrintableMiscselectList() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;absl::string_view&gt; asylo::sgx::GetPrintableMiscselectList </td>
+          <td>(</td>
+          <td class="paramtype">const Miscselect &amp;&#160;</td>
+          <td class="paramname"><em>miscselect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b7f89d4e9e0a0c4f320c195f01a4cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7f89d4e9e0a0c4f320c195f01a4cf8">&#9670;&nbsp;</a></span>IsAttributeBitSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::sgx::IsAttributeBitSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>attributes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the given <code>bit</code> of <code>attributes</code> is set, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid. </p>
+
+</div>
+</div>
+<a id="ab1b9324ee5eadd35f0911b9b491ca92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b9324ee5eadd35f0911b9b491ca92c">&#9670;&nbsp;</a></span>IsMiscselectBitSet() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::sgx::IsMiscselectBitSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>miscselect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the given <code>bit</code> of <code>miscselect</code> is set, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid. </p>
+
+</div>
+</div>
+<a id="afcd11b6b01a543077e88a023cba98ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd11b6b01a543077e88a023cba98ec4">&#9670;&nbsp;</a></span>IsMiscselectBitSet() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;bool&gt; asylo::sgx::IsMiscselectBitSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Miscselect &amp;&#160;</td>
+          <td class="paramname"><em>miscselect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01a88747c8a3d6085361c79c0c860841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a88747c8a3d6085361c79c0c860841">&#9670;&nbsp;</a></span>operator &()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Attributes asylo::sgx::operator&amp; </td>
+          <td>(</td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the bitwise AND of two Attributes protos. </p>
+
+</div>
+</div>
+<a id="adf5e4086f9560e12aa854ace59d843b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5e4086f9560e12aa854ace59d843b4">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::sgx::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const Miscselect &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Miscselect &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks two Miscselect protos for inequality. </p>
+
+</div>
+</div>
+<a id="a81c9e44edd294794e7aa2831fedad623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c9e44edd294794e7aa2831fedad623">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::sgx::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks two Attributes protos for inequality. </p>
+
+</div>
+</div>
+<a id="afe53f48645b4d2d07ee53b4ab536c1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe53f48645b4d2d07ee53b4ab536c1fd">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::sgx::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const Miscselect &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Miscselect &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks two Miscselect protos for equality. </p>
+
+</div>
+</div>
+<a id="a39ac1ff4f0bb489387771b9646c89dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39ac1ff4f0bb489387771b9646c89dd9">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::sgx::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Attributes &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks two Attributes protos for equality. </p>
+
+</div>
+</div>
+<a id="a146fd2416f0d910ede4692750cd2f520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146fd2416f0d910ede4692750cd2f520">&#9670;&nbsp;</a></span>SetAttributeBit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::sgx::SetAttributeBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188">AttributeBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Attributes *&#160;</td>
+          <td class="paramname"><em>attributes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the given <code>bit</code> of <code>attributes</code> to true, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid. </p>
+
+</div>
+</div>
+<a id="a121a72e86c9aec1482d6a90d92b6eed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a121a72e86c9aec1482d6a90d92b6eed2">&#9670;&nbsp;</a></span>SetMiscselectBit() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::sgx::SetMiscselectBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>miscselect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the given <code>bit</code> of <code>miscselect</code> to true, or returns a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the <code>bit</code> was invalid. </p>
+
+</div>
+</div>
+<a id="ab11c57be9c03f83caca78b573c2c3568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11c57be9c03f83caca78b573c2c3568">&#9670;&nbsp;</a></span>SetMiscselectBit() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::sgx::SetMiscselectBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceasylo_1_1sgx.html#af2430f2b59169a5124e35da907fc02ed">MiscselectBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Miscselect *&#160;</td>
+          <td class="paramname"><em>miscselect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a83a73b8eb8ed08a794f4e5243bbb8656"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83a73b8eb8ed08a794f4e5243bbb8656">&#9670;&nbsp;</a></span>kAllAttributeBits</h2>
@@ -229,6 +774,118 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>All valid bit positions in the MISCSELECT bit vector. </p>
+
+</div>
+</div>
+<a id="a1342cb63a9dab3943105133236e59835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1342cb63a9dab3943105133236e59835">&#9670;&nbsp;</a></span>kNumAttributeBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t asylo::sgx::kNumAttributeBits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The total number of ATTRIBUTES bits. </p>
+
+</div>
+</div>
+<a id="ac835148d5ddc3d3d98c7171462a4786f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac835148d5ddc3d3d98c7171462a4786f">&#9670;&nbsp;</a></span>kNumAttributeFlagBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t asylo::sgx::kNumAttributeFlagBits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of ATTRIBUTES flag bits. </p>
+
+</div>
+</div>
+<a id="ab222bc5e21070f105321444799630121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab222bc5e21070f105321444799630121">&#9670;&nbsp;</a></span>kNumAttributeXfrmBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t asylo::sgx::kNumAttributeXfrmBits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of ATTRIBUTES XFRM bits. </p>
+
+</div>
+</div>
+<a id="aed4f2b981e00f33137cee50bf0a43969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed4f2b981e00f33137cee50bf0a43969">&#9670;&nbsp;</a></span>kNumMiscselectBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t asylo::sgx::kNumMiscselectBits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The total number of MISCSELECT bits. </p>
+
+</div>
+</div>
+<a id="a1467fd6daf92307799ca02fdb188d9da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1467fd6daf92307799ca02fdb188d9da">&#9670;&nbsp;</a></span>kValidAttributeFlagsBitmask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64_t asylo::sgx::kValidAttributeFlagsBitmask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A bitmask over all valid ATTRIBUTES flag bits. </p>
+
+</div>
+</div>
+<a id="ac69cc8242e448c27755c23dac6f8af94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69cc8242e448c27755c23dac6f8af94">&#9670;&nbsp;</a></span>kValidAttributeXfrmBitmask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64_t asylo::sgx::kValidAttributeXfrmBitmask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A bitmask over all valid ATTRIBUTES XFRM bits. </p>
+
+</div>
+</div>
+<a id="a50f15e2ce3ab414f69492e364b68d9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f15e2ce3ab414f69492e364b68d9a5">&#9670;&nbsp;</a></span>kValidMiscselectBitmask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t asylo::sgx::kValidMiscselectBitmask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A bitmask over all valid MISCSELECT bits. </p>
 
 </div>
 </div>

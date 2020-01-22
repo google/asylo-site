@@ -72,7 +72,23 @@ $(function() {
 <div class="title">architecture_bits.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for architecture_bits.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="architecture__bits_8h__incl.png" border="0" usemap="#asylo_2identity_2platform_2sgx_2architecture__bits_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="architecture__bits_8h__dep__incl.png" border="0" usemap="#asylo_2identity_2platform_2sgx_2architecture__bits_8hdep" alt=""/></div>
+<map name="asylo_2identity_2platform_2sgx_2architecture__bits_8hdep" id="asylo_2identity_2platform_2sgx_2architecture__bits_8hdep">
+<area shape="rect" id="node2" href="attributes__util_8h.html" title="This library implements operations and utility functions on Attributes messages. " alt="" coords="5,95,176,136"/>
+<area shape="rect" id="node3" href="miscselect__util_8h.html" title="This library implements operations and utility functions on the proto and uint32 representations of t..." alt="" coords="200,95,371,136"/>
+</map>
+</div>
+</div>
 <p><a href="architecture__bits_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -117,9 +133,30 @@ Variables</h2></td></tr>
 <tr class="memitem:a83a73b8eb8ed08a794f4e5243bbb8656"><td class="memItemLeft" align="right" valign="top">const AttributeBit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a83a73b8eb8ed08a794f4e5243bbb8656">asylo::sgx::kAllAttributeBits</a> [15]</td></tr>
 <tr class="memdesc:a83a73b8eb8ed08a794f4e5243bbb8656"><td class="mdescLeft">&#160;</td><td class="mdescRight">All valid bit positions in the ATTRIBUTES bit vector.  <a href="namespaceasylo_1_1sgx.html#a83a73b8eb8ed08a794f4e5243bbb8656">More...</a><br /></td></tr>
 <tr class="separator:a83a73b8eb8ed08a794f4e5243bbb8656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac835148d5ddc3d3d98c7171462a4786f"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ac835148d5ddc3d3d98c7171462a4786f">asylo::sgx::kNumAttributeFlagBits</a></td></tr>
+<tr class="memdesc:ac835148d5ddc3d3d98c7171462a4786f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of ATTRIBUTES flag bits.  <a href="namespaceasylo_1_1sgx.html#ac835148d5ddc3d3d98c7171462a4786f">More...</a><br /></td></tr>
+<tr class="separator:ac835148d5ddc3d3d98c7171462a4786f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab222bc5e21070f105321444799630121"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ab222bc5e21070f105321444799630121">asylo::sgx::kNumAttributeXfrmBits</a></td></tr>
+<tr class="memdesc:ab222bc5e21070f105321444799630121"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of ATTRIBUTES XFRM bits.  <a href="namespaceasylo_1_1sgx.html#ab222bc5e21070f105321444799630121">More...</a><br /></td></tr>
+<tr class="separator:ab222bc5e21070f105321444799630121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1342cb63a9dab3943105133236e59835"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a1342cb63a9dab3943105133236e59835">asylo::sgx::kNumAttributeBits</a></td></tr>
+<tr class="memdesc:a1342cb63a9dab3943105133236e59835"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of ATTRIBUTES bits.  <a href="namespaceasylo_1_1sgx.html#a1342cb63a9dab3943105133236e59835">More...</a><br /></td></tr>
+<tr class="separator:a1342cb63a9dab3943105133236e59835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1467fd6daf92307799ca02fdb188d9da"><td class="memItemLeft" align="right" valign="top">const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a1467fd6daf92307799ca02fdb188d9da">asylo::sgx::kValidAttributeFlagsBitmask</a></td></tr>
+<tr class="memdesc:a1467fd6daf92307799ca02fdb188d9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitmask over all valid ATTRIBUTES flag bits.  <a href="namespaceasylo_1_1sgx.html#a1467fd6daf92307799ca02fdb188d9da">More...</a><br /></td></tr>
+<tr class="separator:a1467fd6daf92307799ca02fdb188d9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69cc8242e448c27755c23dac6f8af94"><td class="memItemLeft" align="right" valign="top">const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#ac69cc8242e448c27755c23dac6f8af94">asylo::sgx::kValidAttributeXfrmBitmask</a></td></tr>
+<tr class="memdesc:ac69cc8242e448c27755c23dac6f8af94"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitmask over all valid ATTRIBUTES XFRM bits.  <a href="namespaceasylo_1_1sgx.html#ac69cc8242e448c27755c23dac6f8af94">More...</a><br /></td></tr>
+<tr class="separator:ac69cc8242e448c27755c23dac6f8af94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa356b4effc322b16858d1a3cfcc5905a"><td class="memItemLeft" align="right" valign="top">const MiscselectBit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#aa356b4effc322b16858d1a3cfcc5905a">asylo::sgx::kAllMiscselectBits</a> [1]</td></tr>
 <tr class="memdesc:aa356b4effc322b16858d1a3cfcc5905a"><td class="mdescLeft">&#160;</td><td class="mdescRight">All valid bit positions in the MISCSELECT bit vector.  <a href="namespaceasylo_1_1sgx.html#aa356b4effc322b16858d1a3cfcc5905a">More...</a><br /></td></tr>
 <tr class="separator:aa356b4effc322b16858d1a3cfcc5905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4f2b981e00f33137cee50bf0a43969"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#aed4f2b981e00f33137cee50bf0a43969">asylo::sgx::kNumMiscselectBits</a></td></tr>
+<tr class="memdesc:aed4f2b981e00f33137cee50bf0a43969"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of MISCSELECT bits.  <a href="namespaceasylo_1_1sgx.html#aed4f2b981e00f33137cee50bf0a43969">More...</a><br /></td></tr>
+<tr class="separator:aed4f2b981e00f33137cee50bf0a43969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f15e2ce3ab414f69492e364b68d9a5"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1sgx.html#a50f15e2ce3ab414f69492e364b68d9a5">asylo::sgx::kValidMiscselectBitmask</a></td></tr>
+<tr class="memdesc:a50f15e2ce3ab414f69492e364b68d9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitmask over all valid MISCSELECT bits.  <a href="namespaceasylo_1_1sgx.html#a50f15e2ce3ab414f69492e364b68d9a5">More...</a><br /></td></tr>
+<tr class="separator:a50f15e2ce3ab414f69492e364b68d9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

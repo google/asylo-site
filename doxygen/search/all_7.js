@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['generate',['Generate',['../classasylo_1_1EnclaveAssertionGenerator.html#a22d2620a3791f01bf77327dfcff62d59',1,'asylo::EnclaveAssertionGenerator::Generate()'],['../classasylo_1_1NullAssertionGenerator.html#ade08b3cc9b63f3289f96896934fc86dd',1,'asylo::NullAssertionGenerator::Generate()']]],
+  ['generate',['Generate',['../classasylo_1_1EnclaveAssertionGenerator.html#a22d2620a3791f01bf77327dfcff62d59',1,'asylo::EnclaveAssertionGenerator::Generate()'],['../classasylo_1_1NullAssertionGenerator.html#ade08b3cc9b63f3289f96896934fc86dd',1,'asylo::NullAssertionGenerator::Generate()'],['../classasylo_1_1SgxLocalAssertionGenerator.html#aa95b3d1908d2791ea99f6495483c8838',1,'asylo::SgxLocalAssertionGenerator::Generate()']]],
   ['generateauthorityid',['GenerateAuthorityId',['../classasylo_1_1EnclaveAssertionAuthority.html#a634e1ad0b08597e8968e6252b9a43e07',1,'asylo::EnclaveAssertionAuthority']]],
   ['generatesealerid',['GenerateSealerId',['../classasylo_1_1SecretSealer.html#a3e3efc3f67478c870f296434f9b2106a',1,'asylo::SecretSealer']]],
   ['get_5flog_5fdirectory',['get_log_directory',['../namespaceasylo.html#a2b2644ab2a74b608e5d3f3e5b228d5ae',1,'asylo']]],
@@ -14,6 +14,8 @@ var searchData=
   ['getinstance',['GetInstance',['../classasylo_1_1error_1_1GoogleErrorSpace.html#a1f3ec8000a0d4ac72cf33db130aaba1d',1,'asylo::error::GoogleErrorSpace::GetInstance()'],['../classasylo_1_1error_1_1PosixErrorSpace.html#af08182ea4594e015b1ca20456969701c',1,'asylo::error::PosixErrorSpace::GetInstance()']]],
   ['getloadconfigfromclient',['GetLoadConfigFromClient',['../classasylo_1_1EnclaveManager.html#ae3d59bbc5b14aaf6b03ab907699f89b5',1,'asylo::EnclaveManager']]],
   ['getname',['GetName',['../classasylo_1_1EnclaveManager.html#a277ff884e89f6c43c48335eebdaa4ce4',1,'asylo::EnclaveManager']]],
+  ['getprintableattributelist',['GetPrintableAttributeList',['../namespaceasylo_1_1sgx.html#a03c23efd52685366a107078e00eda87a',1,'asylo::sgx']]],
+  ['getprintablemiscselectlist',['GetPrintableMiscselectList',['../namespaceasylo_1_1sgx.html#aba7629991720c0f46564d27c133a8002',1,'asylo::sgx::GetPrintableMiscselectList(uint32_t miscselect)'],['../namespaceasylo_1_1sgx.html#a9cb477dd8b9d5cfbbf86ce6f3708b91c',1,'asylo::sgx::GetPrintableMiscselectList(const Miscselect &amp;miscselect)']]],
   ['getrecordprotocol',['GetRecordProtocol',['../classasylo_1_1EnclaveAuthContext.html#a8bb1efd9bb4ed086b4ae2caea5572107',1,'asylo::EnclaveAuthContext']]],
   ['getselfsgxidentity',['GetSelfSgxIdentity',['../namespaceasylo.html#a89433d74e8a613ec3dd232172d787136',1,'asylo']]],
   ['getstate',['GetState',['../classasylo_1_1TrustedApplication.html#a3bdf0e5db5631635d99db4bfa8544dd2',1,'asylo::TrustedApplication']]],

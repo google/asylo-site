@@ -16,12 +16,12 @@ toc: true
 {% include home.html %}
 <!-- Generated with Stardoc: http://skydoc.bazel.build -->
 
-<a name="#backend_debug_sign_enclave"></a>
+<a name="#backend_sign_enclave_with_untrusted_key"></a>
 
-## backend_debug_sign_enclave
+## backend_sign_enclave_with_untrusted_key
 
 <pre>
-backend_debug_sign_enclave(<a href="#backend_debug_sign_enclave-name">name</a>, <a href="#backend_debug_sign_enclave-backend">backend</a>, <a href="#backend_debug_sign_enclave-unsigned">unsigned</a>, <a href="#backend_debug_sign_enclave-config">config</a>, <a href="#backend_debug_sign_enclave-backend_label_struct">backend_label_struct</a>, <a href="#backend_debug_sign_enclave-kwargs">kwargs</a>)
+backend_sign_enclave_with_untrusted_key(<a href="#backend_sign_enclave_with_untrusted_key-name">name</a>, <a href="#backend_sign_enclave_with_untrusted_key-backend">backend</a>, <a href="#backend_sign_enclave_with_untrusted_key-unsigned">unsigned</a>, <a href="#backend_sign_enclave_with_untrusted_key-config">config</a>, <a href="#backend_sign_enclave_with_untrusted_key-backend_label_struct">backend_label_struct</a>, <a href="#backend_sign_enclave_with_untrusted_key-kwargs">kwargs</a>)
 </pre>
 
 Defines the 'signed' version of an unsigned enclave target.
@@ -37,7 +37,7 @@ The signer is backend-specific.
     <col class="col-description" />
   </colgroup>
   <tbody>
-    <tr id="backend_debug_sign_enclave-name">
+    <tr id="backend_sign_enclave_with_untrusted_key-name">
       <td><code>name</code></td>
       <td>
         required.
@@ -46,7 +46,7 @@ The signer is backend-specific.
         </p>
       </td>
     </tr>
-    <tr id="backend_debug_sign_enclave-backend">
+    <tr id="backend_sign_enclave_with_untrusted_key-backend">
       <td><code>backend</code></td>
       <td>
         required.
@@ -55,7 +55,7 @@ The signer is backend-specific.
         </p>
       </td>
     </tr>
-    <tr id="backend_debug_sign_enclave-unsigned">
+    <tr id="backend_sign_enclave_with_untrusted_key-unsigned">
       <td><code>unsigned</code></td>
       <td>
         required.
@@ -64,7 +64,7 @@ The signer is backend-specific.
         </p>
       </td>
     </tr>
-    <tr id="backend_debug_sign_enclave-config">
+    <tr id="backend_sign_enclave_with_untrusted_key-config">
       <td><code>config</code></td>
       <td>
         optional. default is <code>None</code>
@@ -73,7 +73,7 @@ The signer is backend-specific.
         </p>
       </td>
     </tr>
-    <tr id="backend_debug_sign_enclave-backend_label_struct">
+    <tr id="backend_sign_enclave_with_untrusted_key-backend_label_struct">
       <td><code>backend_label_struct</code></td>
       <td>
         optional. default is <code>None</code>
@@ -83,7 +83,7 @@ The signer is backend-specific.
         </p>
       </td>
     </tr>
-    <tr id="backend_debug_sign_enclave-kwargs">
+    <tr id="backend_sign_enclave_with_untrusted_key-kwargs">
       <td><code>kwargs</code></td>
       <td>
         optional.
@@ -330,7 +330,7 @@ cc_enclave_test(<a href="#cc_enclave_test-name">name</a>, <a href="#cc_enclave_t
 
 Build target that runs a cc_test srcs inside of an enclave.
 
-This macro creates two targets, one debug_sign_enclave target with the test
+This macro creates two targets, one sign_enclave_with_untrusted_key target with the test
 source. And another test runner application to launch the test enclave.
 
 
@@ -755,10 +755,10 @@ Creates a C++ unsigned enclave target in all or any backend.
 ## debug_sign_enclave
 
 <pre>
-debug_sign_enclave(<a href="#debug_sign_enclave-name">name</a>, <a href="#debug_sign_enclave-unsigned">unsigned</a>, <a href="#debug_sign_enclave-backends">backends</a>, <a href="#debug_sign_enclave-config">config</a>, <a href="#debug_sign_enclave-testonly">testonly</a>, <a href="#debug_sign_enclave-name_by_backend">name_by_backend</a>)
+debug_sign_enclave(<a href="#debug_sign_enclave-name">name</a>, <a href="#debug_sign_enclave-kwargs">kwargs</a>)
 </pre>
 
-Signs an unsigned enclave according the the backend's signing procedure.
+Alias for sign_enclave_with_untrusted_key.
 
 ### Parameters
 
@@ -773,57 +773,16 @@ Signs an unsigned enclave according the the backend's signing procedure.
       <td>
         required.
         <p>
-          The signed enclave target name.
+          The rule name,
         </p>
       </td>
     </tr>
-    <tr id="debug_sign_enclave-unsigned">
-      <td><code>unsigned</code></td>
+    <tr id="debug_sign_enclave-kwargs">
+      <td><code>kwargs</code></td>
       <td>
-        required.
+        optional.
         <p>
-          The label to the unsigned enclave.
-        </p>
-      </td>
-    </tr>
-    <tr id="debug_sign_enclave-backends">
-      <td><code>backends</code></td>
-      <td>
-        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code>
-        <p>
-          The asylo backend labels the binary uses. Must specify at least
-  one. Defaults to all supported backends. If more than one, then
-  name is an alias to a select on backend value to backend-specialized
-  targets. See enclave_info.bzl:all_backends documentation for details.
-        </p>
-      </td>
-    </tr>
-    <tr id="debug_sign_enclave-config">
-      <td><code>config</code></td>
-      <td>
-        optional. default is <code>None</code>
-        <p>
-          A label to a config target that the backend-specific signing
-  tool uses.
-        </p>
-      </td>
-    </tr>
-    <tr id="debug_sign_enclave-testonly">
-      <td><code>testonly</code></td>
-      <td>
-        optional. default is <code>0</code>
-        <p>
-          True if the target should only be used in tests.
-        </p>
-      </td>
-    </tr>
-    <tr id="debug_sign_enclave-name_by_backend">
-      <td><code>name_by_backend</code></td>
-      <td>
-        optional. default is <code>{}</code>
-        <p>
-          An optional dictionary from backend label to backend-
-  specific target label.
+          The rest of the arguments to sign_enclave_with_untrusted_key.
         </p>
       </td>
     </tr>
@@ -1121,7 +1080,7 @@ The loader is subject to a backend transition by the specified backends.
 This macro creates three build targets:
   1) name: shell script that runs `name_host_loader`.
   2) name_loader: cc_binary used as loader in `name`. This is a normal
-                  native cc_binary. It cannot be directly run because there
+                  cc_binary. It cannot be directly run because there
                   is an undeclared dependency on the enclaves.
   3) name_host_loader: genrule that builds `name_loader` with the host
                        crosstool.
@@ -1261,7 +1220,7 @@ Creates a cc_test for a given enclave. Passes flags according to
 This macro creates three build targets:
  1) name: sh_test that runs the enclave_test.
  2) name_driver: cc_test used as test loader in `name`. This is a normal
-                 native cc_test. It cannot be directly run because there is
+                 cc_test. It cannot be directly run because there is
                  an undeclared dependency on enclave.
  3) name_host_driver: genrule that builds name_driver with host crosstool.
 
@@ -1399,7 +1358,7 @@ This macro creates three build targets:
 sgx_enclave_test(<a href="#sgx_enclave_test-name">name</a>, <a href="#sgx_enclave_test-srcs">srcs</a>, <a href="#sgx_enclave_test-kwargs">kwargs</a>)
 </pre>
 
-Build target for testing one or more instances of 'debug_sign_enclave'.
+Build target for testing one or more instances of 'sign_enclave_with_untrusted_key'.
 
 This macro invokes enclave_test with the "asylo-sgx" tag added.
 
@@ -1436,6 +1395,97 @@ This macro invokes enclave_test with the "asylo-sgx" tag added.
         optional.
         <p>
           enclave_test arguments.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a name="#sign_enclave_with_untrusted_key"></a>
+
+## sign_enclave_with_untrusted_key
+
+<pre>
+sign_enclave_with_untrusted_key(<a href="#sign_enclave_with_untrusted_key-name">name</a>, <a href="#sign_enclave_with_untrusted_key-unsigned">unsigned</a>, <a href="#sign_enclave_with_untrusted_key-key">key</a>, <a href="#sign_enclave_with_untrusted_key-backends">backends</a>, <a href="#sign_enclave_with_untrusted_key-config">config</a>, <a href="#sign_enclave_with_untrusted_key-testonly">testonly</a>, <a href="#sign_enclave_with_untrusted_key-name_by_backend">name_by_backend</a>)
+</pre>
+
+Signs an unsigned enclave according the the backend's signing procedure.
+
+### Parameters
+
+<table class="params-table">
+  <colgroup>
+    <col class="col-param" />
+    <col class="col-description" />
+  </colgroup>
+  <tbody>
+    <tr id="sign_enclave_with_untrusted_key-name">
+      <td><code>name</code></td>
+      <td>
+        required.
+        <p>
+          The signed enclave target name.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-unsigned">
+      <td><code>unsigned</code></td>
+      <td>
+        required.
+        <p>
+          The label to the unsigned enclave.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-key">
+      <td><code>key</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          The untrusted private key for signing. Default value is defined by
+    the backend.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-backends">
+      <td><code>backends</code></td>
+      <td>
+        optional. default is <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code>
+        <p>
+          The asylo backend labels the binary uses. Must specify at least
+  one. Defaults to all supported backends. If more than one, then
+  name is an alias to a select on backend value to backend-specialized
+  targets. See enclave_info.bzl:all_backends documentation for details.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-config">
+      <td><code>config</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          A label to a config target that the backend-specific signing
+  tool uses.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-testonly">
+      <td><code>testonly</code></td>
+      <td>
+        optional. default is <code>0</code>
+        <p>
+          True if the target should only be used in tests.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-name_by_backend">
+      <td><code>name_by_backend</code></td>
+      <td>
+        optional. default is <code>{}</code>
+        <p>
+          An optional dictionary from backend label to backend-
+  specific target label.
         </p>
       </td>
     </tr>

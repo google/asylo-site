@@ -34,27 +34,6 @@ Defines an Asylo backend label for the SGX backend. Should only be used by @linu
 | name |  A unique name for this target.   | <a href="https://bazel.build/docs/build-ref.html#name">Name</a> | required |
 
 
-<a name="#boringssl_sign_enclave_signing_material"></a>
-
-## boringssl_sign_enclave_signing_material
-
-<pre>
-boringssl_sign_enclave_signing_material(<a href="#boringssl_sign_enclave_signing_material-name">name</a>, <a href="#boringssl_sign_enclave_signing_material-private_key">private_key</a>, <a href="#boringssl_sign_enclave_signing_material-signature">signature</a>, <a href="#boringssl_sign_enclave_signing_material-signing_material">signing_material</a>)
-</pre>
-
-Signs an enclave signing material file with a given private key for use in sgx_signed_enclave.
-
-**ATTRIBUTES**
-
-
-| Name  | Description | Type | Mandatory |
-| :-------------: | :-------------: | :-------------: | :-------------: |
-| name |  A unique name for this target.   | <a href="https://bazel.build/docs/build-ref.html#name">Name</a> | required |
-| private_key |  The RSA-3072 private key with public exponent 3 in PEM format used to sign the input enclave signing material.   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
-| signature |  The output signature file name [default: &lt;name&gt;.sig].   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | optional |
-| signing_material |  A target defined by sgx_generate_enclave_signing_material.   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
-
-
 <a name="#enclave_lds"></a>
 
 ## enclave_lds
@@ -105,50 +84,6 @@ Defines an enclave configuration that is meant to be used as base configuration.
 | stack_max_size |  The enclave's maximum stack size in bytes (4KB aligned)   | String | optional |
 | tcs_num |  The number of Thread Control Structures allocated for the enclave   | String | optional |
 | tcs_policy |  The TCS management policy (0 - The TCS is bound to the untrusted thread, 1 - The TCS is unbound to the untrusted thread)   | String | optional |
-
-
-<a name="#sgx_generate_enclave_signing_material"></a>
-
-## sgx_generate_enclave_signing_material
-
-<pre>
-sgx_generate_enclave_signing_material(<a href="#sgx_generate_enclave_signing_material-name">name</a>, <a href="#sgx_generate_enclave_signing_material-config">config</a>, <a href="#sgx_generate_enclave_signing_material-sign_tool">sign_tool</a>, <a href="#sgx_generate_enclave_signing_material-signing_material">signing_material</a>, <a href="#sgx_generate_enclave_signing_material-unsigned">unsigned</a>)
-</pre>
-
-Creates a file that contains the parts of the enclave SIGSTRUCT that must be signed.
-
-**ATTRIBUTES**
-
-
-| Name  | Description | Type | Mandatory |
-| :-------------: | :-------------: | :-------------: | :-------------: |
-| name |  A unique name for this target.   | <a href="https://bazel.build/docs/build-ref.html#name">Name</a> | required |
-| config |  A path to a configuration XML file, or a label of an sgx_enclave_config target. A configuration specifies identity attributes, runtime behaviors that are security-critical, and other components of the enclave SIGSTRUCT.   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
-| sign_tool |  -   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | optional |
-| signing_material |  The name of the output file. Default is "&lt;name&gt;.dat".   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | optional |
-| unsigned |  The label of the unsigned enclave binary to be measured and hashed as a SIGSTRUCT field   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
-
-
-<a name="#sgx_signed_enclave"></a>
-
-## sgx_signed_enclave
-
-<pre>
-sgx_signed_enclave(<a href="#sgx_signed_enclave-name">name</a>, <a href="#sgx_signed_enclave-public_key">public_key</a>, <a href="#sgx_signed_enclave-sign_tool">sign_tool</a>, <a href="#sgx_signed_enclave-signature">signature</a>, <a href="#sgx_signed_enclave-signing_material">signing_material</a>)
-</pre>
-
-Creates a signed enclave binary using a signature file.
-
-**ATTRIBUTES**
-
-
-| Name  | Description | Type | Mandatory |
-| :-------------: | :-------------: | :-------------: | :-------------: |
-| name |  A unique name for this target.   | <a href="https://bazel.build/docs/build-ref.html#name">Name</a> | required |
-| public_key |  The public key to verify the provided signature.   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
-| sign_tool |  -   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | optional |
-| signature |  The sha256 digest of the enclave signing material signed by the RSA-3072 private key with public exponent 3.   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
-| signing_material |  The label of a sgx_generate_enclave_signing_material target that includes both the unsigned enclave and its config.   | <a href="https://bazel.build/docs/build-ref.html#labels">Label</a> | required |
 
 
 <a name="#SGXEnclaveConfigInfo"></a>
@@ -214,6 +149,35 @@ A provider on enclave signing material that carries the enclave and configuratio
 | unsigned |  A cc_unsigned_enclave in an SGX backend    |
 
 
+<a name="#boringssl_sign_enclave_signing_material"></a>
+
+## boringssl_sign_enclave_signing_material
+
+<pre>
+boringssl_sign_enclave_signing_material(<a href="#boringssl_sign_enclave_signing_material-name">name</a>, <a href="#boringssl_sign_enclave_signing_material-signing_material">signing_material</a>, <a href="#boringssl_sign_enclave_signing_material-private_key">private_key</a>, <a href="#boringssl_sign_enclave_signing_material-signature">signature</a>, <a href="#boringssl_sign_enclave_signing_material-backends">backends</a>, <a href="#boringssl_sign_enclave_signing_material-name_by_backend">name_by_backend</a>, <a href="#boringssl_sign_enclave_signing_material-visibility">visibility</a>, <a href="#boringssl_sign_enclave_signing_material-tags">tags</a>, <a href="#boringssl_sign_enclave_signing_material-testonly">testonly</a>)
+</pre>
+
+Signs signing material with a private key.
+
+Signing is done in each backend if transitions enabled.
+
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The rule name, used in name derivations if transitions enabled.   |  none |
+| signing_material |  The output of generate_enclave_signing_material.   |  none |
+| private_key |  A label to an RSA 3072 public exponent 3 private key in<br>    PEM format.   |  none |
+| signature |  An optional output file name (default name + ".sig", where<br>    name is backend-specific if transitions enabled).   |  <code>None</code> |
+| backends |  The list of backend labels to build signing_material against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  An optional dictionary from backend label to name to<br>    backend-specific target name.   |  <code>{}</code> |
+| visibility |  An optional target visibility.   |  <code>None</code> |
+| tags |  Tags to apply to each target.   |  <code>[]</code> |
+| testonly |  True if the target should only be used in tests.   |  <code>0</code> |
+
+
 <a name="#boringssl_sign_sigstruct"></a>
 
 ## boringssl_sign_sigstruct
@@ -254,12 +218,60 @@ Signs enclave signing material with a given private key.
 | kwargs |  The arguments passed to boringssl_sign_enclave_signing_material.   |  none |
 
 
+<a name="#sgx.boringssl_sign_enclave_signing_material"></a>
+
+## sgx.boringssl_sign_enclave_signing_material
+
+<pre>
+sgx.boringssl_sign_enclave_signing_material(<a href="#sgx.boringssl_sign_enclave_signing_material-name">name</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-signing_material">signing_material</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-private_key">private_key</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-signature">signature</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-backends">backends</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-name_by_backend">name_by_backend</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-visibility">visibility</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-tags">tags</a>, <a href="#sgx.boringssl_sign_enclave_signing_material-testonly">testonly</a>)
+</pre>
+
+Signs signing material with a private key.
+
+Signing is done in each backend if transitions enabled.
+
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The rule name, used in name derivations if transitions enabled.   |  none |
+| signing_material |  The output of generate_enclave_signing_material.   |  none |
+| private_key |  A label to an RSA 3072 public exponent 3 private key in<br>    PEM format.   |  none |
+| signature |  An optional output file name (default name + ".sig", where<br>    name is backend-specific if transitions enabled).   |  <code>None</code> |
+| backends |  The list of backend labels to build signing_material against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  An optional dictionary from backend label to name to<br>    backend-specific target name.   |  <code>{}</code> |
+| visibility |  An optional target visibility.   |  <code>None</code> |
+| tags |  Tags to apply to each target.   |  <code>[]</code> |
+| testonly |  True if the target should only be used in tests.   |  <code>0</code> |
+
+
 <a name="#sgx.debug_enclave"></a>
 
 ## sgx.debug_enclave
 
 <pre>
-sgx.debug_enclave(<a href="#sgx.debug_enclave-name">name</a>, <a href="#sgx.debug_enclave-unsigned">unsigned</a>, <a href="#sgx.debug_enclave-config">config</a>, <a href="#sgx.debug_enclave-tags">tags</a>, <a href="#sgx.debug_enclave-deprecation">deprecation</a>, <a href="#sgx.debug_enclave-visibility">visibility</a>, <a href="#sgx.debug_enclave-testonly">testonly</a>)
+sgx.debug_enclave(<a href="#sgx.debug_enclave-name">name</a>, <a href="#sgx.debug_enclave-kwargs">kwargs</a>)
+</pre>
+
+An alias for sgx_sign_enclave_with_untrusted_key.
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The name of the rule.   |  none |
+| kwargs |  The rest of the arguments to<br>    sgx_sign_enclave_with_untrusted_key.   |  none |
+
+
+<a name="#sgx.sign_enclave_with_untrusted_key"></a>
+
+## sgx.sign_enclave_with_untrusted_key
+
+<pre>
+sgx.sign_enclave_with_untrusted_key(<a href="#sgx.sign_enclave_with_untrusted_key-name">name</a>, <a href="#sgx.sign_enclave_with_untrusted_key-unsigned">unsigned</a>, <a href="#sgx.sign_enclave_with_untrusted_key-config">config</a>, <a href="#sgx.sign_enclave_with_untrusted_key-key">key</a>, <a href="#sgx.sign_enclave_with_untrusted_key-tags">tags</a>, <a href="#sgx.sign_enclave_with_untrusted_key-backends">backends</a>, <a href="#sgx.sign_enclave_with_untrusted_key-name_by_backend">name_by_backend</a>, <a href="#sgx.sign_enclave_with_untrusted_key-deprecation">deprecation</a>, <a href="#sgx.sign_enclave_with_untrusted_key-visibility">visibility</a>, <a href="#sgx.sign_enclave_with_untrusted_key-testonly">testonly</a>)
 </pre>
 
 Creates a signed enclave binary by using a debug key.
@@ -272,7 +284,10 @@ Creates a signed enclave binary by using a debug key.
 | name |  The target name   |  none |
 | unsigned |  The label of the unsigned enclave binary.   |  none |
 | config |  The enclave configuration label to use.   |  <code>None</code> |
+| key |  The untrusted key to use for signing.   |  <code>None</code> |
 | tags |  Bazel tags to add to name.   |  <code>[]</code> |
+| backends |  The list of backends to build against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  A dictionary from backend label to target name for<br>    user-specified target names when defining backend-specific targets.   |  <code>{}</code> |
 | deprecation |  An optional deprecation message that issues a warning.   |  <code>None</code> |
 | visibility |  The optional visibility of the enclave binary.   |  <code>None</code> |
 | testonly |  True if the target should only be used in tests.   |  <code>False</code> |
@@ -297,6 +312,32 @@ Wraps sgx_full_enclave_configuration with a default base target.
 | kwargs |  The rest of the sgx_full_enclave_configuration arguments.   |  none |
 
 
+<a name="#sgx.generate_enclave_signing_material"></a>
+
+## sgx.generate_enclave_signing_material
+
+<pre>
+sgx.generate_enclave_signing_material(<a href="#sgx.generate_enclave_signing_material-name">name</a>, <a href="#sgx.generate_enclave_signing_material-config">config</a>, <a href="#sgx.generate_enclave_signing_material-unsigned">unsigned</a>, <a href="#sgx.generate_enclave_signing_material-backends">backends</a>, <a href="#sgx.generate_enclave_signing_material-name_by_backend">name_by_backend</a>, <a href="#sgx.generate_enclave_signing_material-signing_material">signing_material</a>, <a href="#sgx.generate_enclave_signing_material-visibility">visibility</a>, <a href="#sgx.generate_enclave_signing_material-tags">tags</a>, <a href="#sgx.generate_enclave_signing_material-testonly">testonly</a>)
+</pre>
+
+Builds the file to sign for creating a signed enclave binary.
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The rule name, used in name derivations when transitions enabled.   |  none |
+| config |  An enclave_configuration target label.   |  none |
+| unsigned |  A label to an SGX unsigned enclave target. Should be generic<br>    in the backends provided, so it is recommended to use an<br>    sgx_cc_unsigned_enclave target.   |  none |
+| backends |  The list of backends to build against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  A dictionary from backend label to target name for<br>    user-specified target names when defining backend-specific targets.   |  <code>{}</code> |
+| signing_material |  An optional output file name.   |  <code>None</code> |
+| visibility |  An optional visibility specification.   |  <code>None</code> |
+| tags |  Tags to apply to each target.   |  <code>[]</code> |
+| testonly |  If true, the target may only be dependended on by testonly<br>    and test targets.   |  <code>0</code> |
+
+
 <a name="#sgx.generate_sigstruct"></a>
 
 ## sgx.generate_sigstruct
@@ -315,6 +356,32 @@ Creates a file that contains parts of the enclave SIGSTRUCT.
 | name |  The rule name.   |  none |
 | sigstruct |  The name of the output file. Default is "&lt;name&gt;.dat".   |  <code>None</code> |
 | kwargs |  The arguments passed to sgx_generate_enclave_signing_material.   |  none |
+
+
+<a name="#sgx.signed_enclave"></a>
+
+## sgx.signed_enclave
+
+<pre>
+sgx.signed_enclave(<a href="#sgx.signed_enclave-name">name</a>, <a href="#sgx.signed_enclave-public_key">public_key</a>, <a href="#sgx.signed_enclave-signature">signature</a>, <a href="#sgx.signed_enclave-signing_material">signing_material</a>, <a href="#sgx.signed_enclave-backends">backends</a>, <a href="#sgx.signed_enclave-name_by_backend">name_by_backend</a>, <a href="#sgx.signed_enclave-visibility">visibility</a>, <a href="#sgx.signed_enclave-testonly">testonly</a>, <a href="#sgx.signed_enclave-tags">tags</a>)
+</pre>
+
+Creates a signed enclave binary using a signature file.
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The rule name, used in name derivations when transitions enabled.   |  none |
+| public_key |  The public key to verify the provided signature.   |  none |
+| signature |  The sha256 digest of the enclave signing material signed by<br>    the RSA-3072 private key with public exponent 3.   |  none |
+| signing_material |  The label of a sgx_generate_enclave_signing_material<br>    target that includes both the unsigned enclave and its config.   |  none |
+| backends |  The list of backends to build against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  A dictionary from backend label to target name for<br>    user-specified target names when defining backend-specific targets.   |  <code>{}</code> |
+| visibility |  An optional visibility specification.   |  <code>None</code> |
+| testonly |  If true, the target may only be dependended on by testonly<br>    and test targets.   |  <code>0</code> |
+| tags |  Tags to apply to each target.   |  <code>[]</code> |
 
 
 <a name="#sgx.tags"></a>
@@ -358,23 +425,18 @@ Build rule for creating a C++ unsigned SGX enclave shared object file.
 ## sgx_debug_enclave
 
 <pre>
-sgx_debug_enclave(<a href="#sgx_debug_enclave-name">name</a>, <a href="#sgx_debug_enclave-unsigned">unsigned</a>, <a href="#sgx_debug_enclave-config">config</a>, <a href="#sgx_debug_enclave-tags">tags</a>, <a href="#sgx_debug_enclave-deprecation">deprecation</a>, <a href="#sgx_debug_enclave-visibility">visibility</a>, <a href="#sgx_debug_enclave-testonly">testonly</a>)
+sgx_debug_enclave(<a href="#sgx_debug_enclave-name">name</a>, <a href="#sgx_debug_enclave-kwargs">kwargs</a>)
 </pre>
 
-Creates a signed enclave binary by using a debug key.
+An alias for sgx_sign_enclave_with_untrusted_key.
 
 **PARAMETERS**
 
 
 | Name  | Description | Default Value |
 | :-------------: | :-------------: | :-------------: |
-| name |  The target name   |  none |
-| unsigned |  The label of the unsigned enclave binary.   |  none |
-| config |  The enclave configuration label to use.   |  <code>None</code> |
-| tags |  Bazel tags to add to name.   |  <code>[]</code> |
-| deprecation |  An optional deprecation message that issues a warning.   |  <code>None</code> |
-| visibility |  The optional visibility of the enclave binary.   |  <code>None</code> |
-| testonly |  True if the target should only be used in tests.   |  <code>False</code> |
+| name |  The name of the rule.   |  none |
+| kwargs |  The rest of the arguments to<br>    sgx_sign_enclave_with_untrusted_key.   |  none |
 
 
 <a name="#sgx_enclave_configuration"></a>
@@ -396,6 +458,32 @@ Wraps sgx_full_enclave_configuration with a default base target.
 | kwargs |  The rest of the sgx_full_enclave_configuration arguments.   |  none |
 
 
+<a name="#sgx_generate_enclave_signing_material"></a>
+
+## sgx_generate_enclave_signing_material
+
+<pre>
+sgx_generate_enclave_signing_material(<a href="#sgx_generate_enclave_signing_material-name">name</a>, <a href="#sgx_generate_enclave_signing_material-config">config</a>, <a href="#sgx_generate_enclave_signing_material-unsigned">unsigned</a>, <a href="#sgx_generate_enclave_signing_material-backends">backends</a>, <a href="#sgx_generate_enclave_signing_material-name_by_backend">name_by_backend</a>, <a href="#sgx_generate_enclave_signing_material-signing_material">signing_material</a>, <a href="#sgx_generate_enclave_signing_material-visibility">visibility</a>, <a href="#sgx_generate_enclave_signing_material-tags">tags</a>, <a href="#sgx_generate_enclave_signing_material-testonly">testonly</a>)
+</pre>
+
+Builds the file to sign for creating a signed enclave binary.
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The rule name, used in name derivations when transitions enabled.   |  none |
+| config |  An enclave_configuration target label.   |  none |
+| unsigned |  A label to an SGX unsigned enclave target. Should be generic<br>    in the backends provided, so it is recommended to use an<br>    sgx_cc_unsigned_enclave target.   |  none |
+| backends |  The list of backends to build against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  A dictionary from backend label to target name for<br>    user-specified target names when defining backend-specific targets.   |  <code>{}</code> |
+| signing_material |  An optional output file name.   |  <code>None</code> |
+| visibility |  An optional visibility specification.   |  <code>None</code> |
+| tags |  Tags to apply to each target.   |  <code>[]</code> |
+| testonly |  If true, the target may only be dependended on by testonly<br>    and test targets.   |  <code>0</code> |
+
+
 <a name="#sgx_generate_sigstruct"></a>
 
 ## sgx_generate_sigstruct
@@ -414,6 +502,59 @@ Creates a file that contains parts of the enclave SIGSTRUCT.
 | name |  The rule name.   |  none |
 | sigstruct |  The name of the output file. Default is "&lt;name&gt;.dat".   |  <code>None</code> |
 | kwargs |  The arguments passed to sgx_generate_enclave_signing_material.   |  none |
+
+
+<a name="#sgx_sign_enclave_with_untrusted_key"></a>
+
+## sgx_sign_enclave_with_untrusted_key
+
+<pre>
+sgx_sign_enclave_with_untrusted_key(<a href="#sgx_sign_enclave_with_untrusted_key-name">name</a>, <a href="#sgx_sign_enclave_with_untrusted_key-unsigned">unsigned</a>, <a href="#sgx_sign_enclave_with_untrusted_key-config">config</a>, <a href="#sgx_sign_enclave_with_untrusted_key-key">key</a>, <a href="#sgx_sign_enclave_with_untrusted_key-tags">tags</a>, <a href="#sgx_sign_enclave_with_untrusted_key-backends">backends</a>, <a href="#sgx_sign_enclave_with_untrusted_key-name_by_backend">name_by_backend</a>, <a href="#sgx_sign_enclave_with_untrusted_key-deprecation">deprecation</a>, <a href="#sgx_sign_enclave_with_untrusted_key-visibility">visibility</a>, <a href="#sgx_sign_enclave_with_untrusted_key-testonly">testonly</a>)
+</pre>
+
+Creates a signed enclave binary by using a debug key.
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The target name   |  none |
+| unsigned |  The label of the unsigned enclave binary.   |  none |
+| config |  The enclave configuration label to use.   |  <code>None</code> |
+| key |  The untrusted key to use for signing.   |  <code>None</code> |
+| tags |  Bazel tags to add to name.   |  <code>[]</code> |
+| backends |  The list of backends to build against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  A dictionary from backend label to target name for<br>    user-specified target names when defining backend-specific targets.   |  <code>{}</code> |
+| deprecation |  An optional deprecation message that issues a warning.   |  <code>None</code> |
+| visibility |  The optional visibility of the enclave binary.   |  <code>None</code> |
+| testonly |  True if the target should only be used in tests.   |  <code>False</code> |
+
+
+<a name="#sgx_signed_enclave"></a>
+
+## sgx_signed_enclave
+
+<pre>
+sgx_signed_enclave(<a href="#sgx_signed_enclave-name">name</a>, <a href="#sgx_signed_enclave-public_key">public_key</a>, <a href="#sgx_signed_enclave-signature">signature</a>, <a href="#sgx_signed_enclave-signing_material">signing_material</a>, <a href="#sgx_signed_enclave-backends">backends</a>, <a href="#sgx_signed_enclave-name_by_backend">name_by_backend</a>, <a href="#sgx_signed_enclave-visibility">visibility</a>, <a href="#sgx_signed_enclave-testonly">testonly</a>, <a href="#sgx_signed_enclave-tags">tags</a>)
+</pre>
+
+Creates a signed enclave binary using a signature file.
+
+**PARAMETERS**
+
+
+| Name  | Description | Default Value |
+| :-------------: | :-------------: | :-------------: |
+| name |  The rule name, used in name derivations when transitions enabled.   |  none |
+| public_key |  The public key to verify the provided signature.   |  none |
+| signature |  The sha256 digest of the enclave signing material signed by<br>    the RSA-3072 private key with public exponent 3.   |  none |
+| signing_material |  The label of a sgx_generate_enclave_signing_material<br>    target that includes both the unsigned enclave and its config.   |  none |
+| backends |  The list of backends to build against.   |  <code>{"@linux_sgx//:asylo_sgx_hw": struct(config_settings = ["@linux_sgx//:sgx_hw"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_hw", order = 2, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-hw", "manual"]), "@linux_sgx//:asylo_sgx_sim": struct(config_settings = ["@linux_sgx//:sgx_sim"], debug_default_config = "@linux_sgx//:enclave_debug_config", debug_private_key = "@linux_sgx//:enclave_test_private.pem", name_derivation = "_sgx_sim", order = 1, sign_tool = "@linux_sgx//:sgx_sign_tool", tags = ["asylo-sgx-sim", "manual"])}</code> |
+| name_by_backend |  A dictionary from backend label to target name for<br>    user-specified target names when defining backend-specific targets.   |  <code>{}</code> |
+| visibility |  An optional visibility specification.   |  <code>None</code> |
+| testonly |  If true, the target may only be dependended on by testonly<br>    and test targets.   |  <code>0</code> |
+| tags |  Tags to apply to each target.   |  <code>[]</code> |
 
 
 <a name="#sgx_tags"></a>

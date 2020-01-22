@@ -1,6 +1,8 @@
 <map id="asylo::EnclaveAssertionAuthority" name="asylo::EnclaveAssertionAuthority">
-<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionGenerator.html" title="Defines an interface for assertion authorities that create assertion offers and generate assertions..." alt="" coords="5,80,248,107"/>
-<area shape="rect" id="node4" href="$classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions..." alt="" coords="273,80,495,107"/>
-<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="18,155,235,181"/>
-<area shape="rect" id="node5" href="$classasylo_1_1NullAssertionVerifier.html" title="An implementation of the EnclaveAssertionVerifier interface for null assertions. " alt="" coords="285,155,483,181"/>
+<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionGenerator.html" title="Defines an interface for assertion authorities that create assertion offers and generate assertions..." alt="" coords="291,64,533,91"/>
+<area shape="rect" id="node5" href="$classasylo_1_1EnclaveAssertionVerifier.html" title="Defines an interface for assertion authorities that generate assertion requests and verify assertions..." alt="" coords="301,123,523,149"/>
+<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="581,5,799,32"/>
+<area shape="rect" id="node4" href="$classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="598,57,782,98"/>
+<area shape="rect" id="node6" href="$classasylo_1_1NullAssertionVerifier.html" title="An implementation of the EnclaveAssertionVerifier interface for null assertions. " alt="" coords="591,123,789,149"/>
+<area shape="rect" id="node7" href="$classasylo_1_1SgxLocalAssertionVerifier.html" title="An implemention of the EnclaveAssertionVerifier interface for SGX local assertions. " alt="" coords="598,174,782,215"/>
 </map>
