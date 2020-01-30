@@ -6,7 +6,7 @@ overview: Reference for authentication and authorization in Asylo gRPC.
 
 location: /_docs/reference/grpc_auth.md
 
-order: 10
+order: 30
 
 layout: docs
 
