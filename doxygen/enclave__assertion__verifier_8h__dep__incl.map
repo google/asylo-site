@@ -1,4 +1,5 @@
 <map id="asylo/identity/attestation/enclave_assertion_verifier.h" name="asylo/identity/attestation/enclave_assertion_verifier.h">
 <area shape="rect" id="node2" href="$null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="5,102,215,143"/>
-<area shape="rect" id="node3" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="239,95,394,151"/>
+<area shape="rect" id="node3" href="$sgx__intel__ecdsa__qe__remote__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_verifier.h" alt="" coords="239,95,445,151"/>
+<area shape="rect" id="node4" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="470,95,625,151"/>
 </map>

@@ -1,0 +1,6 @@
+<map id="asylo/identity/attestation/sgx" name="asylo/identity/attestation/sgx">
+<area shape="rect" id="node1" href="dir_f360829df39ce84888b801698f8c76ae.html" title="sgx" alt="" coords="27,52,99,100"/>
+<area shape="rect" id="node2" href="dir_d76c6b9049ac6f6d284ddd4be15e6dfa.html" title="util" alt="" coords="27,148,99,196"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000015_000026.html" title="2" alt="" coords="66,122,76,137"/>
+<area shape="rect" id="clust1" href="dir_a383ceb14052bdc6be5ad395e7eec5da.html" title="attestation" alt="" coords="16,16,109,111"/>
+</map>

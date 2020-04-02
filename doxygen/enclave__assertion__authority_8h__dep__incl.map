@@ -1,8 +1,9 @@
 <map id="asylo/identity/enclave_assertion_authority.h" name="asylo/identity/enclave_assertion_authority.h">
-<area shape="rect" id="node2" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="211,95,437,136"/>
-<area shape="rect" id="node5" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="461,95,669,136"/>
+<area shape="rect" id="node2" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="221,95,446,136"/>
+<area shape="rect" id="node5" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="643,95,851,136"/>
+<area shape="rect" id="node7" href="$sgx__intel__ecdsa__qe__remote__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_verifier.h" alt="" coords="849,184,1055,240"/>
 <area shape="rect" id="node3" href="$null__assertion__generator_8h.html" title="asylo/identity/attestation\l/null/null_assertion_generator.h" alt="" coords="5,191,232,233"/>
 <area shape="rect" id="node4" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="256,184,411,240"/>
-<area shape="rect" id="node6" href="$null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="453,191,662,233"/>
-<area shape="rect" id="node7" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="687,184,841,240"/>
+<area shape="rect" id="node6" href="$null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="435,191,645,233"/>
+<area shape="rect" id="node8" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="669,184,824,240"/>
 </map>

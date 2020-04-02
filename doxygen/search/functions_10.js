@@ -23,6 +23,7 @@ var searchData=
   ['setsgxidentitydescription',['SetSgxIdentityDescription',['../namespaceasylo.html#a2e4fbde1c34a3cbc7e847eac196fdf47',1,'asylo']]],
   ['setsgxintelecdsaqeremoteassertiondescription',['SetSgxIntelEcdsaQeRemoteAssertionDescription',['../namespaceasylo.html#a0133e34526b1df93bbbfb5382560d479',1,'asylo']]],
   ['setsgxlocalassertiondescription',['SetSgxLocalAssertionDescription',['../namespaceasylo.html#a18d12c2532052365108e2b59a466cfce',1,'asylo']]],
+  ['sgxintelecdsaqeremoteassertionverifier',['SgxIntelEcdsaQeRemoteAssertionVerifier',['../classasylo_1_1SgxIntelEcdsaQeRemoteAssertionVerifier.html#ad69e2e55435827a6326deb98f5952ba5',1,'asylo::SgxIntelEcdsaQeRemoteAssertionVerifier::SgxIntelEcdsaQeRemoteAssertionVerifier()'],['../classasylo_1_1SgxIntelEcdsaQeRemoteAssertionVerifier.html#ab9f8758e50f194163aebe239c34de093',1,'asylo::SgxIntelEcdsaQeRemoteAssertionVerifier::SgxIntelEcdsaQeRemoteAssertionVerifier(std::unique_ptr&lt; AdditionalAuthenticatedDataGenerator &gt; aad_generator)']]],
   ['sgxlocalassertiongenerator',['SgxLocalAssertionGenerator',['../classasylo_1_1SgxLocalAssertionGenerator.html#ab3fac8bb6b5c1025a20e923bfffba644',1,'asylo::SgxLocalAssertionGenerator']]],
   ['sgxlocalassertionverifier',['SgxLocalAssertionVerifier',['../classasylo_1_1SgxLocalAssertionVerifier.html#acc19f91d289bc014aacaf42915f645ed',1,'asylo::SgxLocalAssertionVerifier']]],
   ['sgxlocalsecretsealer',['SgxLocalSecretSealer',['../classasylo_1_1SgxLocalSecretSealer.html#a0dd8aebad2e1411dc0fffed22d6d0eaf',1,'asylo::SgxLocalSecretSealer']]],

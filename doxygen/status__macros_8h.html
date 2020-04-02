@@ -65,12 +65,16 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">status_macros.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;absl/base/optimization.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;absl/base/optimization.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for status_macros.h:</div>
 <div class="dyncontent">
@@ -81,19 +85,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="status__macros_8h__dep__incl.png" border="0" usemap="#asylo_2util_2status__macros_8hdep" alt=""/></div>
 <map name="asylo_2util_2status__macros_8hdep" id="asylo_2util_2status__macros_8hdep">
-<area shape="rect" id="node2" href="aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="173,80,337,121"/>
-<area shape="rect" id="node3" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="361,80,527,121"/>
-<area shape="rect" id="node4" href="enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="211,169,437,211"/>
-<area shape="rect" id="node7" href="enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="461,169,669,211"/>
+<area shape="rect" id="node2" href="aes__gcm__siv_8h.html" title="asylo/crypto/aes_gcm\l_siv.h" alt="" coords="475,80,639,121"/>
+<area shape="rect" id="node3" href="enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="663,80,830,121"/>
+<area shape="rect" id="node4" href="enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="221,169,446,211"/>
+<area shape="rect" id="node7" href="enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="643,169,851,211"/>
+<area shape="rect" id="node9" href="sgx__intel__ecdsa__qe__remote__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_verifier.h" alt="" coords="849,259,1055,315"/>
 <area shape="rect" id="node5" href="null__assertion__generator_8h.html" title="asylo/identity/attestation\l/null/null_assertion_generator.h" alt="" coords="5,266,232,307"/>
 <area shape="rect" id="node6" href="sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="256,259,411,315"/>
-<area shape="rect" id="node8" href="null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="453,266,662,307"/>
-<area shape="rect" id="node9" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="687,259,841,315"/>
+<area shape="rect" id="node8" href="null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="435,266,645,307"/>
+<area shape="rect" id="node10" href="sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="669,259,824,315"/>
 </map>
 </div>
 </div>
 <p><a href="status__macros_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceasylo"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html">asylo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceasylo_1_1internal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1internal.html">asylo::internal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a884b0600610551e91852b3bc96c732c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(expr)</td></tr>
@@ -102,6 +114,21 @@ Macros</h2></td></tr>
 <tr class="memitem:aed04a682d62384eea1b02f6eec08d30f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="status__macros_8h.html#aed04a682d62384eea1b02f6eec08d30f">ASYLO_ASSIGN_OR_RETURN</a>(lhs,  rexpr)</td></tr>
 <tr class="memdesc:aed04a682d62384eea1b02f6eec08d30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an expression <code>rexpr</code> that returns a <code>StatusOr</code>-like object with <code>.ok()</code>, <code>.status()</code>, and <code>.ValueOrDie()</code> methods.  <a href="#aed04a682d62384eea1b02f6eec08d30f">More...</a><br /></td></tr>
 <tr class="separator:aed04a682d62384eea1b02f6eec08d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4cffcbf90a778511758bfe6e3f26e6dc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4cffcbf90a778511758bfe6e3f26e6dc"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1internal.html#a4cffcbf90a778511758bfe6e3f26e6dc">asylo::internal::HasStatus</a> (decltype(std::declval&lt; T &gt;().status()) *)</td></tr>
+<tr class="separator:a4cffcbf90a778511758bfe6e3f26e6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28db43841d68d74693f6c0db5d85f9fb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a28db43841d68d74693f6c0db5d85f9fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1internal.html#a28db43841d68d74693f6c0db5d85f9fb">asylo::internal::HasStatus</a> (...)</td></tr>
+<tr class="separator:a28db43841d68d74693f6c0db5d85f9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf92db375148cfcbe7181bb0402a990c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; HasStatus&lt; T &gt;(nullptr), int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:adf92db375148cfcbe7181bb0402a990c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1internal.html#adf92db375148cfcbe7181bb0402a990c">asylo::internal::ToStatus</a> (T &amp;&amp;status_or) -&gt; decltype(status_or.status())</td></tr>
+<tr class="separator:adf92db375148cfcbe7181bb0402a990c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36cfafee9d457644986d9b05064e4d2"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt;!HasStatus&lt; T &gt;(nullptr), int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:ae36cfafee9d457644986d9b05064e4d2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1internal.html#ae36cfafee9d457644986d9b05064e4d2">asylo::internal::ToStatus</a> (T &amp;&amp;status_like)</td></tr>
+<tr class="separator:ae36cfafee9d457644986d9b05064e4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aed04a682d62384eea1b02f6eec08d30f"></a>
@@ -150,9 +177,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                       \</div><div class="line">  const <span class="keyword">auto</span> _asylo_status_to_verify = (expr);             \</div><div class="line">  if (ABSL_PREDICT_FALSE(!_asylo_status_to_verify.ok())) { \</div><div class="line">    return _asylo_status_to_verify;                        \</div><div class="line">  }                                                        \</div><div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                        \</div><div class="line">  auto _asylo_status_to_verify = (expr);                                    \</div><div class="line">  if (ABSL_PREDICT_FALSE(!_asylo_status_to_verify.ok())) {                  <a class="code" href="namespaceasylo_1_1internal.html#ae36cfafee9d457644986d9b05064e4d2">\</a></div><div class="line"><a class="code" href="namespaceasylo_1_1internal.html#ae36cfafee9d457644986d9b05064e4d2">    return ::asylo::internal::ToStatus</a>(                                     \</div><div class="line">        std::forward&lt;decltype(_asylo_status_to_verify)&gt;(                    \</div><div class="line">            _asylo_status_to_verify));                                      \</div><div class="line">  }                                                                         \</div><div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div><div class="ttc" id="namespaceasylo_1_1internal_html_ae36cfafee9d457644986d9b05064e4d2"><div class="ttname"><a href="namespaceasylo_1_1internal.html#ae36cfafee9d457644986d9b05064e4d2">asylo::internal::ToStatus</a></div><div class="ttdeci">T ToStatus(T &amp;&amp;status_like)</div><div class="ttdef"><b>Definition:</b> status_macros.h:52</div></div>
+</div><!-- fragment -->
 <p>Evaluates an expression that produces an <code>Status</code>-like object with a <code>.ok()</code> method. </p>
-<p>If this method returns false, the object is returned from the current function.</p>
+<p>If this method returns false, the object is returned from the current function. If the expression evaluates to a <code>StatusOr</code> object, then it is converted to a <code>Status</code> on return.</p>
 <p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classasylo_1_1Status.html">::asylo::Status</a> MultiStepFunction() {</div><div class="line">  <a class="code" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(Function(args...));</div><div class="line">  <a class="code" href="status__macros_8h.html#a884b0600610551e91852b3bc96c732c4">ASYLO_RETURN_IF_ERROR</a>(foo.Method(args...));</div><div class="line">  return ::asylo::Status::OkStatus();</div><div class="line">}</div></div><!-- fragment --> 
 </div>
 </div>

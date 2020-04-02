@@ -11,6 +11,7 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y \
         bazel \
+        default-jdk-headless \
         doxygen \
         gawk \
         git \

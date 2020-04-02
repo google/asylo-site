@@ -1,9 +1,9 @@
 <map id="asylo/identity/sgx/sgx_local_assertion_verifier.h" name="asylo/identity/sgx/sgx_local_assertion_verifier.h">
-<area shape="rect" id="node3" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1515,109,1723,151"/>
-<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="998,199,1165,240"/>
-<area shape="rect" id="node17" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1644,377,1783,404"/>
-<area shape="rect" id="node38" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1431,295,1582,322"/>
-<area shape="rect" id="node37" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="109,377,302,404"/>
-<area shape="rect" id="node23" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="456,459,603,486"/>
-<area shape="rect" id="node30" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="2094,459,2269,486"/>
+<area shape="rect" id="node3" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1686,109,1894,151"/>
+<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="735,199,901,240"/>
+<area shape="rect" id="node17" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1713,377,1851,404"/>
+<area shape="rect" id="node38" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1379,295,1529,322"/>
+<area shape="rect" id="node37" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="889,377,1083,404"/>
+<area shape="rect" id="node23" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1157,459,1303,486"/>
+<area shape="rect" id="node30" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="2533,459,2708,486"/>
 </map>

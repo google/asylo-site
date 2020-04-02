@@ -5,7 +5,7 @@ location: https://asylo.dev/docs/reference/proto/asylo.enclave.v1.html
 layout: protoc-gen-docs
 generator: protoc-gen-docs
 redirect_from: /docs/reference/proto/enclave.html
-number_of_entries: 9
+number_of_entries: 8
 ---
 <p>This file defines the messages for communicating with a trusted application&rsquo;s
 entry-points: <a href="#EnclaveConfig">initialization</a>, (re-entrant)
@@ -234,58 +234,6 @@ back to an untrusted caller.</p>
 <td>
 <p>Contains status information for the Run invocation. A non-OK status may
 indicate an error in either trusted or untrusted space.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="EnclaveSignal">EnclaveSignal</h2>
-<section>
-<p>A POSIX signal event that is routed to an enclave signal handler.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="EnclaveSignal-signum">
-<td><code>signum</code></td>
-<td><code>int32</code></td>
-<td>
-<p>Number of the signal.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="EnclaveSignal-code">
-<td><code>code</code></td>
-<td><code>int32</code></td>
-<td>
-<p>Code of the signal describing cause of the signal. Refer to siginfo(3) for
-more information.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="EnclaveSignal-gregs">
-<td><code>gregs</code></td>
-<td><code>uint64[]</code></td>
-<td>
-<p>General registers defined in |uc_mcontext|. Refer to sys/ucontext.h for
-more information.</p>
 
 </td>
 <td>

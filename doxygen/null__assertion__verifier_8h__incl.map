@@ -1,9 +1,9 @@
 <map id="asylo/identity/attestation/null/null_assertion_verifier.h" name="asylo/identity/attestation/null/null_assertion_verifier.h">
-<area shape="rect" id="node4" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1351,95,1559,136"/>
-<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="1927,184,2093,225"/>
-<area shape="rect" id="node17" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1175,363,1314,389"/>
-<area shape="rect" id="node38" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1380,281,1531,307"/>
-<area shape="rect" id="node37" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="2877,363,3071,389"/>
-<area shape="rect" id="node23" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1843,445,1990,471"/>
-<area shape="rect" id="node30" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="188,445,363,471"/>
+<area shape="rect" id="node4" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1612,95,1820,136"/>
+<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="816,184,983,225"/>
+<area shape="rect" id="node17" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1533,363,1672,389"/>
+<area shape="rect" id="node38" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1392,281,1543,307"/>
+<area shape="rect" id="node37" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="694,363,887,389"/>
+<area shape="rect" id="node23" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="582,445,729,471"/>
+<area shape="rect" id="node30" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1931,445,2106,471"/>
 </map>

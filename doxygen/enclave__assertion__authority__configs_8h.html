@@ -75,7 +75,9 @@ $(function() {
 <p>Provides functions for creating enclave assertion authority configs.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;asylo/crypto/certificate.pb.h&quot;</code><br />
+<code>#include &quot;asylo/identity/attestation/sgx/sgx_intel_ecdsa_qe_remote_assertion_authority_config.pb.h&quot;</code><br />
 <code>#include &quot;asylo/identity/enclave_assertion_authority_config.pb.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="statusor_8h_source.html">asylo/util/statusor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -83,10 +85,10 @@ Include dependency graph for enclave_assertion_authority_configs.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="enclave__assertion__authority__configs_8h__incl.png" border="0" usemap="#asylo_2identity_2enclave__assertion__authority__configs_8h" alt=""/></div>
 <map name="asylo_2identity_2enclave__assertion__authority__configs_8h" id="asylo_2identity_2enclave__assertion__authority__configs_8h">
-<area shape="rect" id="node5" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1045,102,1195,129"/>
-<area shape="rect" id="node9" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="339,266,485,293"/>
-<area shape="rect" id="node16" href="status_8h.html" title="asylo/util/status.h" alt="" coords="1229,184,1368,211"/>
-<area shape="rect" id="node21" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1211,266,1386,293"/>
+<area shape="rect" id="node7" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1366,117,1517,143"/>
+<area shape="rect" id="node11" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="339,295,485,322"/>
+<area shape="rect" id="node18" href="status_8h.html" title="asylo/util/status.h" alt="" coords="1375,213,1513,240"/>
+<area shape="rect" id="node23" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1211,295,1386,322"/>
 </map>
 </div>
 </div>
@@ -95,6 +97,8 @@ Include dependency graph for enclave_assertion_authority_configs.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceasylo"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html">asylo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceasylo_1_1experimental"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html">asylo::experimental</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -108,9 +112,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a3572ca5a070eb9393fa6aee1906c2b74"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a3572ca5a070eb9393fa6aee1906c2b74">asylo::CreateSgxLocalAssertionAuthorityConfig</a> ()</td></tr>
 <tr class="memdesc:a3572ca5a070eb9393fa6aee1906c2b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX local assertion authority.  <a href="namespaceasylo.html#a3572ca5a070eb9393fa6aee1906c2b74">More...</a><br /></td></tr>
 <tr class="separator:a3572ca5a070eb9393fa6aee1906c2b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b5e92b8a0786a6995601418978d3fa"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a41b5e92b8a0786a6995601418978d3fa">asylo::CreateSgxAgeRemoteAssertionAuthorityConfig</a> (std::vector&lt; Certificate &gt; certificates, std::string server_address)</td></tr>
-<tr class="memdesc:a41b5e92b8a0786a6995601418978d3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX AGE remote assertion authority.  <a href="namespaceasylo.html#a41b5e92b8a0786a6995601418978d3fa">More...</a><br /></td></tr>
-<tr class="separator:a41b5e92b8a0786a6995601418978d3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d1b702948f22c4e04ca5129ab8284ab"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html#a6d1b702948f22c4e04ca5129ab8284ab">asylo::experimental::CreateSgxIntelEcdsaQeRemoteAssertionAuthorityConfig</a> ()</td></tr>
+<tr class="memdesc:a6d1b702948f22c4e04ca5129ab8284ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates configuration for the SGX Intel ECDSA QE remote assertion authority.  <a href="namespaceasylo_1_1experimental.html#a6d1b702948f22c4e04ca5129ab8284ab">More...</a><br /></td></tr>
+<tr class="separator:a6d1b702948f22c4e04ca5129ab8284ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac8fbfacacf0ade898ec585ebf73a18"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html#a6ac8fbfacacf0ade898ec585ebf73a18">asylo::experimental::CreateSgxIntelEcdsaQeRemoteAssertionAuthorityConfig</a> (std::vector&lt; Certificate &gt; pck_certificate_chain)</td></tr>
+<tr class="memdesc:a6ac8fbfacacf0ade898ec585ebf73a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates configuration for the SGX Intel ECDSA QE remote assertion authority.  <a href="namespaceasylo_1_1experimental.html#a6ac8fbfacacf0ade898ec585ebf73a18">More...</a><br /></td></tr>
+<tr class="separator:a6ac8fbfacacf0ade898ec585ebf73a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides functions for creating enclave assertion authority configs. </p>

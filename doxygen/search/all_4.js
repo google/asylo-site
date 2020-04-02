@@ -7,5 +7,6 @@ var searchData=
   ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
   ['descriptions_2eh',['descriptions.h',['../descriptions_8h.html',1,'']]],
   ['destroy',['Destroy',['../classasylo_1_1primitives_1_1Client.html#a7835fe159260bad7d9928fd16214058c',1,'asylo::primitives::Client']]],
-  ['destroyenclave',['DestroyEnclave',['../classasylo_1_1EnclaveManager.html#aee47d9f58ba53d0e275a3383c8413806',1,'asylo::EnclaveManager']]]
+  ['destroyenclave',['DestroyEnclave',['../classasylo_1_1EnclaveManager.html#aee47d9f58ba53d0e275a3383c8413806',1,'asylo::EnclaveManager']]],
+  ['destroyenclaveclient',['destroyEnclaveClient',['../classcom_1_1asylo_1_1client_1_1EnclaveManager.html#a2e8ce05c2aa3907531feec6d994c9a7c',1,'com::asylo::client::EnclaveManager']]]
 ];

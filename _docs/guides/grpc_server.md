@@ -45,7 +45,10 @@ The Asylo enclave runtime features rich POSIX support that allows full-featured
 serve as secure nodes in your distributed systems and cloud applications.
 
 The source files for this example are located in the
-[asylo/examples/grpc_server](https://github.com/google/asylo/blob/master/asylo/examples/grpc_server) folder.
+[grpc_server](https://github.com/google/asylo-examples/tree/master/grpc_server)
+directory of [asylo-examples](https://github.com/google/asylo-examples).
+Download the latest release
+[here](https://github.com/google/asylo-examples/releases).
 
 ## Setting up the environment
 
@@ -509,7 +512,7 @@ proto_library(
     name = "grpc_server_config_proto",
     srcs = ["grpc_server_config.proto"],
     deps = [
-        "//asylo:enclave_proto",
+        "@com_google_asylo//asylo:enclave_proto",
     ],
 )
 
@@ -531,8 +534,8 @@ cc_unsigned_enclave(
         "@com_google_absl//absl/strings",
         "@com_google_absl//absl/synchronization",
         "@com_google_absl//absl/time",
-        "//asylo:enclave_runtime",
-        "//asylo/util:status",
+        "@com_google_asylo//asylo:enclave_runtime",
+        "@com_google_asylo//asylo/util:status",
         "@com_github_grpc_grpc//:grpc++",
         "@com_github_grpc_grpc//:grpc++_reflection",
     ],
@@ -541,7 +544,7 @@ cc_unsigned_enclave(
 debug_sign_enclave(
     name = "grpc_server_enclave.so",
     backends = sgx.backend_labels,
-    config = "//asylo/grpc/util:grpc_enclave_config",
+    config = "@com_google_asylo//asylo/grpc/util:grpc_enclave_config",
     unsigned = "grpc_server_enclave_unsigned.so",
 )
 
@@ -564,9 +567,9 @@ enclave_loader(
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
         "@com_google_absl//absl/time",
-        "//asylo:enclave_client",
-        "//asylo/util:logging",
-        "//asylo/util:status",
+        "@com_google_asylo//asylo:enclave_client",
+        "@com_google_asylo//asylo/util:logging",
+        "@com_google_asylo//asylo/util:status",
     ],
 )
 
@@ -579,10 +582,10 @@ cc_library(
         ":grpc_server_config_cc_proto",
         "//net/proto2/public:proto2",
         "@com_google_absl//absl/strings",
-        "//asylo:enclave_cc_proto",
-        "//asylo:enclave_client",
-        "//asylo/platform/primitives/sgx:loader_cc_proto",
-        "//asylo/util:status",
+        "@com_google_asylo//asylo:enclave_cc_proto",
+        "@com_google_asylo//asylo:enclave_client",
+        "@com_google_asylo//asylo/platform/primitives/sgx:loader_cc_proto",
+        "@com_google_asylo//asylo/util:status",
     ],
 )
 ```
@@ -593,7 +596,7 @@ You can run the server enclave using `bazel`:
 
 ```bash
 $ bazel run --config=sgx-sim \
-    //asylo/examples/grpc_server:grpc_server
+    //grpc_server:grpc_server
 ```
 
 The above command starts the server and keeps it running for five minutes. If
@@ -605,7 +608,7 @@ For example, to set a maximum server lifetime of ten seconds, run:
 
 ```bash
 $ bazel run --config=sgx-sim \
-    //asylo/examples/grpc_server:grpc_server -- \
+    //grpc_server:grpc_server -- \
     --server_max_lifetime=10
 ```
 
@@ -616,7 +619,7 @@ For example, to make the server listen on port 62831, run:
 
 ```bash
 $ bazel run --config=sgx-sim \
-    //asylo/examples/grpc_server:grpc_server -- \
+    //grpc_server:grpc_server -- \
     --port=62831
 ```
 

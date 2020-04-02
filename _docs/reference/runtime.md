@@ -566,7 +566,8 @@ host, it will be invoked on the corresponding file on the host.
 #### `ioctl`
 
 `ioctl` is implemented for secure path file descriptors. Currently `ioctl` only
-accepts the `ENCLAVE_STORAGE_SET_KEY` request.
+accepts the `ENCLAVE_STORAGE_SET_KEY` request defined in
+`asylo/secure_storage.h`.
 
 If called on a file descriptor for anything other than a secure path, or given
 an invalid request, `ioctl` will error, set errno to `ENOSYS` and return -1.
@@ -1053,6 +1054,15 @@ the filename and times variable directly.
 
 When `utimes` is called inside an enclave it makes the call on the host passing
 the filename and times variable directly.
+
+### xattr.h
+
+#### `get/set/listattr`
+
+For all the xattr calls, including {get, set, list}attr, {get, set, list}lattr,
+and {get, set, list}fxattr, when they are invoked from inside the enclave, they
+are deligated to the host and the correponding extended attributes of the file
+is get/set/listed.
 
 [^1]: The current implementation does not support multiple enclaves registering
     the same signal. If that happens, the latter will overwrite the former.

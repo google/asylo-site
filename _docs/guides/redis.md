@@ -61,9 +61,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # Asylo
 http_archive(
     name = "com_google_asylo",
-    urls = ["https://github.com/google/asylo/archive/v0.4.1.tar.gz"],
-    sha256 = "6eb3f8ae4dd87a43d337286896874b47674aad1eff5c3568bd69a3d0bc5b26c0",
-    strip_prefix = "asylo-0.4.1",
+    urls = ["https://github.com/google/asylo/archive/v0.5.2.tar.gz"],
+    sha256 = "7a32cb64b3f5cb2f2716eef063db0caccf7bafd9c771183b3e0146df2bc1697d",
+    strip_prefix = "asylo-0.5.2",
 )
 
 # Redis
@@ -84,7 +84,7 @@ sgx_deps()
 
 This bazel rule imports Asylo and Redis. To build Redis with Bazel, Asylo
 provides the BUILD file for Redis 5.0.7, located at
-`@com_google_asylo/asylo/distrib/redis.BUILD`.
+`@com_google_asylo//asylo/distrib/redis.BUILD`.
 
 #### Add .bazelrc
 
@@ -138,7 +138,7 @@ docker run -it --rm \
     --tmpfs /root/.cache/bazel:exec \
     -w /opt/my-project \
     --network host \
-    gcr.io/asylo-framework/asylo:buildenv-v0.4.1
+    gcr.io/asylo-framework/asylo:buildenv-v0.5.2
 ```
 
 Here `-v` maps the current workspace to the directory in Docker, and `-w` sets
@@ -258,7 +258,7 @@ docker run -it --rm \
     --tmpfs /root/.cache/bazel:exec \
     -w /opt/my-project \
     --network host \
-    gcr.io/asylo-framework/asylo:buildenv-v0.4.1
+    gcr.io/asylo-framework/asylo:buildenv-v0.5.2
 ```
 
 The SGX capabilities are propagated by the docker flags `--device=/dev/isgx` and

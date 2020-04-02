@@ -27,7 +27,10 @@ policies on two gRPC endpoints, and how to enforce a per-call authorization
 policy based on enclave identity in the gRPC server.
 
 The source files for this example are located in the
-[asylo/examples/secure_grpc](https://github.com/google/asylo/blob/master/asylo/examples/secure_grpc) folder.
+[secure_grpc](https://github.com/google/asylo-examples/tree/master/secure_grpc)
+directory of [asylo-examples](https://github.com/google/asylo-examples).
+Download the latest release
+[here](https://github.com/google/asylo-examples/releases).
 
 This guide builds on the concepts introduced in the
 [Asylo gRPC Server Example]({{home}}/docs/guides/grpc_server.html).
@@ -88,8 +91,8 @@ Build and run the server enclave with the following command:
 
 ```bash
 $ bazel run --config=sgx-sim \
-   //asylo/examples/secure_grpc:grpc_server -- \
-   --acl="$(cat asylo/examples/secure_grpc/acl_isvprodid_2.textproto)"
+   //secure_grpc:grpc_server -- \
+   --acl="$(cat secure_grpc/acl_isvprodid_2.textproto)"
 ```
 
 There is one small difference between the invocation in this example and in the
@@ -106,7 +109,7 @@ Run the client enclave in a separate terminal, passing the server’s port in
 
 ```bash
 $ bazel run --config=sgx-sim \
-  //asylo/examples/secure_grpc:grpc_client -- \
+  //secure_grpc:grpc_client -- \
   --word_to_translate="asylo" \
   --port=<PORT>
 ```
@@ -210,15 +213,15 @@ signer-assigned identity:
 
 ```bash
 $ bazel run --config=sgx-sim \
-   //asylo/examples/secure_grpc:grpc_server -- \
-   --acl="$(cat asylo/examples/secure_grpc/acl_isvprodid_3.textproto)"
+   //secure_grpc:grpc_server -- \
+   --acl="$(cat secure_grpc/acl_isvprodid_3.textproto)"
 ```
 
 Now, run the client enclave using the same command as before:
 
 ```bash
 $ bazel run --config=sgx-sim \
-  //asylo/examples/secure_grpc:grpc_client -- \
+  //secure_grpc:grpc_client -- \
   --word_to_translate="asylo" \
   --port=<PORT>
 ```
@@ -294,8 +297,8 @@ match_spec: {
 
 ```bash
 $ bazel run --config=sgx-sim \
-   //asylo/examples/secure_grpc:grpc_server -- \
-   --acl="$(cat asylo/examples/secure_grpc/acl_non_debug.textproto)"
+   //secure_grpc:grpc_server -- \
+   --acl="$(cat secure_grpc/acl_non_debug.textproto)"
 ```
 
 As expected, the RPC fails in this case due to the peer’s DEBUG bit being set.
@@ -318,7 +321,7 @@ mode. This requires configuring the `debug` field in the enclave's
 
 ```bash
 $ bazel run --config=sgx-sim \
-  //asylo/examples/secure_grpc:grpc_client -- \
+  //secure_grpc:grpc_client -- \
   --word_to_translate="asylo" \
   --debug=false \
   --port=<PORT>
@@ -338,13 +341,13 @@ with the `--config=sgx` option and then re-run the example.
 
 ```bash
 $ bazel run --config=sgx \
-   //asylo/examples/secure_grpc:grpc_server -- \
-   --acl="$(cat asylo/examples/secure_grpc/acl_non_debug.textproto)"
+   //secure_grpc:grpc_server -- \
+   --acl="$(cat secure_grpc/acl_non_debug.textproto)"
 ```
 
 ```bash
 $ bazel run --config=sgx \
-  //asylo/examples/secure_grpc:grpc_client -- \
+  //secure_grpc:grpc_client -- \
   --word_to_translate="asylo" \
   --debug=false \
   --port=<PORT>

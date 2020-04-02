@@ -6,6 +6,8 @@ overview: Build rules for defining enclaves and tests.
 
 location: /_docs/reference/api/bazel/asylo_bzl.md
 
+order: 40
+
 layout: docs
 
 type: markdown
@@ -991,7 +993,7 @@ an error message stating that the file is in the wrong format.
 ## enclave_build_test
 
 <pre>
-enclave_build_test(<a href="#enclave_build_test-name">name</a>, <a href="#enclave_build_test-enclaves">enclaves</a>, <a href="#enclave_build_test-tap">tap</a>, <a href="#enclave_build_test-tags">tags</a>, <a href="#enclave_build_test-name_by_backend">name_by_backend</a>, <a href="#enclave_build_test-backends">backends</a>)
+enclave_build_test(<a href="#enclave_build_test-name">name</a>, <a href="#enclave_build_test-enclaves">enclaves</a>, <a href="#enclave_build_test-tags">tags</a>, <a href="#enclave_build_test-name_by_backend">name_by_backend</a>, <a href="#enclave_build_test-backends">backends</a>)
 </pre>
 
 Tests that the given enclaves build in the specified backends.
@@ -1021,12 +1023,6 @@ Tests that the given enclaves build in the specified backends.
         <p>
           A list of enclave labels.
         </p>
-      </td>
-    </tr>
-    <tr id="enclave_build_test-tap">
-      <td><code>tap</code></td>
-      <td>
-        optional. default is <code>False</code>
       </td>
     </tr>
     <tr id="enclave_build_test-tags">
@@ -1407,7 +1403,7 @@ This macro invokes enclave_test with the "asylo-sgx" tag added.
 ## sign_enclave_with_untrusted_key
 
 <pre>
-sign_enclave_with_untrusted_key(<a href="#sign_enclave_with_untrusted_key-name">name</a>, <a href="#sign_enclave_with_untrusted_key-unsigned">unsigned</a>, <a href="#sign_enclave_with_untrusted_key-key">key</a>, <a href="#sign_enclave_with_untrusted_key-backends">backends</a>, <a href="#sign_enclave_with_untrusted_key-config">config</a>, <a href="#sign_enclave_with_untrusted_key-testonly">testonly</a>, <a href="#sign_enclave_with_untrusted_key-name_by_backend">name_by_backend</a>)
+sign_enclave_with_untrusted_key(<a href="#sign_enclave_with_untrusted_key-name">name</a>, <a href="#sign_enclave_with_untrusted_key-unsigned">unsigned</a>, <a href="#sign_enclave_with_untrusted_key-key">key</a>, <a href="#sign_enclave_with_untrusted_key-backends">backends</a>, <a href="#sign_enclave_with_untrusted_key-config">config</a>, <a href="#sign_enclave_with_untrusted_key-testonly">testonly</a>, <a href="#sign_enclave_with_untrusted_key-name_by_backend">name_by_backend</a>, <a href="#sign_enclave_with_untrusted_key-visibility">visibility</a>)
 </pre>
 
 Signs an unsigned enclave according the the backend's signing procedure.
@@ -1486,6 +1482,15 @@ Signs an unsigned enclave according the the backend's signing procedure.
         <p>
           An optional dictionary from backend label to backend-
   specific target label.
+        </p>
+      </td>
+    </tr>
+    <tr id="sign_enclave_with_untrusted_key-visibility">
+      <td><code>visibility</code></td>
+      <td>
+        optional. default is <code>None</code>
+        <p>
+          Optional target visibility.
         </p>
       </td>
     </tr>

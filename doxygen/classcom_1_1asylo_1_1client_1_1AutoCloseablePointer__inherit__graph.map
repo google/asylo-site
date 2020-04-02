@@ -1,0 +1,4 @@
+<map id="com.asylo.client.AutoCloseablePointer" name="com.asylo.client.AutoCloseablePointer">
+<area shape="rect" id="node3" href="$classcom_1_1asylo_1_1client_1_1EnclaveClient.html" title="EnclaveClient class which provides methods for invoking enclave&#39;s entry points. " alt="" coords="5,169,189,211"/>
+<area shape="rect" id="node4" href="$classcom_1_1asylo_1_1client_1_1EnclaveManager.html" title="A manager class responsible for creating and managing enclave instances. " alt="" coords="213,169,397,211"/>
+</map>

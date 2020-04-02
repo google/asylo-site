@@ -2,6 +2,7 @@ var searchData=
 [
   ['secret_5fsealer_2eh',['secret_sealer.h',['../secret__sealer_8h.html',1,'']]],
   ['sgx_5fidentity_5futil_2eh',['sgx_identity_util.h',['../sgx__identity__util_8h.html',1,'']]],
+  ['sgx_5fintel_5fecdsa_5fqe_5fremote_5fassertion_5fverifier_2eh',['sgx_intel_ecdsa_qe_remote_assertion_verifier.h',['../sgx__intel__ecdsa__qe__remote__assertion__verifier_8h.html',1,'']]],
   ['sgx_5flocal_5fassertion_5fgenerator_2eh',['sgx_local_assertion_generator.h',['../sgx__local__assertion__generator_8h.html',1,'']]],
   ['sgx_5flocal_5fassertion_5fverifier_2eh',['sgx_local_assertion_verifier.h',['../sgx__local__assertion__verifier_8h.html',1,'']]],
   ['sgx_5flocal_5fcredentials_5foptions_2eh',['sgx_local_credentials_options.h',['../sgx__local__credentials__options_8h.html',1,'']]],
