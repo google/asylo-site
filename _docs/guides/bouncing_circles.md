@@ -19,6 +19,9 @@ toc: true
 
 ## Introduction
 
+*Disclaimer: Aspects of this guide need to be updated for the latest Asylo
+release and may currently experience issues.*
+
 This guide demonstrates more elaborate usage of Asylo with a Remote Backend. It
 assumes the reader has knowledge introduced in the
 [Remote Quickstart Guide]({{home}}/docs/guides/remote_quickstart.html).

@@ -1,5 +1,7 @@
 <map id="asylo::EnclaveAssertionGenerator" name="asylo::EnclaveAssertionGenerator">
-<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="5,162,223,189"/>
-<area shape="rect" id="node4" href="$classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="247,155,431,196"/>
-<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="107,5,345,32"/>
+<area shape="rect" id="node3" href="$classasylo_1_1NullAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for null assertions. ..." alt="" coords="585,5,803,32"/>
+<area shape="rect" id="node4" href="$classasylo_1_1SgxAgeRemoteAssertionGenerator.html" title="A thread&#45;safe implementation of the EnclaveAssertionGenerator interface for SGX remote assertions gen..." alt="" coords="581,57,807,98"/>
+<area shape="rect" id="node5" href="$classasylo_1_1SgxIntelEcdsaQeRemoteAssertionGenerator.html" title="Implementation of EnclaveAssertionGenerator that generates assertions using the Intel ECDSA quoting e..." alt="" coords="582,122,806,163"/>
+<area shape="rect" id="node6" href="$classasylo_1_1SgxLocalAssertionGenerator.html" title="An implementation of the EnclaveAssertionGenerator interface for SGX local assertions. " alt="" coords="602,187,786,229"/>
+<area shape="rect" id="node2" href="$classasylo_1_1EnclaveAssertionAuthority.html" title="An EnclaveAssertionAuthority is an authority for assertions of a particular identity type..." alt="" coords="5,97,243,124"/>
 </map>

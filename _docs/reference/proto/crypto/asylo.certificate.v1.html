@@ -1,0 +1,283 @@
+---
+title: CSR, CRL, Certificate, and Certificate Chain
+overview: Certificate-related protos
+location: https://asylo.dev/docs/reference/proto/crypto/asylo.certificate.v1.html
+layout: protoc-gen-docs
+generator: protoc-gen-docs
+redirect_from: /docs/reference/proto/crypto/certificate.html
+number_of_entries: 7
+---
+<p>This package defines certificate-related messages.</p>
+
+<h2 id="Certificate">Certificate</h2>
+<section>
+<p>A certificate for a public key.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Certificate-format">
+<td><code>format</code></td>
+<td><code><a href="#Certificate-CertificateFormat">CertificateFormat</a></code></td>
+<td>
+<p>The format of the certificate in |data|. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Certificate-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+<p>The raw bytes of an encoded certificate. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="Certificate-CertificateFormat">Certificate.CertificateFormat</h2>
+<section>
+<p>Defines different certificate formats.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Certificate-CertificateFormat-UNKNOWN">
+<td><code>UNKNOWN</code></td>
+<td>
+</td>
+</tr>
+<tr id="Certificate-CertificateFormat-X509_DER">
+<td><code>X509_DER</code></td>
+<td>
+<p>An X.509 certificate encoded in DER format (.der file).</p>
+
+</td>
+</tr>
+<tr id="Certificate-CertificateFormat-X509_PEM">
+<td><code>X509_PEM</code></td>
+<td>
+<p>An X.509 certificate encoded in PEM format (.pem file).</p>
+
+</td>
+</tr>
+<tr id="Certificate-CertificateFormat-SGX_ATTESTATION_KEY_CERTIFICATE">
+<td><code>SGX_ATTESTATION_KEY_CERTIFICATE</code></td>
+<td>
+<p>A serialized sgx.AttestationKeyCertificate proto for an SGX attestation
+key.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="CertificateChain">CertificateChain</h2>
+<section>
+<p>A chain of certificates. In general, the following properties apply:</p>
+
+<ul>
+<li>The first certificate in the chain is the end-entity certificate. This
+certificate belongs to an entity that is presenting a certificate chain in
+order to prove a public key trustworthy.</li>
+<li>Certificates in the range [1, N-1] belong to intermediate certificate
+authorities.</li>
+<li>The last certificate in the chain represents the root certificate. This
+certificate is self-signed, and belongs to an entity that is trusted by the
+relying party for some out-of-band reason.</li>
+<li>A certificate with index i in the range [0, N-1] is signed by the private
+key corresponding to the certificate with index i+1.</li>
+</ul>
+
+<p>Additional properties may apply for particular certificate types.</p>
+
+<p>Note that a CertificateChain may use more than one certificate format.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateChain-certificates">
+<td><code>certificates</code></td>
+<td><code><a href="#Certificate">Certificate[]</a></code></td>
+<td>
+<p>A chain of certificates.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="CertificateRevocationList">CertificateRevocationList</h2>
+<section>
+<p>A Certificate Revocation List (CRL).</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateRevocationList-format">
+<td><code>format</code></td>
+<td><code><a href="#CertificateRevocationList-CertificateRevocationListFormat">CertificateRevocationListFormat</a></code></td>
+<td>
+<p>The format of the certificate revocation list in |data|. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="CertificateRevocationList-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+<p>The raw bytes of an encoded certificate revocation list. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="CertificateRevocationList-CertificateRevocationListFormat">CertificateRevocationList.CertificateRevocationListFormat</h2>
+<section>
+<p>Defines different certificate revocation list formats.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateRevocationList-CertificateRevocationListFormat-UNKNOWN">
+<td><code>UNKNOWN</code></td>
+<td>
+</td>
+</tr>
+<tr id="CertificateRevocationList-CertificateRevocationListFormat-X509_DER">
+<td><code>X509_DER</code></td>
+<td>
+<p>An X.509 certificate revocation list in DER format (.der file).</p>
+
+</td>
+</tr>
+<tr id="CertificateRevocationList-CertificateRevocationListFormat-X509_PEM">
+<td><code>X509_PEM</code></td>
+<td>
+<p>An X.509 certificate revocation list in PEM format (.pem file).</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="CertificateSigningRequest">CertificateSigningRequest</h2>
+<section>
+<p>A certificate signing request (CSR) for a public key.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateSigningRequest-format">
+<td><code>format</code></td>
+<td><code><a href="#CertificateSigningRequest-CertificateSigningRequestFormat">CertificateSigningRequestFormat</a></code></td>
+<td>
+<p>The format of the CSR in |data|. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="CertificateSigningRequest-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+<p>The raw bytes of an encoded CSR. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="CertificateSigningRequest-CertificateSigningRequestFormat">CertificateSigningRequest.CertificateSigningRequestFormat</h2>
+<section>
+<p>Defines different CSR formats.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateSigningRequest-CertificateSigningRequestFormat-UNKNOWN">
+<td><code>UNKNOWN</code></td>
+<td>
+</td>
+</tr>
+<tr id="CertificateSigningRequest-CertificateSigningRequestFormat-PKCS10_DER">
+<td><code>PKCS10_DER</code></td>
+<td>
+<p>A PKCS #10 certificate request encoded in DER format (.der file).</p>
+
+</td>
+</tr>
+<tr id="CertificateSigningRequest-CertificateSigningRequestFormat-PKCS10_PEM">
+<td><code>PKCS10_PEM</code></td>
+<td>
+<p>A PKCS #10 certificate request encoded in PEM format (.pem file).</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>

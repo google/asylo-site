@@ -1,6 +1,6 @@
 <map id="asylo/identity/enclave_assertion_authority_configs.h" name="asylo/identity/enclave_assertion_authority_configs.h">
-<area shape="rect" id="node7" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1366,117,1517,143"/>
-<area shape="rect" id="node11" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="339,295,485,322"/>
-<area shape="rect" id="node18" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1375,213,1513,240"/>
-<area shape="rect" id="node23" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1211,295,1386,322"/>
+<area shape="rect" id="node9" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1751,117,1902,143"/>
+<area shape="rect" id="node13" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="339,295,485,322"/>
+<area shape="rect" id="node20" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1449,213,1588,240"/>
+<area shape="rect" id="node26" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1282,295,1457,322"/>
 </map>

@@ -6,7 +6,7 @@ overview: An authenticated Diffie-Hellman key-negotiation protocol for secure ch
 
 location: /_docs/concepts/ekep.md
 
-order: 12
+order: 50
 
 layout: docs
 
@@ -27,13 +27,13 @@ security stack to establish secure gRPC sessions. EKEP is based on the
 While it follows the fundamental principles of the ALTS handshake protocol, EKEP
 differs from the ALTS handshake protocol in the following aspects:
 
-1.  EKEP always uses ephemeral Diffie-Hellman keys. If both participants comply,
-    then perfect forward secrecy is guaranteed. Session resumption is not
-    supported in EKEP. ALTS supports ephemeral Diffie-Hellman keys, but also
+1.  EKEP always uses ephemeral Diffie-Hellman keys. The use of ephemeral keys by
+    both participants guarantees perfect forward secrecy. Session resumption is
+    not supported in EKEP. ALTS supports ephemeral Diffie-Hellman keys, but also
     supports session resumption based on previously-generated resumption
-    tickets. Session resumption was dropped to keep the protocol and its
-    implementation simple. We may revisit this limitation in the future if there
-    is a strong need to support session resumption.
+    tickets. Session resumption was dropped from EKEP to keep the protocol and
+    its implementation simple. We may revisit this limitation in the future if
+    there is a strong need to support session resumption.
 1.  EKEP requires that participants present credentials that are
     cryptographically bound to a challenge provided by their peer during the
     handshake. This prevents attackers that steal a participant's ephemeral
@@ -138,7 +138,7 @@ message Assertion {
 }
 ```
 
-The `description` field describes two aspects of the assertion:
+The `description` field describes the assertion, including:
 
 *   The type of enclave identity that is asserted
 *   The assertion authority that is associated with the assertion
@@ -163,7 +163,7 @@ to generate and verify the assertion. One possible use of this field is to
 encode a serialized protocol-buffer message.
 
 To illustrate an example of an assertion, we point readers to the
-[SGX local assertion](https://github.com/google/asylo/blob/master/asylo/identity/sgx/local_assertion.proto),
+[SGX local assertion](https://github.com/google/asylo/blob/master/asylo/identity/attestation/sgx/internal/local_assertion.proto),
 which is an assertion of an SGX enclave's code identity. Such an assertion can
 be described by setting the description to an identity type of `CODE_IDENTITY`
 and the `"SGX Local"` assertion authority. The `assertion` field itself is set
@@ -290,53 +290,6 @@ message LocalAssertionRequestAdditionalInfo {
 }
 ```
 
-## Framing
-
-EKEP messages are framed as shown below (offsets are shown in bytes):
-
- {% include figure.html width='80%' ratio='46.36%' img='./images/ekep-frame.svg' alt='EKEP framing' title='EKEP framing' caption='EKEP framing' %} 
-
-`size` and `message-type` are both 32-bit little-endian unsigned integers.
-`message` is a serialized protocol buffer message.
-
-## Transcript
-
-An EKEP _transcript_ is the concatenation of all [handshake frames](#framing)
-exchanged so far in an EKEP handshake. Handshake frames are concatenated in the
-order in which they arrive.
-
-For example, consider the transcript after the `SERVER_ID` message is received.
-
-We use the following notation:
-
-*   **P<sub>C</sub>** is the EKEP frame containing the `CLIENT_PRECOMMIT`
-    message
-*   **P<sub>S</sub>** is the EKEP frame containing the `SERVER_PRECOMMIT`
-    message
-*   **I<sub>C</sub>** is the EKEP frame containing the `CLIENT_ID` message
-*   **I<sub>S</sub>** is the EKEP frame containing the `SERVER_ID` message
-
-Using this notation, the transcript at this stage in the protocol is computed as
-follows:
-
-<code>transcript = (**P<sub>C</sub>** || **P<sub>S</sub>** || **I<sub>C</sub>**
-|| **I<sub>S</sub>**)</code>
-
-Note that a transcript is a complete and cumulative record of the data sent
-during the handshake (i.e. no data added to the transcript is ever removed).
-Additionally, since participants exchange nonces and ephemeral DH public keys
-during an EKEP handshake, the transcript for an EKEP session contains data that
-is unique to that session. This provides the useful property that a transcript
-of an EKEP handshake uniquely represents that handshake. It follows that a
-cryptographic hash computed over a transcript also uniquely represents that EKEP
-handshake.
-
-A cryptographic hash of an EKEP transcript is computed using the negotiated
-ciphersuite, and is used at various points during the protocol, including:
-
-*   [Assertion Generation and Verification](#assertion-generation-and-verification)
-*   [Deriving EKEP Secrets](#deriving-ekep-secrets)
-
 ## Handshake
 
 ### Message Types
@@ -367,8 +320,71 @@ participants.
 
  {% include figure.html width='80%' ratio='100%' img='./images/ekep-handshake.svg' alt='EKEP Handshake' title='EKEP Handshake' caption='EKEP Handshake' %} 
 
-Subsequent sections describe the formats of EKEP handshake messages and the
-message-specific verification procedures in detail.
+Subsequent sections describe the formats and use of EKEP handshake messages, as
+well as the message-specific verification procedures in detail.
+
+## Framing
+
+EKEP messages are framed as shown below (offsets are shown in bytes):
+
+ {% include figure.html width='80%' ratio='46.36%' img='./images/ekep-frame.svg' alt='EKEP framing' title='EKEP framing' caption='EKEP framing' %} 
+
+`size` and `message-type` are both 32-bit little-endian unsigned integers.
+`message` is a serialized protocol buffer message.
+
+## Transcript
+
+An EKEP _transcript_ is the concatenation of all [handshake frames](#framing)
+exchanged up to a certain point in an EKEP handshake. Handshake frames are
+concatenated in the order in which they arrive.
+
+A transcript is a complete and cumulative record of the data sent during the
+handshake (data is appended to the transcript, but never removed). Additionally,
+since participants exchange nonces and ephemeral DH public keys during an EKEP
+handshake, the transcript for an EKEP session contains data that is unique to
+that session. This provides the useful property that a transcript of an EKEP
+handshake uniquely represents that handshake. It follows that a cryptographic
+hash computed over a transcript also uniquely represents that EKEP handshake.
+
+Transcripts are used at various points during the protocol, including
+[Assertion Generation and Verification](#assertion-generation-and-verification)
+and [Deriving EKEP Secrets](#deriving-ekep-secrets).
+
+There are a total of 6 transcripts hashes in EKEP. We define them using the
+following notation:
+
+*   **P<sub>C</sub>** is the EKEP frame containing the `CLIENT_PRECOMMIT`
+    message
+*   **P<sub>S</sub>** is the EKEP frame containing the `SERVER_PRECOMMIT`
+    message
+*   **I<sub>C</sub>** is the EKEP frame containing the `CLIENT_ID` message
+*   **I<sub>S</sub>** is the EKEP frame containing the `SERVER_ID` message
+*   **F<sub>C</sub>** is the EKEP frame containing the `CLIENT_FINISH` message
+*   **F<sub>S</sub>** is the EKEP frame containing the `SERVER_FINISH` message
+*   **H** is the cryptographic hash function from a negotiated ciphersuite
+
+The transcript hashes are defined as follows:
+
+<code>**T<sub>0</sub>** = H(**P<sub>C</sub>**)</code>
+
+<code>**T<sub>1</sub>** = H(**P<sub>C</sub>** || **P<sub>S</sub>**)</code>
+
+<code>**T<sub>2</sub>** = H(**P<sub>C</sub>** || **P<sub>S</sub>** ||
+**I<sub>C</sub>**)</code>
+
+<code>**T<sub>3</sub>** = H(**P<sub>C</sub>** || **P<sub>S</sub>** ||
+**I<sub>C</sub>** || **I<sub>S</sub>**)</code>
+
+<code>**T<sub>4</sub>** = H(**P<sub>C</sub>** || **P<sub>S</sub>** ||
+**I<sub>C</sub>** || **I<sub>S</sub>** || **F<sub>S</sub>**)</code>
+
+<code>**T<sub>5</sub>** = H(**P<sub>C</sub>** || **P<sub>S</sub>** ||
+**I<sub>C</sub>** || **I<sub>S</sub>** || **F<sub>S</sub>** ||
+**F<sub>C</sub>**)</code>
+
+Note that **T<sub>0</sub>** and **T<sub>4</sub>** are not actually used in any
+derivations during the protocol. They are listed here for completeness, and to
+assist in tracking incremental changes to the transcript.
 
 ## `ABORT` Message
 
@@ -515,8 +531,8 @@ It has the following constraints:
 *   `dh_public_key` is a valid public key for the negotiated cipher suite
 *   `assertions` is the set of assertions requested by the server in the
     `SERVER_PRECOMMIT` message
-*   Each assertion in `assertions` is bound to `dh_public_key` and the handshake
-    transcript
+*   Each assertion in `assertions` is bound to `dh_public_key` and the
+    [handshake transcript](#transcript) **T<sub>1</sub>**
 
 #### Server validation of `CLIENT_ID`
 
@@ -527,15 +543,15 @@ included in that message. The server sends an `ABORT` message with a
 *   One or more of the assertions in `assertions` cannot be verified
 *   One or more of the assertions in `assertions` is not bound to
     `dh_public_key`
-*   One or more of the assertions in `assertions` is not bound to the handshake
-    transcript containing messages up to and including the `SERVER_PRECOMMIT`
-    message
+*   One or more of the assertions in `assertions` is not bound to the
+    [handshake transcript](#transcript) **T<sub>1</sub>**
 *   `assertions` is not the set of assertions requested by the server in
     `server_requests` of the `SERVER_PRECOMMIT` message
 
 If the `CLIENT_ID` message passes validation, the server uses its own DH private
 key, the client's `dh_public_key`, and the negotiated Diffie-Hellman group to
-generate a shared secret.
+generate a shared secret according to
+[Deriving EKEP Secrets](#deriving-ekep-secrets).
 
 ## `SERVER_ID` Message
 
@@ -559,8 +575,8 @@ It has the following constraints:
 *   `dh_public_key` is a valid public key for the negotiated cipher suite
 *   `assertions` is the set of assertions offered by the server in the
     `SERVER_PRECOMMIT` message
-*   Each assertion in `assertions` is bound to `dh_public_key` and the handshake
-    transcript
+*   Each assertion in `assertions` is bound to `dh_public_key` and the
+    [handshake transcript](#transcript) **T<sub>2</sub>**
 
 #### Client validation of `SERVER_ID`
 
@@ -571,14 +587,15 @@ provided by the server. The client sends an `ABORT` message with a
 *   One or more of the assertions in `assertions` cannot be verified
 *   One or more of the assertions in `assertions` is not bound to
     `dh_public_key`
-*   One or more of the assertions in `assertions` is not bound to the handshake
-    transcript containing messages up to and including the `CLIENT_ID` message
+*   One or more of the assertions in `assertions` is not bound to the
+    [handshake transcript](#transcript) **T<sub>2</sub>**
 *   `assertions` is not the set of assertions offered by the server in
     `server_offers` of the `SERVER_PRECOMMIT` message
 
 If the `SERVER_ID` message passes validation, the client uses its own DH private
 key, the server's `dh_public_key`, and the negotiated Diffie-Hellman group to
-generate a shared secret.
+generate a shared secret according to
+[Deriving EKEP Secrets](#deriving-ekep-secrets).
 
 ## `SERVER_FINISH` Message
 
@@ -591,14 +608,14 @@ is done as described in [Deriving EKEP Secrets](#deriving-ekep-secrets).
 The server then derives `handshake_authenticator` as follows:
 
 <code>handshake_authenticator = HMAC-H(**A<sub>S</sub>**,
-**T<sub>S</sub>**)</code>
+**X<sub>S</sub>**)</code>
 
 We use the following definitions in the above computation:
 
 *   **H** is the hash function from the negotiated `HandshakeCipher`
 *   **HMAC-H** is the HMAC function (as defined in
     [RFC 2104](https://www.ietf.org/rfc/rfc2104.txt)) instantiated with **H**
-*   **T<sub>S</sub>** is `"EKEP Handshake v1: Server Finish"` as a UTF-8
+*   **X<sub>S</sub>** is `"EKEP Handshake v1: Server Finish"` as a UTF-8
     encoded, non null-terminated string, and is used as the `text` parameter.
 *   **A<sub>S</sub>** is the Authenticator Secret computed by the server, and is
     used as the key.
@@ -617,9 +634,9 @@ message ServerFinish {
 The client verifies that:
 
 <code>handshake_authenticator ≟ HMAC-H(**A<sub>C</sub>**,
-**T<sub>S</sub>**)</code>
+**X<sub>S</sub>**)</code>
 
-Where **T<sub>S</sub>**, **A<sub>C</sub>**, and **HMAC-H** have the same
+Where **X<sub>S</sub>**, **A<sub>C</sub>**, and **HMAC-H** have the same
 definitions as before.
 
 If the client's HMAC value does not match, the client aborts the handshake by
@@ -639,14 +656,14 @@ DH private key, and the negotiated Diffie-Hellman group. The client then derives
 The client then computes `handshake_authenticator` as follows:
 
 <code>handshake_authenticator = HMAC-H(**A<sub>C</sub>**,
-**T<sub>C</sub>**</code>)
+**X<sub>C</sub>**</code>)
 
 We use the following definitions in the above computation:
 
 *   **H** is the hash function from the negotiated `HandshakeCipher`
 *   **HMAC-H** is the HMAC function (as defined in
     [RFC 2104](https://www.ietf.org/rfc/rfc2104.txt)) instantiated with **H**
-*   **T<sub>C</sub>** is `"EKEP Handshake v1: Client Finish"` as a UTF-8
+*   **X<sub>C</sub>** is `"EKEP Handshake v1: Client Finish"` as a UTF-8
     encoded, non null-terminated string, and is used as the `text` parameter.
 *   **A<sub>C</sub>** is the Authenticator Secret computed by the client, and is
     used as the key.
@@ -665,9 +682,9 @@ message ClientFinish {
 The server verifies that:
 
 <code>handshake_authenticator ≟ HMAC-H(**A<sub>S</sub>**,
-**T<sub>C</sub>**)</code>
+**X<sub>C</sub>**)</code>
 
-Where **T<sub>C</sub>**, **A<sub>S</sub>**, and **HMAC-H** have the same
+Where **X<sub>C</sub>**, **A<sub>S</sub>**, and **HMAC-H** have the same
 definitions as before.
 
 If the server's HMAC value does not match, the server silently closes the
@@ -684,16 +701,11 @@ derive two additional secrets: a Master Secret **M** and an Authenticator Secret
 
 We use the following definitions:
 
+*   **H** is the hash function from the negotiated `HandshakeCipher`
 *   **HKDF-Extract** and **HKDF-Expand** are used as defined in
     [RFC-5869](https://tools.ietf.org/html/rfc5869). Both are instantiated using
     the hash function **H**.
-*   **P<sub>C</sub>** is the EKEP frame containing the `CLIENT_PRECOMMIT`
-    message
-*   **P<sub>S</sub>** is the EKEP frame containing the `SERVER_PRECOMMIT`
-    message
-*   **I<sub>C</sub>** is the EKEP frame containing the `CLIENT_ID` message
-*   **I<sub>S</sub>** is the EKEP frame containing the `SERVER_ID` message
-*   **H** is the hash function from the negotiated `HandshakeCipher`
+*   **T<sub>3</sub>** is the value defined in [Transcript](#transcript)
 *   **S<sub>1</sub>** is `"EKEP Handshake v1"` as a UTF-8 encoded, non
     null-terminated string, and is used as the `salt` parameter in
     **HKDF-Extract**.
@@ -707,9 +719,8 @@ A pseudo-random key **K<sub>1</sub>** is derived as follows:
 
 **M** and **A** are derived as follows:
 
-<code>(**M** || **A**) = HKDF-Expand(**K<sub>1</sub>**, **H**(**P<sub>C</sub>**
-|| **P<sub>S</sub>** || **I<sub>C</sub>** || **I<sub>S</sub>**)), (512 * 2) /
-8)</code>
+<code>(**M** || **A**) = HKDF-Expand(**K<sub>1</sub>**, **T<sub>3</sub>**)),
+(512 * 2) / 8)</code>
 
 ## Deriving Record Protocol Secrets
 
@@ -724,8 +735,9 @@ We use the symbols defined and derived in
 [Deriving EKEP Secrets](#deriving-ekep-secrets). Additionally, we use the
 following new definitions:
 
-*   **F<sub>C</sub>** is the EKEP frame containing the `CLIENT_FINISH` message
-*   **F<sub>S</sub>** is the EKEP frame containing the `SERVER_FINISH` message
+*   **H**, **HKDF-Extract**, and **HKDF-Expand** have the same definitions as
+    above
+*   **T<sub>5</sub>** is the value defined in [Transcript](#transcript)
 *   **S<sub>2</sub>** is `"EKEP Record Protocol v1"` as a UTF-8 encoded, non
     null-terminated string
 *   **L** is the length of the key needed for the record protocol (in bytes)
@@ -735,9 +747,7 @@ follows:
 
 <code>**K<sub>2</sub>** = HKDF-Extract(**S<sub>2</sub>**, **M**)</code>
 
-<code>**X** = HKDF-Expand(**K<sub>2</sub>**, **H**(**P<sub>C</sub>** ||
-**P<sub>S</sub>** || **I<sub>C</sub>** || **I<sub>S</sub>** || **F<sub>C</sub>**
-|| **F<sub>S</sub>**), **L**)</code>
+<code>**X** = HKDF-Expand(**K<sub>2</sub>**, **T<sub>5</sub>**), **L**)</code>
 
 <!-- Footnotes themselves at the bottom. -->
 

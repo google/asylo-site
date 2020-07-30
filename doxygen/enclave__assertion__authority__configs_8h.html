@@ -79,16 +79,18 @@ $(function() {
 <code>#include &quot;asylo/crypto/certificate.pb.h&quot;</code><br />
 <code>#include &quot;asylo/identity/attestation/sgx/sgx_intel_ecdsa_qe_remote_assertion_authority_config.pb.h&quot;</code><br />
 <code>#include &quot;asylo/identity/enclave_assertion_authority_config.pb.h&quot;</code><br />
+<code>#include &quot;asylo/identity/identity_acl.pb.h&quot;</code><br />
+<code>#include &quot;asylo/identity/platform/sgx/sgx_identity.pb.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="statusor_8h_source.html">asylo/util/statusor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for enclave_assertion_authority_configs.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="enclave__assertion__authority__configs_8h__incl.png" border="0" usemap="#asylo_2identity_2enclave__assertion__authority__configs_8h" alt=""/></div>
 <map name="asylo_2identity_2enclave__assertion__authority__configs_8h" id="asylo_2identity_2enclave__assertion__authority__configs_8h">
-<area shape="rect" id="node7" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1366,117,1517,143"/>
-<area shape="rect" id="node11" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="339,295,485,322"/>
-<area shape="rect" id="node18" href="status_8h.html" title="asylo/util/status.h" alt="" coords="1375,213,1513,240"/>
-<area shape="rect" id="node23" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1211,295,1386,322"/>
+<area shape="rect" id="node9" href="statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1751,117,1902,143"/>
+<area shape="rect" id="node13" href="logging_8h.html" title="asylo/util/logging.h" alt="" coords="339,295,485,322"/>
+<area shape="rect" id="node20" href="status_8h.html" title="asylo/util/status.h" alt="" coords="1449,213,1588,240"/>
+<area shape="rect" id="node26" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1282,295,1457,322"/>
 </map>
 </div>
 </div>
@@ -112,12 +114,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a3572ca5a070eb9393fa6aee1906c2b74"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a3572ca5a070eb9393fa6aee1906c2b74">asylo::CreateSgxLocalAssertionAuthorityConfig</a> ()</td></tr>
 <tr class="memdesc:a3572ca5a070eb9393fa6aee1906c2b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX local assertion authority.  <a href="namespaceasylo.html#a3572ca5a070eb9393fa6aee1906c2b74">More...</a><br /></td></tr>
 <tr class="separator:a3572ca5a070eb9393fa6aee1906c2b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320068d1e4b8edcdf7f94a4cf2d96ef0"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a320068d1e4b8edcdf7f94a4cf2d96ef0">asylo::CreateSgxAgeRemoteAssertionAuthorityConfig</a> (Certificate intel_root_cert, std::vector&lt; Certificate &gt; certificates, std::string server_address, IdentityAclPredicate age_identity_expectation)</td></tr>
+<tr class="memdesc:a320068d1e4b8edcdf7f94a4cf2d96ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX AGE remote assertion authority.  <a href="namespaceasylo.html#a320068d1e4b8edcdf7f94a4cf2d96ef0">More...</a><br /></td></tr>
+<tr class="separator:a320068d1e4b8edcdf7f94a4cf2d96ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ed081abf7ba7312e4c1b1b2c27dd62"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ad8ed081abf7ba7312e4c1b1b2c27dd62">asylo::CreateSgxAgeRemoteAssertionAuthorityConfig</a> (std::string server_address, SgxIdentity age_identity)</td></tr>
+<tr class="memdesc:ad8ed081abf7ba7312e4c1b1b2c27dd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a configuration for the SGX AGE remote assertion authority.  <a href="namespaceasylo.html#ad8ed081abf7ba7312e4c1b1b2c27dd62">More...</a><br /></td></tr>
+<tr class="separator:ad8ed081abf7ba7312e4c1b1b2c27dd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d1b702948f22c4e04ca5129ab8284ab"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html#a6d1b702948f22c4e04ca5129ab8284ab">asylo::experimental::CreateSgxIntelEcdsaQeRemoteAssertionAuthorityConfig</a> ()</td></tr>
 <tr class="memdesc:a6d1b702948f22c4e04ca5129ab8284ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates configuration for the SGX Intel ECDSA QE remote assertion authority.  <a href="namespaceasylo_1_1experimental.html#a6d1b702948f22c4e04ca5129ab8284ab">More...</a><br /></td></tr>
 <tr class="separator:a6d1b702948f22c4e04ca5129ab8284ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ac8fbfacacf0ade898ec585ebf73a18"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html#a6ac8fbfacacf0ade898ec585ebf73a18">asylo::experimental::CreateSgxIntelEcdsaQeRemoteAssertionAuthorityConfig</a> (std::vector&lt; Certificate &gt; pck_certificate_chain)</td></tr>
-<tr class="memdesc:a6ac8fbfacacf0ade898ec585ebf73a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates configuration for the SGX Intel ECDSA QE remote assertion authority.  <a href="namespaceasylo_1_1experimental.html#a6ac8fbfacacf0ade898ec585ebf73a18">More...</a><br /></td></tr>
-<tr class="separator:a6ac8fbfacacf0ade898ec585ebf73a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac253a86ced8528f1627371c766cca5e"><td class="memItemLeft" align="right" valign="top">StatusOr&lt; EnclaveAssertionAuthorityConfig &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1experimental.html#aac253a86ced8528f1627371c766cca5e">asylo::experimental::CreateSgxIntelEcdsaQeRemoteAssertionAuthorityConfig</a> (CertificateChain pck_certificate_chain, SgxIdentity qe_identity)</td></tr>
+<tr class="memdesc:aac253a86ced8528f1627371c766cca5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates configuration for the SGX Intel ECDSA QE remote assertion authority.  <a href="namespaceasylo_1_1experimental.html#aac253a86ced8528f1627371c766cca5e">More...</a><br /></td></tr>
+<tr class="separator:aac253a86ced8528f1627371c766cca5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides functions for creating enclave assertion authority configs. </p>

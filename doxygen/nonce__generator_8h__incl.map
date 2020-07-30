@@ -1,5 +1,5 @@
 <map id="asylo/crypto/nonce_generator.h" name="asylo/crypto/nonce_generator.h">
-<area shape="rect" id="node4" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1128,95,1267,121"/>
-<area shape="rect" id="node10" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="499,177,645,203"/>
-<area shape="rect" id="node18" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1471,177,1646,203"/>
+<area shape="rect" id="node22" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="2685,102,2824,129"/>
+<area shape="rect" id="node27" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1502,191,1649,218"/>
+<area shape="rect" id="node33" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="2592,191,2767,218"/>
 </map>

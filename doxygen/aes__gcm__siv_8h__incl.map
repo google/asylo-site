@@ -1,9 +1,0 @@
-<map id="asylo/crypto/aes_gcm_siv.h" name="asylo/crypto/aes_gcm_siv.h">
-<area shape="rect" id="node8" href="$nonce__generator_8h.html" title="asylo/crypto/nonce\l_generator.h" alt="" coords="979,95,1125,136"/>
-<area shape="rect" id="node11" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1164,191,1303,218"/>
-<area shape="rect" id="node17" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="2035,281,2181,307"/>
-<area shape="rect" id="node46" href="$cleansing__types_8h.html" title="asylo/util/cleansing\l_types.h" alt="" coords="2226,95,2374,136"/>
-<area shape="rect" id="node47" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="1429,191,1622,218"/>
-<area shape="rect" id="node48" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1663,102,1814,129"/>
-<area shape="rect" id="node24" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="931,281,1106,307"/>
-</map>

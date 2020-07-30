@@ -247,7 +247,9 @@ user-defined content.
 The enclave may provide a handler that runs synchronously at the time the
 enclave is loaded by `EnclaveManager`.
 
-    virtual Status TrustedApplication::Initialize(const EnclaveConfig &config);
+```
+virtual Status TrustedApplication::Initialize(const EnclaveConfig &config);
+```
 
 The Asylo framework guarantees this entry point is invoked exactly once, and
 that no other thread may enter until this method completes successfully. If
@@ -259,8 +261,10 @@ enclave is possible.
 After initialization has succeeded, threads may enter the enclave and run the
 following handler via the client method `EnclaveClient::EnterAndRun`:
 
-    virtual Status TrustedApplication::Run(const EnclaveInput &input,
-                                           EnclaveOutput *output);
+```
+virtual Status TrustedApplication::Run(const EnclaveInput &input,
+                                       EnclaveOutput *output);
+```
 
 Many threads may invoke this entry point in parallel, so its implementation of
 `Run` must be thread safe. The application author is responsible for ensuring
@@ -270,7 +274,9 @@ that concurrent access to data is managed appropriately.
 
 The last category of enclave entry is finalization.
 
-    virtual Status TrustedApplication::Finalize(const EnclaveFinal &final);
+```
+virtual Status TrustedApplication::Finalize(const EnclaveFinal &final);
+```
 
 The Asylo runtime will make a best-effort attempt to invoke the enclave
 finalization entry point when either of the following occurs:

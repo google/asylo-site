@@ -23,6 +23,9 @@ has knowledge introduced in the
 
 ## Introduction
 
+*Disclaimer: Aspects of this guide need to be updated for the latest Asylo
+release and may currently experience issues.*
+
 ### What is an Asylo Remote Backend?
 
 An Asylo Remote Backend provides Asylo users with the capability to run a local
@@ -260,15 +263,16 @@ cc_proto_library(
     deps = [":demo_proto"],
 )
 
-sgx_unsigned_enclave(
+cc_unsigned_enclave(
     name = "demo_enclave_unsigned.so",
     srcs = ["demo_enclave.cc"],
     copts = ASYLO_DEFAULT_COPTS,
     deps = [
         ":demo_cc_proto",
+        "@com_google_absl//absl/base:core_headers",
         "@com_google_absl//absl/strings",
         "@com_google_asylo//asylo:enclave_runtime",
-        "@com_google_asylo//asylo/crypto:aes_gcm_siv",
+        "@com_google_asylo//asylo/crypto:aead_cryptor",
         "@com_google_asylo//asylo/util:cleansing_types",
         "@com_google_asylo//asylo/util:status",
     ],
@@ -344,7 +348,6 @@ mode, replace `CONFIG_TYPE=sgx` with `CONFIG_TYPE=sgx-sim`).
 
 ```bash
 export MESSAGE="Asylo Rocks" # Or another message
-export CONFIG_TYPE=sgx # Or sgx-sim if Remote Provision server isn't running on SGX-enabled hardware.
 docker run -it --net=host \
     -v ${ASYLO_SDK}:/opt/asylo/sdk \
     -v ${MY_PROJECT}:/opt/asylo/examples \
@@ -352,7 +355,7 @@ docker run -it --net=host \
     -e CONFIG_TYPE=${CONFIG_TYPE} \
     -w /opt/asylo/examples \
     gcr.io/asylo-framework/asylo:latest \
-    sh -c 'bazel run --config=${CONFIG_TYPE} --define=ASYLO_REMOTE=1 //remote/quickstart -- --message="${MESSAGE}"'
+    sh -c 'bazel run --define=ASYLO_REMOTE=1 //remote/quickstart:quickstart_sgx_sim -- --message="${MESSAGE}"'
 ```
 
 It will then print an encrypted message similar to the following:
@@ -396,12 +399,11 @@ docker run -it --net=host \
 ```
 
 Then, once it started and reported listening to the port `4321` (configurable),
-build and run the application `quickstart_remote` (to run it in simulated mode,
-replace `CONFIG_TYPE=sgx` with `CONFIG_TYPE=sgx-sim`):
+build and run the application `quickstart_remote`:
 
 ```bash
 export MESSAGE="Asylo Rocks" # Or another message
-export CONFIG_TYPE=sgx # Or sgx-sim if not running on SGX-enabled hardware.
+export CONFIG_TYPE=sgx-sim
 docker run -it --net=host \
     -v ${ASYLO_SDK}:/opt/asylo/sdk \
     -v ${MY_PROJECT}:/opt/asylo/examples \
@@ -409,5 +411,5 @@ docker run -it --net=host \
     -e CONFIG_TYPE=${CONFIG_TYPE} \
     -w /opt/asylo/examples/remote/quickstart \
     gcr.io/asylo-framework/asylo:latest \
-    ./build.sh "${MESSAGE}" ${CONFIG_TYPE}
+    ./build.sh ${CONFIG_TYPE} "${MESSAGE}"
 ```

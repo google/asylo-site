@@ -1,9 +1,0 @@
-<map id="asylo/identity/sgx" name="asylo/identity/sgx">
-<area shape="rect" id="node1" href="dir_c5a1f4e39b26462655dea91e423d91a7.html" title="sgx" alt="" coords="59,52,131,100"/>
-<area shape="rect" id="node2" href="dir_a383ceb14052bdc6be5ad395e7eec5da.html" title="attestation" alt="" coords="5,148,99,196"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000020_000013.html" title="2" alt="" coords="73,127,83,142"/>
-<area shape="rect" id="node3" href="dir_d76c6b9049ac6f6d284ddd4be15e6dfa.html" title="util" alt="" coords="57,244,129,292"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000020_000026.html" title="1" alt="" coords="109,221,118,236"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000013_000026.html" title="6" alt="" coords="79,216,88,231"/>
-<area shape="rect" id="clust1" href="dir_e1c0d852c20f7060122f8152bba123e1.html" title="identity" alt="" coords="48,16,141,111"/>
-</map>

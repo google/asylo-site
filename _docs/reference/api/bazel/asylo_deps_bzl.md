@@ -61,6 +61,18 @@ Macro to include Asylo's critical dependencies in a WORKSPACE.
 </table>
 
 
+<a name="#asylo_disable_transitions"></a>
+
+## asylo_disable_transitions
+
+<pre>
+asylo_disable_transitions()
+</pre>
+
+Serves as a workspace-wide transition-disable flag.
+
+
+
 <a name="#asylo_go_deps"></a>
 
 ## asylo_go_deps

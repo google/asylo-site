@@ -1,9 +1,12 @@
 <map id="asylo/identity/enclave_assertion_authority.h" name="asylo/identity/enclave_assertion_authority.h">
-<area shape="rect" id="node2" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="221,95,446,136"/>
-<area shape="rect" id="node5" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="643,95,851,136"/>
-<area shape="rect" id="node7" href="$sgx__intel__ecdsa__qe__remote__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_verifier.h" alt="" coords="849,184,1055,240"/>
+<area shape="rect" id="node2" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="509,95,734,136"/>
+<area shape="rect" id="node7" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1289,95,1497,136"/>
+<area shape="rect" id="node10" href="$sgx__intel__ecdsa__qe__remote__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_verifier.h" alt="" coords="1666,184,1873,240"/>
 <area shape="rect" id="node3" href="$null__assertion__generator_8h.html" title="asylo/identity/attestation\l/null/null_assertion_generator.h" alt="" coords="5,191,232,233"/>
-<area shape="rect" id="node4" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="256,184,411,240"/>
-<area shape="rect" id="node6" href="$null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="435,191,645,233"/>
-<area shape="rect" id="node8" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_verifier.h" alt="" coords="669,184,824,240"/>
+<area shape="rect" id="node4" href="$sgx__age__remote__assertion__generator_8h.html" title="asylo/identity/attestation\l/sgx/sgx_age_remote_assertion\l_generator.h" alt="" coords="257,184,485,240"/>
+<area shape="rect" id="node5" href="$sgx__intel__ecdsa__qe__remote__assertion__generator_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_generator.h" alt="" coords="509,184,733,240"/>
+<area shape="rect" id="node6" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/attestation\l/sgx/sgx_local_assertion\l_generator.h" alt="" coords="757,184,944,240"/>
+<area shape="rect" id="node8" href="$null__assertion__verifier_8h.html" title="asylo/identity/attestation\l/null/null_assertion_verifier.h" alt="" coords="969,191,1178,233"/>
+<area shape="rect" id="node9" href="$sgx__age__remote__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_age_remote_assertion\l_verifier.h" alt="" coords="1202,184,1430,240"/>
+<area shape="rect" id="node11" href="$sgx__local__assertion__verifier_8h.html" title="asylo/identity/attestation\l/sgx/sgx_local_assertion\l_verifier.h" alt="" coords="1455,184,1641,240"/>
 </map>

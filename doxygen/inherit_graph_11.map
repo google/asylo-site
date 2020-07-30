@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classasylo_1_1experimental_1_1ExecTester.html" title="Executes a subprocess. " alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node1" href="$classasylo_1_1IdentityExpectationMatcher.html" title="Defines an abstract interface that describes how to match an EnclaveIdentity against an EnclaveIdenti..." alt="" coords="5,5,197,47"/>
+<area shape="rect" id="node2" href="$classasylo_1_1NamedIdentityExpectationMatcher.html" title="A NamedIdentityExpectationMatcher is capable of matching an identity to an expectation if the identit..." alt="" coords="245,5,484,47"/>
+<area shape="rect" id="node3" href="$classasylo_1_1SgxIdentityExpectationMatcher.html" title="SgxIdentityExpectationMatcher is capable of matching SGX identities with SGX identity expectations..." alt="" coords="532,5,748,47"/>
 </map>

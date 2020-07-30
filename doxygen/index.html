@@ -92,7 +92,7 @@ $(function() {
 <h4>Running the <code>hello_world</code> example</h4>
 <p>To run the <code>hello_world</code> example, first use the following set of commands to grab the <a href="https://github.com/google/asylo-examples"><code>asylo-examples</code> repository source code</a>:</p>
 <div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">git clone https://github.com/google/asylo-examples.git &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Docker to build and run the <code>hello_world</code> application, using a simulated enclave backend:</p>
-<div class="fragment"><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">docker run -it --rm \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -v &quot;${MY_PROJECT}&quot;:/opt/my-project \</div><div class="line">    -w /opt/my-project \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    bazel run --config=sgx-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>You can also set <code>NAMES</code> to a comma-separated list of names and see the enclave's entry-point get invoked for each name.</p>
+<div class="fragment"><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">docker run -it --rm \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -v &quot;${MY_PROJECT}&quot;:/opt/my-project \</div><div class="line">    -w /opt/my-project \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    bazel run //hello_world_sgx_sim -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>You can also set <code>NAMES</code> to a comma-separated list of names and see the enclave's entry-point get invoked for each name.</p>
 <h5>Docker flags</h5>
 <p>In the above example, we use the following Docker flags:</p>
 <ul>
@@ -111,10 +111,9 @@ $(function() {
 <li><code>-v /var/run/aesmd/aesm.socket:/var/run/aesmd/aesm.socket</code> allows the container to access the Architectural Enclave Service Manager (AESM) daemon running on the host.</li>
 </ul>
 <h5>Bazel flags and workspace settings</h5>
-<p>In the above example, we use the following Bazel flags:</p>
+<p>In the above example, we use the following Bazel flag:</p>
 <ul>
-<li><code>--config=CONFIG</code> configures the Asylo toolchain to build the target for a given enclave backend. You can specify <code>--config=sgx-sim</code> to build the enclave for the Intel SGX simulation backend or <code>--config=sgx</code> to build the enclave for the Intel SGX hardware backend.</li>
-<li><code>--names="${NAMES}"</code> is the argument passed to the <code>//hello_world</code> target.</li>
+<li><code>--names="${NAMES}"</code> is the argument passed to the <code>//hello_world_sgx_sim</code> target.</li>
 </ul>
 <p>Note: The example source code includes an additional Bazel configuration file, <code>.bazelrc</code>, at the root of the source tree. Remember to copy the contents of this file into the <code>.bazelrc</code> file at the root of any future Bazel workspaces that use Asylo's toolchain.</p>
 <h4>Running your own enclave application</h4>
@@ -122,7 +121,7 @@ $(function() {
 <h4>Running an interactive terminal</h4>
 <p>You can get an interactive terminal (instead of running a single command) by omitting the <code>bazel run ...</code> part of the <code>docker</code> invocation. For instance, to run the <code>hello_world</code> example as above but in an interactive terminal, run:</p>
 <div class="fragment"><div class="line">docker run -it --rm \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -v &quot;${MY_PROJECT}&quot;:/opt/my-project \</div><div class="line">    -w /opt/my-project \</div><div class="line">    gcr.io/asylo-framework/asylo</div></div><!-- fragment --><p>This opens a terminal inside the Docker container. From this terminal, you can run Bazel as usual:</p>
-<div class="fragment"><div class="line">bazel run --config=sgx-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><h4>Running the regression tests</h4>
+<div class="fragment"><div class="line">bazel run //hello_world_sgx_sim -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><h4>Running the regression tests</h4>
 <p>To run our regression test suite, first clone the Asylo repository to a directory of your choice:</p>
 <div class="fragment"><div class="line">ASYLO_SDK=~/asylo-sdk</div><div class="line">git clone https://github.com/google/asylo.git &quot;${ASYLO_SDK}&quot;</div></div><!-- fragment --><p>The regression test suite includes tests that unit-test code directly as well as tests that run inside a simulated enclave environment. You can run it with the following command:</p>
 <div class="fragment"><div class="line">docker run -it --rm \</div><div class="line">    -v &quot;${ASYLO_SDK}:/opt/asylo/sdk&quot; \</div><div class="line">    -v bazel-cache:/root/.cache/bazel \</div><div class="line">    -w &quot;/opt/asylo/sdk&quot; \</div><div class="line">    gcr.io/asylo-framework/asylo \</div><div class="line">    asylo/test/run_enclave_tests.sh</div></div><!-- fragment --><p>See <a href="#docker-flags">Docker flags</a> for a breakdown of the flags used in this command. Note that in this command we also use <code>-v</code> to map the Asylo SDK source files to <code>/opt/asylo/sdk</code>.</p>
@@ -133,7 +132,7 @@ $(function() {
 <h4>Running the <code>hello_world</code> example</h4>
 <p>To run the <code>hello_world</code> example, first use the following set of commands to grab the <a href="https://github.com/google/asylo-examples"><code>asylo-examples</code> repository source code</a>:</p>
 <div class="fragment"><div class="line">MY_PROJECT=~/asylo-examples</div><div class="line">git clone https://github.com/google/asylo-examples.git &quot;${MY_PROJECT}&quot;</div></div><!-- fragment --><p>Next, use Bazel to build and run the <code>hello_world</code> application, which uses a simulated SGX enclave backend:</p>
-<div class="fragment"><div class="line">cd &quot;${MY_PROJECT}&quot;</div><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">bazel run --config=sgx-sim //hello_world -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>Refer to <a href="#bazel-flags-and-workspace-settings">Bazel flags and workspace settings</a> for an explanation of the flags and workspace configuration used in this example.</p>
+<div class="fragment"><div class="line">cd &quot;${MY_PROJECT}&quot;</div><div class="line">NAMES=&quot;${USER}&quot;</div><div class="line">bazel run //hello_world_sgx_sim -- --names=&quot;${NAMES}&quot;</div></div><!-- fragment --><p>Refer to <a href="#bazel-flags-and-workspace-settings">Bazel flags and workspace settings</a> for an explanation of the flags and workspace configuration used in this example.</p>
 <h4>Running your own enclave application</h4>
 <p>You can follow the <a href="#running-the-hello_world-example-1">steps above</a> to build your own enclave application instead. You can use the examples code in <code>MY_PROJECT</code> as the start of your own project, or simply change <code>MY_PROJECT</code> to point to your own Bazel project instead.</p>
 <h4>Running the regression test suite</h4>

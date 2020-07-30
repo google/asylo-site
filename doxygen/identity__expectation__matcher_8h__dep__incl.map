@@ -1,3 +1,5 @@
 <map id="asylo/identity/identity_expectation_matcher.h" name="asylo/identity/identity_expectation_matcher.h">
-<area shape="rect" id="node2" href="$identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="12,95,177,136"/>
+<area shape="rect" id="node2" href="$identity__acl__evaluator_8h.html" title="asylo/identity/identity\l_acl_evaluator.h" alt="" coords="5,102,171,143"/>
+<area shape="rect" id="node3" href="$named__identity__expectation__matcher_8h.html" title="asylo/identity/named\l_identity_expectation\l_matcher.h" alt="" coords="195,95,357,151"/>
+<area shape="rect" id="node4" href="$sgx__identity__expectation__matcher_8h.html" title="asylo/identity/platform\l/sgx/sgx_identity_expectation\l_matcher.h" alt="" coords="167,199,385,255"/>
 </map>

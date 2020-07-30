@@ -1,4 +1,6 @@
 <map id="asylo/identity/attestation/enclave_assertion_generator.h" name="asylo/identity/attestation/enclave_assertion_generator.h">
 <area shape="rect" id="node2" href="$null__assertion__generator_8h.html" title="asylo/identity/attestation\l/null/null_assertion_generator.h" alt="" coords="5,102,232,143"/>
-<area shape="rect" id="node3" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/sgx\l/sgx_local_assertion\l_generator.h" alt="" coords="256,95,411,151"/>
+<area shape="rect" id="node3" href="$sgx__age__remote__assertion__generator_8h.html" title="asylo/identity/attestation\l/sgx/sgx_age_remote_assertion\l_generator.h" alt="" coords="257,95,485,151"/>
+<area shape="rect" id="node4" href="$sgx__intel__ecdsa__qe__remote__assertion__generator_8h.html" title="asylo/identity/attestation\l/sgx/sgx_intel_ecdsa_qe\l_remote_assertion_generator.h" alt="" coords="509,95,733,151"/>
+<area shape="rect" id="node5" href="$sgx__local__assertion__generator_8h.html" title="asylo/identity/attestation\l/sgx/sgx_local_assertion\l_generator.h" alt="" coords="757,95,944,151"/>
 </map>

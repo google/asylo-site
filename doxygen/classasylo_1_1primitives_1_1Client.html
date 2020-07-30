@@ -101,8 +101,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab9f9598254c50af2e57d9be3c983c24e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1primitives_1_1Client.html#ab9f9598254c50af2e57d9be3c983c24e">~Client</a> ()=default</td></tr>
-<tr class="separator:ab9f9598254c50af2e57d9be3c983c24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ed27595ce58d034fc50a29d5fca9d6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1primitives_1_1Client.html#a96ed27595ce58d034fc50a29d5fca9d6">~Client</a> ()</td></tr>
+<tr class="separator:a96ed27595ce58d034fc50a29d5fca9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad13f0b5753af3a8733d3158f4c1655f9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1primitives_1_1Client.html#ad13f0b5753af3a8733d3158f4c1655f9">RegisterExitHandlers</a> () ASYLO_MUST_USE_RESULT</td></tr>
 <tr class="memdesc:ad13f0b5753af3a8733d3158f4c1655f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">An overridable handler registration method.  <a href="#ad13f0b5753af3a8733d3158f4c1655f9">More...</a><br /></td></tr>
 <tr class="separator:ad13f0b5753af3a8733d3158f4c1655f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +123,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a26e2442b1b04aef8314beb267e5389f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1primitives_1_1Client_1_1ExitCallProvider.html">ExitCallProvider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1primitives_1_1Client.html#a26e2442b1b04aef8314beb267e5389f2">exit_call_provider</a> ()</td></tr>
 <tr class="memdesc:a26e2442b1b04aef8314beb267e5389f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor to the client's exit call provider.  <a href="#a26e2442b1b04aef8314beb267e5389f2">More...</a><br /></td></tr>
 <tr class="separator:a26e2442b1b04aef8314beb267e5389f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6c3b37726a38c9b54b3d21fe8b4df5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1primitives_1_1Client.html#ada6c3b37726a38c9b54b3d21fe8b4df5">RegisterMemory</a> (void *mem)</td></tr>
+<tr class="memdesc:ada6c3b37726a38c9b54b3d21fe8b4df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register memory to be freed upon enclave destruction.  <a href="#ada6c3b37726a38c9b54b3d21fe8b4df5">More...</a><br /></td></tr>
+<tr class="separator:ada6c3b37726a38c9b54b3d21fe8b4df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081af6196a1d07d6a41aaaab6b8ce56b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1primitives_1_1Client.html#a081af6196a1d07d6a41aaaab6b8ce56b">ReleaseMemory</a> ()</td></tr>
+<tr class="memdesc:a081af6196a1d07d6a41aaaab6b8ce56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees enclave resources registered to the client.  <a href="#a081af6196a1d07d6a41aaaab6b8ce56b">More...</a><br /></td></tr>
+<tr class="separator:a081af6196a1d07d6a41aaaab6b8ce56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -146,8 +152,8 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>A reference to an enclave held by untrusted code. </p>
 <p>This declares the primitive API exposed to untrusted application code by the Asylo runtime. Each Asylo backend is responsible for providing an implementation of this interface. To support multiple implementations, the interface defines a generic "Enclave Backend" concept which every backend must implement. An enclave backend is a structure compatible with:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>EnclaveBackend {</div><div class="line">  <span class="comment">// Load an enclave, returning a Client or error status.</span></div><div class="line">  <span class="keyword">static</span> StatusOr&lt;std::shared_ptr&lt;Client&gt;&gt; Load(...);</div><div class="line">};</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab9f9598254c50af2e57d9be3c983c24e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9f9598254c50af2e57d9be3c983c24e">&#9670;&nbsp;</a></span>~Client()</h2>
+<a id="a96ed27595ce58d034fc50a29d5fca9d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ed27595ce58d034fc50a29d5fca9d6">&#9670;&nbsp;</a></span>~Client()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +170,7 @@ Protected Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -534,6 +540,67 @@ Protected Member Functions</h2></td></tr>
 <p>An overridable handler registration method. </p>
 <p>This allows backend implementations to register special-purpose exit handlers that might only be appropriate to that backend. The default implementation registers nothing and returns Ok.</p>
 <dl class="section return"><dt>Returns</dt><dd>An error on failure, or Ok. </dd></dl>
+
+</div>
+</div>
+<a id="ada6c3b37726a38c9b54b3d21fe8b4df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6c3b37726a38c9b54b3d21fe8b4df5">&#9670;&nbsp;</a></span>RegisterMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void asylo::primitives::Client::RegisterMemory </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register memory to be freed upon enclave destruction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mem</td><td>A pointer to be passed to free on enclave exit. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a081af6196a1d07d6a41aaaab6b8ce56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081af6196a1d07d6a41aaaab6b8ce56b">&#9670;&nbsp;</a></span>ReleaseMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void asylo::primitives::Client::ReleaseMemory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frees enclave resources registered to the client. </p>
 
 </div>
 </div>

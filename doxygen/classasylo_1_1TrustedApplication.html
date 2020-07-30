@@ -65,7 +65,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="#related">Related Functions</a> &#124;
@@ -80,21 +79,6 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="trusted__application_8h_source.html">trusted_application.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a2b7db58523b41fc2220fef8009c8e43d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">State</a> { <br />
-&#160;&#160;<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da518b13885544b3431069d8b44387de9c">State::kUninitialized</a>, 
-<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da74a0fb96206fdb3a302ef859367ab60d">State::kInternalInitializing</a>, 
-<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da26a2a57251e2f0aa4459947fae4e5ac9">State::kUserInitializing</a>, 
-<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da2fc7fbf0d19294f85dd3880460dd3c0a">State::kRunning</a>, 
-<br />
-&#160;&#160;<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43da54dde0eb156436f81e0f0ebf1911b293">State::kFinalizing</a>, 
-<a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43daba210225b145d1d91ce8f90444cd103c">State::kFinalized</a>
-<br />
- }<tr class="memdesc:a2b7db58523b41fc2220fef8009c8e43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enumeration of possible enclave runtime states.  <a href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:a2b7db58523b41fc2220fef8009c8e43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afcdfb29385aeb42c0a9cb79180b79153"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#afcdfb29385aeb42c0a9cb79180b79153">Initialize</a> (const EnclaveConfig &amp;config)</td></tr>
@@ -109,9 +93,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8cb844d9901bb253de76dfa9ed000d2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#ad8cb844d9901bb253de76dfa9ed000d2">~TrustedApplication</a> ()=default</td></tr>
 <tr class="memdesc:ad8cb844d9901bb253de76dfa9ed000d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trivial destructor.  <a href="#ad8cb844d9901bb253de76dfa9ed000d2">More...</a><br /></td></tr>
 <tr class="separator:ad8cb844d9901bb253de76dfa9ed000d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bdf0e5db5631635d99db4bfa8544dd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1TrustedApplication.html#a3bdf0e5db5631635d99db4bfa8544dd2">GetState</a> () ABSL_LOCKS_EXCLUDED(mutex_)</td></tr>
-<tr class="memdesc:a3bdf0e5db5631635d99db4bfa8544dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the enclave state in a thread-safe manner.  <a href="#a3bdf0e5db5631635d99db4bfa8544dd2">More...</a><br /></td></tr>
-<tr class="separator:a3bdf0e5db5631635d99db4bfa8544dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -138,47 +119,7 @@ Related Functions</h2></td></tr>
 <p>To implement an enclave application, client code declares a <a class="el" href="classasylo_1_1TrustedApplication.html" title="Abstract base class for trusted applications. ">TrustedApplication</a> and implements the entry points it wishes to handle. For example:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>HelloWorld : <span class="keyword">public</span> TrustedApplication {</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">  Status <a class="code" href="classasylo_1_1TrustedApplication.html#afcdfb29385aeb42c0a9cb79180b79153">Initialize</a>(<span class="keyword">const</span> EnclaveConfig &amp;config)<span class="keyword"> override </span>{</div><div class="line">    <a class="code" href="classasylo_1_1primitives_1_1TrustedPrimitives.html#aa8ecf17d986e25c90cda488b4e6fa4e2">primitives::TrustedPrimitives::DebugPuts</a>(<span class="stringliteral">&quot;Hello!&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> <a class="code" href="classasylo_1_1Status.html#ad40b6e307f9d08de21e1498c84c5c67c">Status::OkStatus</a>();</div><div class="line">  }</div><div class="line"></div><div class="line">  Status <a class="code" href="classasylo_1_1TrustedApplication.html#abdbb87cfe7cebfd27357ca54c225a286">Run</a>(<span class="keyword">const</span> EnclaveInput &amp;input, EnclaveOutput *output)<span class="keyword"> override </span>{</div><div class="line">    <a class="code" href="classasylo_1_1primitives_1_1TrustedPrimitives.html#aa8ecf17d986e25c90cda488b4e6fa4e2">primitives::TrustedPrimitives::DebugPuts</a>(<span class="stringliteral">&quot;Running!&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> <a class="code" href="classasylo_1_1Status.html#ad40b6e307f9d08de21e1498c84c5c67c">Status::OkStatus</a>();</div><div class="line">  }</div><div class="line"></div><div class="line">  Status <a class="code" href="classasylo_1_1TrustedApplication.html#a54985f666ac55f37ec1baa81472c3a2c">Finalize</a>(<span class="keyword">const</span> EnclaveFinal &amp;fini)<span class="keyword"> override </span>{</div><div class="line">    <a class="code" href="classasylo_1_1primitives_1_1TrustedPrimitives.html#aa8ecf17d986e25c90cda488b4e6fa4e2">primitives::TrustedPrimitives::DebugPuts</a>(<span class="stringliteral">&quot;Goodbye!&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> <a class="code" href="classasylo_1_1Status.html#ad40b6e307f9d08de21e1498c84c5c67c">Status::OkStatus</a>();</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>At startup, the runtime will call the user supplied function BuildTrustedApplication and install the returned instance as the handler for enclave entries events. For instance:</p>
 <div class="fragment"><div class="line">TrustedApplication *<a class="code" href="classasylo_1_1TrustedApplication.html#adbb29c562d65bcfd2ce08c7c91410c53">BuildTrustedApplication</a>() {</div><div class="line">  <span class="keywordflow">return</span> <span class="keyword">new</span> HelloWorld;</div><div class="line">}</div></div><!-- fragment --><p>Note that types derived from <a class="el" href="classasylo_1_1TrustedApplication.html" title="Abstract base class for trusted applications. ">TrustedApplication</a> must be trivially destructible, and any such destructor will never be invoked by the runtime. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a2b7db58523b41fc2220fef8009c8e43d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b7db58523b41fc2220fef8009c8e43d">&#9670;&nbsp;</a></span>State</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">asylo::TrustedApplication::State</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>An enumeration of possible enclave runtime states. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da518b13885544b3431069d8b44387de9c"></a>kUninitialized&#160;</td><td class="fielddoc"><p>Enclave initialization has not started. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da74a0fb96206fdb3a302ef859367ab60d"></a>kInternalInitializing&#160;</td><td class="fielddoc"><p>Asylo internals are initializing. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da26a2a57251e2f0aa4459947fae4e5ac9"></a>kUserInitializing&#160;</td><td class="fielddoc"><p>Asylo internals are initialized. </p>
-<p>User-defined initialization is in-progress. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da2fc7fbf0d19294f85dd3880460dd3c0a"></a>kRunning&#160;</td><td class="fielddoc"><p>All initialization has completed. The enclave is running. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43da54dde0eb156436f81e0f0ebf1911b293"></a>kFinalizing&#160;</td><td class="fielddoc"><p>The enclave is finalizing. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b7db58523b41fc2220fef8009c8e43daba210225b145d1d91ce8f90444cd103c"></a>kFinalized&#160;</td><td class="fielddoc"><p>The enclave has finalized. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad8cb844d9901bb253de76dfa9ed000d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8cb844d9901bb253de76dfa9ed000d2">&#9670;&nbsp;</a></span>~TrustedApplication()</h2>
 
@@ -240,25 +181,6 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OK status or error <a class="anchor" id="finalize"></a> </dd></dl>
-
-</div>
-</div>
-<a id="a3bdf0e5db5631635d99db4bfa8544dd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bdf0e5db5631635d99db4bfa8544dd2">&#9670;&nbsp;</a></span>GetState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classasylo_1_1TrustedApplication.html#a2b7db58523b41fc2220fef8009c8e43d">State</a> asylo::TrustedApplication::GetState </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the enclave state in a thread-safe manner. </p>
 
 </div>
 </div>

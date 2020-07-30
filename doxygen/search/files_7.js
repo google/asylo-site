@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['named_5fidentity_5fexpectation_5fmatcher_2eh',['named_identity_expectation_matcher.h',['../named__identity__expectation__matcher_8h.html',1,'']]],
   ['nonce_5fgenerator_2eh',['nonce_generator.h',['../nonce__generator_8h.html',1,'']]],
   ['null_5fassertion_5fgenerator_2eh',['null_assertion_generator.h',['../null__assertion__generator_8h.html',1,'']]],
   ['null_5fassertion_5fverifier_2eh',['null_assertion_verifier.h',['../null__assertion__verifier_8h.html',1,'']]],

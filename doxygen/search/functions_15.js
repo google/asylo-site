@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['_7eaesgcmsivcryptor',['~AesGcmSivCryptor',['../classasylo_1_1AesGcmSivCryptor.html#a9e3a4c00516cb3b48d9a9fb4334aa623',1,'asylo::AesGcmSivCryptor']]],
   ['_7echeckopmessagebuilder',['~CheckOpMessageBuilder',['../classasylo_1_1CheckOpMessageBuilder.html#a84dece841f248931eb6c37a844db9933',1,'asylo::CheckOpMessageBuilder']]],
-  ['_7eclient',['~Client',['../classasylo_1_1primitives_1_1Client.html#ab9f9598254c50af2e57d9be3c983c24e',1,'asylo::primitives::Client']]],
+  ['_7eclient',['~Client',['../classasylo_1_1primitives_1_1Client.html#a96ed27595ce58d034fc50a29d5fca9d6',1,'asylo::primitives::Client']]],
   ['_7eenclaveassertionauthority',['~EnclaveAssertionAuthority',['../classasylo_1_1EnclaveAssertionAuthority.html#a87d52690e1939abd2a4871f6873a3b73',1,'asylo::EnclaveAssertionAuthority']]],
   ['_7eenclaveauthcontext',['~EnclaveAuthContext',['../classasylo_1_1EnclaveAuthContext.html#aa1e697dbf607b42fd10112721ef15382',1,'asylo::EnclaveAuthContext']]],
   ['_7eenclaveclient',['~EnclaveClient',['../classasylo_1_1EnclaveClient.html#ae9da12d428f7d5c27814359a243a8cdb',1,'asylo::EnclaveClient']]],
@@ -18,6 +17,8 @@ var searchData=
   ['_7eposixerrorspace',['~PosixErrorSpace',['../classasylo_1_1error_1_1PosixErrorSpace.html#aa2a37c45129a7de44bdb67a64afa7ba8',1,'asylo::error::PosixErrorSpace']]],
   ['_7escopedcurrentclient',['~ScopedCurrentClient',['../classasylo_1_1primitives_1_1Client_1_1ScopedCurrentClient.html#a6ba794a24e2522f41a9edd268f5fc451',1,'asylo::primitives::Client::ScopedCurrentClient']]],
   ['_7esecretsealer',['~SecretSealer',['../classasylo_1_1SecretSealer.html#a1639d4e4d3f866c38bd31d2709a8777d',1,'asylo::SecretSealer']]],
+  ['_7esgxidentityexpectationmatcher',['~SgxIdentityExpectationMatcher',['../classasylo_1_1SgxIdentityExpectationMatcher.html#a3a7a20f3cc5c34e7f9ee2a5781065c99',1,'asylo::SgxIdentityExpectationMatcher']]],
+  ['_7esgxintelecdsaqeremoteassertiongenerator',['~SgxIntelEcdsaQeRemoteAssertionGenerator',['../classasylo_1_1SgxIntelEcdsaQeRemoteAssertionGenerator.html#ace9a2b427dd7492c5d659567b70bbbde',1,'asylo::SgxIntelEcdsaQeRemoteAssertionGenerator']]],
   ['_7esgxlocalsecretsealer',['~SgxLocalSecretSealer',['../classasylo_1_1SgxLocalSecretSealer.html#ab80397d0b60ff6f1f59fd8fd34a52b75',1,'asylo::SgxLocalSecretSealer']]],
   ['_7estatusor',['~StatusOr',['../classasylo_1_1StatusOr.html#a477eaa377fdd1b6f3ed3715243e48036',1,'asylo::StatusOr']]],
   ['_7etrustedapplication',['~TrustedApplication',['../classasylo_1_1TrustedApplication.html#ad8cb844d9901bb253de76dfa9ed000d2',1,'asylo::TrustedApplication']]]

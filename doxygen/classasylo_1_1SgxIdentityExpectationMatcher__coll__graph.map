@@ -1,0 +1,4 @@
+<map id="asylo::SgxIdentityExpectationMatcher" name="asylo::SgxIdentityExpectationMatcher">
+<area shape="rect" id="node2" href="$classasylo_1_1NamedIdentityExpectationMatcher.html" title="A NamedIdentityExpectationMatcher is capable of matching an identity to an expectation if the identit..." alt="" coords="5,95,244,136"/>
+<area shape="rect" id="node3" href="$classasylo_1_1IdentityExpectationMatcher.html" title="Defines an abstract interface that describes how to match an EnclaveIdentity against an EnclaveIdenti..." alt="" coords="29,5,221,47"/>
+</map>
