@@ -98,6 +98,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe093705bf9d694a5a7f6caa6dceb7f4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#abe093705bf9d694a5a7f6caa6dceb7f4">Status</a> (const StatusT &amp;other)</td></tr>
 <tr class="memdesc:abe093705bf9d694a5a7f6caa6dceb7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> object from <code>StatusT</code>.  <a href="#abe093705bf9d694a5a7f6caa6dceb7f4">More...</a><br /></td></tr>
 <tr class="separator:abe093705bf9d694a5a7f6caa6dceb7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96f6bc2cdaf33ede9622216290de2838"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#a96f6bc2cdaf33ede9622216290de2838">Status</a> (const absl::Status &amp;other)</td></tr>
+<tr class="separator:a96f6bc2cdaf33ede9622216290de2838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0e4d2ab3556239afb092d211bdf5a74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#ad0e4d2ab3556239afb092d211bdf5a74">operator=</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;other)=default</td></tr>
 <tr class="separator:ad0e4d2ab3556239afb092d211bdf5a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c7f412b83e825a779999c60d2b9eea7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#a0c7f412b83e825a779999c60d2b9eea7">operator=</a> (<a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&amp;other)</td></tr>
@@ -106,6 +108,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0405921363d07cbaac544ddc74df5ca0"><td class="memTemplItemLeft" align="right" valign="top">StatusT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#a0405921363d07cbaac544ddc74df5ca0">ToOtherStatus</a> ()</td></tr>
 <tr class="memdesc:a0405921363d07cbaac544ddc74df5ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy this object to a status type <code>StatusT</code>.  <a href="#a0405921363d07cbaac544ddc74df5ca0">More...</a><br /></td></tr>
 <tr class="separator:a0405921363d07cbaac544ddc74df5ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15757afa9af5615675eb9bfe4f0b37d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#a15757afa9af5615675eb9bfe4f0b37d2">operator::absl::Status</a> ()</td></tr>
+<tr class="separator:a15757afa9af5615675eb9bfe4f0b37d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4945870bafdae2871238658420d1d46d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a4945870bafdae2871238658420d1d46d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#a4945870bafdae2871238658420d1d46d">operator absl::StatusOr&lt; T &gt;</a> ()</td></tr>
+<tr class="separator:a4945870bafdae2871238658420d1d46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a810414107562c448f504f47cbc5b6772"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1Status.html#a810414107562c448f504f47cbc5b6772">error_code</a> () const</td></tr>
 <tr class="memdesc:a810414107562c448f504f47cbc5b6772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the integer error code for this object.  <a href="#a810414107562c448f504f47cbc5b6772">More...</a><br /></td></tr>
 <tr class="separator:a810414107562c448f504f47cbc5b6772"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,7 +159,7 @@ Static Public Member Functions</h2></td></tr>
 <p><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> contains an error code from some error space and a message string suitable for logging or debugging. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a09ecd50e58beee5fc46b0db6cdd1f167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09ecd50e58beee5fc46b0db6cdd1f167">&#9670;&nbsp;</a></span>Status() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ecd50e58beee5fc46b0db6cdd1f167">&#9670;&nbsp;</a></span>Status() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +178,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae0c0b0498e8202be93212b563e297f66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c0b0498e8202be93212b563e297f66">&#9670;&nbsp;</a></span>Status() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c0b0498e8202be93212b563e297f66">&#9670;&nbsp;</a></span>Status() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +222,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a481e2c69c27da1a8d64ba2e38291af32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a481e2c69c27da1a8d64ba2e38291af32">&#9670;&nbsp;</a></span>Status() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a481e2c69c27da1a8d64ba2e38291af32">&#9670;&nbsp;</a></span>Status() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,7 +270,7 @@ template&lt;typename Enum &gt; </div>
 </div>
 </div>
 <a id="a63be4a074710300d5ea97cbff86a6087"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63be4a074710300d5ea97cbff86a6087">&#9670;&nbsp;</a></span>Status() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a63be4a074710300d5ea97cbff86a6087">&#9670;&nbsp;</a></span>Status() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +296,7 @@ template&lt;typename Enum &gt; </div>
 </div>
 </div>
 <a id="a46b84061e8c1beb362785f65a0ae19d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46b84061e8c1beb362785f65a0ae19d5">&#9670;&nbsp;</a></span>Status() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a46b84061e8c1beb362785f65a0ae19d5">&#9670;&nbsp;</a></span>Status() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +314,7 @@ template&lt;typename Enum &gt; </div>
 </div>
 </div>
 <a id="abe093705bf9d694a5a7f6caa6dceb7f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe093705bf9d694a5a7f6caa6dceb7f4">&#9670;&nbsp;</a></span>Status() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abe093705bf9d694a5a7f6caa6dceb7f4">&#9670;&nbsp;</a></span>Status() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,6 +352,32 @@ template&lt;typename StatusT , typename E  = typename absl::enable_if_t&lt;     
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a96f6bc2cdaf33ede9622216290de2838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f6bc2cdaf33ede9622216290de2838">&#9670;&nbsp;</a></span>Status() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asylo::Status::Status </td>
+          <td>(</td>
+          <td class="paramtype">const absl::Status &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -506,6 +539,58 @@ template&lt;typename Enum &gt; </div>
 
 <p>Constructs an OK status object. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> indicating no error occurred. </dd></dl>
+
+</div>
+</div>
+<a id="a4945870bafdae2871238658420d1d46d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4945870bafdae2871238658420d1d46d">&#9670;&nbsp;</a></span>operator absl::StatusOr< T >()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asylo::Status::operator absl::StatusOr&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15757afa9af5615675eb9bfe4f0b37d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15757afa9af5615675eb9bfe4f0b37d2">&#9670;&nbsp;</a></span>operator::absl::Status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asylo::Status::operator::absl::Status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

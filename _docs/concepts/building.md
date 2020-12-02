@@ -233,7 +233,6 @@ enclave_test(
     backends = sgx.backend_labels,
     copts = ASYLO_DEFAULT_COPTS,
     enclaves = {"enclave": ":test_enclave_smoke.so"},
-    tap = 1,
     test_args = ["--enclave_path='{enclave}'"],
     deps = TEST_DEPS_COMMON,
 )

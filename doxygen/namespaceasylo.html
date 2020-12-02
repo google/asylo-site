@@ -210,8 +210,11 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aebb535adde7099f90ae8da5b9670d3ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; Sha256HashProto &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#aebb535adde7099f90ae8da5b9670d3ab">CreateSha256HashProto</a> (absl::string_view hash_hex)</td></tr>
-<tr class="memdesc:aebb535adde7099f90ae8da5b9670d3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code>Sha256HashProto</code> with the hash of the given |hex_string|, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the provided string is an invalid hex-encoded SHA-256 hash.  <a href="#aebb535adde7099f90ae8da5b9670d3ab">More...</a><br /></td></tr>
+<tr class="memdesc:aebb535adde7099f90ae8da5b9670d3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code>Sha256HashProto</code> with the hash of the given |hash_hex|, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the provided string is an invalid hex-encoded SHA-256 hash.  <a href="#aebb535adde7099f90ae8da5b9670d3ab">More...</a><br /></td></tr>
 <tr class="separator:aebb535adde7099f90ae8da5b9670d3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10bde933e306f1bce56bbc454289b18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#af10bde933e306f1bce56bbc454289b18">ValidateSha256HashProto</a> (const Sha256HashProto &amp;hash_proto)</td></tr>
+<tr class="memdesc:af10bde933e306f1bce56bbc454289b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that |hash_proto| has a hash that is exactly 32 bytes.  <a href="#af10bde933e306f1bce56bbc454289b18">More...</a><br /></td></tr>
+<tr class="separator:af10bde933e306f1bce56bbc454289b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51945598697c3b053fa6012c76b6b7e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a51945598697c3b053fa6012c76b6b7e7">operator==</a> (const Sha256HashProto &amp;lhs, const Sha256HashProto &amp;rhs)</td></tr>
 <tr class="memdesc:a51945598697c3b053fa6012c76b6b7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <code>Sha256HashProto</code> messages for equality.  <a href="#a51945598697c3b053fa6012c76b6b7e7">More...</a><br /></td></tr>
 <tr class="separator:a51945598697c3b053fa6012c76b6b7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -982,7 +985,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a <code>Sha256HashProto</code> with the hash of the given |hex_string|, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the provided string is an invalid hex-encoded SHA-256 hash. </p>
+<p>Returns a <code>Sha256HashProto</code> with the hash of the given |hash_hex|, or a non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> if the provided string is an invalid hex-encoded SHA-256 hash. </p>
 
 </div>
 </div>
@@ -2153,6 +2156,26 @@ template&lt;&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af10bde933e306f1bce56bbc454289b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10bde933e306f1bce56bbc454289b18">&#9670;&nbsp;</a></span>ValidateSha256HashProto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::ValidateSha256HashProto </td>
+          <td>(</td>
+          <td class="paramtype">const Sha256HashProto &amp;&#160;</td>
+          <td class="paramname"><em>hash_proto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validates that |hash_proto| has a hash that is exactly 32 bytes. </p>
 
 </div>
 </div>

@@ -1,14 +1,14 @@
 <map id="asylo/platform/core/enclave_manager.h" name="asylo/platform/core/enclave_manager.h">
-<area shape="rect" id="node11" href="$enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="538,95,687,136"/>
-<area shape="rect" id="node15" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1241,281,1379,307"/>
-<area shape="rect" id="node29" href="$enclave__config__util_8h.html" title="asylo/platform/core\l/enclave_config_util.h" alt="" coords="351,95,514,136"/>
-<area shape="rect" id="node30" href="$shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="1360,95,1569,136"/>
-<area shape="rect" id="node31" href="$untrusted__primitives_8h.html" title="asylo/platform/primitives\l/untrusted_primitives.h" alt="" coords="2173,95,2359,136"/>
-<area shape="rect" id="node42" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1639,191,1789,218"/>
-<area shape="rect" id="node12" href="$shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="538,184,687,225"/>
-<area shape="rect" id="node20" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1794,370,1941,397"/>
-<area shape="rect" id="node25" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="975,370,1149,397"/>
-<area shape="rect" id="node34" href="$extent_8h.html" title="asylo/platform/primitives\l/extent.h" alt="" coords="2067,184,2254,225"/>
-<area shape="rect" id="node36" href="$primitive__status_8h.html" title="asylo/platform/primitives\l/primitive_status.h" alt="" coords="2278,184,2465,225"/>
-<area shape="rect" id="node38" href="$primitives_8h.html" title="asylo/platform/primitives\l/primitives.h" alt="" coords="3377,273,3563,315"/>
+<area shape="rect" id="node11" href="$enclave__client_8h.html" title="asylo/platform/core\l/enclave_client.h" alt="" coords="466,95,616,136"/>
+<area shape="rect" id="node14" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1177,281,1316,307"/>
+<area shape="rect" id="node29" href="$enclave__config__util_8h.html" title="asylo/platform/core\l/enclave_config_util.h" alt="" coords="26,95,189,136"/>
+<area shape="rect" id="node30" href="$shared__resource__manager_8h.html" title="asylo/platform/core\l/shared_resource_manager.h" alt="" coords="1188,95,1398,136"/>
+<area shape="rect" id="node31" href="$untrusted__primitives_8h.html" title="asylo/platform/primitives\l/untrusted_primitives.h" alt="" coords="2356,95,2542,136"/>
+<area shape="rect" id="node42" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1618,191,1768,218"/>
+<area shape="rect" id="node12" href="$shared__name_8h.html" title="asylo/platform/core\l/shared_name.h" alt="" coords="578,184,728,225"/>
+<area shape="rect" id="node20" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1798,370,1945,397"/>
+<area shape="rect" id="node25" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1162,370,1336,397"/>
+<area shape="rect" id="node34" href="$extent_8h.html" title="asylo/platform/primitives\l/extent.h" alt="" coords="2356,184,2542,225"/>
+<area shape="rect" id="node36" href="$primitive__status_8h.html" title="asylo/platform/primitives\l/primitive_status.h" alt="" coords="1894,184,2081,225"/>
+<area shape="rect" id="node38" href="$primitives_8h.html" title="asylo/platform/primitives\l/primitives.h" alt="" coords="3114,273,3301,315"/>
 </map>

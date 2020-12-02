@@ -1,9 +1,9 @@
 <map id="asylo/identity/attestation/sgx/sgx_intel_ecdsa_qe_remote_assertion_verifier.h" name="asylo/identity/attestation/sgx/sgx_intel_ecdsa_qe_remote_assertion_verifier.h">
-<area shape="rect" id="node9" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1605,124,1813,165"/>
-<area shape="rect" id="node10" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="1034,228,1201,269"/>
-<area shape="rect" id="node21" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1401,407,1540,433"/>
-<area shape="rect" id="node41" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1939,325,2090,351"/>
-<area shape="rect" id="node40" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="263,407,457,433"/>
-<area shape="rect" id="node27" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="548,489,695,515"/>
-<area shape="rect" id="node33" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1609,489,1783,515"/>
+<area shape="rect" id="node9" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1555,124,1763,165"/>
+<area shape="rect" id="node10" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="1035,228,1201,269"/>
+<area shape="rect" id="node21" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1449,407,1587,433"/>
+<area shape="rect" id="node42" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1940,325,2091,351"/>
+<area shape="rect" id="node41" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="264,407,457,433"/>
+<area shape="rect" id="node28" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1575,489,1722,515"/>
+<area shape="rect" id="node34" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1797,489,1972,515"/>
 </map>

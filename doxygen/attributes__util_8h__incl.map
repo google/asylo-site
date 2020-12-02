@@ -1,7 +1,7 @@
 <map id="asylo/identity/platform/sgx/attributes_util.h" name="asylo/identity/platform/sgx/attributes_util.h">
-<area shape="rect" id="node4" href="$architecture__bits_8h.html" title="asylo/identity/platform\l/sgx/architecture_bits.h" alt="" coords="674,95,849,136"/>
-<area shape="rect" id="node8" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1084,184,1223,211"/>
-<area shape="rect" id="node29" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1422,102,1573,129"/>
-<area shape="rect" id="node15" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="1515,266,1661,293"/>
-<area shape="rect" id="node22" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="213,266,387,293"/>
+<area shape="rect" id="node4" href="$architecture__bits_8h.html" title="asylo/identity/platform\l/sgx/architecture_bits.h" alt="" coords="435,95,609,136"/>
+<area shape="rect" id="node8" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="989,184,1127,211"/>
+<area shape="rect" id="node30" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1685,102,1836,129"/>
+<area shape="rect" id="node16" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="2061,266,2207,293"/>
+<area shape="rect" id="node23" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="309,266,484,293"/>
 </map>

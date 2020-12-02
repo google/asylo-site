@@ -1,9 +1,9 @@
 <map id="asylo/identity/attestation/sgx/sgx_local_assertion_verifier.h" name="asylo/identity/attestation/sgx/sgx_local_assertion_verifier.h">
-<area shape="rect" id="node3" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1499,109,1707,151"/>
-<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="662,199,829,240"/>
-<area shape="rect" id="node17" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1185,377,1324,404"/>
-<area shape="rect" id="node39" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1645,295,1795,322"/>
-<area shape="rect" id="node38" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="250,377,443,404"/>
-<area shape="rect" id="node24" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="509,459,656,486"/>
-<area shape="rect" id="node31" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1449,459,1623,486"/>
+<area shape="rect" id="node3" href="$enclave__assertion__verifier_8h.html" title="asylo/identity/attestation\l/enclave_assertion_verifier.h" alt="" coords="1693,109,1901,151"/>
+<area shape="rect" id="node5" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="834,199,1001,240"/>
+<area shape="rect" id="node17" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1636,377,1775,404"/>
+<area shape="rect" id="node40" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="114,295,265,322"/>
+<area shape="rect" id="node39" href="$status__macros_8h.html" title="asylo/util/status_macros.h" alt="" coords="221,377,414,404"/>
+<area shape="rect" id="node25" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="556,459,703,486"/>
+<area shape="rect" id="node32" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="2527,459,2702,486"/>
 </map>
