@@ -1,7 +1,6 @@
 <map id="asylo/identity/attestation/sgx/sgx_intel_ecdsa_qe_remote_assertion_generator.h" name="asylo/identity/attestation/sgx/sgx_intel_ecdsa_qe_remote_assertion_generator.h">
-<area shape="rect" id="node9" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="1001,124,1226,165"/>
-<area shape="rect" id="node15" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="867,407,1005,433"/>
-<area shape="rect" id="node27" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="577,325,727,351"/>
-<area shape="rect" id="node10" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="1329,228,1495,269"/>
-<area shape="rect" id="node23" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="509,489,656,515"/>
+<area shape="rect" id="node9" href="$enclave__assertion__generator_8h.html" title="asylo/identity/attestation\l/enclave_assertion_generator.h" alt="" coords="478,124,703,165"/>
+<area shape="rect" id="node15" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="525,407,664,433"/>
+<area shape="rect" id="node20" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="630,325,781,351"/>
+<area shape="rect" id="node10" href="$enclave__assertion__authority_8h.html" title="asylo/identity/enclave\l_assertion_authority.h" alt="" coords="882,228,1049,269"/>
 </map>
