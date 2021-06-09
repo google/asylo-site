@@ -1,5 +1,5 @@
 <map id="asylo/platform/core/trusted_application.h" name="asylo/platform/core/trusted_application.h">
-<area shape="rect" id="node6" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1313,102,1452,129"/>
-<area shape="rect" id="node14" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="499,191,645,218"/>
-<area shape="rect" id="node22" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1831,191,2006,218"/>
+<area shape="rect" id="node7" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1388,102,1527,129"/>
+<area shape="rect" id="node20" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="2765,191,2912,218"/>
+<area shape="rect" id="node27" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="333,191,507,218"/>
 </map>

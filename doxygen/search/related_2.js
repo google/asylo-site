@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statusor',['StatusOr',['../classasylo_1_1StatusOr.html#a3b82887d777cb8874f99c331eb7977d8',1,'asylo::StatusOr']]]
+  ['operator_3d_3d',['operator==',['../classasylo_1_1Status.html#ab34525292de0245a8f290a1572c2f6c5',1,'asylo::Status']]]
 ];

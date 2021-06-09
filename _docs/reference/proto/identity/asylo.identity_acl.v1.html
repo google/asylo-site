@@ -29,6 +29,41 @@ satisfied if the embedded predicate is not satisfied.</li>
 <p>An <code>EnclaveIdentityExpectation</code> predicate is satisfied if it is matched by
 any of a given set of enclave identities.</p>
 
+<h2 id="IdentityAclPredicate">IdentityAclPredicate</h2>
+<section>
+<p>Represents either a group of predicates or a single expectation.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IdentityAclPredicate-acl_group" class="oneof oneof-start">
+<td><code>acl_group</code></td>
+<td><code><a href="#IdentityAclGroup">IdentityAclGroup (oneof)</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="IdentityAclPredicate-expectation" class="oneof">
+<td><code>expectation</code></td>
+<td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.identity.v1.html#EnclaveIdentityExpectation">EnclaveIdentityExpectation (oneof)</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="IdentityAclGroup">IdentityAclGroup</h2>
 <section>
 <p>Represents a group of ACL predicates.</p>
@@ -101,41 +136,6 @@ No
 <p>Evaluates to true iff no predicates match. |predicates| must have exactly
 one element.</p>
 
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="IdentityAclPredicate">IdentityAclPredicate</h2>
-<section>
-<p>Represents either a group of predicates or a single expectation.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="IdentityAclPredicate-acl_group" class="oneof oneof-start">
-<td><code>acl_group</code></td>
-<td><code><a href="#IdentityAclGroup">IdentityAclGroup (oneof)</a></code></td>
-<td>
-</td>
-<td>
-Yes
-</td>
-</tr>
-<tr id="IdentityAclPredicate-expectation" class="oneof">
-<td><code>expectation</code></td>
-<td><code><a href="{{site.baseurl}}/docs/reference/proto/identity/asylo.identity.v1.html#EnclaveIdentityExpectation">EnclaveIdentityExpectation (oneof)</a></code></td>
-<td>
-</td>
-<td>
-Yes
 </td>
 </tr>
 </tbody>

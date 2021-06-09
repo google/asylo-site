@@ -502,9 +502,9 @@ registered handler.
 #### `abort`
 
 In the general case, the runtime cannot guarantee that `abort` will destroy the
-enclave or terminate the client. These resources are controlled by the host
-operating system which must be assumed to behave in an adversarial fashion. The
-runtime is only able to provide for abnormal termination on a best-effort basis.
+enclave or the client. These resources are controlled by the host operating
+system which must be assumed to behave in an adversarial fashion. The runtime is
+only able to provide for abnormal termination on a best-effort basis.
 
 The enclave implementation of `abort` will prevent any further calls into the
 enclave through an enclave entry point, and it will prevent any thread from
@@ -862,7 +862,7 @@ from the snapshot. The following security features for `fork` are provided:
     generated from a Diffie-Hellman key exchange.
 9.  The parent will only send the key to one child enclave.
 10. If there are other threads running in the child enclave while restoring,
-    restore terminates and rejects all entries into the enclave.
+    restore stops and rejects all entries into the enclave.
 11. If the encrypted snapshot is modified, the child enclave does not restore,
     and rejects all entries.
 
@@ -882,7 +882,7 @@ A current working directory can be set by the user through `EnclaveConfig` when
 the enclave is created. If it's not set by the user, it's default to be the
 current working directory on the host. It is then stored inside the enclave.
 `getcwd` returns that working directory without exiting the enclave. If `getcwd`
-is called prior to enclave is initialized, it returns a dummy value.
+is called prior to enclave is initialized, it returns a placeholder value.
 
 #### `gethostname`
 

@@ -6,7 +6,6 @@ var searchData=
   ['initlogging',['InitLogging',['../namespaceasylo.html#a9e697759e6f0edf9926d7c4bda2e6f0b',1,'asylo']]],
   ['instance',['Instance',['../classasylo_1_1EnclaveManager.html#a1ab1d6d8d1043a53cab1e99c82c5f1a3',1,'asylo::EnclaveManager']]],
   ['invokeexithandler',['InvokeExitHandler',['../classasylo_1_1primitives_1_1Client_1_1ExitCallProvider.html#a75ebd380ea006dfa59feb8738c2f1942',1,'asylo::primitives::Client::ExitCallProvider']]],
-  ['is',['Is',['../classasylo_1_1Status.html#a7c000d39699137ac4de67be56b68c59e',1,'asylo::Status']]],
   ['isattributebitset',['IsAttributeBitSet',['../namespaceasylo_1_1sgx.html#a5b7f89d4e9e0a0c4f320c195f01a4cf8',1,'asylo::sgx']]],
   ['isclosed',['IsClosed',['../classasylo_1_1primitives_1_1Client.html#afbaea700c89a7064bbc3148e5607d577',1,'asylo::primitives::Client']]],
   ['iscompatibleassertiondescription',['IsCompatibleAssertionDescription',['../classasylo_1_1EnclaveAssertionAuthority.html#acf0da8a795359ded5f88542820f384c6',1,'asylo::EnclaveAssertionAuthority']]],

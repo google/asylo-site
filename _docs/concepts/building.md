@@ -109,7 +109,7 @@ source code. Asylo rules that accept backend labels to multiplex on are written
 with an "open world assumption". We do not assume a backend is one of a set few
 in order to allow users to define their own backends without modifying Asylo.
 
-## Backend-generic and backend-agnostic targets
+## Backend-generic and backend-independent targets
 
 Some enclave behaviors are specific to a backend technology (backend-specific).
 Sometimes we can replicate the behavior across technologies and provide a common
@@ -117,20 +117,21 @@ interface (backend-generic). In some cases, backend differences must be given a
 name that carries distinct meaning across all backends (e.g., backend-specific
 identities). Some enclave behaviors are shared across all conceivable backends
 because they're generally available on computer architectures that support
-trusted execution environments (backend-agnostic).
+trusted execution environments (backend-independent).
 
 We make a distinction between backend-specific, backend-generic, and
-backend-agnostic code as a way to help users navigate our codebase to establish
-trust. This also helps conceptualize the code tree organization.
+backend-independent code as a way to help users navigate our codebase to
+establish trust. This also helps conceptualize the code tree organization.
 
 A target is considered _backend-specific_ if its behavior is defined only for a
 single backend. A target is _backend-generic_ if its behavior is defined for any
 of a given set of backends (a `backends` build argument). A target is considered
-_backend-agnostic_ if its behavior is well-defined regardless of backend choice.
-Backend-agnostic libraries should be usable within any enclave backend (e.g.,
-crypto libraries). A backend-agnostic target is backend-generic, but the
-converse is not generally true. The main difference is that a backend-generic
-target may conditionally build different code based on each possible backend.
+_backend-independent_ if its behavior is well-defined regardless of backend
+choice. Backend-independent libraries should be usable within any enclave
+backend (e.g., crypto libraries). A backend-independent target is
+backend-generic, but the converse is not generally true. The main difference is
+that a backend-generic target may conditionally build different code based on
+each possible backend.
 
 You can write backend-generic unsigned enclave binaries with
 `cc_unsigned_enclave`, and backend-generic signed enclave binaries with

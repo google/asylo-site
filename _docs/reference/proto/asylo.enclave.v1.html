@@ -12,6 +12,171 @@ entry-points: <a href="#EnclaveConfig">initialization</a>, (re-entrant)
 execution <a href="#EnclaveInput">input</a> and
 <a href="#EnclaveOutput">output</a>, and <a href="#EnclaveFinal">finalization</a>.</p>
 
+<h2 id="HostConfig">HostConfig</h2>
+<section>
+<p>A configuration message for the EnclaveManager to communicate with the
+attestation daemon.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="HostConfig-local_attestation_domain">
+<td><code>local_attestation_domain</code></td>
+<td><code>string</code></td>
+<td>
+<p>Local attestation domain of the enclave.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="EnvironmentVariable">EnvironmentVariable</h2>
+<section>
+<p>Represents an environment variable&rsquo;s value to communicate a baseline
+environment to <code>getenv</code>.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnvironmentVariable-name">
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>
+<p>The name of the variable (e.g., as input to <code>getenv</code>).</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="EnvironmentVariable-value">
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>
+<p>The initial value of the variable. An enclave can change the value later
+with e.g., <code>setenv</code>. The environment variable&rsquo;s value is not changed by
+changes in the host environment. The host&rsquo;s environment variable values are
+not inherited from the enclave.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="LoggingConfig">LoggingConfig</h2>
+<section>
+<p>Initialization settings for the logging system in an enclave.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="LoggingConfig-vlog_level">
+<td><code>vlog_level</code></td>
+<td><code>int32</code></td>
+<td>
+<p>Enclave logging levels for VLOG. Any VLOG with levels below or equal to
+this level will be logged, others will be ignored.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="LoggingConfig-log_directory">
+<td><code>log_directory</code></td>
+<td><code>string</code></td>
+<td>
+<p>Directory under which to store enclave log files. Default: <code>&quot;/tmp/&quot;</code></p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="EnclaveLoadConfig">EnclaveLoadConfig</h2>
+<section>
+<p>The configuration required to load an enclave. This message is extended for
+each backend supported by the Asylo primitive library.
+asylo::EnclaveManager::LoadEnclave is passed an instance of this message for
+loading enclaves in Asylo.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EnclaveLoadConfig-name">
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>
+<p>Name of the enclave to be loaded.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="EnclaveLoadConfig-config">
+<td><code>config</code></td>
+<td><code><a href="#EnclaveConfig">EnclaveConfig</a></code></td>
+<td>
+<p>Configuration passed to an enclave during initialization.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="EnclaveLoadConfig-exit_logging">
+<td><code>exit_logging</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Should enclave exit call logging be enabled.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="EnclaveConfig">EnclaveConfig</h2>
 <section>
 <p>Configuration passed to an enclave during initialization. An enclave&rsquo;s
@@ -149,68 +314,15 @@ No
 </tbody>
 </table>
 </section>
-<h2 id="EnclaveFinal">EnclaveFinal</h2>
-<section>
-<p>Input passed to an enclave during finalization.</p>
-
-</section>
 <h2 id="EnclaveInput">EnclaveInput</h2>
 <section>
 <p>Input passed to an enclave after it has been initialized with EnclaveConfig.</p>
 
 </section>
-<h2 id="EnclaveLoadConfig">EnclaveLoadConfig</h2>
+<h2 id="EnclaveFinal">EnclaveFinal</h2>
 <section>
-<p>The configuration required to load an enclave. This message is extended for
-each backend supported by the Asylo primitive library.
-asylo::EnclaveManager::LoadEnclave is passed an instance of this message for
-loading enclaves in Asylo.</p>
+<p>Input passed to an enclave during finalization.</p>
 
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="EnclaveLoadConfig-name">
-<td><code>name</code></td>
-<td><code>string</code></td>
-<td>
-<p>Name of the enclave to be loaded.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="EnclaveLoadConfig-config">
-<td><code>config</code></td>
-<td><code><a href="#EnclaveConfig">EnclaveConfig</a></code></td>
-<td>
-<p>Configuration passed to an enclave during initialization.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="EnclaveLoadConfig-exit_logging">
-<td><code>exit_logging</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Should enclave exit call logging be enabled.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
 </section>
 <h2 id="EnclaveOutput">EnclaveOutput</h2>
 <section>
@@ -234,118 +346,6 @@ back to an untrusted caller.</p>
 <td>
 <p>Contains status information for the Run invocation. A non-OK status may
 indicate an error in either trusted or untrusted space.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="EnvironmentVariable">EnvironmentVariable</h2>
-<section>
-<p>Represents an environment variable&rsquo;s value to communicate a baseline
-environment to <code>getenv</code>.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="EnvironmentVariable-name">
-<td><code>name</code></td>
-<td><code>string</code></td>
-<td>
-<p>The name of the variable (e.g., as input to <code>getenv</code>).</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="EnvironmentVariable-value">
-<td><code>value</code></td>
-<td><code>string</code></td>
-<td>
-<p>The initial value of the variable. An enclave can change the value later
-with e.g., <code>setenv</code>. The environment variable&rsquo;s value is not changed by
-changes in the host environment. The host&rsquo;s environment variable values are
-not inherited from the enclave.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="HostConfig">HostConfig</h2>
-<section>
-<p>A configuration message for the EnclaveManager to communicate with the
-attestation daemon.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="HostConfig-local_attestation_domain">
-<td><code>local_attestation_domain</code></td>
-<td><code>string</code></td>
-<td>
-<p>Local attestation domain of the enclave.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="LoggingConfig">LoggingConfig</h2>
-<section>
-<p>Initialization settings for the logging system in an enclave.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="LoggingConfig-vlog_level">
-<td><code>vlog_level</code></td>
-<td><code>int32</code></td>
-<td>
-<p>Enclave logging levels for VLOG. Any VLOG with levels below or equal to
-this level will be logged, others will be ignored.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="LoggingConfig-log_directory">
-<td><code>log_directory</code></td>
-<td><code>string</code></td>
-<td>
-<p>Directory under which to store enclave log files. Default: <code>&quot;/tmp/&quot;</code></p>
 
 </td>
 <td>

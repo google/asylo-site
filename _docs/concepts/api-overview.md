@@ -134,7 +134,7 @@ int main(int argc, char *argv[]) {
   file_enclave_config->set_enclave_path(enclave_path);
 
   // Load Enclave with prepared |EnclaveManager| and |load_config| message.
-  asylo::EnclaveManager *manager = manager_result.ValueOrDie();
+  asylo::EnclaveManager *manager = manager_result.value();
   auto status = manager->LoadEnclave(load_config);
   LOG_IF(QFATAL, !status.ok()) << "LoadEnclave failed: " << status;
 
@@ -222,7 +222,7 @@ class EnclaveDemo : public TrustedApplication {
     std::string encrypt_message = EncryptMessage(user_message);
     std::cout << "Encrypted message:" << std::endl
               << encrypt_message << std::endl;
-    return Status::OkStatus();
+    return absl::OkStatus();
   }
 
   const std::string GetEnclaveUserMessage(const EnclaveInput &input) {

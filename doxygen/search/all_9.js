@@ -11,7 +11,6 @@ var searchData=
   ['inittokenkey',['INITTOKENKEY',['../namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188aed5b3c4583ea92da58e5a3529f6606eb',1,'asylo::sgx']]],
   ['instance',['Instance',['../classasylo_1_1EnclaveManager.html#a1ab1d6d8d1043a53cab1e99c82c5f1a3',1,'asylo::EnclaveManager']]],
   ['invokeexithandler',['InvokeExitHandler',['../classasylo_1_1primitives_1_1Client_1_1ExitCallProvider.html#a75ebd380ea006dfa59feb8738c2f1942',1,'asylo::primitives::Client::ExitCallProvider']]],
-  ['is',['Is',['../classasylo_1_1Status.html#a7c000d39699137ac4de67be56b68c59e',1,'asylo::Status']]],
   ['isattributebitset',['IsAttributeBitSet',['../namespaceasylo_1_1sgx.html#a5b7f89d4e9e0a0c4f320c195f01a4cf8',1,'asylo::sgx']]],
   ['isclosed',['IsClosed',['../classasylo_1_1primitives_1_1Client.html#afbaea700c89a7064bbc3148e5607d577',1,'asylo::primitives::Client']]],
   ['iscompatibleassertiondescription',['IsCompatibleAssertionDescription',['../classasylo_1_1EnclaveAssertionAuthority.html#acf0da8a795359ded5f88542820f384c6',1,'asylo::EnclaveAssertionAuthority']]],

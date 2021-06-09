@@ -390,7 +390,7 @@ assist in tracking incremental changes to the transcript.
 
 An `ABORT` message is sent by an EKEP participant when it detects an error. Once
 a participant receives an `ABORT` message from its peer, it must immediately
-terminate the handshake. An `ABORT` message has the following format.
+stop the handshake. An `ABORT` message has the following format.
 
 ```protobuf
 message AbortMessage {
@@ -601,7 +601,7 @@ generate a shared secret according to
 
 #### `SERVER_FINISH` format
 
-After sending a `SERVER_ID` message, the server is able to derive a Master
+After sending a `SERVER_ID` message, the server is able to derive a Primary
 Secret **M<sub>S</sub>** and an Authenticator Secret **A<sub>S</sub>**[^1]. This
 is done as described in [Deriving EKEP Secrets](#deriving-ekep-secrets).
 
@@ -694,8 +694,8 @@ exchanged after a `CLIENT_FINISH` message is sent).
 ## Deriving EKEP Secrets
 
 Based on the first four handshake messages exchanged, the client and server both
-derive two additional secrets: a Master Secret **M** and an Authenticator Secret
-**A**.
+derive two additional secrets: a Primary Secret **M** and an Authenticator
+Secret **A**.
 
 **M** and **A** are both 512 bits in size.
 

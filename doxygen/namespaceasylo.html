@@ -373,6 +373,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a51fcb0ae5791d14eb8ef1c3a405dd0b7"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a51fcb0ae5791d14eb8ef1c3a405dd0b7">CheckNotNull</a> (const char *file, int line, const char *exprtext, T &amp;&amp;t)</td></tr>
 <tr class="memdesc:a51fcb0ae5791d14eb8ef1c3a405dd0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message if the given value of type <code>T</code> is null, and then forwards the value.  <a href="#a51fcb0ae5791d14eb8ef1c3a405dd0b7">More...</a><br /></td></tr>
 <tr class="separator:a51fcb0ae5791d14eb8ef1c3a405dd0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1fe9c46895980125695a1e727ff3f8"><td class="memItemLeft" align="right" valign="top">PolymorphicStatusMatcherType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#aac1fe9c46895980125695a1e727ff3f8">PosixErrorIs</a> (int errnum)</td></tr>
+<tr class="memdesc:aac1fe9c46895980125695a1e727ff3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>-like object that contains the given POSIX error.  <a href="#aac1fe9c46895980125695a1e727ff3f8">More...</a><br /></td></tr>
+<tr class="separator:aac1fe9c46895980125695a1e727ff3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a441880ecccdc19e349c3440f9425f041"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a441880ecccdc19e349c3440f9425f041">PosixError</a> (int errnum, absl::string_view message=&quot;&quot;)</td></tr>
+<tr class="memdesc:a441880ecccdc19e349c3440f9425f041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> representing a POSIX error.  <a href="#a441880ecccdc19e349c3440f9425f041">More...</a><br /></td></tr>
+<tr class="separator:a441880ecccdc19e349c3440f9425f041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f3c82fd8b95473782c8fe04afe8ec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#af6f3c82fd8b95473782c8fe04afe8ec0">LastPosixError</a> (absl::string_view message=&quot;&quot;)</td></tr>
+<tr class="memdesc:af6f3c82fd8b95473782c8fe04afe8ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> representing the last POSIX error in this thread.  <a href="#af6f3c82fd8b95473782c8fe04afe8ec0">More...</a><br /></td></tr>
+<tr class="separator:af6f3c82fd8b95473782c8fe04afe8ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcbd4414f3eaa7d805e74b46ece741f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#adcbd4414f3eaa7d805e74b46ece741f2">GetErrno</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;status)</td></tr>
+<tr class="memdesc:adcbd4414f3eaa7d805e74b46ece741f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the POSIX error number that a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> represents, or zero if the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> does not represent a POSIX error.  <a href="#adcbd4414f3eaa7d805e74b46ece741f2">More...</a><br /></td></tr>
+<tr class="separator:adcbd4414f3eaa7d805e74b46ece741f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a182ee831ebf45362cfd24b7f95fc1682"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a182ee831ebf45362cfd24b7f95fc1682"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a182ee831ebf45362cfd24b7f95fc1682">AbslParseFlag</a> (absl::string_view text, T *flag, std::string *error)</td></tr>
 <tr class="separator:a182ee831ebf45362cfd24b7f95fc1682"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -385,6 +397,50 @@ Functions</h2></td></tr>
 <tr class="separator:a885e4e1efb5467dfd7b4fabe4a857434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a811c63d3a350c781b7c87f9d425beb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a7a811c63d3a350c781b7c87f9d425beb">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;status)</td></tr>
 <tr class="separator:a7a811c63d3a350c781b7c87f9d425beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae814261808b042d355974f0bb3bb6171"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ae814261808b042d355974f0bb3bb6171">operator==</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;lhs, const absl::Status &amp;rhs)</td></tr>
+<tr class="separator:ae814261808b042d355974f0bb3bb6171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd57e81f0af17cdc8c495216c9eb6104"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#abd57e81f0af17cdc8c495216c9eb6104">operator!=</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;lhs, const absl::Status &amp;rhs)</td></tr>
+<tr class="separator:abd57e81f0af17cdc8c495216c9eb6104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317f9316209abf6df326db0de2010c18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a317f9316209abf6df326db0de2010c18">operator==</a> (const absl::Status &amp;lhs, const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;rhs)</td></tr>
+<tr class="separator:a317f9316209abf6df326db0de2010c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e64bf30b8a2402b3f937397b0cbee0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a73e64bf30b8a2402b3f937397b0cbee0">operator!=</a> (const absl::Status &amp;lhs, const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;rhs)</td></tr>
+<tr class="separator:a73e64bf30b8a2402b3f937397b0cbee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03025d792be214c036d83424e26cd48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ac03025d792be214c036d83424e26cd48">OkStatus</a> ()</td></tr>
+<tr class="memdesc:ac03025d792be214c036d83424e26cd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an OK status object.  <a href="#ac03025d792be214c036d83424e26cd48">More...</a><br /></td></tr>
+<tr class="separator:ac03025d792be214c036d83424e26cd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba6e2497ee5fd14756f9e2cc5e2fe12f"><td class="memTemplParams" colspan="2">template&lt;typename ToStatusT , typename FromStatusT &gt; </td></tr>
+<tr class="memitem:aba6e2497ee5fd14756f9e2cc5e2fe12f"><td class="memTemplItemLeft" align="right" valign="top">ToStatusT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#aba6e2497ee5fd14756f9e2cc5e2fe12f">ConvertStatus</a> (const FromStatusT &amp;from_status)</td></tr>
+<tr class="memdesc:aba6e2497ee5fd14756f9e2cc5e2fe12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a status-like object to another status type.  <a href="#aba6e2497ee5fd14756f9e2cc5e2fe12f">More...</a><br /></td></tr>
+<tr class="separator:aba6e2497ee5fd14756f9e2cc5e2fe12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2dc8bbc3b091a862b6617ababd6334"><td class="memItemLeft" align="right" valign="top">StatusProto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a7b2dc8bbc3b091a862b6617ababd6334">StatusToProto</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;status)</td></tr>
+<tr class="memdesc:a7b2dc8bbc3b091a862b6617ababd6334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the contents of <code>status</code> into a <code>StatusProto</code>.  <a href="#a7b2dc8bbc3b091a862b6617ababd6334">More...</a><br /></td></tr>
+<tr class="separator:a7b2dc8bbc3b091a862b6617ababd6334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0afce34d0ddf38d563a04267c1b922"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ada0afce34d0ddf38d563a04267c1b922">StatusFromProto</a> (const StatusProto &amp;status_proto)</td></tr>
+<tr class="memdesc:ada0afce34d0ddf38d563a04267c1b922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> based on the contents of the given <code>status_proto</code>.  <a href="#ada0afce34d0ddf38d563a04267c1b922">More...</a><br /></td></tr>
+<tr class="separator:ada0afce34d0ddf38d563a04267c1b922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a08aabb13018a5ab5f799962159ba1"><td class="memTemplParams" colspan="2">template&lt;typename MessageT &gt; </td></tr>
+<tr class="memitem:a79a08aabb13018a5ab5f799962159ba1"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a79a08aabb13018a5ab5f799962159ba1">GetTypeUrl</a> ()</td></tr>
+<tr class="memdesc:a79a08aabb13018a5ab5f799962159ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type URL associated with a given protobuf message type.  <a href="#a79a08aabb13018a5ab5f799962159ba1">More...</a><br /></td></tr>
+<tr class="separator:a79a08aabb13018a5ab5f799962159ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336a6e224ec5a68c150d0ed4af5c0e17"><td class="memTemplParams" colspan="2">template&lt;typename MessageT , typename StatusT  = Status&gt; </td></tr>
+<tr class="memitem:a336a6e224ec5a68c150d0ed4af5c0e17"><td class="memTemplItemLeft" align="right" valign="top">absl::optional&lt; MessageT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a336a6e224ec5a68c150d0ed4af5c0e17">GetProtoPayload</a> (const StatusT &amp;status)</td></tr>
+<tr class="memdesc:a336a6e224ec5a68c150d0ed4af5c0e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the payload of type <code>MessageT</code> in <code>status</code>.  <a href="#a336a6e224ec5a68c150d0ed4af5c0e17">More...</a><br /></td></tr>
+<tr class="separator:a336a6e224ec5a68c150d0ed4af5c0e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347d5d9d0a8894a03cbfa23f3b69fd97"><td class="memTemplParams" colspan="2">template&lt;typename MessageT , typename StatusT  = Status&gt; </td></tr>
+<tr class="memitem:a347d5d9d0a8894a03cbfa23f3b69fd97"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a347d5d9d0a8894a03cbfa23f3b69fd97">SetProtoPayload</a> (const MessageT &amp;message, StatusT &amp;status)</td></tr>
+<tr class="memdesc:a347d5d9d0a8894a03cbfa23f3b69fd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a payload of type <code>MessageT</code> to <code>status</code>.  <a href="#a347d5d9d0a8894a03cbfa23f3b69fd97">More...</a><br /></td></tr>
+<tr class="separator:a347d5d9d0a8894a03cbfa23f3b69fd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ebb437b3c00856f9a9054ef47feb30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a59ebb437b3c00856f9a9054ef47feb30">WithContext</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;status, absl::string_view context)</td></tr>
+<tr class="memdesc:a59ebb437b3c00856f9a9054ef47feb30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> with the provided context prepended to its error message.  <a href="#a59ebb437b3c00856f9a9054ef47feb30">More...</a><br /></td></tr>
+<tr class="separator:a59ebb437b3c00856f9a9054ef47feb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77584ecb42f762606be6cec5670bd5f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad77584ecb42f762606be6cec5670bd5f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ad77584ecb42f762606be6cec5670bd5f">WithContext</a> (<a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; T &gt; status_or, absl::string_view context)</td></tr>
+<tr class="memdesc:ad77584ecb42f762606be6cec5670bd5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">As the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> overload above, but for <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code>.  <a href="#ad77584ecb42f762606be6cec5670bd5f">More...</a><br /></td></tr>
+<tr class="separator:ad77584ecb42f762606be6cec5670bd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f0d204d1c203d43bb8181b5a95095a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae9f0d204d1c203d43bb8181b5a95095a"><td class="memTemplItemLeft" align="right" valign="top">absl::StatusOr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ae9f0d204d1c203d43bb8181b5a95095a">WithContext</a> (absl::StatusOr&lt; T &gt; status_or, absl::string_view context)</td></tr>
+<tr class="memdesc:ae9f0d204d1c203d43bb8181b5a95095a"><td class="mdescLeft">&#160;</td><td class="mdescRight">As the <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> overload above, but for <code>absl::StatusOr&lt;T&gt;</code>.  <a href="#ae9f0d204d1c203d43bb8181b5a95095a">More...</a><br /></td></tr>
+<tr class="separator:ae9f0d204d1c203d43bb8181b5a95095a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -392,10 +448,10 @@ Variables</h2></td></tr>
 <tr class="separator:a3761b184f111021d5bbee1139d21a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5996a0b819b65f1a8d281beb8f4fff"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a6b5996a0b819b65f1a8d281beb8f4fff">kValueMoveAssignmentMsg</a> []</td></tr>
 <tr class="separator:a6b5996a0b819b65f1a8d281beb8f4fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affd5688a45e23af3310b88489b7def41"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#affd5688a45e23af3310b88489b7def41">kStatusMoveConstructorMsg</a> []</td></tr>
-<tr class="separator:affd5688a45e23af3310b88489b7def41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65c326357c7452aac96ee0e128dd0e6"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#ab65c326357c7452aac96ee0e128dd0e6">kValueOrDieMovedMsg</a> []</td></tr>
 <tr class="separator:ab65c326357c7452aac96ee0e128dd0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd5688a45e23af3310b88489b7def41"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#affd5688a45e23af3310b88489b7def41">kStatusMoveConstructorMsg</a> []</td></tr>
+<tr class="separator:affd5688a45e23af3310b88489b7def41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fac12ece837aca860004ddc0eecd5df"><td class="memItemLeft" align="right" valign="top">ABSL_CONST_INIT const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html#a4fac12ece837aca860004ddc0eecd5df">kStatusMoveAssignmentMsg</a> []</td></tr>
 <tr class="separator:a4fac12ece837aca860004ddc0eecd5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -658,6 +714,43 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aba6e2497ee5fd14756f9e2cc5e2fe12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba6e2497ee5fd14756f9e2cc5e2fe12f">&#9670;&nbsp;</a></span>ConvertStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ToStatusT , typename FromStatusT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ToStatusT asylo::ConvertStatus </td>
+          <td>(</td>
+          <td class="paramtype">const FromStatusT &amp;&#160;</td>
+          <td class="paramname"><em>from_status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a status-like object to another status type. </p>
+<p>The source and target types must:</p>
+<ul>
+<li>Have a two-parameter constructor that takes an enum as its first parameter and a string as its second parameter.</li>
+<li>Have non-static <code>const</code> <code>error_code()</code>, <code>error_message()</code>, and <code>ok()</code> methods.</li>
+</ul>
+<p>This function is provided for the convenience of Asylo-SDK consumers utilizing other status types such as <code>::grpc::Status</code>.</p>
+<p>Note that all statuses are converted to the canonical error space, so additional error space information is lost.</p>
+<p>Payloads are preserved if both input and output status types support them.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from_status</td><td>A status-like object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A status-like object copied from <code>from_status</code>. </dd></dl>
 
 </div>
 </div>
@@ -1209,6 +1302,65 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="adcbd4414f3eaa7d805e74b46ece741f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcbd4414f3eaa7d805e74b46ece741f2">&#9670;&nbsp;</a></span>GetErrno()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int asylo::GetErrno </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the POSIX error number that a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> represents, or zero if the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> does not represent a POSIX error. </p>
+<p>This function understands <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>es that were created in the POSIX error space.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>A status object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The POSIX error number represented by <code>status</code>, or zero if <code>status</code> does not represent a POSIX error. </dd></dl>
+
+</div>
+</div>
+<a id="a336a6e224ec5a68c150d0ed4af5c0e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336a6e224ec5a68c150d0ed4af5c0e17">&#9670;&nbsp;</a></span>GetProtoPayload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MessageT , typename StatusT  = Status&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">absl::optional&lt;MessageT&gt; asylo::GetProtoPayload </td>
+          <td>(</td>
+          <td class="paramtype">const StatusT &amp;&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the payload of type <code>MessageT</code> in <code>status</code>. </p>
+<p><code>MessageT</code> must be a protobuf message type.</p>
+<p>The <code>status</code> argument may be either an Asylo <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> or an <code>absl::Status</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>The status to find the payload in. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The payload of type <code>MessageT</code> in <code>status</code>, or <code>absl::nullopt</code> if <code>status</code> contains no payload of the given type. Also returns <code>absl::nullopt</code> if there was a parsing error. </dd></dl>
+
+</div>
+</div>
 <a id="a89433d74e8a613ec3dd232172d787136"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89433d74e8a613ec3dd232172d787136">&#9670;&nbsp;</a></span>GetSelfSgxIdentity()</h2>
 
@@ -1225,6 +1377,29 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the current enclave's identity. </p>
+
+</div>
+</div>
+<a id="a79a08aabb13018a5ab5f799962159ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a08aabb13018a5ab5f799962159ba1">&#9670;&nbsp;</a></span>GetTypeUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MessageT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string asylo::GetTypeUrl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the type URL associated with a given protobuf message type. </p>
+<p>This should be used when embedding a message of that type as a payload in a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The type URL to use for <code>MessageT</code> payloads. </dd></dl>
 
 </div>
 </div>
@@ -1336,6 +1511,34 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="af6f3c82fd8b95473782c8fe04afe8ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f3c82fd8b95473782c8fe04afe8ec0">&#9670;&nbsp;</a></span>LastPosixError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::LastPosixError </td>
+          <td>(</td>
+          <td class="paramtype">absl::string_view&#160;</td>
+          <td class="paramname"><em>message</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> representing the last POSIX error in this thread. </p>
+<p>Equivalent to calling <code>PosixError(errno, message)</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>An optional message to prepend to the POSIX error explanation string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An error the last POSIX error in this thread. </dd></dl>
+
+</div>
+</div>
 <a id="a005bb1a1f2f6b589f32ff69440fa6bf6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a005bb1a1f2f6b589f32ff69440fa6bf6">&#9670;&nbsp;</a></span>LoadEnclaveInChildProcess()</h2>
 
@@ -1400,8 +1603,28 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="ac03025d792be214c036d83424e26cd48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03025d792be214c036d83424e26cd48">&#9670;&nbsp;</a></span>OkStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::OkStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns an OK status object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> indicating no error occurred. </dd></dl>
+
+</div>
+</div>
 <a id="ac6f73c209a6586e3f32086549ab16f57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6f73c209a6586e3f32086549ab16f57">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f73c209a6586e3f32086549ab16f57">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1431,7 +1654,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="a885e4e1efb5467dfd7b4fabe4a857434"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a885e4e1efb5467dfd7b4fabe4a857434">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a885e4e1efb5467dfd7b4fabe4a857434">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1440,6 +1663,62 @@ template&lt;&gt; </div>
           <td class="memname">bool asylo::operator!= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd57e81f0af17cdc8c495216c9eb6104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd57e81f0af17cdc8c495216c9eb6104">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const absl::Status &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73e64bf30b8a2402b3f937397b0cbee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e64bf30b8a2402b3f937397b0cbee0">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const absl::Status &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
@@ -1523,7 +1802,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="a51945598697c3b053fa6012c76b6b7e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51945598697c3b053fa6012c76b6b7e7">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a51945598697c3b053fa6012c76b6b7e7">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1553,7 +1832,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="aecb05d614b80b0147ae4af78a32cd41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecb05d614b80b0147ae4af78a32cd41d">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb05d614b80b0147ae4af78a32cd41d">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1562,6 +1841,62 @@ template&lt;&gt; </div>
           <td class="memname">bool asylo::operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae814261808b042d355974f0bb3bb6171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae814261808b042d355974f0bb3bb6171">&#9670;&nbsp;</a></span>operator==() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const absl::Status &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a317f9316209abf6df326db0de2010c18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a317f9316209abf6df326db0de2010c18">&#9670;&nbsp;</a></span>operator==() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool asylo::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const absl::Status &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
@@ -1706,6 +2041,75 @@ template&lt;&gt; </div>
 <p>Sample usage for creating <code>::grpc::ChannelCredentials</code>:</p>
 <div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ChannelCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a6172f61ca6679f7d266b9aebbbc5238b">EnclaveChannelCredentials</a>(<a class="code" href="namespaceasylo.html#a8dc68a49014050276695e89b190eab7d">PeerSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><p>Sample usage for creating <code>::grpc::ServerCredentials</code>:</p>
 <div class="fragment"><div class="line">std::shared_ptr&lt;::grpc::ServerCredentials&gt; creds =</div><div class="line">  <a class="code" href="namespaceasylo.html#a41ae5afd47e724b67e79da0ef6d923fe">EnclaveServerCredentials</a>(<a class="code" href="namespaceasylo.html#a8dc68a49014050276695e89b190eab7d">PeerSgxLocalCredentialsOptions</a>());</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Options used to configure gRPC credentials for a channel that is unidirectionally-authenticated on the peer's end using SGX enclave code identity. </dd></dl>
+
+</div>
+</div>
+<a id="a441880ecccdc19e349c3440f9425f041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441880ecccdc19e349c3440f9425f041">&#9670;&nbsp;</a></span>PosixError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::PosixError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>errnum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">absl::string_view&#160;</td>
+          <td class="paramname"><em>message</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> representing a POSIX error. </p>
+<p>If <code>errnum</code> is zero, <code><a class="el" href="namespaceasylo.html#a441880ecccdc19e349c3440f9425f041" title="Returns a Status representing a POSIX error. ">PosixError()</a></code> returns an OK status. Otherwise, the returned error message includes the POSIX error explanation string.</p>
+<p>Callers should not rely on how <code><a class="el" href="namespaceasylo.html#a441880ecccdc19e349c3440f9425f041" title="Returns a Status representing a POSIX error. ">PosixError()</a></code> embeds error information in the returned <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>. Instead, callers can use <code><a class="el" href="namespaceasylo.html#adcbd4414f3eaa7d805e74b46ece741f2" title="Returns the POSIX error number that a Status represents, or zero if the Status does not represent a P...">GetErrno()</a></code> to inspect a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> for POSIX error information.</p>
+<p>However, callers may rely on stability in the mapping between POSIX error numbers and <code>absl::StatusCode</code>s. Callers can also use this function to create <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>es that are understandable by other code that uses the POSIX error space.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errnum</td><td>A POSIX error number. See errno(3). </td></tr>
+    <tr><td class="paramname">message</td><td>An optional message to prepend to the POSIX error explanation string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An error representing <code>errnum</code>, or an OK status if <code>errnum</code> is zero. </dd></dl>
+
+</div>
+</div>
+<a id="aac1fe9c46895980125695a1e727ff3f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1fe9c46895980125695a1e727ff3f8">&#9670;&nbsp;</a></span>PosixErrorIs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PolymorphicStatusMatcherType asylo::PosixErrorIs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>errnum</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Matches a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>-like object that contains the given POSIX error. </p>
+<p>Works on any <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> that can be inspected by <code><a class="el" href="namespaceasylo.html#adcbd4414f3eaa7d805e74b46ece741f2" title="Returns the POSIX error number that a Status represents, or zero if the Status does not represent a P...">GetErrno()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errnum</td><td>A POSIX error code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A GoogleTest matcher for POSIX errors representing <code>errnum</code>. </dd></dl>
 
 </div>
 </div>
@@ -2023,6 +2427,48 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="a347d5d9d0a8894a03cbfa23f3b69fd97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347d5d9d0a8894a03cbfa23f3b69fd97">&#9670;&nbsp;</a></span>SetProtoPayload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MessageT , typename StatusT  = Status&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void asylo::SetProtoPayload </td>
+          <td>(</td>
+          <td class="paramtype">const MessageT &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StatusT &amp;&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a payload of type <code>MessageT</code> to <code>status</code>. </p>
+<p><code>MessageT</code> must be a protobuf message type. Note that a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> can only have one payload of any given message type.</p>
+<p>The message is embedded with the same type URL that would be used to pack the message into a <code>google::protobuf::Any</code>.</p>
+<p>The <code>status</code> argument may be either an Asylo <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> or an <code>absl::Status</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">message</td><td>A protobuf message object. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">status</td><td>The status to add the payload to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4cfcb13ce45083bea24d7a2dcba884f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cfcb13ce45083bea24d7a2dcba884f9">&#9670;&nbsp;</a></span>SetSgxAgeRemoteAssertionDescription()</h2>
 
@@ -2159,6 +2605,68 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="ada0afce34d0ddf38d563a04267c1b922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0afce34d0ddf38d563a04267c1b922">&#9670;&nbsp;</a></span>StatusFromProto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::StatusFromProto </td>
+          <td>(</td>
+          <td class="paramtype">const StatusProto &amp;&#160;</td>
+          <td class="paramname"><em>status_proto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> based on the contents of the given <code>status_proto</code>. </p>
+<p>If the error space given by <code>status_proto.space()</code> is unrecognized, the returned <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> is in the canonical error space and has an error code equal to <code>status_proto.canonical_code()</code>. If <code>status_proto</code> has no canonical code, the returned <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> has an error code of <code>absl::StatusCode::kUnknown</code>. Note that the error message is only set if <code>status_proto</code> represents a non-OK status.</p>
+<p>If the given <code>status_proto</code> is invalid, then the returned <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> has an appropriate error code and message. A <code>StatusProto</code> is valid if and only if all the following conditions hold:</p>
+<ul>
+<li>If <code>code()</code> is 0, then <code>canonical_code()</code> is set to 0.</li>
+<li>If <code>canonical_code()</code> is 0, then <code>code()</code> is set to 0.</li>
+<li>If the error space is recognized, then <code>canonical_code()</code> is equal to the equivalent canonical code given by the error space.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status_proto</td><td>A protobuf object to unpack. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> based on the contents of <code>status_proto</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a7b2dc8bbc3b091a862b6617ababd6334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2dc8bbc3b091a862b6617ababd6334">&#9670;&nbsp;</a></span>StatusToProto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StatusProto asylo::StatusToProto </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exports the contents of <code>status</code> into a <code>StatusProto</code>. </p>
+<p>This function sets the <code>space</code> and <code>canonical_code</code> fields in <code>status_proto</code> even if <code>status</code> is in the canonical error space.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>A <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> to pack into a proto. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code>StatusProto</code> representing <code>status</code>. </dd></dl>
+
+</div>
+</div>
 <a id="af10bde933e306f1bce56bbc454289b18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af10bde933e306f1bce56bbc454289b18">&#9670;&nbsp;</a></span>ValidateSha256HashProto()</h2>
 
@@ -2176,6 +2684,125 @@ template&lt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Validates that |hash_proto| has a hash that is exactly 32 bytes. </p>
+
+</div>
+</div>
+<a id="a59ebb437b3c00856f9a9054ef47feb30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ebb437b3c00856f9a9054ef47feb30">&#9670;&nbsp;</a></span>WithContext() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1Status.html">Status</a> asylo::WithContext </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">absl::string_view&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> with the provided context prepended to its error message. </p>
+<p>Returns <code><a class="el" href="namespaceasylo.html#ac03025d792be214c036d83424e26cd48" title="Returns an OK status object. ">OkStatus()</a></code> if the given <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> is OK.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>A <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> to add context to. </td></tr>
+    <tr><td class="paramname">context</td><td>Additional context to add to the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>status</code> with <code>context</code> prepended, along with an appropriate separator. </dd></dl>
+
+</div>
+</div>
+<a id="ad77584ecb42f762606be6cec5670bd5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77584ecb42f762606be6cec5670bd5f">&#9670;&nbsp;</a></span>WithContext() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt;T&gt; asylo::WithContext </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>status_or</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">absl::string_view&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>As the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code> overload above, but for <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>A <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> to add context to, if it is not OK. </td></tr>
+    <tr><td class="paramname">context</td><td>Additional context to add to the <code><a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>status_or</code> if it is OK, otherwise <code>status_or.status()</code> with <code>context</code> prepended to the error message. </dd></dl>
+
+</div>
+</div>
+<a id="ae9f0d204d1c203d43bb8181b5a95095a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f0d204d1c203d43bb8181b5a95095a">&#9670;&nbsp;</a></span>WithContext() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">absl::StatusOr&lt;T&gt; asylo::WithContext </td>
+          <td>(</td>
+          <td class="paramtype">absl::StatusOr&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>status_or</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">absl::string_view&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>As the <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> overload above, but for <code>absl::StatusOr&lt;T&gt;</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>An <code>absl::StatusOr&lt;T&gt;</code> to add context to, if it is not OK. </td></tr>
+    <tr><td class="paramname">context</td><td>Additional context to add to the <code>absl::Status</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>status_or</code> if it is OK, otherwise <code>status_or.status()</code> with <code>context</code> prepended to the error message. </dd></dl>
 
 </div>
 </div>

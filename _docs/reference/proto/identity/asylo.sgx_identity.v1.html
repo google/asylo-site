@@ -52,6 +52,46 @@ No
 </tbody>
 </table>
 </section>
+<h2 id="SgxIdentityMatchSpec">SgxIdentityMatchSpec</h2>
+<section>
+<p>Specification of which fields from <code>SgxIdentity</code> to match.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SgxIdentityMatchSpec-code_identity_match_spec">
+<td><code>code_identity_match_spec</code></td>
+<td><code><a href="#asylo-sgx-CodeIdentityMatchSpec">CodeIdentityMatchSpec</a></code></td>
+<td>
+<p>A specification of which fields from <code>CodeIdentity</code> to match. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SgxIdentityMatchSpec-machine_configuration_match_spec">
+<td><code>machine_configuration_match_spec</code></td>
+<td><code><a href="#asylo-sgx-MachineConfigurationMatchSpec">MachineConfigurationMatchSpec</a></code></td>
+<td>
+<p>A specification of which fields from <code>MachineConfiguration</code> to match.
+Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="SgxIdentityExpectation">SgxIdentityExpectation</h2>
 <section>
 <p>A verifier&rsquo;s expectation on an <code>SgxIdentity</code>.</p>
@@ -83,46 +123,6 @@ No
 <td><code><a href="#SgxIdentityMatchSpec">SgxIdentityMatchSpec</a></code></td>
 <td>
 <p>Specification of which fields from the target enclave identity to match.
-Required.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="SgxIdentityMatchSpec">SgxIdentityMatchSpec</h2>
-<section>
-<p>Specification of which fields from <code>SgxIdentity</code> to match.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="SgxIdentityMatchSpec-code_identity_match_spec">
-<td><code>code_identity_match_spec</code></td>
-<td><code><a href="#asylo-sgx-CodeIdentityMatchSpec">CodeIdentityMatchSpec</a></code></td>
-<td>
-<p>A specification of which fields from <code>CodeIdentity</code> to match. Required.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="SgxIdentityMatchSpec-machine_configuration_match_spec">
-<td><code>machine_configuration_match_spec</code></td>
-<td><code><a href="#asylo-sgx-MachineConfigurationMatchSpec">MachineConfigurationMatchSpec</a></code></td>
-<td>
-<p>A specification of which fields from <code>MachineConfiguration</code> to match.
 Required.</p>
 
 </td>
@@ -203,6 +203,45 @@ No
 </tbody>
 </table>
 </section>
+<h2 id="asylo-sgx-MachineConfiguration">asylo.sgx.MachineConfiguration</h2>
+<section>
+<p>Security-relevant machine configuration properties.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="asylo-sgx-MachineConfiguration-cpu_svn">
+<td><code>cpu_svn</code></td>
+<td><code><a href="#asylo-sgx-CpuSvn">CpuSvn</a></code></td>
+<td>
+<p>Optional.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="asylo-sgx-MachineConfiguration-sgx_type">
+<td><code>sgx_type</code></td>
+<td><code><a href="#asylo-sgx-SgxType">SgxType</a></code></td>
+<td>
+<p>Optional.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="asylo-sgx-CodeIdentityMatchSpec">asylo.sgx.CodeIdentityMatchSpec</h2>
 <section>
 <p>Specification of which fields from <code>CodeIdentity</code> to match.</p>
@@ -262,45 +301,6 @@ No
 similar to the miscselect mask.  Note that this is a required field. If
 this field is skipped, no <code>CodeIdentity</code> will match this identity
 expectation. Required.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="asylo-sgx-MachineConfiguration">asylo.sgx.MachineConfiguration</h2>
-<section>
-<p>Security-relevant machine configuration properties.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="asylo-sgx-MachineConfiguration-cpu_svn">
-<td><code>cpu_svn</code></td>
-<td><code><a href="#asylo-sgx-CpuSvn">CpuSvn</a></code></td>
-<td>
-<p>Optional.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="asylo-sgx-MachineConfiguration-sgx_type">
-<td><code>sgx_type</code></td>
-<td><code><a href="#asylo-sgx-SgxType">SgxType</a></code></td>
-<td>
-<p>Optional.</p>
 
 </td>
 <td>

@@ -66,7 +66,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">primitive_status.h File Reference</div>  </div>
 </div><!--header-->
@@ -77,6 +78,7 @@ $(function() {
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &quot;absl/status/status.h&quot;</code><br />
 <code>#include &quot;asylo/util/error_codes.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for primitive_status.h:</div>
@@ -108,6 +110,35 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceasylo_1_1primitives"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1primitives.html">asylo::primitives</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ad960383b728dd202e42b27e44909e84f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84f">asylo::primitives::AbslStatusCode</a> : int { <br />
+&#160;&#160;<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa9c98f43fed563bfdb6d94676d9abde1c">asylo::primitives::kOk</a> = 0, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fac3d0c93f4a85dc0dd133987dadf580d7">asylo::primitives::kCancelled</a> = 1, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa13a2a892c15aba651f616afd36d29a9e">asylo::primitives::kUnknown</a> = 2, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa56447441b1316cce90f7299284bdc923">asylo::primitives::kInvalidArgument</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa34a5b7f7f7668c0ef66719f8320a83e7">asylo::primitives::kDeadlineExceeded</a> = 4, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa3cee124553006bfa63b98b9dc39c036c">asylo::primitives::kNotFound</a> = 5, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84faf1733e8c36f9ce905cc03caec78b622f">asylo::primitives::kAlreadyExists</a> = 6, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa6c54ef836332ef924abd809289bb8f45">asylo::primitives::kPermissionDenied</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fad6197fd2798c63ced825756a48464375">asylo::primitives::kResourceExhausted</a> = 8, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa774a489156b090a5706ed8d591ba1e33">asylo::primitives::kFailedPrecondition</a> = 9, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa702bccaa3ee0e5413ae52c4847c3cba5">asylo::primitives::kAborted</a> = 10, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa368e2529c3314ec8d580e188e2231dbe">asylo::primitives::kOutOfRange</a> = 11, 
+<br />
+&#160;&#160;<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa94a7be77d734d233abfa6c4cab963ac5">asylo::primitives::kUnimplemented</a> = 12, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa0270a66593328b30ee5e336093eef070">asylo::primitives::kInternal</a> = 13, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84faca50a644f0ac4a5199829e5dac2eead2">asylo::primitives::kUnavailable</a> = 14, 
+<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa566ecff5906f97c397eaf1fe8c5c899b">asylo::primitives::kDataLoss</a> = 15, 
+<br />
+&#160;&#160;<a class="el" href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fac1fb352e0e6d92598fed927384d61c75">asylo::primitives::kUnauthenticated</a> = 16
+<br />
+ }<tr class="memdesc:ad960383b728dd202e42b27e44909e84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum of error codes aliases <code>absl::StatusCode</code>.  <a href="namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84f">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ad960383b728dd202e42b27e44909e84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

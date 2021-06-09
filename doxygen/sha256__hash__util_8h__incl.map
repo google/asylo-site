@@ -1,6 +1,6 @@
 <map id="asylo/crypto/sha256_hash_util.h" name="asylo/crypto/sha256_hash_util.h">
-<area shape="rect" id="node5" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="667,102,818,129"/>
-<area shape="rect" id="node9" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="287,266,433,293"/>
-<area shape="rect" id="node15" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1148,184,1287,211"/>
-<area shape="rect" id="node22" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1627,266,1802,293"/>
+<area shape="rect" id="node5" href="$statusor_8h.html" title="asylo/util/statusor.h" alt="" coords="1423,102,1574,129"/>
+<area shape="rect" id="node13" href="$logging_8h.html" title="asylo/util/logging.h" alt="" coords="152,266,299,293"/>
+<area shape="rect" id="node19" href="$status_8h.html" title="asylo/util/status.h" alt="" coords="1483,184,1621,211"/>
+<area shape="rect" id="node28" href="$error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="1875,266,2050,293"/>
 </map>

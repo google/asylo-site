@@ -15,7 +15,6 @@ var searchData=
   ['errorspace',['ErrorSpace',['../classasylo_1_1error_1_1ErrorSpace.html',1,'asylo::error']]],
   ['errorspaceimplementationhelper',['ErrorSpaceImplementationHelper',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]],
   ['errorspaceimplementationhelper_3c_20googleerrorspace_20_3e',['ErrorSpaceImplementationHelper&lt; GoogleErrorSpace &gt;',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]],
-  ['errorspaceimplementationhelper_3c_20posixerrorspace_20_3e',['ErrorSpaceImplementationHelper&lt; PosixErrorSpace &gt;',['../classasylo_1_1error_1_1ErrorSpaceImplementationHelper.html',1,'asylo::error']]],
   ['exectester',['ExecTester',['../classasylo_1_1experimental_1_1ExecTester.html',1,'asylo::experimental']]],
   ['exitcallprovider',['ExitCallProvider',['../classasylo_1_1primitives_1_1Client_1_1ExitCallProvider.html',1,'asylo::primitives::Client']]],
   ['exithandler',['ExitHandler',['../structasylo_1_1primitives_1_1ExitHandler.html',1,'asylo::primitives']]],

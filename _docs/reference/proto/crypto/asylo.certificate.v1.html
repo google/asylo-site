@@ -9,6 +9,45 @@ number_of_entries: 7
 ---
 <p>This package defines certificate-related messages.</p>
 
+<h2 id="CertificateSigningRequest">CertificateSigningRequest</h2>
+<section>
+<p>A certificate signing request (CSR) for a public key.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateSigningRequest-format">
+<td><code>format</code></td>
+<td><code><a href="#CertificateSigningRequest-CertificateSigningRequestFormat">CertificateSigningRequestFormat</a></code></td>
+<td>
+<p>The format of the CSR in |data|. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="CertificateSigningRequest-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+<p>The raw bytes of an encoded CSR. Required.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="Certificate">Certificate</h2>
 <section>
 <p>A certificate for a public key.</p>
@@ -43,48 +82,6 @@ No
 </td>
 <td>
 No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="Certificate-CertificateFormat">Certificate.CertificateFormat</h2>
-<section>
-<p>Defines different certificate formats.</p>
-
-<table class="enum-values">
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr id="Certificate-CertificateFormat-UNKNOWN">
-<td><code>UNKNOWN</code></td>
-<td>
-</td>
-</tr>
-<tr id="Certificate-CertificateFormat-X509_DER">
-<td><code>X509_DER</code></td>
-<td>
-<p>An X.509 certificate encoded in DER format (.der file).</p>
-
-</td>
-</tr>
-<tr id="Certificate-CertificateFormat-X509_PEM">
-<td><code>X509_PEM</code></td>
-<td>
-<p>An X.509 certificate encoded in PEM format (.pem file).</p>
-
-</td>
-</tr>
-<tr id="Certificate-CertificateFormat-SGX_ATTESTATION_KEY_CERTIFICATE">
-<td><code>SGX_ATTESTATION_KEY_CERTIFICATE</code></td>
-<td>
-<p>A serialized sgx.AttestationKeyCertificate proto for an SGX attestation
-key.</p>
-
 </td>
 </tr>
 </tbody>
@@ -174,79 +171,6 @@ No
 </tbody>
 </table>
 </section>
-<h2 id="CertificateRevocationList-CertificateRevocationListFormat">CertificateRevocationList.CertificateRevocationListFormat</h2>
-<section>
-<p>Defines different certificate revocation list formats.</p>
-
-<table class="enum-values">
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr id="CertificateRevocationList-CertificateRevocationListFormat-UNKNOWN">
-<td><code>UNKNOWN</code></td>
-<td>
-</td>
-</tr>
-<tr id="CertificateRevocationList-CertificateRevocationListFormat-X509_DER">
-<td><code>X509_DER</code></td>
-<td>
-<p>An X.509 certificate revocation list in DER format (.der file).</p>
-
-</td>
-</tr>
-<tr id="CertificateRevocationList-CertificateRevocationListFormat-X509_PEM">
-<td><code>X509_PEM</code></td>
-<td>
-<p>An X.509 certificate revocation list in PEM format (.pem file).</p>
-
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<h2 id="CertificateSigningRequest">CertificateSigningRequest</h2>
-<section>
-<p>A certificate signing request (CSR) for a public key.</p>
-
-<table class="message-fields">
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr id="CertificateSigningRequest-format">
-<td><code>format</code></td>
-<td><code><a href="#CertificateSigningRequest-CertificateSigningRequestFormat">CertificateSigningRequestFormat</a></code></td>
-<td>
-<p>The format of the CSR in |data|. Required.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-<tr id="CertificateSigningRequest-data">
-<td><code>data</code></td>
-<td><code>bytes</code></td>
-<td>
-<p>The raw bytes of an encoded CSR. Required.</p>
-
-</td>
-<td>
-No
-</td>
-</tr>
-</tbody>
-</table>
-</section>
 <h2 id="CertificateSigningRequest-CertificateSigningRequestFormat">CertificateSigningRequest.CertificateSigningRequestFormat</h2>
 <section>
 <p>Defines different CSR formats.</p>
@@ -275,6 +199,82 @@ No
 <td><code>PKCS10_PEM</code></td>
 <td>
 <p>A PKCS #10 certificate request encoded in PEM format (.pem file).</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="Certificate-CertificateFormat">Certificate.CertificateFormat</h2>
+<section>
+<p>Defines different certificate formats.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Certificate-CertificateFormat-UNKNOWN">
+<td><code>UNKNOWN</code></td>
+<td>
+</td>
+</tr>
+<tr id="Certificate-CertificateFormat-X509_DER">
+<td><code>X509_DER</code></td>
+<td>
+<p>An X.509 certificate encoded in DER format (.der file).</p>
+
+</td>
+</tr>
+<tr id="Certificate-CertificateFormat-X509_PEM">
+<td><code>X509_PEM</code></td>
+<td>
+<p>An X.509 certificate encoded in PEM format (.pem file).</p>
+
+</td>
+</tr>
+<tr id="Certificate-CertificateFormat-SGX_ATTESTATION_KEY_CERTIFICATE">
+<td><code>SGX_ATTESTATION_KEY_CERTIFICATE</code></td>
+<td>
+<p>A serialized sgx.AttestationKeyCertificate proto for an SGX attestation
+key.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="CertificateRevocationList-CertificateRevocationListFormat">CertificateRevocationList.CertificateRevocationListFormat</h2>
+<section>
+<p>Defines different certificate revocation list formats.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CertificateRevocationList-CertificateRevocationListFormat-UNKNOWN">
+<td><code>UNKNOWN</code></td>
+<td>
+</td>
+</tr>
+<tr id="CertificateRevocationList-CertificateRevocationListFormat-X509_DER">
+<td><code>X509_DER</code></td>
+<td>
+<p>An X.509 certificate revocation list in DER format (.der file).</p>
+
+</td>
+</tr>
+<tr id="CertificateRevocationList-CertificateRevocationListFormat-X509_PEM">
+<td><code>X509_PEM</code></td>
+<td>
+<p>An X.509 certificate revocation list in PEM format (.pem file).</p>
 
 </td>
 </tr>

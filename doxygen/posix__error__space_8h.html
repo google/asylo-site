@@ -65,9 +65,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">posix_error_space.h File Reference</div>  </div>
@@ -76,24 +74,19 @@ $(function() {
 <div class="textblock"><code>#include &lt;errno.h&gt;</code><br />
 <code>#include &lt;cerrno&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &quot;absl/base/macros.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="error__space_8h_source.html">asylo/util/error_space.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for posix_error_space.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="posix__error__space_8h__incl.png" border="0" usemap="#asylo_2util_2posix__error__space_8h" alt=""/></div>
 <map name="asylo_2util_2posix__error__space_8h" id="asylo_2util_2posix__error__space_8h">
-<area shape="rect" id="node5" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="320,95,495,121"/>
+<area shape="rect" id="node6" href="error__space_8h.html" title="asylo/util/error_space.h" alt="" coords="456,95,631,121"/>
 </map>
 </div>
 </div>
 <p><a href="posix__error__space_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1error_1_1PosixErrorSpace.html">asylo::error::PosixErrorSpace</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="classasylo_1_1error_1_1ErrorSpace.html" title="All implementations of error spaces are derived from this abstract class. ">ErrorSpace</a> interface for POSIX error codes.  <a href="classasylo_1_1error_1_1PosixErrorSpace.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceasylo"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo.html">asylo</a></td></tr>
@@ -101,117 +94,11 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceasylo_1_1error"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1error.html">asylo::error</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:acb996ddf664ee12a8ce21859c26ca0b9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9">asylo::error::PosixError</a> { <br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a51682dead0ca799d84a25d9260226686">asylo::error::P_E2BIG</a> = E2BIG, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a66a58ee2dc1feb3c6e5c6ff2cf5e89bf">asylo::error::P_EACCES</a> = EACCES, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a8c032636023732514b17561becf77ecc">asylo::error::P_EADDRINUSE</a> = EADDRINUSE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a3b3b98d7c2fe6ba7f66e69d7a4988083">asylo::error::P_EADDRNOTAVAIL</a> = EADDRNOTAVAIL, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9abf3c43b67cdf5a0749a258570f6c6aec">asylo::error::P_EAFNOSUPPORT</a> = EAFNOSUPPORT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a191e92bdfeea76b878e5b84a03c263d2">asylo::error::P_EAGAIN</a> = EAGAIN, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ada023901dec75ef903bf2b70213f0a31">asylo::error::P_EALREADY</a> = EALREADY, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a379d49a2ec5d0ef8a761820172bfa1c7">asylo::error::P_EBADF</a> = EBADF, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9add11af50241a063d6665ad61681c4d6e">asylo::error::P_EBADMSG</a> = EBADMSG, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a10327da1aa30fec0e33c01ed1d1c0775">asylo::error::P_EBUSY</a> = EBUSY, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9afb0d1b2e865d672f838c27206c8ea1cb">asylo::error::P_ECANCELED</a> = ECANCELED, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9acba781cca33d0489e8239e57a69ab9cc">asylo::error::P_ECHILD</a> = ECHILD, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a62ea372779507ef0eb57aaee16b8f14f">asylo::error::P_ECONNABORTED</a> = ECONNABORTED, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ab5dba0ee11919987fdaea14a26d4b45f">asylo::error::P_ECONNREFUSED</a> = ECONNREFUSED, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9acdf7f5117101c0ca55bdf4577525264f">asylo::error::P_ECONNRESET</a> = ECONNRESET, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a89298b2c2977451e7093c948acb0bc8e">asylo::error::P_EDEADLK</a> = EDEADLK, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a1341c50ed890d053f5581a9848ba65a7">asylo::error::P_EDESTADDRREQ</a> = EDESTADDRREQ, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a9a8779cf779cea7b2d64597a6ad4061f">asylo::error::P_EDOM</a> = EDOM, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a66647ee5b8c811fe0b18b705feca1272">asylo::error::P_EDQUOT</a> = EDQUOT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac2546d7ef75d5d04ed38e59d8714d25c">asylo::error::P_EEXIST</a> = EEXIST, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a522c0ed548bd4ca3305b8d96f9adaa1f">asylo::error::P_EFAULT</a> = EFAULT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a35ee7356b478ef2c871488c34805723e">asylo::error::P_EFBIG</a> = EFBIG, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a23a1070a05c0e6509bd53c04d7c73d6b">asylo::error::P_EHOSTUNREACH</a> = EHOSTUNREACH, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a306fa315c39138246c310780cd0ce855">asylo::error::P_EIDRM</a> = EIDRM, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9abd230b1134cc4fd0a4ac3773280af930">asylo::error::P_EILSEQ</a> = EILSEQ, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a5e53b20ad578a99099dfe50a05b4ec98">asylo::error::P_EINPROGRESS</a> = EINPROGRESS, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9af71426879a2bb7a15e74be86d969bb9a">asylo::error::P_EINTR</a> = EINTR, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac6732a9df919fbbf9a50b33e59ff93ea">asylo::error::P_EINVAL</a> = EINVAL, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ae5bddbb007201e2a54f5c7d2b6ba2420">asylo::error::P_EIO</a> = EIO, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a387082670624589fd138d8abaeb0f27c">asylo::error::P_EISCONN</a> = EISCONN, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a768585e05a4f414c715c6619b1e06eb0">asylo::error::P_EISDIR</a> = EISDIR, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a37287c49b77a8556e83bf2b5513c63e6">asylo::error::P_ELOOP</a> = ELOOP, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a7803af23ac6fc7f241d7d03e630a3995">asylo::error::P_EMFILE</a> = EMFILE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a9f8ad3ca12673c19f7e8fb276e22b0b0">asylo::error::P_EMLINK</a> = EMLINK, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a9db6e7914dc8dc8aff022d650b6fd891">asylo::error::P_EMSGSIZE</a> = EMSGSIZE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9aa276f73d0cc0db6aa9a761d022667e0e">asylo::error::P_EMULTIHOP</a> = EMULTIHOP, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a28ea7545cd7e23b5e4f0832ddbd1101d">asylo::error::P_ENAMETOOLONG</a> = ENAMETOOLONG, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9af65de9716da8371c68eeb0b5057191eb">asylo::error::P_ENETDOWN</a> = ENETDOWN, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9af800f53cc770a78a8c819efef25c6b90">asylo::error::P_ENETRESET</a> = ENETRESET, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a6b2806c2db740bcb1e43522d6d6fd232">asylo::error::P_ENETUNREACH</a> = ENETUNREACH, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a2e3a72683175ed760208687b232ad156">asylo::error::P_ENFILE</a> = ENFILE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a3290a833228ea7d2c35ba708cd0a73be">asylo::error::P_ENOBUFS</a> = ENOBUFS, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a93bf520f791644439fad84702f8e6d85">asylo::error::P_ENODATA</a> = ENODATA, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a0ca05fea19cf5f86e4d568b75c2e49e1">asylo::error::P_ENODEV</a> = ENODEV, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ae97391a249e1d838cefadc1c8063f788">asylo::error::P_ENOENT</a> = ENOENT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ad14e49baddee6d1f89f516d3a4cb2d6c">asylo::error::P_ENOEXEC</a> = ENOEXEC, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a367cbac3ab67e64e49af38c630d362e0">asylo::error::P_ENOLCK</a> = ENOLCK, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a7729960e8dfc51d39f1de21045892e59">asylo::error::P_ENOLINK</a> = ENOLINK, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a443f9f717c801d52623fc707391f8979">asylo::error::P_ENOMEM</a> = ENOMEM, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a5ca5a18a1ed51c81ed218e64e7af4c08">asylo::error::P_ENOMSG</a> = ENOMSG, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9abdd3d6a85978ff43241320aaa08e8388">asylo::error::P_ENOPROTOOPT</a> = ENOPROTOOPT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ad41d4310a2a151f7d1d6401120cb1f10">asylo::error::P_ENOSPC</a> = ENOSPC, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a89ca9513680f4aef70532b4bea4d3fc0">asylo::error::P_ENOSR</a> = ENOSR, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a5b7bed82011793c6814dcfd768b0fcaf">asylo::error::P_ENOSTR</a> = ENOSTR, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9aa07a555751e56467f6f3c30106b4d67a">asylo::error::P_ENOSYS</a> = ENOSYS, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a9f45ed6eb5f743fadfb3caeb9af3770a">asylo::error::P_ENOTCONN</a> = ENOTCONN, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a68560d4505e0b0df79b0f24eb7b51709">asylo::error::P_ENOTDIR</a> = ENOTDIR, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a53dc88f8a64afb86ef1914818115de30">asylo::error::P_ENOTEMPTY</a> = ENOTEMPTY, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9aac1d4aef7c9ac8c41951071087d299a3">asylo::error::P_ENOTRECOVERABLE</a> = ENOTRECOVERABLE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac9e7ad3a9b67b13fd51175a4303b1018">asylo::error::P_ENOTSOCK</a> = ENOTSOCK, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ad8f246a658a6cb5866ba4dcd49796020">asylo::error::P_ENOTSUP</a> = ENOTSUP, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a4eaca981aeeebeed4f67136db278ff29">asylo::error::P_ENOTTY</a> = ENOTTY, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ae50d84a7e364acbb7754ad6c05bcb046">asylo::error::P_ENXIO</a> = ENXIO, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a2c7104c1d082054ec80c25b0d88ab1ca">asylo::error::P_EOVERFLOW</a> = EOVERFLOW, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a89af7861212b94f198e13ba4d515a18e">asylo::error::P_EOWNERDEAD</a> = EOWNERDEAD, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac2179d9abc1581367f30726a2af3ab9d">asylo::error::P_EPERM</a> = EPERM, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9aa5e58135849b691764e0eaa02333641a">asylo::error::P_EPIPE</a> = EPIPE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ae042c0387981a1007fa4b14210ec9868">asylo::error::P_EPROTO</a> = EPROTO, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ad4e5f3b56bc0fdefdf75eff97662d0fa">asylo::error::P_EPROTONOSUPPORT</a> = EPROTONOSUPPORT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ab27ac3edec72e5c6216a722a1d001879">asylo::error::P_EPROTOTYPE</a> = EPROTOTYPE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a1731e4f5ff95a3285bc5ea27e5f80b43">asylo::error::P_ERANGE</a> = ERANGE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a683c0208096ec3865a36f03394885f49">asylo::error::P_EROFS</a> = EROFS, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9acd0562b30359e449c8c25659e63592bf">asylo::error::P_ESPIPE</a> = ESPIPE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a294caee7a4b487624029869adc58a07c">asylo::error::P_ESRCH</a> = ESRCH, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac2f7850b336730a5372bd034b621cdfb">asylo::error::P_ESTALE</a> = ESTALE, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ae1ddcbfa5dd5b7845beead67652d4cd7">asylo::error::P_ETIME</a> = ETIME, 
-<br />
-&#160;&#160;<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9ac96f0d595243685040afa975c0b1e8a5">asylo::error::P_ETIMEDOUT</a> = ETIMEDOUT, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a718084ac1240ee3c2b1da156022d722f">asylo::error::P_ETXTBSY</a> = ETXTBSY, 
-<a class="el" href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9a41631bde1de04dcceff5635f5ea8fcf3">asylo::error::P_EXDEV</a> = EXDEV
-<br />
- }<tr class="memdesc:acb996ddf664ee12a8ce21859c26ca0b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enum associated with the POSIX error-space.  <a href="namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:acb996ddf664ee12a8ce21859c26ca0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa4f261361e617d8be57d71cfc78d1539"><td class="memItemLeft" align="right" valign="top">ErrorSpace const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1error.html#aa4f261361e617d8be57d71cfc78d1539">asylo::error::GetErrorSpace</a> (ErrorSpaceAdlTag&lt; PosixError &gt; tag)</td></tr>
-<tr class="memdesc:aa4f261361e617d8be57d71cfc78d1539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the <a class="el" href="classasylo_1_1error_1_1PosixErrorSpace.html" title="An implementation of the ErrorSpace interface for POSIX error codes. ">PosixErrorSpace</a> class to the PosixError enum.  <a href="namespaceasylo_1_1error.html#aa4f261361e617d8be57d71cfc78d1539">More...</a><br /></td></tr>
-<tr class="separator:aa4f261361e617d8be57d71cfc78d1539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae730ed4936996beb755e1d32596604a6"><td class="memItemLeft" align="right" valign="top">enum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasylo_1_1error.html#ae730ed4936996beb755e1d32596604a6">asylo::error::ABSL_DEPRECATED</a> (&quot;Deprecated as part of Asylo's absl::Status migration. Use the functions &quot; &quot;from asylo/util/posix_errors.h or the matchers from &quot; &quot;asylo/util/posix_error_matchers.h instead.&quot;) PosixError</td></tr>
+<tr class="memdesc:ae730ed4936996beb755e1d32596604a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enum associated with the POSIX error-space.  <a href="namespaceasylo_1_1error.html#ae730ed4936996beb755e1d32596604a6">More...</a><br /></td></tr>
+<tr class="separator:ae730ed4936996beb755e1d32596604a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

@@ -172,7 +172,7 @@ int main(int argc, char *argv[]) {
 
   auto remote_config = load_config.MutableExtension(asylo::remote_load_config);
   remote_config->set_remote_proxy_config(
-      reinterpret_cast<uintptr_t>(proxy_config_result.ValueOrDie().get()));
+      reinterpret_cast<uintptr_t>(proxy_config_result.value().get()));
   // END_ADDITION
 
   // Prepare |sgx_config| message.
@@ -182,7 +182,7 @@ int main(int argc, char *argv[]) {
   file_enclave_config->set_enclave_path(enclave_path);
 
   // Load Enclave with prepared |EnclaveManager| and |load_config| message.
-  asylo::EnclaveManager *manager = manager_result.ValueOrDie();
+  asylo::EnclaveManager *manager = manager_result.value();
   auto status = manager->LoadEnclave(load_config);
   LOG_IF(QFATAL, !status.ok()) << "LoadEnclave failed with: " << status;
 
@@ -343,8 +343,7 @@ wget -q -O - https://github.com/google/asylo-examples/archive/master.tar.gz | \
 
 Then run the quickstart example:
 
-Note: The following command runs the enclave in sgx mode (to run it in simulated
-mode, replace `CONFIG_TYPE=sgx` with `CONFIG_TYPE=sgx-sim`).
+Note: The following command runs the enclave in sgx-sim mode.
 
 ```bash
 export MESSAGE="Asylo Rocks" # Or another message

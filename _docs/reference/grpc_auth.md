@@ -160,7 +160,7 @@ if (!result.ok()) {
 
 asylo::EnclaveConfig config;
 *config.add_enclave_assertion_authority_configs() =
-    std::move(result).ValueOrDie()
+    std::move(result).value()
 ```
 
 #### Reference
@@ -517,7 +517,7 @@ ACL.
   if (!evaluate_result.ok()) {
     // Log the error and/or return
   }
-  if (!evaluate_result.ValueOrDie()) {
+  if (!evaluate_result.value()) {
     // Peer is unauthorized! Log the explanation and/or return.
   }
 }
@@ -556,7 +556,7 @@ See
     // Log the error and/or return
   }
 
- const asylo::EnclaveIdentity &identity = *identity_result.ValueOrDie();
+ const asylo::EnclaveIdentity &identity = *identity_result.value();
  // Do something with |identity|.
  …
 }

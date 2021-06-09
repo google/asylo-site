@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['posixerror',['PosixError',['../namespaceasylo_1_1error.html#acb996ddf664ee12a8ce21859c26ca0b9',1,'asylo::error']]]
+  ['sgxidentitymatchspecoptions',['SgxIdentityMatchSpecOptions',['../namespaceasylo.html#ad9ce7785495cca99df26647b7762dcbd',1,'asylo']]],
+  ['sharednamekind',['SharedNameKind',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afce',1,'shared_name_kind.h']]]
 ];

@@ -66,6 +66,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classasylo_1_1StatusOr-members.html">List of all members</a>  </div>
@@ -79,6 +80,12 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="statusor_8h_source.html">statusor.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a35ae9e8a6d6482a0b6c6b7d11cb0fd32"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a35ae9e8a6d6482a0b6c6b7d11cb0fd32">value_type</a> = T</td></tr>
+<tr class="memdesc:a35ae9e8a6d6482a0b6c6b7d11cb0fd32"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alias for T. Useful for generic programming.  <a href="#a35ae9e8a6d6482a0b6c6b7d11cb0fd32">More...</a><br /></td></tr>
+<tr class="separator:a35ae9e8a6d6482a0b6c6b7d11cb0fd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7ba2e2c842b80c8295b07de24dbc703"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#ac7ba2e2c842b80c8295b07de24dbc703">StatusOr</a> ()</td></tr>
@@ -89,8 +96,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7cc701906b22b075e22ae7f88a02280"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#aa7cc701906b22b075e22ae7f88a02280">StatusOr</a> (const <a class="el" href="classasylo_1_1Status.html">Status</a> &amp;<a class="el" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>)</td></tr>
 <tr class="memdesc:aa7cc701906b22b075e22ae7f88a02280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object with the given non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> object.  <a href="#aa7cc701906b22b075e22ae7f88a02280">More...</a><br /></td></tr>
 <tr class="separator:aa7cc701906b22b075e22ae7f88a02280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac023a87725e94dc8d194cdd65626623b"><td class="memTemplParams" colspan="2">template&lt;typename U , typename E  = typename std::enable_if&lt;                is_implicitly_constructible&lt;T, U&gt;::value &amp;&amp;                !std::is_same&lt;typename std::remove_reference&lt;                                  typename std::remove_cv&lt;U&gt;::type&gt;::type,                              Status&gt;::value&gt;::type&gt; </td></tr>
-<tr class="memitem:ac023a87725e94dc8d194cdd65626623b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#ac023a87725e94dc8d194cdd65626623b">StatusOr</a> (U &amp;&amp;value)</td></tr>
+<tr class="memitem:a1abfa85631fce4295c5c9e4a5c824f5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a1abfa85631fce4295c5c9e4a5c824f5c">StatusOr</a> (const absl::Status &amp;<a class="el" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>)</td></tr>
+<tr class="memdesc:a1abfa85631fce4295c5c9e4a5c824f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object with the given non-OK <code>absl::Status</code> object.  <a href="#a1abfa85631fce4295c5c9e4a5c824f5c">More...</a><br /></td></tr>
+<tr class="separator:a1abfa85631fce4295c5c9e4a5c824f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac023a87725e94dc8d194cdd65626623b"><td class="memTemplParams" colspan="2">template&lt;typename U , typename E  = typename std::enable_if&lt;                is_implicitly_constructible&lt;T, U&gt;::value &amp;&amp;                !std::is_same&lt;typename std::remove_reference&lt;                                  typename std::remove_cv&lt;U&gt;::type&gt;::type,                              Status&gt;::value &amp;&amp;                !std::is_same&lt;typename std::remove_reference&lt;                                  typename std::remove_cv&lt;U&gt;::type&gt;::type,                              absl::Status&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:ac023a87725e94dc8d194cdd65626623b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#ac023a87725e94dc8d194cdd65626623b">StatusOr</a> (U &amp;&amp;<a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8">value</a>)</td></tr>
 <tr class="memdesc:ac023a87725e94dc8d194cdd65626623b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object that contains <code>value</code>.  <a href="#ac023a87725e94dc8d194cdd65626623b">More...</a><br /></td></tr>
 <tr class="separator:ac023a87725e94dc8d194cdd65626623b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4655ae2c2e98be6d227203f72608453b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a4655ae2c2e98be6d227203f72608453b">StatusOr</a> (const <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> &amp;other)</td></tr>
@@ -100,6 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a551a3de30a5e6968329a6bcc92d2f16b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a551a3de30a5e6968329a6bcc92d2f16b">StatusOr</a> (const <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; U &gt; &amp;other)</td></tr>
 <tr class="memdesc:a551a3de30a5e6968329a6bcc92d2f16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templatized constructor that constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> from a const reference to a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;U&gt;</code>.  <a href="#a551a3de30a5e6968329a6bcc92d2f16b">More...</a><br /></td></tr>
 <tr class="separator:a551a3de30a5e6968329a6bcc92d2f16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7710a142400311f312e6c236eec6fdb"><td class="memTemplParams" colspan="2">template&lt;typename U , typename E  = typename std::enable_if&lt;                is_implicitly_constructible&lt;T, const U &amp;&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:af7710a142400311f312e6c236eec6fdb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#af7710a142400311f312e6c236eec6fdb">StatusOr</a> (const absl::StatusOr&lt; U &gt; &amp;other)</td></tr>
+<tr class="memdesc:af7710a142400311f312e6c236eec6fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templatized constructor that constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> from a const reference to an <code>absl::StatusOr&lt;U&gt;</code>.  <a href="#af7710a142400311f312e6c236eec6fdb">More...</a><br /></td></tr>
+<tr class="separator:af7710a142400311f312e6c236eec6fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3390da1195f5ef89983b52afeafdadd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#ab3390da1195f5ef89983b52afeafdadd">operator=</a> (const <a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> &amp;other)</td></tr>
 <tr class="memdesc:ab3390da1195f5ef89983b52afeafdadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-assignment operator.  <a href="#ab3390da1195f5ef89983b52afeafdadd">More...</a><br /></td></tr>
 <tr class="separator:ab3390da1195f5ef89983b52afeafdadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,24 +121,55 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a066cd2e0d4c40ef4d984a581bd0b10a0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a066cd2e0d4c40ef4d984a581bd0b10a0">StatusOr</a> (<a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a>&lt; U &gt; &amp;&amp;other)</td></tr>
 <tr class="memdesc:a066cd2e0d4c40ef4d984a581bd0b10a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templatized constructor which constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> by moving the contents of a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;U&gt;</code>.  <a href="#a066cd2e0d4c40ef4d984a581bd0b10a0">More...</a><br /></td></tr>
 <tr class="separator:a066cd2e0d4c40ef4d984a581bd0b10a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d97f7f0161f1029b1a9efa18e30ae4d"><td class="memTemplParams" colspan="2">template&lt;typename U , typename E  = typename std::enable_if&lt;                            is_implicitly_constructible&lt;T, U &amp;&amp;&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a2d97f7f0161f1029b1a9efa18e30ae4d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a2d97f7f0161f1029b1a9efa18e30ae4d">StatusOr</a> (absl::StatusOr&lt; U &gt; &amp;&amp;other)</td></tr>
+<tr class="memdesc:a2d97f7f0161f1029b1a9efa18e30ae4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templatized constructor which constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> by moving the contents of an <code>absl::StatusOr&lt;U&gt;</code>.  <a href="#a2d97f7f0161f1029b1a9efa18e30ae4d">More...</a><br /></td></tr>
+<tr class="separator:a2d97f7f0161f1029b1a9efa18e30ae4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbb6e7a20a4f64c1e5c974946d856b91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#acbb6e7a20a4f64c1e5c974946d856b91">operator=</a> (<a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> &amp;&amp;other)</td></tr>
 <tr class="memdesc:acbb6e7a20a4f64c1e5c974946d856b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-assignment operator.  <a href="#acbb6e7a20a4f64c1e5c974946d856b91">More...</a><br /></td></tr>
 <tr class="separator:acbb6e7a20a4f64c1e5c974946d856b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8005c68bd9a8077e07d613283ea6b70"><td class="memTemplParams" colspan="2">template&lt;typename U , typename E  = typename std::enable_if&lt;                            is_implicitly_constructible&lt;U, T &amp;&amp;&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:aa8005c68bd9a8077e07d613283ea6b70"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#aa8005c68bd9a8077e07d613283ea6b70">operator absl::StatusOr&lt; U &gt;</a> () const</td></tr>
+<tr class="separator:aa8005c68bd9a8077e07d613283ea6b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0365979a3a379130563e0f7830350b38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38">ok</a> () const</td></tr>
 <tr class="memdesc:a0365979a3a379130563e0f7830350b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the object contains a <code>T</code> value.  <a href="#a0365979a3a379130563e0f7830350b38">More...</a><br /></td></tr>
 <tr class="separator:a0365979a3a379130563e0f7830350b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5472244d465ec905de195ff1445a00fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classasylo_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a> () const</td></tr>
 <tr class="memdesc:a5472244d465ec905de195ff1445a00fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored status object, or an OK status if a <code>T</code> value is stored.  <a href="#a5472244d465ec905de195ff1445a00fe">More...</a><br /></td></tr>
 <tr class="separator:a5472244d465ec905de195ff1445a00fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe77b138fa7f54ea469505c02dff983f"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f">ValueOrDie</a> () const &amp;</td></tr>
-<tr class="memdesc:afe77b138fa7f54ea469505c02dff983f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#afe77b138fa7f54ea469505c02dff983f">More...</a><br /></td></tr>
-<tr class="separator:afe77b138fa7f54ea469505c02dff983f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3970ee6236b51bf6935b80a0e99ffb89"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a3970ee6236b51bf6935b80a0e99ffb89">ValueOrDie</a> () &amp;</td></tr>
-<tr class="memdesc:a3970ee6236b51bf6935b80a0e99ffb89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a mutable reference to the stored <code>T</code> value.  <a href="#a3970ee6236b51bf6935b80a0e99ffb89">More...</a><br /></td></tr>
-<tr class="separator:a3970ee6236b51bf6935b80a0e99ffb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e40cf885ab51ee832ccfdabb8f3aaf7"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a5e40cf885ab51ee832ccfdabb8f3aaf7">ValueOrDie</a> () &amp;&amp;</td></tr>
-<tr class="memdesc:a5e40cf885ab51ee832ccfdabb8f3aaf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves and returns the internally-stored <code>T</code> value.  <a href="#a5e40cf885ab51ee832ccfdabb8f3aaf7">More...</a><br /></td></tr>
-<tr class="separator:a5e40cf885ab51ee832ccfdabb8f3aaf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c85d7d0d2a3de9608e5c610256e7c8"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8">value</a> () const &amp;</td></tr>
+<tr class="memdesc:a31c85d7d0d2a3de9608e5c610256e7c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#a31c85d7d0d2a3de9608e5c610256e7c8">More...</a><br /></td></tr>
+<tr class="separator:a31c85d7d0d2a3de9608e5c610256e7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf12384d9573e95c26606b00cde650f"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#adbf12384d9573e95c26606b00cde650f">value</a> () &amp;</td></tr>
+<tr class="memdesc:adbf12384d9573e95c26606b00cde650f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#adbf12384d9573e95c26606b00cde650f">More...</a><br /></td></tr>
+<tr class="separator:adbf12384d9573e95c26606b00cde650f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfc71dbbdbfcca4f8d98ae613d88d739"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#acfc71dbbdbfcca4f8d98ae613d88d739">value</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:acfc71dbbdbfcca4f8d98ae613d88d739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves and returns the internally-stored <code>T</code> value.  <a href="#acfc71dbbdbfcca4f8d98ae613d88d739">More...</a><br /></td></tr>
+<tr class="separator:acfc71dbbdbfcca4f8d98ae613d88d739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79aae328a5a98f679a40dd648049355e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a79aae328a5a98f679a40dd648049355e">ABSL_DEPRECATED</a> (&quot;Deprecated as part of Asylo's absl::Status migration. Use <a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8">value</a>(), &quot; &quot;operator*(), or operator-&gt;() instead.&quot;) const T &amp;ValueOrDie() const &amp;</td></tr>
+<tr class="memdesc:a79aae328a5a98f679a40dd648049355e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#a79aae328a5a98f679a40dd648049355e">More...</a><br /></td></tr>
+<tr class="separator:a79aae328a5a98f679a40dd648049355e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761dd2586441541bf251e439c5a30a79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a761dd2586441541bf251e439c5a30a79">ABSL_DEPRECATED</a> (&quot;Deprecated as part of Asylo's absl::Status migration. Use <a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8">value</a>(), &quot; &quot;operator*(), or operator-&gt;() instead.&quot;) T &amp;ValueOrDie() &amp;</td></tr>
+<tr class="memdesc:a761dd2586441541bf251e439c5a30a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a mutable reference to the stored <code>T</code> value.  <a href="#a761dd2586441541bf251e439c5a30a79">More...</a><br /></td></tr>
+<tr class="separator:a761dd2586441541bf251e439c5a30a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5484f1de80df98eac18f7ba8e4b9d715"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a5484f1de80df98eac18f7ba8e4b9d715">ABSL_DEPRECATED</a> (&quot;Deprecated as part of Asylo's absl::Status migration. Use <a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8">value</a>(), &quot; &quot;operator*(), or operator-&gt;() instead.&quot;) T ValueOrDie() &amp;&amp;</td></tr>
+<tr class="memdesc:a5484f1de80df98eac18f7ba8e4b9d715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves and returns the internally-stored <code>T</code> value.  <a href="#a5484f1de80df98eac18f7ba8e4b9d715">More...</a><br /></td></tr>
+<tr class="separator:a5484f1de80df98eac18f7ba8e4b9d715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a327e3336d2c55744e5d9da0e5c75f05b"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a327e3336d2c55744e5d9da0e5c75f05b">operator*</a> () const &amp;</td></tr>
+<tr class="memdesc:a327e3336d2c55744e5d9da0e5c75f05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#a327e3336d2c55744e5d9da0e5c75f05b">More...</a><br /></td></tr>
+<tr class="separator:a327e3336d2c55744e5d9da0e5c75f05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f853febe8fdb96c2b9789c8433d8b8d"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#a7f853febe8fdb96c2b9789c8433d8b8d">operator*</a> () &amp;</td></tr>
+<tr class="memdesc:a7f853febe8fdb96c2b9789c8433d8b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#a7f853febe8fdb96c2b9789c8433d8b8d">More...</a><br /></td></tr>
+<tr class="separator:a7f853febe8fdb96c2b9789c8433d8b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab393b1e12da9f7a386f09214fe2d191"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#aab393b1e12da9f7a386f09214fe2d191">operator*</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:aab393b1e12da9f7a386f09214fe2d191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#aab393b1e12da9f7a386f09214fe2d191">More...</a><br /></td></tr>
+<tr class="separator:aab393b1e12da9f7a386f09214fe2d191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecdc6cb0add27722a547288e1a84b595"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#aecdc6cb0add27722a547288e1a84b595">operator-&gt;</a> () const</td></tr>
+<tr class="memdesc:aecdc6cb0add27722a547288e1a84b595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aecceses the stored <code>T</code> value.  <a href="#aecdc6cb0add27722a547288e1a84b595">More...</a><br /></td></tr>
+<tr class="separator:aecdc6cb0add27722a547288e1a84b595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c4dfbc8707ed18384e907dd106d386"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasylo_1_1StatusOr.html#aa8c4dfbc8707ed18384e907dd106d386">operator-&gt;</a> ()</td></tr>
+<tr class="memdesc:aa8c4dfbc8707ed18384e907dd106d386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored <code>T</code> value.  <a href="#aa8c4dfbc8707ed18384e907dd106d386">More...</a><br /></td></tr>
+<tr class="separator:aa8c4dfbc8707ed18384e907dd106d386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -139,13 +184,35 @@ class asylo::StatusOr&lt; T &gt;</h3>
 <p>A class for representing either a usable value, or an error. </p>
 <p>A <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object either contains a value of type <code>T</code> or a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> object explaining why such a value is not present. The type <code>T</code> must be copy-constructible and/or move-constructible.</p>
 <p>The state of a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object may be determined by calling <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> or <a class="el" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe" title="Gets the stored status object, or an OK status if a T value is stored. ">status()</a>. The <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> method returns true if the object contains a valid value. The <a class="el" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe" title="Gets the stored status object, or an OK status if a T value is stored. ">status()</a> method returns the internal <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> object. A <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object that contains a valid value will return an OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> for a call to <a class="el" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe" title="Gets the stored status object, or an OK status if a T value is stored. ">status()</a>.</p>
-<p>A value of type <code>T</code> may be extracted from a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object through a call to <a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f" title="Gets the stored T value. ">ValueOrDie()</a>. This function should only be called if a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true. Sample usage:</p>
-<div class="fragment"><div class="line"> <a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;Foo&gt;</a> result = CalculateFoo();</div><div class="line"> <span class="keywordflow">if</span> (result.<a class="code" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38">ok</a>()) {</div><div class="line">   Foo foo = result.<a class="code" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f">ValueOrDie</a>();</div><div class="line">   foo-&gt;DoSomethingCool();</div><div class="line"> } <span class="keywordflow">else</span> {</div><div class="line">   <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90">ERROR</a>) &lt;&lt; result.<a class="code" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>();</div><div class="line">}</div></div><!-- fragment --><p>If <code>T</code> is a move-only type, like <code>std::unique_ptr&lt;&gt;</code>, then the value should only be extracted after invoking <code>std::move()</code> on the <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object. Sample usage:</p>
-<div class="fragment"><div class="line"><a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;std::unique_ptr&lt;Foo&gt;</a>&gt; result = CalculateFoo();</div><div class="line"><span class="keywordflow">if</span> (result.<a class="code" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38">ok</a>()) {</div><div class="line">  std::unique_ptr&lt;Foo&gt; foo = std::move(result).ValueOrDie();</div><div class="line">  foo-&gt;DoSomethingCool();</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">  <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90">ERROR</a>) &lt;&lt; result.<a class="code" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>();</div><div class="line">}</div></div><!-- fragment --><p><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> is provided for the convenience of implementing functions that return some value but may fail during execution. For instance, consider a function with the following signature:</p>
+<p>A value of type <code>T</code> may be extracted by dereferencing an OK <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object, either with <a class="el" href="classasylo_1_1StatusOr.html#a327e3336d2c55744e5d9da0e5c75f05b" title="Gets the stored T value. ">operator*()</a> or <a class="el" href="classasylo_1_1StatusOr.html#aa8c4dfbc8707ed18384e907dd106d386" title="Gets the stored T value. ">operator-&gt;()</a>. These operators should only be called if a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true. Sample usage:</p>
+<div class="fragment"><div class="line"> <a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;Foo&gt;</a> result = CalculateFoo();</div><div class="line"> <span class="keywordflow">if</span> (result.<a class="code" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38">ok</a>()) {</div><div class="line">   Foo foo = *result;</div><div class="line">   foo.DoSomethingCool();</div><div class="line"> } <span class="keywordflow">else</span> {</div><div class="line">   <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90">ERROR</a>) &lt;&lt; result.<a class="code" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>();</div><div class="line">}</div></div><!-- fragment --><p>Or more concisely:</p>
+<div class="fragment"><div class="line"> <a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;Foo&gt;</a> result = CalculateFoo();</div><div class="line"> <span class="keywordflow">if</span> (result.<a class="code" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38">ok</a>()) {</div><div class="line">   result-&gt;DoSomethingCool();</div><div class="line"> } <span class="keywordflow">else</span> {</div><div class="line">   <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90">ERROR</a>) &lt;&lt; result.<a class="code" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>();</div><div class="line">}</div></div><!-- fragment --><p>If <code>T</code> is a move-only type, like <code>std::unique_ptr&lt;&gt;</code>, then the value should only be extracted after invoking <code>std::move()</code> on the <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object. Sample usage:</p>
+<div class="fragment"><div class="line"><a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;std::unique_ptr&lt;Foo&gt;</a>&gt; result = CalculateFoo();</div><div class="line"><span class="keywordflow">if</span> (result.<a class="code" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38">ok</a>()) {</div><div class="line">  std::unique_ptr&lt;Foo&gt; foo = *std::move(result);</div><div class="line">  foo-&gt;DoSomethingCool();</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">  <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90">ERROR</a>) &lt;&lt; result.<a class="code" href="classasylo_1_1StatusOr.html#a5472244d465ec905de195ff1445a00fe">status</a>();</div><div class="line">}</div></div><!-- fragment --><p>If exceptions are enabled, callers can alternatively use the <code><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a></code> method to extract the contents of a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>. Calls to <code><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a></code> throw <code>absl::BadStatusOrAccess</code> if the <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> is not OK. Sample usage:</p>
+<div class="fragment"><div class="line"> <a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;Foo&gt;</a> result = CalculateFoo();</div><div class="line"> <span class="keywordflow">try</span> {</div><div class="line">   result.<a class="code" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8">value</a>().DoSomethingCool();</div><div class="line"> } <span class="keywordflow">catch</span> (<span class="keyword">const</span> absl::BadStatusOrAccess &amp;bad_access) {</div><div class="line">   <a class="code" href="logging_8h.html#accad43a85d781d53381cd53a9894b6ae">LOG</a>(<a class="code" href="logging_8h.html#a93a3ba385cad27c4774e5fe64c025d3da2fd6f336d08340583bd620a7f5694c90">ERROR</a>) &lt;&lt; bad_access.status();</div><div class="line">}</div></div><!-- fragment --><p>If exceptions are disabled, then calls to <code><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a></code> on a non-OK <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> will abort the program.</p>
+<p><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> is provided for the convenience of implementing functions that return some value but may fail during execution. For instance, consider a function with the following signature:</p>
 <div class="fragment"><div class="line"><a class="code" href="classasylo_1_1Status.html">asylo::Status</a> CalculateFoo(<span class="keywordtype">int</span> *output);</div></div><!-- fragment --><p>This function may instead be written as:</p>
-<div class="fragment"><div class="line"><a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;int&gt;</a> CalculateFoo();</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classasylo_1_1StatusOr.html">asylo::StatusOr&lt;int&gt;</a> CalculateFoo();</div></div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a35ae9e8a6d6482a0b6c6b7d11cb0fd32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ae9e8a6d6482a0b6c6b7d11cb0fd32">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::<a class="el" href="classasylo_1_1StatusOr.html#a35ae9e8a6d6482a0b6c6b7d11cb0fd32">value_type</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An alias for T. Useful for generic programming. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac7ba2e2c842b80c8295b07de24dbc703"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ba2e2c842b80c8295b07de24dbc703">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ba2e2c842b80c8295b07de24dbc703">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +270,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a id="aa7cc701906b22b075e22ae7f88a02280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7cc701906b22b075e22ae7f88a02280">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cc701906b22b075e22ae7f88a02280">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +296,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object with the given non-OK <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> object. </p>
-<p>All calls to <a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f" title="Gets the stored T value. ">ValueOrDie()</a> on this object will abort. The given <code>status</code> must not be an OK status, otherwise this constructor will abort.</p>
+<p>The given <code>status</code> must not be an OK status, otherwise this constructor will abort.</p>
 <p>This constructor is not declared explicit so that a function with a return type of <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> can return a <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> object, and the status will be implicitly converted to the appropriate return type as a matter of convenience.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -240,15 +307,53 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="a1abfa85631fce4295c5c9e4a5c824f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abfa85631fce4295c5c9e4a5c824f5c">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::<a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> </td>
+          <td>(</td>
+          <td class="paramtype">const absl::Status &amp;&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object with the given non-OK <code>absl::Status</code> object. </p>
+<p>All calls to <a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a> on this object will throw an exception or cause the program to abort. The given <code>status</code> must not be an OK status, otherwise this constructor will cause an abort.</p>
+<p>This constructor is not declared explicit so that a function with a return type of <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> can return an <code>absl::Status</code> object, and the status will be implicitly converted to the appropriate return type as a matter of convenience.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>The non-OK <code>absl::Status</code> object to initalize to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac023a87725e94dc8d194cdd65626623b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac023a87725e94dc8d194cdd65626623b">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac023a87725e94dc8d194cdd65626623b">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
 <div class="memtemplate">
-template&lt;typename U , typename E  = typename std::enable_if&lt;                is_implicitly_constructible&lt;T, U&gt;::value &amp;&amp;                !std::is_same&lt;typename std::remove_reference&lt;                                  typename std::remove_cv&lt;U&gt;::type&gt;::type,                              Status&gt;::value&gt;::type&gt; </div>
+template&lt;typename U , typename E  = typename std::enable_if&lt;                is_implicitly_constructible&lt;T, U&gt;::value &amp;&amp;                !std::is_same&lt;typename std::remove_reference&lt;                                  typename std::remove_cv&lt;U&gt;::type&gt;::type,                              Status&gt;::value &amp;&amp;                !std::is_same&lt;typename std::remove_reference&lt;                                  typename std::remove_cv&lt;U&gt;::type&gt;::type,                              absl::Status&gt;::value&gt;::type&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -269,7 +374,7 @@ template&lt;typename U , typename E  = typename std::enable_if&lt;              
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object that contains <code>value</code>. </p>
-<p>The resulting object is considered to have an OK status. The wrapped element can be accessed with <a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f" title="Gets the stored T value. ">ValueOrDie()</a>.</p>
+<p>The resulting object is considered to have an OK status. The wrapped element can be accessed by dereferencing or with <a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a>.</p>
 <p>This constructor is made implicit so that a function with a return type of <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> can return an object of type <code>U &amp;&amp;</code>, implicitly converting it to a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> object.</p>
 <p>Note that <code>T</code> must be implicitly constructible from <code>U</code>, and <code>U</code> must not be a (cv-qualified) <a class="el" href="classasylo_1_1Status.html" title="Status contains information about an error. ">Status</a> or Status-reference type. Due to C++ reference-collapsing rules and perfect-forwarding semantics, this constructor matches invocations that pass <code>value</code> either as a const reference or as an rvalue reference. Since <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> needs to work for both reference and rvalue-reference types, the constructor uses perfect forwarding to avoid invalidating arguments that were passed by reference. See <a href="http://thbecker.net/articles/rvalue_references/section_08.html">http://thbecker.net/articles/rvalue_references/section_08.html</a> for additional details.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -282,7 +387,7 @@ template&lt;typename U , typename E  = typename std::enable_if&lt;              
 </div>
 </div>
 <a id="a4655ae2c2e98be6d227203f72608453b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4655ae2c2e98be6d227203f72608453b">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4655ae2c2e98be6d227203f72608453b">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,7 +424,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a id="a551a3de30a5e6968329a6bcc92d2f16b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a551a3de30a5e6968329a6bcc92d2f16b">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a551a3de30a5e6968329a6bcc92d2f16b">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,8 +462,47 @@ template&lt;typename U , typename E  = typename std::enable_if&lt;              
 
 </div>
 </div>
+<a id="af7710a142400311f312e6c236eec6fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7710a142400311f312e6c236eec6fdb">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , typename E  = typename std::enable_if&lt;                is_implicitly_constructible&lt;T, const U &amp;&gt;::value&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::<a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> </td>
+          <td>(</td>
+          <td class="paramtype">const absl::StatusOr&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Templatized constructor that constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> from a const reference to an <code>absl::StatusOr&lt;U&gt;</code>. </p>
+<p><code>T</code> must be implicitly constructible from <code>const U &amp;</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The value to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a066cd2e0d4c40ef4d984a581bd0b10a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a066cd2e0d4c40ef4d984a581bd0b10a0">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a066cd2e0d4c40ef4d984a581bd0b10a0">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,10 +531,49 @@ template&lt;typename U , typename E  = typename std::enable_if&lt;              
 
 <p>Templatized constructor which constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> by moving the contents of a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;U&gt;</code>. </p>
 <p><code>T</code> must be implicitly constructible from <code>U &amp;&amp;</code>.</p>
-<p>Sets <code>other</code> to contain a non-OK status with a<code>StatusError::MOVED</code> error code.</p>
+<p>Sets <code>other</code> to a valid but unspecified state.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object to move from and set to a non-OK status. </td></tr>
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object to move from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2d97f7f0161f1029b1a9efa18e30ae4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d97f7f0161f1029b1a9efa18e30ae4d">&#9670;&nbsp;</a></span>StatusOr() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , typename E  = typename std::enable_if&lt;                            is_implicitly_constructible&lt;T, U &amp;&amp;&gt;::value&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::<a class="el" href="classasylo_1_1StatusOr.html">StatusOr</a> </td>
+          <td>(</td>
+          <td class="paramtype">absl::StatusOr&lt; U &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Templatized constructor which constructs a <code><a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>&lt;T&gt;</code> by moving the contents of an <code>absl::StatusOr&lt;U&gt;</code>. </p>
+<p><code>T</code> must be implicitly constructible from <code>U &amp;&amp;</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <code>absl::StatusOr&lt;U&gt;</code> object to move from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -398,6 +581,153 @@ template&lt;typename U , typename E  = typename std::enable_if&lt;              
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a79aae328a5a98f679a40dd648049355e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79aae328a5a98f679a40dd648049355e">&#9670;&nbsp;</a></span>ABSL_DEPRECATED() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::ABSL_DEPRECATED </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Deprecated as part of Asylo's absl::Status migration. Use &#160;</td>
+          <td class="paramname"><em>value</em>(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot; &quot;operator*&#160;</td>
+          <td class="paramname">(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">or operator-&gt;() instead.&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated:</a></b></dt><dd>Deprecated as part of Asylo's <code>absl::Status</code> migration. Use <code><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a></code>, <code><a class="el" href="classasylo_1_1StatusOr.html#a327e3336d2c55744e5d9da0e5c75f05b" title="Gets the stored T value. ">operator*()</a></code>, or <code>operator-&gt;()</code> instead. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
+<a id="a761dd2586441541bf251e439c5a30a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761dd2586441541bf251e439c5a30a79">&#9670;&nbsp;</a></span>ABSL_DEPRECATED() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::ABSL_DEPRECATED </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Deprecated as part of Asylo's absl::Status migration. Use &#160;</td>
+          <td class="paramname"><em>value</em>(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot; &quot;operator*&#160;</td>
+          <td class="paramname">(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">or operator-&gt;() instead.&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a mutable reference to the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated:</a></b></dt><dd>Deprecated as part of Asylo's <code>absl::Status</code> migration. Use <code><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a></code>, <code><a class="el" href="classasylo_1_1StatusOr.html#a327e3336d2c55744e5d9da0e5c75f05b" title="Gets the stored T value. ">operator*()</a></code>, or <code>operator-&gt;()</code> instead. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
+<a id="a5484f1de80df98eac18f7ba8e4b9d715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5484f1de80df98eac18f7ba8e4b9d715">&#9670;&nbsp;</a></span>ABSL_DEPRECATED() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::ABSL_DEPRECATED </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Deprecated as part of Asylo's absl::Status migration. Use &#160;</td>
+          <td class="paramname"><em>value</em>(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot; &quot;operator*&#160;</td>
+          <td class="paramname">(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">or operator-&gt;() instead.&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Moves and returns the internally-stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort. The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is changed after this call to a valid but unspecified state.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated:</a></b></dt><dd>Deprecated as part of Asylo's <code>absl::Status</code> migration. Use <code><a class="el" href="classasylo_1_1StatusOr.html#a31c85d7d0d2a3de9608e5c610256e7c8" title="Gets the stored T value. ">value()</a></code>, <code><a class="el" href="classasylo_1_1StatusOr.html#a327e3336d2c55744e5d9da0e5c75f05b" title="Gets the stored T value. ">operator*()</a></code>, or <code>operator-&gt;()</code> instead. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
 <a id="a0365979a3a379130563e0f7830350b38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0365979a3a379130563e0f7830350b38">&#9670;&nbsp;</a></span>ok()</h2>
 
@@ -424,7 +754,191 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Indicates whether the object contains a <code>T</code> value. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true). If this function returns true, then it is safe to access the wrapped element through a call to <a class="el" href="classasylo_1_1StatusOr.html#afe77b138fa7f54ea469505c02dff983f" title="Gets the stored T value. ">ValueOrDie()</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true). If this function returns true, then it is safe to dereference this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aa8005c68bd9a8077e07d613283ea6b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8005c68bd9a8077e07d613283ea6b70">&#9670;&nbsp;</a></span>operator absl::StatusOr< U >()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , typename E  = typename std::enable_if&lt;                            is_implicitly_constructible&lt;U, T &amp;&amp;&gt;::value&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::operator absl::StatusOr&lt; U &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a327e3336d2c55744e5d9da0e5c75f05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a327e3336d2c55744e5d9da0e5c75f05b">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise the behavior of this method is undefined.</p>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
+<a id="a7f853febe8fdb96c2b9789c8433d8b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f853febe8fdb96c2b9789c8433d8b8d">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise the behavior of this method is undefined.</p>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
+<a id="aab393b1e12da9f7a386f09214fe2d191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab393b1e12da9f7a386f09214fe2d191">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise the behavior of this method is undefined. The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is changed after this call to a valid but unspecified state.</p>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
+<a id="aecdc6cb0add27722a547288e1a84b595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecdc6cb0add27722a547288e1a84b595">&#9670;&nbsp;</a></span>operator->() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T* <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aecceses the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise the behavior of this method is undefined.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the stored <code>T</code> value. </dd></dl>
+
+</div>
+</div>
+<a id="aa8c4dfbc8707ed18384e907dd106d386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c4dfbc8707ed18384e907dd106d386">&#9670;&nbsp;</a></span>operator->() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the stored <code>T</code> value. </p>
+<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise the behavior of this method is undefined.</p>
+<dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
 
 </div>
 </div>
@@ -491,10 +1005,10 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Move-assignment operator. </p>
-<p>Sets <code>other</code> to contain a non-OK status with a <code>StatusError::MOVED</code> error code.</p>
+<p>Sets <code>other</code> to a valid but unspecified state.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object to assign from and set to a non-OK status. </td></tr>
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object to assign from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -531,8 +1045,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="afe77b138fa7f54ea469505c02dff983f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe77b138fa7f54ea469505c02dff983f">&#9670;&nbsp;</a></span>ValueOrDie() <span class="overload">[1/3]</span></h2>
+<a id="a31c85d7d0d2a3de9608e5c610256e7c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c85d7d0d2a3de9608e5c610256e7c8">&#9670;&nbsp;</a></span>value() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -543,7 +1057,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const T&amp; <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::ValueOrDie </td>
+          <td class="memname">const T&amp; <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::value </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const &amp;</td>
@@ -557,13 +1071,13 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Gets the stored <code>T</code> value. </p>
-<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort.</p>
+<p>If this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is not OK, then this method either throws an <code>absl::BadStatusOrAccess</code> exception or aborts the program, depending on whether exceptions are enabled.</p>
 <dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
 
 </div>
 </div>
-<a id="a3970ee6236b51bf6935b80a0e99ffb89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3970ee6236b51bf6935b80a0e99ffb89">&#9670;&nbsp;</a></span>ValueOrDie() <span class="overload">[2/3]</span></h2>
+<a id="adbf12384d9573e95c26606b00cde650f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf12384d9573e95c26606b00cde650f">&#9670;&nbsp;</a></span>value() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,7 +1088,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T&amp; <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::ValueOrDie </td>
+          <td class="memname">T&amp; <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::value </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> &amp;</td>
@@ -587,14 +1101,14 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a mutable reference to the stored <code>T</code> value. </p>
-<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort.</p>
+<p>Gets the stored <code>T</code> value. </p>
+<p>If this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is not OK, then this method either throws an <code>absl::BadStatusOrAccess</code> exception or aborts the program, depending on whether exceptions are enabled.</p>
 <dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
 
 </div>
 </div>
-<a id="a5e40cf885ab51ee832ccfdabb8f3aaf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e40cf885ab51ee832ccfdabb8f3aaf7">&#9670;&nbsp;</a></span>ValueOrDie() <span class="overload">[3/3]</span></h2>
+<a id="acfc71dbbdbfcca4f8d98ae613d88d739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfc71dbbdbfcca4f8d98ae613d88d739">&#9670;&nbsp;</a></span>value() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,7 +1119,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::ValueOrDie </td>
+          <td class="memname">T <a class="el" href="classasylo_1_1StatusOr.html">asylo::StatusOr</a>&lt; T &gt;::value </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> &amp;&amp;</td>
@@ -619,7 +1133,8 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Moves and returns the internally-stored <code>T</code> value. </p>
-<p>This method should only be called if this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object's status is OK (i.e. a call to <a class="el" href="classasylo_1_1StatusOr.html#a0365979a3a379130563e0f7830350b38" title="Indicates whether the object contains a T value. ">ok()</a> returns true), otherwise this call will abort. The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is invalidated after this call and will be updated to contain a non-OK status with a <code>StatusError::MOVED</code> error code.</p>
+<p>The <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is invalidated after this call and will be updated to a valid but unspecified state.</p>
+<p>If this <a class="el" href="classasylo_1_1StatusOr.html" title="A class for representing either a usable value, or an error. ">StatusOr</a> object is not OK, then this method either throws an <code>absl::BadStatusOrAccess</code> exception or aborts the program, depending on whether exceptions are enabled.</p>
 <dl class="section return"><dt>Returns</dt><dd>The stored <code>T</code> value. </dd></dl>
 
 </div>

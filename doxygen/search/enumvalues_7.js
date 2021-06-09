@@ -1,9 +1,26 @@
 var searchData=
 [
+  ['kaborted',['kAborted',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa702bccaa3ee0e5413ae52c4847c3cba5',1,'asylo::primitives']]],
   ['kaddressname',['kAddressName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea04a037ad839440f36fdd69b75ea50f32',1,'shared_name_kind.h']]],
+  ['kalreadyexists',['kAlreadyExists',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84faf1733e8c36f9ce905cc03caec78b622f',1,'asylo::primitives']]],
+  ['kcancelled',['kCancelled',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fac3d0c93f4a85dc0dd133987dadf580d7',1,'asylo::primitives']]],
+  ['kdataloss',['kDataLoss',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa566ecff5906f97c397eaf1fe8c5c899b',1,'asylo::primitives']]],
+  ['kdeadlineexceeded',['kDeadlineExceeded',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa34a5b7f7f7668c0ef66719f8320a83e7',1,'asylo::primitives']]],
+  ['kfailedprecondition',['kFailedPrecondition',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa774a489156b090a5706ed8d591ba1e33',1,'asylo::primitives']]],
+  ['kinternal',['kInternal',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa0270a66593328b30ee5e336093eef070',1,'asylo::primitives']]],
+  ['kinvalidargument',['kInvalidArgument',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa56447441b1316cce90f7299284bdc923',1,'asylo::primitives']]],
   ['kmemblockname',['kMemBlockName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea621e9038c379a0d14aa590fb5df1e34a',1,'shared_name_kind.h']]],
+  ['knotfound',['kNotFound',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa3cee124553006bfa63b98b9dc39c036c',1,'asylo::primitives']]],
+  ['kok',['kOk',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa9c98f43fed563bfdb6d94676d9abde1c',1,'asylo::primitives']]],
+  ['koutofrange',['kOutOfRange',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa368e2529c3314ec8d580e188e2231dbe',1,'asylo::primitives']]],
+  ['kpermissiondenied',['kPermissionDenied',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa6c54ef836332ef924abd809289bb8f45',1,'asylo::primitives']]],
+  ['kresourceexhausted',['kResourceExhausted',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fad6197fd2798c63ced825756a48464375',1,'asylo::primitives']]],
   ['ksocketname',['kSocketName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea1a35db811e8dd72628ca323f420a2b8b',1,'shared_name_kind.h']]],
   ['kss',['KSS',['../namespaceasylo_1_1sgx.html#ab2d05c25632137511aa7a5fda4cb9188ae2f43810038466961e733c01eadedcc6',1,'asylo::sgx']]],
   ['ktimername',['kTimerName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afceab824b6eb0b4827cff6e96602198b601c',1,'shared_name_kind.h']]],
+  ['kunauthenticated',['kUnauthenticated',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fac1fb352e0e6d92598fed927384d61c75',1,'asylo::primitives']]],
+  ['kunavailable',['kUnavailable',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84faca50a644f0ac4a5199829e5dac2eead2',1,'asylo::primitives']]],
+  ['kunimplemented',['kUnimplemented',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa94a7be77d734d233abfa6c4cab963ac5',1,'asylo::primitives']]],
+  ['kunknown',['kUnknown',['../namespaceasylo_1_1primitives.html#ad960383b728dd202e42b27e44909e84fa13a2a892c15aba651f616afd36d29a9e',1,'asylo::primitives']]],
   ['kunspecifiedname',['kUnspecifiedName',['../shared__name__kind_8h.html#afef9abbb4efbe298078fc9dd8a30afcea7c9a44128c7112176129050b06b43e7e',1,'shared_name_kind.h']]]
 ];
