@@ -261,11 +261,10 @@ function build_proto_file_doc() {
     FLAGS="${USER_FLAGS}"
   fi
   local CMD="protoc --docs_out=${FLAGS}:${TEMP}"
-  # This assumes the .proto file is in the asylo package.
-  local OUT_BASE=$(sed -e 's/\.proto$/.pb.html/' <<< $(basename "${SOURCE}"))
+  local OUT_FILE=$(sed -e 's/\.proto$/.pb.html/' <<< "${SOURCE}")
 
   ${CMD} "${SOURCE}"
-  relocate_file "${TEMP}/${OUT_BASE}" "${OUT_DIR}" "${DOCS_URL}"
+  relocate_file "${TEMP}/${OUT_FILE}" "${OUT_DIR}" "${DOCS_URL}"
   rm -rf "${TEMP}"
 }
 
